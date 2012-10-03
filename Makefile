@@ -1,3 +1,5 @@
+all: badbuf input1.txt
+
 GCC_OPTS = -fno-stack-protector -ggdb
 .PHONY: clean
 
