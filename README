@@ -27,15 +27,15 @@ The main routine's stack frame:
 
   memory    address of first byte
   ------    ---------------------
-            rsp
+            rbp
   --------
-  | good |  rsp - 8
+  | good |  rbp - 8
   --------
-  | evil |  rsp - 16  (= 8 + 8)
+  | evil |  rbp - 16  (= 8 + 8)
   --------
-  | name |  rsp - 144 (= 16 + 128)
+  | name |  rbp - 144 (= 16 + 128)
   --------
-  | pw   |  rsp - 272 (= 144 + 128)
+  | pw   |  rbp - 272 (= 144 + 128)
   --------
 
 Part 1
@@ -43,7 +43,7 @@ Part 1
 
 We write the value of good into evil, so that goodbye(evil) prints the
 welcome string.  We get the value of good from the dissambly of main,
-as the value stored into rsp - 8.
+as the value stored into rbp - 8.
 
 To run the exploit:
 
