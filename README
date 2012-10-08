@@ -3,13 +3,13 @@ Overview
 
 There are two key properties of the architecture that we rely on:
 
-1. the good and evil pointers are located after (in memory, before on
+1. The good and evil pointers are located after (in memory, before on
 the stack) the name and pw buffers.  So, the evil pointer can
 overwritten by overflowing name or pw.
 
-2. the endianness is s.t. the low order bits of the address in a
-pointer occur in the high order bits of the pointer's memory (what is
-this called? "big" or "little" endian?).
+2. The endianness is s.t. the low order bits of the address in a
+pointer occur in the high order bits of the pointer's memory ("Big
+Endian").
 
 Both exploits use the same strategy.  We overwrite name's buffer to
 change the address of the evil pointer, which in turn affects what is
@@ -23,40 +23,27 @@ write with non-zero values come first.
 Memory layout
 =============
 
-The main routine's stack frame (numbers are distances in bytes from
-the end (esb)):
-
-  2    1                    e
-  7    4      1             s
-  2    4      6      8      b
-  ---------------------------
-  | pw | name | evil | good |
-  ---------------------------
-
-( another picture attempt that might be better?
+The main routine's stack frame:
 
   memory    address of first byte
   ------    ---------------------
-            esb
+            rsp
   --------
-  | good |  esb - 8
+  | good |  rsp - 8
   --------
-  | evil |  esb - 16  (= 8 + 8)
+  | evil |  rsp - 16  (= 8 + 8)
   --------
-  | name |  esb - 144 (= 16 + 128)
+  | name |  rsp - 144 (= 16 + 128)
   --------
-  | pw   |  esb - 272 (= 144 + 128)
+  | pw   |  rsp - 272 (= 144 + 128)
   --------
-
-)
-
 
 Part 1
 ======
 
 We write the value of good into evil, so that goodbye(evil) prints the
 welcome string.  We get the value of good from the dissambly of main,
-as the value stored into esb - 8.
+as the value stored into rsp - 8.
 
 To run the exploit:
 
