@@ -6,7 +6,7 @@ GCC_OPTS = -fno-stack-protector -ggdb
 badbuf.s: badbuf.c
 	gcc -S $(GCC_OPTS) -o $@ $<
 
-badbuf: badbuf.c
+%: %.c
 	gcc $(GCC_OPTS) -static -o $@ $<
 
 clean:
@@ -15,7 +15,15 @@ clean:
 input1.txt: part1.py
 	python part1.py > input1.txt
 
+input2.txt: part2.py
+	python part2.py > input2.txt
+
 test1: input1.txt badbuf
 	cat input1.txt
 	./badbuf < input1.txt
+	echo
+
+test2: input2.txt badbuf
+	cat input2.txt
+	./badbuf < input2.txt
 	echo

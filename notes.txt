@@ -4,3 +4,12 @@ evil = 0x0000000000401219 <+19>:	movq   $0x4964bd,-0x10(%rbp)
 good   0x0000000000401211 <+11>:	movq   $0x496664,-0x8(%rbp)
 evil   0x0000000000401219 <+19>:	movq   $0x49667d,-0x10(%rbp)
 
+Part 2
+======
+
+0x00007fffffffdb{6,7,8,9}0
+
+0x7fffffffdb20
+0x7f ff ff ff da 90
+
+info registers
