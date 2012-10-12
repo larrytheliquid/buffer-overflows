@@ -1,25 +1,45 @@
-good = 0x0000000000401211 <+11>:	movq   $0x4964a4,-0x8(%rbp)
-evil = 0x0000000000401219 <+19>:	movq   $0x4964bd,-0x10(%rbp)
+Part 1
+======
 
-good   0x0000000000401211 <+11>:	movq   $0x496664,-0x8(%rbp)
-evil   0x0000000000401219 <+19>:	movq   $0x49667d,-0x10(%rbp)
+good: 0x0000000000401211 <+11>:	movq   $0x4964a4,-0x8(%rbp)
+evil: 0x0000000000401219 <+19>:	movq   $0x4964bd,-0x10(%rbp)
+
+good: 0x0000000000401211 <+11>:	movq   $0x496664,-0x8(%rbp)
+evil: 0x0000000000401219 <+19>:	movq   $0x49667d,-0x10(%rbp)
 
 Part 2
 ======
+
+rbp (frame pointer)
+~~~~~~~~~~~~~~~~~~~
+
+values we saw by running cd:
 
 0x00007fffffffdb{6,7,8,9}0
 
 0x7fffffffdb20
 0x7f ff ff ff da 90
 
+
+gdb command to see value of registers:
+
 info registers
 
 
-test script
-~~~~~~~~~~~
+test scripts
+~~~~~~~~~~~~
 
-
-
+# Run the exploit from any directory.  Useful by the loop that follows.
 function test { ~/v/buffer-overflows.git/badbuf < ~/v/buffer-overflows.git/input2.txt ; }
 
+# Construct a chain of 100 nested temp dirs and run the exploit in each.
 for f in $(seq 1 100); do d=$(mktemp -d --tmpdir=./); cd $d; test; echo $d $f; read; done
+
+That one shows us that the env sits above the stack, and that the
+stack can pushed down as far as you want.
+
+# Shift the top of the stack down by 0x123 (assumes X is already a defined env var).
+export X=$(python -c "'x'*0x123")
+
+# Clear all non-PATH env vars.
+unset $(env | sed -nre 's/^([^ \t=]*)=.*/\1/p'  | grep -v '^PATH$')
