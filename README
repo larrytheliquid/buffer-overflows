@@ -79,8 +79,7 @@ information about the stack.
 Exploit generated per attack
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-We run the supplied getsp.c program to get an idea where the stack
-starts.
+We run the getfp.c program to get an idea where the stack starts.
 
 
 Single "robust" exploit for all attacks
