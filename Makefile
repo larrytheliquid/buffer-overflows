@@ -1,5 +1,6 @@
 all: badbuf input1.txt
 
+# The -ggdb doesn't seem to affect the stack top address.
 GCC_OPTS = -fno-stack-protector -ggdb
 .PHONY: clean test1
 
@@ -23,7 +24,8 @@ test1: input1.txt badbuf
 	./badbuf < input1.txt
 	echo
 
-test2: input2.txt badbuf
-	cat input2.txt
+test2: badbuf
+	./getfp
+	./getfp | ./part2.py | tee input2.txt
 	./badbuf < input2.txt
 	echo

