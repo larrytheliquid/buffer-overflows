@@ -1,24 +1,28 @@
+Project 1
+CS 591 Intro to Security
+Fall 2012
+Portland State University
+Nathan Collins, Larry Diehl, Caylee Hogg
+
 Overview
 ========
 
 There are two key properties of the architecture that we rely on:
 
 1. The good and evil pointers are located after (in memory, before on
-the stack) the name and pw buffers.  So, the evil pointer can
+the stack) the name and pw buffers.  So, the evil pointer can be
 overwritten by overflowing name or pw.
 
-2. The endianness is s.t. the low order bits of the address in a
-pointer occur in the high order bits of the pointer's memory ("Big
-Endian").
+2. The endianness is s.t. the low order bytes of the address in a
+pointer occur in the initial bytes of the pointer's memory ("Big
+Endian").  This is important because we overwrite the address byte by
+byte, and so are responsible for the order in which the address bytes
+are written.
 
-Both exploits use the same strategy.  We overwrite name's buffer to
+Both exploits use the same strategy.  We overrun name's buffer to
 change the address of the evil pointer, which in turn affects what is
-printed when goodbye(evil) is called (since the name and password
-don't match).  The address we write into evil has zeros in the high
-order bits (e.g. the Part 1 address is three bytes), and we can only
-write one zero via a string, the null terminator (since scanf will
-stop there).  However, due to the endianness, the bytes we want to
-write with non-zero values come first.
+printed when goodbye(evil) is called (our name and password strings
+are not equated by match()).
 
 Memory layout
 =============
@@ -45,7 +49,39 @@ We write the value of good into evil, so that goodbye(evil) prints the
 welcome string.  We get the value of good from the dissambly of main,
 as the value stored into rbp - 8.
 
+When creating our exploit string, we believed (wrongly) that scanf()
+stopped at null (i.e., that scanf() treated the input as a
+C-string). However, due to endianness, the address we write into evil
+has zeros only in the final bytes, and so it suffices to write the
+initial non-zero bytes followed by a zero (null terminating) byte.
+
 To run the exploit:
 
   make all
   ./badbuf < input1.txt
+
+Part 2
+======
+
+We write the value of an 8-byte-aligned address in name or pw into the
+evil pointer.  We fill name and pw with 32 copies of the 8-byte
+character sequence "ownz_u!\0".  We are able to do this because
+scanf() does not stop at null ('\0'), but rather only at EOF or white
+space.
+
+The memory backing name and pw depends on where the stack starts,
+which in turn depends on the environment in which the program is run
+(the environment is stored above the stack).  So, we have two attacks:
+one where the exploit is generated in the current environment, and one
+where exploit is generated once beforehand, but based on some
+information about the stack.
+
+Exploit generated per attack
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+We run the supplied getsp.c program to get an idea where the stack
+starts.
+
+
+Single "robust" exploit for all attacks
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
