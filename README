@@ -64,22 +64,24 @@ Part 2
 ======
 
 We write the value of an 8-byte-aligned address in name or pw into the
-evil pointer.  We fill name and pw with 32 copies of the 8-byte
-character sequence "ownz_u!\0".  We are able to do this because
-scanf() does not stop at null ('\0'), but rather only at EOF or white
-space.
+evil pointer.  We fill name and pw with 31 copies of the 8-byte
+character sequence "ownz_u!\0" (and a different string in the first 8
+bytes of pw to make 'match(name,pw)' return false).  We are able to do
+this because scanf() does not stop at null ('\0'), but rather only at
+EOF or white space.
 
-The memory backing name and pw depends on where the stack starts,
-which in turn depends on the environment in which the program is run
-(the environment is stored above the stack).  So, we have two attacks:
-one where the exploit is generated in the current environment, and one
-where exploit is generated once beforehand, but based on some
-information about the stack.
+The stack memory backing name and pw depends on where the stack
+starts, which in turn depends on the environment in which the program
+is run (the environment is stored above the stack).  So, we have two
+attacks: one where the exploit is generated in the current
+environment, and one where exploit is generated once beforehand, but
+based on some information about the stack.
 
 Exploit generated per attack
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-We run the getfp.c program to get an idea where the stack starts.
+We run the getfp.c program (like getsp.c, but returning %rbp instead)
+to get an idea where the stack starts.
 
 To run the exploit:
 
