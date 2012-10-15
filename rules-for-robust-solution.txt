@@ -1,0 +1,27 @@
+Andrew said in email:
+
+  OK, for those of you trying to create a "robust" solution (a single fixed exploit
+  input rather than just scheme for generating the exploit input in the target
+  environment), I'll need to be a bit more precise.
+
+  So suppose that you have access to (source code and ability to run)
+  another dubious program, called "foo."  
+
+  I will feed your input to 'badbuf' in an environment where the program
+  "foo"  when compiled  with "gcc -o foo foo.c" prints "ea4c" .
+
+  This information should be enough to get your target address in the right ballpark.
+
+  Here is program "foo": 
+
+  #include <stdio.h>
+  void p(unsigned short i) {
+    printf("%x\n",i);
+  }
+  main ()
+  {
+    int i;
+    p((unsigned long) &i);
+  }
+
+That program is saved as foo.c here.

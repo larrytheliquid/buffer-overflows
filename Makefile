@@ -1,4 +1,4 @@
-ALL = badbuf input1.txt getfp 
+ALL = badbuf input1.txt getfp input2_robust.txt
 all: $(ALL)
 
 # The -ggdb doesn't seem to affect the stack top address.
@@ -19,6 +19,9 @@ test1: input1.txt badbuf
 	./badbuf < input1.txt
 	echo
 
+input2_robust.txt: part2_robust.py
+	./part2_robust.py > $@
+
 # NB: the stack top is different in make than it is on the command
 # line.
 test2: badbuf
@@ -28,5 +31,5 @@ test2: badbuf
 	echo
 
 clean:
-	-rm $(ALL) badbuf.s input2.txt badbuf_instrumented
+	-rm $(ALL) badbuf.s input2.txt badbuf_instrumented foo
 
