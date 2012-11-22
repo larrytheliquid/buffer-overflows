@@ -1,0 +1,14 @@
+From the class email list:
+
+The pcap files are very old, and some programs have trouble reading
+them.  They can up converted a modern pcap format with:
+
+  tcpdump -r <old>.tcpdump -w <new>.tcpdump
+
+
+The traces for the assignment:
+
+A 10 minute (2.4M) trace with no port scans (APT thinks):
+
+  wget http://web.cecs.pdx.edu/~apt/cs491/98-10minutes.tcpdump
+  tcpdump -r 98-10minutes.tcpdump -w 98-10minutes.tcpdump.new
