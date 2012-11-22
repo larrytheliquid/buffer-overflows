@@ -1,0 +1,226 @@
+Network.Pcap: http://hackage.haskell.org/package/pcap-0.4.5.2
+
+The filtering functions return a packet header 'PktHdr' and a pointer
+to the data ('Ptr Word8' or 'ByteString').
+
+The header is:
+
+  data PktHdr = PktHdr {
+        hdrSeconds :: {-# UNPACK #-} !Word32       -- ^ timestamp (seconds)
+      , hdrUseconds :: {-# UNPACK #-} !Word32      -- ^ timestamp (microseconds)
+      , hdrCaptureLength :: {-# UNPACK #-} !Word32 -- ^ number of bytes present in capture
+      , hdrWireLength :: {-# UNPACK #-} !Word32    -- ^ number of bytes on the wire
+      } deriving (Eq, Show)
+
+The header and payload are what pcap returns.  Some relevant
+discussion from `man pcap`:
+
+  Packets  are  read  with  pcap_dispatch()  or pcap_loop(), which process one or more packets,
+  calling a callback routine for each packet, or  with  pcap_next()  or  pcap_next_ex(),  which
+  return  the  next  packet.   The  callback  for pcap_dispatch() and pcap_loop() is supplied a
+  pointer to a struct pcap_pkthdr, which includes the following members:
+
+         ts     a struct timeval containing the time when the packet was captured
+
+         caplen a bpf_u_int32 giving the number of bytes of the packet that are available  from
+                the capture
+
+         len    a  bpf_u_int32  giving  the length of the packet, in bytes (which might be more
+                than the number of bytes available from the  capture,  if  the  length  of  the
+                packet is larger than the maximum number of bytes to capture).
+
+  pcap_next_ex()  supplies  that  pointer through a pointer argument.  pcap_next() is passed an
+  argument that points to a struct pcap_pkthdr structure, and fills it in.
+
+  The callback is also supplied a const u_char pointer to the first caplen  (as  given  in  the
+  struct  pcap_pkthdr  a pointer to which is passed to the callback routine) bytes of data from
+  the packet.  This won't necessarily be the entire packet; to capture the entire  packet,  you
+  will  have  to  provide  a  value for snaplen in your call to pcap_open_live() that is suffi‐
+  ciently large to get all of the packet's data - a value of 65535 should be sufficient on most
+  if  not  all networks).  When reading from a ``savefile'', the snapshot length specified when
+  the capture was performed will limit  the  amount  of  packet  data  available.   pcap_next()
+  returns that pointer; pcap_next_ex() supplies that pointer through a pointer argument.
+
+Are packets ever fragmented at this level? And what does "fragmented"
+mean here? E.g. does one speak of TCP packets being fragmented into
+multiple non-fragmented IP packets for transport?  Probably they mean
+fragmentation of IP packets. The pcap C tutorial [1] indicates the
+packet could be fragmented:
+
+  The first argument is our session handler. The second argument is a
+  pointer to a structure that holds general information about the
+  packet, specifically the time in which it was sniffed, the length of
+  this packet, and the length of his specific portion (incase it is
+  fragmented, for example.) pcap_next() returns a u_char pointer to
+  the packet that is described by this structure. We'll discuss the
+  technique for actually reading the packet itself later.
+
+[1]: http://www.tcpdump.org/pcap.html
+
+The tutorial then explains how to process packets by casting.  They
+have to define all the structs corresponding to the packet
+datastructures.
+
+Do we have to do similar crap in our Haskell/Ruby/whatever program?
+The Java pcap library appears to not have this problem:
+
+  http://jpcap.sourceforge.net/javadoc/net/sourceforge/jpcap/net/PacketFactory.html
+  http://jpcap.sourceforge.net/javadoc/net/sourceforge/jpcap/net/Packet.html
+  http://jpcap.sourceforge.net/javadoc/net/sourceforge/jpcap/net/TCPPacket.html
+
+The Ruby and Python (via Impacket) libraries also provide decoding. Ruby:
+
+  http://rubypcap.svn.sourceforge.net/viewvc/rubypcap/doc/IPPacket.html
+
+Python:
+
+  http://code.google.com/p/impacket/
+
+(there are various pcap libs).
+
+In Haskell I cannot find a featureful library. Here is an example of
+manually decoding a DNS packet:
+
+  http://www.haskell.org/haskellwiki/DealingWithBinaryData#Bit_twiddling
+
+which uses the binary package (and 'BitGit').
+
+Tom DuBuisson has a library, but it appears very primitive:
+
+  http://hackage.haskell.org/package/network-data
+
+E.g., it does not decode ports for TCP packets into numbers, but
+rather 'Word16' (but maybe 'fromIntegral' works here?).
+
+There is another library derived from the OGI House project. Might be
+more featureful, but is still very short on documentation:
+
+  http://hackage.haskell.org/package/network-house
+
+Finally, a possibly more developed library, but with no documentation
+:P
+
+  http://hackage.haskell.org/package/hans
+
+Haskell fail ...
+
+In the C tutorial they show how to turn the raw data into an
+(ethernet) packet, and then cast to a more specific packet type using
+a subclass of Packet.  The relevant part of the pcap C tutorial:
+
+  But how do you make use of this variable (named "packet" in our
+  prototype)? A packet contains many attributes, so as you can imagine,
+  it is not really a string, but actually a collection of structures
+  (for instance, a TCP/IP packet would have an Ethernet header, an IP
+  header, a TCP header, and lastly, the packet's payload). This u_char
+  pointer points to the serialized version of these structures. To make
+  any use of it, we must do some interesting typecasting.
+
+  First, we must have the actual structures define before we can
+  typecast to them. The following are the structure definitions that I
+  use to describe a TCP/IP packet over Ethernet.
+
+  /* Ethernet addresses are 6 bytes */
+  #define ETHER_ADDR_LEN	6
+
+  	/* Ethernet header */
+  	struct sniff_ethernet {
+  		u_char ether_dhost[ETHER_ADDR_LEN]; /* Destination host address */
+  		u_char ether_shost[ETHER_ADDR_LEN]; /* Source host address */
+  		u_short ether_type; /* IP? ARP? RARP? etc */
+  	};
+
+  	/* IP header */
+  	struct sniff_ip {
+  		u_char ip_vhl;		/* version << 4 | header length >> 2 */
+  		u_char ip_tos;		/* type of service */
+  		u_short ip_len;		/* total length */
+  		u_short ip_id;		/* identification */
+  		u_short ip_off;		/* fragment offset field */
+  	#define IP_RF 0x8000		/* reserved fragment flag */
+  	#define IP_DF 0x4000		/* dont fragment flag */
+  	#define IP_MF 0x2000		/* more fragments flag */
+  	#define IP_OFFMASK 0x1fff	/* mask for fragmenting bits */
+  		u_char ip_ttl;		/* time to live */
+  		u_char ip_p;		/* protocol */
+  		u_short ip_sum;		/* checksum */
+  		struct in_addr ip_src,ip_dst; /* source and dest address */
+  	};
+  	#define IP_HL(ip)		(((ip)->ip_vhl) & 0x0f)
+  	#define IP_V(ip)		(((ip)->ip_vhl) >> 4)
+
+  	/* TCP header */
+  	struct sniff_tcp {
+  		u_short th_sport;	/* source port */
+  		u_short th_dport;	/* destination port */
+  		tcp_seq th_seq;		/* sequence number */
+  		tcp_seq th_ack;		/* acknowledgement number */
+
+  		u_char th_offx2;	/* data offset, rsvd */
+  	#define TH_OFF(th)	(((th)->th_offx2 & 0xf0) >> 4)
+  		u_char th_flags;
+  	#define TH_FIN 0x01
+  	#define TH_SYN 0x02
+  	#define TH_RST 0x04
+  	#define TH_PUSH 0x08
+  	#define TH_ACK 0x10
+  	#define TH_URG 0x20
+  	#define TH_ECE 0x40
+  	#define TH_CWR 0x80
+  	#define TH_FLAGS (TH_FIN|TH_SYN|TH_RST|TH_ACK|TH_URG|TH_ECE|TH_CWR)
+  		u_short th_win;		/* window */
+  		u_short th_sum;		/* checksum */
+  		u_short th_urp;		/* urgent pointer */
+  };
+
+  Note: On my Slackware Linux 8 box (stock kernel 2.2.19) I found that
+  code using the above structures would not compile. The problem, as it
+  turns out, was in include/features.h, which implements a POSIX
+  interface unless _BSD_SOURCE is defined. If it was not defined, then I
+  had to use a different structure definition for the TCP header. The
+  more universal solution, that does not prevent the code from working
+  on FreeBSD or OpenBSD (where it had previously worked fine), is simply
+  to do the following:
+
+  #define _BSD_SOURCE 1
+
+  prior to including any of your header files. This will ensure that a
+  BSD style API is being used. Again, if you don't wish to do this, then
+  you can simply use the alternative TCP header structure, which I've
+  linked to here, along with some quick notes about using it.
+
+  [...]
+
+  Again, we're going to assume that we are dealing with a TCP/IP
+  packet over Ethernet. This same technique applies to any packet; the
+  only difference is the structure types that you actually use. So
+  let's begin by defining the variables and compile-time definitions
+  we will need to deconstruct the packet data.
+
+  /* ethernet headers are always exactly 14 bytes */
+  #define SIZE_ETHERNET 14
+
+  	const struct sniff_ethernet *ethernet; /* The ethernet header */
+  	const struct sniff_ip *ip; /* The IP header */
+  	const struct sniff_tcp *tcp; /* The TCP header */
+  	const char *payload; /* Packet payload */
+
+  	u_int size_ip;
+  	u_int size_tcp;
+
+  And now we do our magical typecasting:
+
+  	ethernet = (struct sniff_ethernet*)(packet);
+  	ip = (struct sniff_ip*)(packet + SIZE_ETHERNET);
+  	size_ip = IP_HL(ip)*4;
+  	if (size_ip < 20) {
+  		printf("   * Invalid IP header length: %u bytes\n", size_ip);
+  		return;
+  	}
+  	tcp = (struct sniff_tcp*)(packet + SIZE_ETHERNET + size_ip);
+  	size_tcp = TH_OFF(tcp)*4;
+  	if (size_tcp < 20) {
+  		printf("   * Invalid TCP header length: %u bytes\n", size_tcp);
+  		return;
+  	}
+  	payload = (u_char *)(packet + SIZE_ETHERNET + size_ip + size_tcp);

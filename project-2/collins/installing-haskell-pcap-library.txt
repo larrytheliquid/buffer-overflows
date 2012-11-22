@@ -1,0 +1,7 @@
+You need the pcap C headers:
+
+  sudo aptitude install libpcap-dev
+
+Then cabal install:
+
+  cabal install pcap
