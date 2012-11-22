@@ -1,0 +1,14 @@
+If you want to run wireshark as non-root:
+
+1. Enable privilege separation for packet capture:
+
+     sudo dpkg-reconfigure wireshark-common
+
+   and choose "yes" for setuid.
+
+2. Add your user to the wireshark group:
+
+     sudo adduser collins wireshark
+
+3. Log out and back in for group changes to take effect.
+
