@@ -1,0 +1,8 @@
+Looking at traces in Wireshark, it appears that a TCP handshake
+consists of three packets:
+
+1. C -> S: flags = SYN
+2. S -> C: flags = SYN | ACK
+3. C -> S: flags = ACK, ack field = 1
+
+Should double check this.
