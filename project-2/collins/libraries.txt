@@ -1,0 +1,6 @@
+Impacket:
+
+For decoding raw packets.
+
+  wget https://impacket.googlecode.com/files/impacket-0.9.9.9.tar.gz
+  tar xf impacket*
