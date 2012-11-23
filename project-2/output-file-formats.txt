@@ -1,0 +1,11 @@
+Part 1:
+
+server_ip port
+
+Part 2:
+
+server_ip port connections bytes
+
+Part 3:
+
+attacker_ip server_ip number_of_ports_scanned
