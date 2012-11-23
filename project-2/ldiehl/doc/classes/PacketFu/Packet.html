@@ -1,0 +1,2057 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>PacketFu::Packet</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/github.css" type="text/css" media="screen" />
+<script src="../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            PacketFu::Packet 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="../Object.html">Object</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../files/lib/packetfu/packet_rb.html">lib/packetfu/packet.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p><a href="Packet.html">Packet</a> is the parent class of <a
+href="EthPacket.html">EthPacket</a>, <a href="IPPacket.html">IPPacket</a>,
+<a href="UDPPacket.html">UDPPacket</a>, <a
+href="TCPPacket.html">TCPPacket</a>, and all other packets. It acts as both
+a singleton class, so things like <a
+href="Packet.html#method-c-parse">::parse</a> can happen, and as an
+abstract class to provide  subclasses some structure.</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>#</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-3D-3D">==</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>C</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-can_parse-3F">can_parse?</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-clone">clone</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>D</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-dissect">dissect</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-dissection_table">dissection_table</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>F</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-force_binary">force_binary</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>H</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-handle_is_identity">handle_is_identity</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-hexify">hexify</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>I</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-inherited">inherited</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-inspect">inspect</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-inspect_hex">inspect_hex</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-inspect_style-3D">inspect_style=</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>K</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-kind_of-3F">kind_of?</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>L</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-layer">layer</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-layer">layer</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-c-layer_symbol">layer_symbol</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-layer_symbol">layer_symbol</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-length">length</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>M</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-method_missing">method_missing</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-new">new</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>O</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-orig_kind_of-3F">orig_kind_of?</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>P</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-parse">parse</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-payload">payload</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-payload-3D">payload=</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-peek">peek</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-peek_format">peek_format</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-proto">proto</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-protocol">protocol</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>R</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-read">read</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-recalc">recalc</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-respond_to-3F">respond_to?</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-size">size</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-to_f">to_f</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-to_pcap">to_pcap</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-to_s">to_s</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-to_w">to_w</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>W</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-write">write</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+      <!-- Section attributes -->
+      <div class="sectiontitle">Attributes</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [R]
+            </td>
+            <td class='attr-name'>flavor</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [RW]
+            </td>
+            <td class='attr-name'>headers</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [RW]
+            </td>
+            <td class='attr-name'>iface</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [RW]
+            </td>
+            <td class='attr-name'>inspect_style</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+      </table>
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-can_parse-3F">
+            
+              <b>can_parse?</b>(str)
+            
+            <a href="../../classes/PacketFu/Packet.html#method-c-can_parse-3F" name="method-c-can_parse-3F" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p><a href="Packet.html">Packet</a> subclasses must override this, since the
+<a href="Packet.html">Packet</a> superclass can't actually parse anything.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-can_parse-3F_source')" id="l_method-c-can_parse-3F_source">show</a>
+                
+              </p>
+              <div id="method-c-can_parse-3F_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/packet.rb, line 281</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">can_parse?</span>(<span class="ruby-identifier">str</span>)
+        <span class="ruby-keyword">false</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-force_binary">
+            
+              <b>force_binary</b>(str)
+            
+            <a href="../../classes/PacketFu/Packet.html#method-c-force_binary" name="method-c-force_binary" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Force strings into binary.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-force_binary_source')" id="l_method-c-force_binary_source">show</a>
+                
+              </p>
+              <div id="method-c-force_binary_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/packet.rb, line 21</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">force_binary</span>(<span class="ruby-identifier">str</span>)
+        <span class="ruby-identifier">str</span>.<span class="ruby-identifier">force_encoding</span> <span class="ruby-constant">Encoding</span><span class="ruby-operator">::</span><span class="ruby-constant">BINARY</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">str</span>.<span class="ruby-identifier">respond_to?</span> <span class="ruby-value">:force_encoding</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-inherited">
+            
+              <b>inherited</b>(subclass)
+            
+            <a href="../../classes/PacketFu/Packet.html#method-c-inherited" name="method-c-inherited" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Register subclasses in PacketFu.packet_class to do all kinds of neat things
+that obviates those long if/else trees for parsing. It’s pretty sweet.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-inherited_source')" id="l_method-c-inherited_source">show</a>
+                
+              </p>
+              <div id="method-c-inherited_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/packet.rb, line 16</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">inherited</span>(<span class="ruby-identifier">subclass</span>)
+        <span class="ruby-constant">PacketFu</span>.<span class="ruby-identifier">add_packet_class</span>(<span class="ruby-identifier">subclass</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-layer">
+            
+              <b>layer</b>()
+            
+            <a href="../../classes/PacketFu/Packet.html#method-c-layer" name="method-c-layer" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Defines the layer this packet type lives at, based on the number of headers
+it  requires. Note that this has little to do with the OSI model, since
+TCP/IP doesn’t really have Session and Presentation layers.</p>
+
+<p>Ethernet and the like are layer 1, IP, IPv6, and ARP are layer 2, TCP, UDP,
+and other transport protocols are layer 3, and application protocols are at
+layer 4 or higher. InvalidPackets have an arbitrary layer 0 to distinguish
+them.</p>
+
+<p>Because these don’t change much, it’s cheaper just to case through them,
+and only resort to counting headers if we don’t have a match – this makes
+adding protocols somewhat easier, but of course you can just override this
+method over there, too. This is merely optimized for the most likely
+protocols you see on the Internet.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-layer_source')" id="l_method-c-layer_source">show</a>
+                
+              </p>
+              <div id="method-c-layer_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/packet.rb, line 250</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">layer</span>
+        <span class="ruby-keyword">case</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">name</span> <span class="ruby-comment"># Lol ran into case's fancy treatment of classes</span>
+        <span class="ruby-keyword">when</span> <span class="ruby-regexp">%rInvalidPacket$/</span>; <span class="ruby-number">0</span>
+        <span class="ruby-keyword">when</span> <span class="ruby-regexp">%rEthPacket$/</span>; <span class="ruby-number">1</span>
+        <span class="ruby-keyword">when</span> <span class="ruby-regexp">%rIPPacket$/</span>, <span class="ruby-regexp">%rARPPacket$/</span>, <span class="ruby-regexp">%rIPv6Packet$/</span>; <span class="ruby-number">2</span>
+        <span class="ruby-keyword">when</span> <span class="ruby-regexp">%rTCPPacket$/</span>, <span class="ruby-regexp">%rUDPPacket$/</span>, <span class="ruby-regexp">%rICMPPacket$/</span>; <span class="ruby-number">3</span>
+        <span class="ruby-keyword">when</span> <span class="ruby-regexp">%rHSRPPacket$/</span>; <span class="ruby-number">4</span>
+        <span class="ruby-keyword">else</span>; <span class="ruby-keyword">self</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">headers</span>.<span class="ruby-identifier">size</span>
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-layer_symbol">
+            
+              <b>layer_symbol</b>()
+            
+            <a href="../../classes/PacketFu/Packet.html#method-c-layer_symbol" name="method-c-layer_symbol" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-layer_symbol_source')" id="l_method-c-layer_symbol_source">show</a>
+                
+              </p>
+              <div id="method-c-layer_symbol_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/packet.rb, line 265</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">layer_symbol</span>
+        <span class="ruby-keyword">case</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">layer</span>
+        <span class="ruby-keyword">when</span> <span class="ruby-number">0</span>; <span class="ruby-value">:invalid</span>
+        <span class="ruby-keyword">when</span> <span class="ruby-number">1</span>; <span class="ruby-value">:link</span>
+        <span class="ruby-keyword">when</span> <span class="ruby-number">2</span>; <span class="ruby-value">:internet</span>
+        <span class="ruby-keyword">when</span> <span class="ruby-number">3</span>; <span class="ruby-value">:transport</span>
+        <span class="ruby-keyword">else</span>; <span class="ruby-value">:application</span>
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-new">
+            
+              <b>new</b>(args={})
+            
+            <a href="../../classes/PacketFu/Packet.html#method-c-new" name="method-c-new" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>the <a href="Packet.html">Packet</a> class should not be instantiated
+directly, since it’s an  abstract class that real packet types inherit
+from. Sadly, this makes the <a href="Packet.html">Packet</a> class more
+difficult to test directly.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
+                
+              </p>
+              <div id="method-c-new_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/packet.rb, line 466</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize</span>(<span class="ruby-identifier">args</span>={})
+        <span class="ruby-keyword">if</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">name</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">%r(::|^)PacketFu::Packet$/</span>
+                <span class="ruby-identifier">raise</span> <span class="ruby-constant">NoMethodError</span>, <span class="ruby-node">&quot;method `new' called for abstract class #{self.class.name}&quot;</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-ivar">@inspect_style</span> = <span class="ruby-identifier">args</span>[<span class="ruby-value">:inspect_style</span>] <span class="ruby-operator">||</span> <span class="ruby-constant">PacketFu</span>.<span class="ruby-identifier">inspect_style</span> <span class="ruby-operator">||</span> <span class="ruby-value">:dissect</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">args</span>[<span class="ruby-value">:config</span>]
+                <span class="ruby-identifier">args</span>[<span class="ruby-value">:config</span>].<span class="ruby-identifier">each_pair</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>,<span class="ruby-identifier">v</span><span class="ruby-operator">|</span>
+                        <span class="ruby-keyword">case</span> <span class="ruby-identifier">k</span>
+                        <span class="ruby-keyword">when</span> <span class="ruby-value">:eth_daddr</span>; <span class="ruby-ivar">@eth_header</span>.<span class="ruby-identifier">eth_daddr</span>=<span class="ruby-identifier">v</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@eth_header</span>
+                        <span class="ruby-keyword">when</span> <span class="ruby-value">:eth_saddr</span>; <span class="ruby-ivar">@eth_header</span>.<span class="ruby-identifier">eth_saddr</span>=<span class="ruby-identifier">v</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@eth_header</span>
+                        <span class="ruby-keyword">when</span> <span class="ruby-value">:ip_saddr</span>; <span class="ruby-ivar">@ip_header</span>.<span class="ruby-identifier">ip_saddr</span>=<span class="ruby-identifier">v</span>               <span class="ruby-keyword">if</span> <span class="ruby-ivar">@ip_header</span>
+                        <span class="ruby-keyword">when</span> <span class="ruby-value">:iface</span>; <span class="ruby-ivar">@iface</span> = <span class="ruby-identifier">v</span>
+                        <span class="ruby-keyword">end</span>
+                <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-parse">
+            
+              <b>parse</b>(packet=nil,args={})
+            
+            <a href="../../classes/PacketFu/Packet.html#method-c-parse" name="method-c-parse" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Parse() creates the correct packet type based on the data, and returns the
+apporpiate <a href="Packet.html">Packet</a> subclass object.</p>
+
+<p>There is an assumption here that all incoming packets are either <a
+href="EthPacket.html">EthPacket</a> or <a
+href="InvalidPacket.html">InvalidPacket</a> types. This will be addressed
+pretty soon.</p>
+
+<p>If application-layer parsing is /not/ desired, that should be indicated
+explicitly with an argument of  :parse_app =&gt; false. Otherwise,
+app-layer parsing will happen.</p>
+
+<p>It is no longer neccisary to manually add packet types here.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-parse_source')" id="l_method-c-parse_source">show</a>
+                
+              </p>
+              <div id="method-c-parse_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/packet.rb, line 35</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">packet</span>=<span class="ruby-keyword">nil</span>,<span class="ruby-identifier">args</span>={})
+        <span class="ruby-identifier">parse_app</span> = <span class="ruby-keyword">true</span> <span class="ruby-keyword">if</span>(<span class="ruby-identifier">args</span>[<span class="ruby-value">:parse_app</span>].<span class="ruby-identifier">nil?</span> <span class="ruby-keyword">or</span> <span class="ruby-identifier">args</span>[<span class="ruby-value">:parse_app</span>])
+        <span class="ruby-identifier">force_binary</span>(<span class="ruby-identifier">packet</span>)
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">parse_app</span>
+                <span class="ruby-identifier">classes</span> = <span class="ruby-constant">PacketFu</span>.<span class="ruby-identifier">packet_classes</span>.<span class="ruby-identifier">select</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">pclass</span><span class="ruby-operator">|</span> <span class="ruby-identifier">pclass</span>.<span class="ruby-identifier">can_parse?</span> <span class="ruby-identifier">packet</span>}
+        <span class="ruby-keyword">else</span>
+                <span class="ruby-identifier">classes</span> = <span class="ruby-constant">PacketFu</span>.<span class="ruby-identifier">packet_classes</span>.<span class="ruby-identifier">select</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">pclass</span><span class="ruby-operator">|</span> <span class="ruby-identifier">pclass</span>.<span class="ruby-identifier">can_parse?</span> <span class="ruby-identifier">packet</span>}.<span class="ruby-identifier">reject</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">pclass</span><span class="ruby-operator">|</span> <span class="ruby-identifier">pclass</span>.<span class="ruby-identifier">layer_symbol</span> <span class="ruby-operator">==</span> <span class="ruby-value">:application</span>}
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-identifier">p</span> = <span class="ruby-identifier">classes</span>.<span class="ruby-identifier">sort</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">x</span>,<span class="ruby-identifier">y</span><span class="ruby-operator">|</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">layer</span> <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-identifier">y</span>.<span class="ruby-identifier">layer</span>}.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">new</span>
+        <span class="ruby-identifier">parsed_packet</span> = <span class="ruby-identifier">p</span>.<span class="ruby-identifier">read</span>(<span class="ruby-identifier">packet</span>,<span class="ruby-identifier">args</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-3D-3D">
+            
+              <b>==</b>(other)
+            
+            <a href="../../classes/PacketFu/Packet.html#method-i-3D-3D" name="method-i-3D-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>If two packets are represented as the same binary string, and they’re both
+actually <a href="../PacketFu.html">PacketFu</a> packets of the same sort,
+they’re equal.</p>
+
+<p>The intuitive result is that a packet of a higher layer (like DNSPacket)
+can be equal to a packet of a lower level (like <a
+href="UDPPacket.html">UDPPacket</a>) as long as the bytes are equal (this
+can come up if a transport-layer packet has a hand-crafted payload that is
+identical to what would have been created by using an application layer
+packet)</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-3D-3D_source')" id="l_method-i-3D-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-3D-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/packet.rb, line 188</span>
+<span class="ruby-keyword">def</span> <span class="ruby-operator">==</span>(<span class="ruby-keyword ruby-title">other</span>)
+        <span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">kind_of?</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">respond_to?</span> <span class="ruby-value">:to_s</span>
+        <span class="ruby-keyword">self</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">to_s</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-clone">
+            
+              <b>clone</b>()
+            
+            <a href="../../classes/PacketFu/Packet.html#method-i-clone" name="method-i-clone" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Packets are bundles of lots of objects, so copying them is a little
+complicated – a dup of a packet is actually full of pass-by-reference stuff
+in the @headers, so  if you change one, you’re changing all this copies,
+too.</p>
+
+<p>Normally, this doesn’t seem to be a big deal, and it’s a pretty decent
+performance tradeoff. But, if you’re going to be creating a template packet
+to base a bunch of slightly different ones off of (like a fuzzer might),
+you’ll want to use clone()</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-clone_source')" id="l_method-i-clone_source">show</a>
+                
+              </p>
+              <div id="method-i-clone_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/packet.rb, line 176</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">clone</span>
+        <span class="ruby-constant">Packet</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-keyword">self</span>.<span class="ruby-identifier">to_s</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-dissect">
+            
+              <b>dissect</b>()
+            
+            <a href="../../classes/PacketFu/Packet.html#method-i-dissect" name="method-i-dissect" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Renders the <a
+href="Packet.html#method-i-dissection_table">#dissection_table</a> suitable
+for screen printing. Can take one or two arguments. If just the one, only
+that layer will be displayed take either a range or a number – if a range,
+only protos within that range will be rendered. If an integer, only that
+proto will be rendered.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-dissect_source')" id="l_method-i-dissect_source">show</a>
+                
+              </p>
+              <div id="method-i-dissect_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/packet.rb, line 359</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">dissect</span>
+        <span class="ruby-identifier">dtable</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">dissection_table</span>
+        <span class="ruby-identifier">hex_body</span> = <span class="ruby-keyword">nil</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">dtable</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">Array</span>) <span class="ruby-keyword">and</span> <span class="ruby-identifier">dtable</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">first</span> <span class="ruby-operator">==</span> <span class="ruby-value">:body</span>
+                <span class="ruby-identifier">body</span> = <span class="ruby-identifier">dtable</span>.<span class="ruby-identifier">pop</span> 
+                <span class="ruby-identifier">hex_body</span> = <span class="ruby-identifier">hexify</span>(<span class="ruby-identifier">body</span>[<span class="ruby-number">1</span>])
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-identifier">elem_widths</span> = [<span class="ruby-number">0</span>,<span class="ruby-number">0</span>,<span class="ruby-number">0</span>]
+        <span class="ruby-identifier">dtable</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">proto_table</span><span class="ruby-operator">|</span>
+                <span class="ruby-identifier">proto_table</span>[<span class="ruby-number">1</span>].<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">elems</span><span class="ruby-operator">|</span>
+                        <span class="ruby-identifier">elems</span>.<span class="ruby-identifier">each_with_index</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">e</span>,<span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+                                <span class="ruby-identifier">width</span> = <span class="ruby-identifier">e</span>.<span class="ruby-identifier">size</span>
+                                <span class="ruby-identifier">elem_widths</span>[<span class="ruby-identifier">i</span>] = <span class="ruby-identifier">width</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">width</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">elem_widths</span>[<span class="ruby-identifier">i</span>]
+                        <span class="ruby-keyword">end</span>
+                <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-identifier">total_width</span> = <span class="ruby-identifier">elem_widths</span>.<span class="ruby-identifier">inject</span>(<span class="ruby-number">0</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">sum</span>,<span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-identifier">sum</span><span class="ruby-operator">+</span><span class="ruby-identifier">x</span>} 
+        <span class="ruby-identifier">table</span> = <span class="ruby-string">&quot;&quot;</span>
+        <span class="ruby-identifier">dtable</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">proto</span><span class="ruby-operator">|</span>
+                <span class="ruby-identifier">table</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;--&quot;</span>
+                <span class="ruby-identifier">table</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">proto</span>[<span class="ruby-number">0</span>] 
+                <span class="ruby-keyword">if</span> <span class="ruby-identifier">total_width</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">proto</span>[<span class="ruby-number">0</span>].<span class="ruby-identifier">size</span>
+                        <span class="ruby-identifier">table</span> <span class="ruby-operator">&lt;&lt;</span> (<span class="ruby-string">&quot;-&quot;</span> * (<span class="ruby-identifier">total_width</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">proto</span>[<span class="ruby-number">0</span>].<span class="ruby-identifier">size</span> <span class="ruby-operator">+</span> <span class="ruby-number">2</span>))
+                <span class="ruby-keyword">else</span>
+                        <span class="ruby-identifier">table</span> <span class="ruby-operator">&lt;&lt;</span> (<span class="ruby-string">&quot;-&quot;</span> * (<span class="ruby-identifier">total_width</span> <span class="ruby-operator">+</span> <span class="ruby-number">2</span>))
+                <span class="ruby-keyword">end</span>
+                <span class="ruby-identifier">table</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;\n&quot;</span>
+                <span class="ruby-identifier">proto</span>[<span class="ruby-number">1</span>].<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">elems</span><span class="ruby-operator">|</span>
+                        <span class="ruby-identifier">table</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;  &quot;</span>
+                        <span class="ruby-identifier">elems_table</span> = []
+                        (<span class="ruby-number">0</span><span class="ruby-operator">..</span><span class="ruby-number">2</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+                                <span class="ruby-identifier">elems_table</span> <span class="ruby-operator">&lt;&lt;</span> (<span class="ruby-node">&quot;%-#{elem_widths[i]}s&quot;</span> <span class="ruby-operator">%</span> <span class="ruby-identifier">elems</span>[<span class="ruby-identifier">i</span>])
+                        <span class="ruby-keyword">end</span>
+                        <span class="ruby-identifier">table</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">elems_table</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">&quot;\s&quot;</span>)
+                        <span class="ruby-identifier">table</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;\n&quot;</span>
+                <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">hex_body</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">hex_body</span>.<span class="ruby-identifier">empty?</span>
+                <span class="ruby-identifier">table</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;-&quot;</span> * <span class="ruby-number">66</span>
+                <span class="ruby-identifier">table</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;\n&quot;</span>
+                <span class="ruby-identifier">table</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;00-01-02-03-04-05-06-07-08-09-0a-0b-0c-0d-0e-0f---0123456789abcdef\n&quot;</span>
+                <span class="ruby-identifier">table</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;-&quot;</span> * <span class="ruby-number">66</span>
+                <span class="ruby-identifier">table</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;\n&quot;</span>
+                <span class="ruby-identifier">table</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">hex_body</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-identifier">table</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-dissection_table">
+            
+              <b>dissection_table</b>()
+            
+            <a href="../../classes/PacketFu/Packet.html#method-i-dissection_table" name="method-i-dissection_table" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-dissection_table_source')" id="l_method-i-dissection_table_source">show</a>
+                
+              </p>
+              <div id="method-i-dissection_table_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/packet.rb, line 327</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">dissection_table</span>
+        <span class="ruby-identifier">table</span> = []
+        <span class="ruby-ivar">@headers</span>.<span class="ruby-identifier">each_with_index</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">header</span>,<span class="ruby-identifier">table_idx</span><span class="ruby-operator">|</span>
+                <span class="ruby-identifier">proto</span> = <span class="ruby-identifier">header</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">name</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-regexp">%r^.*::/</span>,<span class="ruby-string">&quot;&quot;</span>)
+                <span class="ruby-identifier">table</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-identifier">proto</span>,[]]
+                <span class="ruby-identifier">header</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">members</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">elem</span><span class="ruby-operator">|</span>
+                        <span class="ruby-identifier">elem_sym</span> = <span class="ruby-identifier">elem</span>.<span class="ruby-identifier">to_sym</span> <span class="ruby-comment"># to_sym needed for 1.8</span>
+                        <span class="ruby-keyword">next</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">elem_sym</span> <span class="ruby-operator">==</span> <span class="ruby-value">:body</span> 
+                        <span class="ruby-identifier">elem_type_value</span> = []
+                        <span class="ruby-identifier">elem_type_value</span>[<span class="ruby-number">0</span>] = <span class="ruby-identifier">elem</span>
+                        <span class="ruby-identifier">readable_element</span> = <span class="ruby-node">&quot;#{elem}_readable&quot;</span>
+                        <span class="ruby-keyword">if</span> <span class="ruby-identifier">header</span>.<span class="ruby-identifier">respond_to?</span> <span class="ruby-identifier">readable_element</span>
+                                <span class="ruby-identifier">elem_type_value</span>[<span class="ruby-number">1</span>] = <span class="ruby-identifier">header</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">readable_element</span>)
+                        <span class="ruby-keyword">else</span>
+                                <span class="ruby-identifier">elem_type_value</span>[<span class="ruby-number">1</span>] = <span class="ruby-identifier">header</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">elem</span>)
+                        <span class="ruby-keyword">end</span>
+                        <span class="ruby-identifier">elem_type_value</span>[<span class="ruby-number">2</span>] = <span class="ruby-identifier">header</span>[<span class="ruby-identifier">elem</span>.<span class="ruby-identifier">to_sym</span>].<span class="ruby-identifier">class</span>.<span class="ruby-identifier">name</span> 
+                        <span class="ruby-identifier">table</span>[<span class="ruby-identifier">table_idx</span>][<span class="ruby-number">1</span>] <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">elem_type_value</span>
+                <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-identifier">table</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-ivar">@headers</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">members</span>.<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">to_sym</span> }.<span class="ruby-identifier">include?</span> <span class="ruby-value">:body</span>
+                <span class="ruby-identifier">body_part</span> = [<span class="ruby-value">:body</span>, <span class="ruby-keyword">self</span>.<span class="ruby-identifier">payload</span>, <span class="ruby-ivar">@headers</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">body</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">name</span>]
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-identifier">table</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">body_part</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-handle_is_identity">
+            
+              <b>handle_is_identity</b>(ptype)
+            
+            <a href="../../classes/PacketFu/Packet.html#method-i-handle_is_identity" name="method-i-handle_is_identity" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-handle_is_identity_source')" id="l_method-i-handle_is_identity_source">show</a>
+                
+              </p>
+              <div id="method-i-handle_is_identity_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/packet.rb, line 47</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">handle_is_identity</span>(<span class="ruby-identifier">ptype</span>)
+        <span class="ruby-identifier">idx</span> = <span class="ruby-constant">PacketFu</span>.<span class="ruby-identifier">packet_prefixes</span>.<span class="ruby-identifier">index</span>(<span class="ruby-identifier">ptype</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">downcase</span>)
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">idx</span>
+                <span class="ruby-keyword">self</span>.<span class="ruby-identifier">kind_of?</span> <span class="ruby-constant">PacketFu</span>.<span class="ruby-identifier">packet_classes</span>[<span class="ruby-identifier">idx</span>]
+        <span class="ruby-keyword">else</span>
+                <span class="ruby-identifier">raise</span> <span class="ruby-constant">NoMethodError</span>, <span class="ruby-node">&quot;Undefined method `is_#{ptype}?' for #{self.class}.&quot;</span>
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-hexify">
+            
+              <b>hexify</b>(str)
+            
+            <a href="../../classes/PacketFu/Packet.html#method-i-hexify" name="method-i-hexify" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Hexify provides a neatly-formatted dump of binary data, familar to hex
+readers.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-hexify_source')" id="l_method-i-hexify_source">show</a>
+                
+              </p>
+              <div id="method-i-hexify_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/packet.rb, line 286</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">hexify</span>(<span class="ruby-identifier">str</span>)
+        <span class="ruby-identifier">str</span>.<span class="ruby-identifier">force_encoding</span>(<span class="ruby-constant">Encoding</span><span class="ruby-operator">::</span><span class="ruby-constant">BINARY</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">str</span>.<span class="ruby-identifier">respond_to?</span> <span class="ruby-value">:force_encoding</span>
+        <span class="ruby-identifier">hexascii_lines</span> = <span class="ruby-identifier">str</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">unpack</span>(<span class="ruby-string">&quot;H*&quot;</span>)[<span class="ruby-number">0</span>].<span class="ruby-identifier">scan</span>(<span class="ruby-regexp">%r.{1,32}/</span>)
+        <span class="ruby-identifier">regex</span> = <span class="ruby-constant">Regexp</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">'[\x00-\x1f\x7f-\xff]'</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-string">'n'</span>)
+        <span class="ruby-identifier">chars</span> = <span class="ruby-identifier">str</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-identifier">regex</span>,<span class="ruby-string">'.'</span>)
+        <span class="ruby-identifier">chars_lines</span> = <span class="ruby-identifier">chars</span>.<span class="ruby-identifier">scan</span>(<span class="ruby-regexp">%r.{1,16}/</span>)
+        <span class="ruby-identifier">ret</span> = []
+        <span class="ruby-identifier">hexascii_lines</span>.<span class="ruby-identifier">size</span>.<span class="ruby-identifier">times</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span> <span class="ruby-identifier">ret</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;%-48s  %s&quot;</span> <span class="ruby-operator">%</span> [<span class="ruby-identifier">hexascii_lines</span>[<span class="ruby-identifier">i</span>].<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">%r(.{2})/</span>,<span class="ruby-string">&quot;\\1 &quot;</span>),<span class="ruby-identifier">chars_lines</span>[<span class="ruby-identifier">i</span>]]}
+        <span class="ruby-identifier">ret</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">&quot;\n&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-inspect">
+            
+              <b>inspect</b>()
+            
+            <a href="../../classes/PacketFu/Packet.html#method-i-inspect" name="method-i-inspect" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>For packets, inspect is overloaded as <a
+href="Packet.html#method-i-inspect_hex">#inspect_hex</a>(0). Not sure if
+this is a great idea yet, but it sure makes the irb output more sane.</p>
+
+<p>If you hate this, you can run <a
+href="../PacketFu.html#method-i-toggle_inspect">PacketFu#toggle_inspect</a>
+to return to the typical (and often unreadable) Object#inspect format.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-inspect_source')" id="l_method-i-inspect_source">show</a>
+                
+              </p>
+              <div id="method-i-inspect_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/packet.rb, line 428</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">inspect</span>
+        <span class="ruby-keyword">case</span> <span class="ruby-ivar">@inspect_style</span>
+        <span class="ruby-keyword">when</span> <span class="ruby-value">:dissect</span>
+                <span class="ruby-keyword">self</span>.<span class="ruby-identifier">dissect</span>
+        <span class="ruby-keyword">when</span> <span class="ruby-value">:hex</span>
+                <span class="ruby-keyword">self</span>.<span class="ruby-identifier">proto</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">&quot;|&quot;</span>) <span class="ruby-operator">+</span> <span class="ruby-string">&quot;\n&quot;</span> <span class="ruby-operator">+</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">inspect_hex</span>
+        <span class="ruby-keyword">else</span>
+                <span class="ruby-keyword">super</span>
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-inspect_hex">
+            
+              <b>inspect_hex</b>(arg=0)
+            
+            <a href="../../classes/PacketFu/Packet.html#method-i-inspect_hex" name="method-i-inspect_hex" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>If @<a href="Packet.html#attribute-i-inspect_style">#inspect_style</a> is
+:default (or :ugly), the inspect output is the usual inspect.</p>
+
+<p>If @<a href="Packet.html#attribute-i-inspect_style">#inspect_style</a> is
+:hex (or :pretty), the inspect output is a much more compact hexdump-style,
+with a shortened set of packet header names at the top.</p>
+
+<p>If @<a href="Packet.html#attribute-i-inspect_style">#inspect_style</a> is
+:dissect (or :verbose), the inspect output is the longer, but more
+readable, dissection of the packet. This is the default.</p>
+
+<p>TODO: Have an option for colors. Everyone loves colorized irb output.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-inspect_hex_source')" id="l_method-i-inspect_hex_source">show</a>
+                
+              </p>
+              <div id="method-i-inspect_hex_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/packet.rb, line 308</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">inspect_hex</span>(<span class="ruby-identifier">arg</span>=<span class="ruby-number">0</span>)
+        <span class="ruby-keyword">case</span> <span class="ruby-identifier">arg</span>
+        <span class="ruby-keyword">when</span> <span class="ruby-value">:layers</span>
+                <span class="ruby-identifier">ret</span> = []
+                <span class="ruby-ivar">@headers</span>.<span class="ruby-identifier">size</span>.<span class="ruby-identifier">times</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+                        <span class="ruby-identifier">ret</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">hexify</span>(<span class="ruby-ivar">@headers</span>[<span class="ruby-identifier">i</span>])
+                <span class="ruby-keyword">end</span>
+                <span class="ruby-identifier">ret</span>
+        <span class="ruby-keyword">when</span> (<span class="ruby-number">0</span><span class="ruby-operator">..</span><span class="ruby-number">9</span>)
+                <span class="ruby-keyword">if</span> <span class="ruby-ivar">@headers</span>[<span class="ruby-identifier">arg</span>]
+                        <span class="ruby-identifier">hexify</span>(<span class="ruby-ivar">@headers</span>[<span class="ruby-identifier">arg</span>])
+                <span class="ruby-keyword">else</span>
+                        <span class="ruby-keyword">nil</span>
+                <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">when</span> <span class="ruby-value">:all</span>
+                <span class="ruby-identifier">inspect_hex</span>(<span class="ruby-number">0</span>)
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-inspect_style-3D">
+            
+              <b>inspect_style=</b>()
+            
+            <a href="../../classes/PacketFu/Packet.html#method-i-inspect_style-3D" name="method-i-inspect_style-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Delegate to PacketFu’s <a
+href="Packet.html#attribute-i-inspect_style">#inspect_style</a>, since the
+class variable name is the same. Yay for namespace pollution!</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-inspect_style-3D_source')" id="l_method-i-inspect_style-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-inspect_style-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/packet.rb, line 486</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">inspect_style=</span>()
+        <span class="ruby-constant">PacketFu</span>.<span class="ruby-identifier">inspect_style</span>(<span class="ruby-identifier">arg</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-kind_of-3F">
+            
+              <b>kind_of?</b>(klass)
+            
+            <a href="../../classes/PacketFu/Packet.html#method-i-kind_of-3F" name="method-i-kind_of-3F" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+            <div class="aka">
+              Also aliased as: <a href="Packet.html#method-i-orig_kind_of-3F">orig_kind_of?</a>
+            </div>
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-kind_of-3F_source')" id="l_method-i-kind_of-3F_source">show</a>
+                
+              </p>
+              <div id="method-i-kind_of-3F_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/packet.rb, line 409</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">kind_of?</span>(<span class="ruby-identifier">klass</span>)
+        <span class="ruby-keyword">return</span> <span class="ruby-keyword">true</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">orig_kind_of?</span> <span class="ruby-identifier">klass</span>
+        <span class="ruby-identifier">packet_types</span> = <span class="ruby-identifier">proto</span>.<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span> <span class="ruby-constant">PacketFu</span>.<span class="ruby-identifier">const_get</span>(<span class="ruby-node">&quot;#{p}Packet&quot;</span>)}
+        <span class="ruby-identifier">match</span> = <span class="ruby-keyword">false</span>
+        <span class="ruby-identifier">packet_types</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span>
+                <span class="ruby-keyword">if</span> <span class="ruby-identifier">p</span>.<span class="ruby-identifier">ancestors</span>.<span class="ruby-identifier">include?</span> <span class="ruby-identifier">klass</span>
+                        <span class="ruby-identifier">match</span> =  <span class="ruby-keyword">true</span>
+                        <span class="ruby-keyword">break</span>
+                <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-identifier">match</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-layer">
+            
+              <b>layer</b>()
+            
+            <a href="../../classes/PacketFu/Packet.html#method-i-layer" name="method-i-layer" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-layer_source')" id="l_method-i-layer_source">show</a>
+                
+              </p>
+              <div id="method-i-layer_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/packet.rb, line 261</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">layer</span>
+        <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">layer</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-layer_symbol">
+            
+              <b>layer_symbol</b>()
+            
+            <a href="../../classes/PacketFu/Packet.html#method-i-layer_symbol" name="method-i-layer_symbol" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-layer_symbol_source')" id="l_method-i-layer_symbol_source">show</a>
+                
+              </p>
+              <div id="method-i-layer_symbol_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/packet.rb, line 275</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">layer_symbol</span>
+        <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">layer_symbol</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-length">
+            
+              <b>length</b>()
+            
+            <a href="../../classes/PacketFu/Packet.html#method-i-length" name="method-i-length" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-method_missing">
+            
+              <b>method_missing</b>(sym, *args, &amp;block)
+            
+            <a href="../../classes/PacketFu/Packet.html#method-i-method_missing" name="method-i-method_missing" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p><a href="Packet.html#method-i-method_missing">#method_missing</a>()
+delegates protocol-specific field actions to the apporpraite class variable
+(which contains the associated packet type) This register-of-protocols
+style switch will work for the  forseeable future (there aren't /that/ many
+packet types), and it's a handy way to know at a glance what packet types
+are supported.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-method_missing_source')" id="l_method-i-method_missing_source">show</a>
+                
+              </p>
+              <div id="method-i-method_missing_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/packet.rb, line 495</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">method_missing</span>(<span class="ruby-identifier">sym</span>, *<span class="ruby-identifier">args</span>, &amp;<span class="ruby-identifier">block</span>)
+        <span class="ruby-keyword">case</span> <span class="ruby-identifier">sym</span>.<span class="ruby-identifier">to_s</span>
+        <span class="ruby-keyword">when</span> <span class="ruby-regexp">%r^is_([a-zA-Z0-9]+)\?/</span>
+                <span class="ruby-identifier">ptype</span> = <span class="ruby-node">$1</span>
+                <span class="ruby-keyword">if</span> <span class="ruby-constant">PacketFu</span>.<span class="ruby-identifier">packet_prefixes</span>.<span class="ruby-identifier">index</span>(<span class="ruby-identifier">ptype</span>)
+                        <span class="ruby-keyword">self</span>.<span class="ruby-identifier">send</span>(<span class="ruby-value">:handle_is_identity</span>, <span class="ruby-node">$1</span>)
+                <span class="ruby-keyword">else</span>
+                        <span class="ruby-keyword">super</span>
+                <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">when</span> <span class="ruby-regexp">%r^([a-zA-Z0-9]+)_.+/</span>
+                <span class="ruby-identifier">ptype</span> = <span class="ruby-node">$1</span>
+                <span class="ruby-keyword">if</span> <span class="ruby-constant">PacketFu</span>.<span class="ruby-identifier">packet_prefixes</span>.<span class="ruby-identifier">index</span>(<span class="ruby-identifier">ptype</span>)
+                        <span class="ruby-keyword">self</span>.<span class="ruby-identifier">instance_variable_get</span>(<span class="ruby-node">&quot;@#{ptype}_header&quot;</span>).<span class="ruby-identifier">send</span>(<span class="ruby-identifier">sym</span>,*<span class="ruby-identifier">args</span>, &amp;<span class="ruby-identifier">block</span>)
+                <span class="ruby-keyword">else</span>
+                        <span class="ruby-keyword">super</span>
+                <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">else</span>
+                <span class="ruby-keyword">super</span>
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-orig_kind_of-3F">
+            
+              <b>orig_kind_of?</b>(klass)
+            
+            <a href="../../classes/PacketFu/Packet.html#method-i-orig_kind_of-3F" name="method-i-orig_kind_of-3F" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-payload">
+            
+              <b>payload</b>()
+            
+            <a href="../../classes/PacketFu/Packet.html#method-i-payload" name="method-i-payload" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Get the outermost payload (body) of the packet; this is why all packet
+headers should have a body type.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-payload_source')" id="l_method-i-payload_source">show</a>
+                
+              </p>
+              <div id="method-i-payload_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/packet.rb, line 68</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">payload</span>
+        <span class="ruby-ivar">@headers</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">body</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-payload-3D">
+            
+              <b>payload=</b>(args)
+            
+            <a href="../../classes/PacketFu/Packet.html#method-i-payload-3D" name="method-i-payload-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Set the outermost payload (body) of the packet.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-payload-3D_source')" id="l_method-i-payload-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-payload-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/packet.rb, line 73</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">payload=</span>(<span class="ruby-identifier">args</span>)
+        <span class="ruby-ivar">@headers</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">body</span>=(<span class="ruby-identifier">args</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-peek">
+            
+              <b>peek</b>(args={})
+            
+            <a href="../../classes/PacketFu/Packet.html#method-i-peek" name="method-i-peek" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Peek provides summary data on packet contents.</p>
+
+<p>Each packet type should provide a peek_format.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-peek_source')" id="l_method-i-peek_source">show</a>
+                
+              </p>
+              <div id="method-i-peek_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/packet.rb, line 197</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">peek</span>(<span class="ruby-identifier">args</span>={})
+        <span class="ruby-identifier">idx</span> = <span class="ruby-ivar">@headers</span>.<span class="ruby-identifier">reverse</span>.<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">h</span><span class="ruby-operator">|</span> <span class="ruby-identifier">h</span>.<span class="ruby-identifier">respond_to?</span> <span class="ruby-identifier">peek_format</span>}.<span class="ruby-identifier">index</span>(<span class="ruby-keyword">true</span>)
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">idx</span>
+                <span class="ruby-ivar">@headers</span>.<span class="ruby-identifier">reverse</span>[<span class="ruby-identifier">idx</span>].<span class="ruby-identifier">peek_format</span>
+        <span class="ruby-keyword">else</span>
+                <span class="ruby-identifier">peek_format</span>
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-peek_format">
+            
+              <b>peek_format</b>()
+            
+            <a href="../../classes/PacketFu/Packet.html#method-i-peek_format" name="method-i-peek_format" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>The <a href="Packet.html#method-i-peek_format">#peek_format</a> is used to
+display a single line of packet data useful for eyeballing. It should not
+exceed 80 characters. The <a href="Packet.html">Packet</a> superclass
+defines an example <a
+href="Packet.html#method-i-peek_format">#peek_format</a>, but it should
+hardly ever be triggered, since peek traverses the @header list in reverse
+to find a suitable format.</p>
+
+<h3 id="method-i-peek_format-label-Format">Format</h3>
+
+<pre>* A one or two character protocol initial. It should be unique
+* The packet size
+* Useful data in a human-usable form.</pre>
+
+<p>Ideally, related peek_formats will all line up with each other when printed
+to the screen.</p>
+
+<h3 id="method-i-peek_format-label-Example">Example</h3>
+
+<pre class="ruby"><span class="ruby-identifier">tcp_packet</span>.<span class="ruby-identifier">peek</span>
+<span class="ruby-comment">#=&gt; &quot;T  1054 10.10.10.105:55000   -&gt;   192.168.145.105:80 [......] S:adc7155b|I:8dd0&quot;</span>
+<span class="ruby-identifier">tcp_packet</span>.<span class="ruby-identifier">peek</span>.<span class="ruby-identifier">size</span>
+<span class="ruby-comment">#=&gt; 79</span>
+</pre>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-peek_format_source')" id="l_method-i-peek_format_source">show</a>
+                
+              </p>
+              <div id="method-i-peek_format_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/packet.rb, line 229</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">peek_format</span>
+        <span class="ruby-identifier">peek_data</span> = [<span class="ruby-string">&quot;?  &quot;</span>]
+        <span class="ruby-identifier">peek_data</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;%-5d&quot;</span> <span class="ruby-operator">%</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">size</span>
+        <span class="ruby-identifier">peek_data</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;%68s&quot;</span> <span class="ruby-operator">%</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">to_s</span>[<span class="ruby-number">0</span>,<span class="ruby-number">34</span>].<span class="ruby-identifier">unpack</span>(<span class="ruby-string">&quot;H*&quot;</span>)[<span class="ruby-number">0</span>]
+        <span class="ruby-identifier">peek_data</span>.<span class="ruby-identifier">join</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-proto">
+            
+              <b>proto</b>()
+            
+            <a href="../../classes/PacketFu/Packet.html#method-i-proto" name="method-i-proto" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns an array of protocols contained in this packet. For example:</p>
+
+<pre>t = PacketFu::TCPPacket.new
+=&gt; 00 1a c5 00 00 00 00 1a c5 00 00 00 08 00 45 00   ..............E.
+00 28 3c ab 00 00 ff 06 7f 25 00 00 00 00 00 00   .(&lt;......%......
+00 00 93 5e 00 00 ad 4f e4 a4 00 00 00 00 50 00   ...^...O......P.
+40 00 4a 92 00 00                                 @.J...
+t.proto
+=&gt; [&quot;Eth&quot;, &quot;IP&quot;, &quot;TCP&quot;]
+</pre>
+            </div>
+          
+          
+          
+            <div class="aka">
+              Also aliased as: <a href="Packet.html#method-i-protocol">protocol</a>
+            </div>
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-proto_source')" id="l_method-i-proto_source">show</a>
+                
+              </p>
+              <div id="method-i-proto_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/packet.rb, line 454</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">proto</span>
+        <span class="ruby-identifier">type_array</span> = []
+        <span class="ruby-keyword">self</span>.<span class="ruby-identifier">headers</span>.<span class="ruby-identifier">each</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">header</span><span class="ruby-operator">|</span> <span class="ruby-identifier">type_array</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">header</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">'::'</span>).<span class="ruby-identifier">last</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">%rHeader$/</span>,<span class="ruby-string">''</span>)}
+        <span class="ruby-identifier">type_array</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-protocol">
+            
+              <b>protocol</b>()
+            
+            <a href="../../classes/PacketFu/Packet.html#method-i-protocol" name="method-i-protocol" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-read">
+            
+              <b>read</b>(args={})
+            
+            <a href="../../classes/PacketFu/Packet.html#method-i-read" name="method-i-read" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Read() takes (and trusts) the io input and shoves it all into a well-formed
+<a href="Packet.html">Packet</a>. Note that read is a destructive process,
+so any existing data will be lost.</p>
+
+<p>A note on the :strip =&gt; true argument: If :strip is set, defined lengths
+of data will be believed, and any trailers (such as frame check sequences)
+will be chopped off. This helps to ensure well-formed packets, at the cost
+of losing perhaps important FCS data.</p>
+
+<p>If :strip is false, header lengths are /not/ believed, and all data will be
+piped in. When capturing from the wire, this is usually fine, but
+recalculating the length before saving or re-transmitting will absolutely
+change the data payload; FCS data will become part of the TCP data as far
+as tcp_len is concerned. Some effort has been made to preserve the “real”
+payload for the purposes of checksums, but currently, it’s impossible to
+seperate new payload data from old trailers, so things like pkt.payload +=
+“some data” will not work correctly.</p>
+
+<p>So, to summarize; if you intend to alter the data, use :strip. If you
+don’t, don’t. Also, this is a horrid hack. Stripping is useful (and fun!),
+but the default behavior really should be to create payloads correctly, and
+/not/ treat extra FCS data as a payload.</p>
+
+<p>Finally, packet subclasses should take two arguments: the string that is
+the data to be transmuted into a packet, as well as args. This superclass
+method is merely concerned with handling args common to many packet formats
+(namely, fixing packets on the fly)</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-read_source')" id="l_method-i-read_source">show</a>
+                
+              </p>
+              <div id="method-i-read_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/packet.rb, line 158</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">read</span>(<span class="ruby-identifier">args</span>={})
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">args</span>[<span class="ruby-value">:fix</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">args</span>[<span class="ruby-value">:recalc</span>]
+                <span class="ruby-identifier">ip_recalc</span>(<span class="ruby-value">:ip_sum</span>) <span class="ruby-keyword">if</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">is_ip?</span>
+                <span class="ruby-identifier">recalc</span>(<span class="ruby-value">:tcp</span>) <span class="ruby-keyword">if</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">is_tcp?</span>
+                <span class="ruby-identifier">recalc</span>(<span class="ruby-value">:udp</span>) <span class="ruby-keyword">if</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">is_udp?</span>
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-recalc">
+            
+              <b>recalc</b>(arg=:all)
+            
+            <a href="../../classes/PacketFu/Packet.html#method-i-recalc" name="method-i-recalc" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Recalculates all the calcuated fields for all headers in the packet. This
+is important since read() wipes out all the calculated fields such as
+length and checksum and what all.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-recalc_source')" id="l_method-i-recalc_source">show</a>
+                
+              </p>
+              <div id="method-i-recalc_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/packet.rb, line 114</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">recalc</span>(<span class="ruby-identifier">arg</span>=<span class="ruby-value">:all</span>)
+        <span class="ruby-keyword">case</span> <span class="ruby-identifier">arg</span>
+        <span class="ruby-keyword">when</span> <span class="ruby-value">:ip</span>
+                <span class="ruby-identifier">ip_recalc</span>(<span class="ruby-value">:all</span>)
+        <span class="ruby-keyword">when</span> <span class="ruby-value">:icmp</span>
+                <span class="ruby-identifier">icmp_recalc</span>(<span class="ruby-value">:all</span>)
+        <span class="ruby-keyword">when</span> <span class="ruby-value">:udp</span>
+                <span class="ruby-identifier">udp_recalc</span>(<span class="ruby-value">:all</span>)
+        <span class="ruby-keyword">when</span> <span class="ruby-value">:tcp</span>
+                <span class="ruby-identifier">tcp_recalc</span>(<span class="ruby-value">:all</span>)
+        <span class="ruby-keyword">when</span> <span class="ruby-value">:all</span>
+                <span class="ruby-identifier">ip_recalc</span>(<span class="ruby-value">:all</span>) <span class="ruby-keyword">if</span> <span class="ruby-ivar">@ip_header</span>
+                <span class="ruby-identifier">icmp_recalc</span>(<span class="ruby-value">:all</span>) <span class="ruby-keyword">if</span> <span class="ruby-ivar">@icmp_header</span>
+                <span class="ruby-identifier">udp_recalc</span>(<span class="ruby-value">:all</span>) <span class="ruby-keyword">if</span> <span class="ruby-ivar">@udp_header</span>
+                <span class="ruby-identifier">tcp_recalc</span>(<span class="ruby-value">:all</span>) <span class="ruby-keyword">if</span> <span class="ruby-ivar">@tcp_header</span>
+        <span class="ruby-keyword">else</span>
+                <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;Recalculating `#{arg}' unsupported. Try :all&quot;</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-ivar">@headers</span>[<span class="ruby-number">0</span>]
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-respond_to-3F">
+            
+              <b>respond_to?</b>(sym, include_private = false)
+            
+            <a href="../../classes/PacketFu/Packet.html#method-i-respond_to-3F" name="method-i-respond_to-3F" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-respond_to-3F_source')" id="l_method-i-respond_to-3F_source">show</a>
+                
+              </p>
+              <div id="method-i-respond_to-3F_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/packet.rb, line 516</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">respond_to?</span>(<span class="ruby-identifier">sym</span>, <span class="ruby-identifier">include_private</span> = <span class="ruby-keyword">false</span>)
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">sym</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">%r^(invalid|eth|arp|ip|icmp|udp|hsrp|tcp|ipv6)_/</span>
+                <span class="ruby-keyword">self</span>.<span class="ruby-identifier">instance_variable_get</span>(<span class="ruby-node">&quot;@#{$1}_header&quot;</span>).<span class="ruby-identifier">respond_to?</span> <span class="ruby-identifier">sym</span>
+        <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">sym</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">%r^is_([a-zA-Z0-9]+)\?/</span>
+                <span class="ruby-keyword">if</span> <span class="ruby-constant">PacketFu</span>.<span class="ruby-identifier">packet_prefixes</span>.<span class="ruby-identifier">index</span>(<span class="ruby-node">$1</span>)
+                        <span class="ruby-keyword">true</span>
+                <span class="ruby-keyword">else</span>
+                        <span class="ruby-keyword">super</span>
+                <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">else</span>
+                <span class="ruby-keyword">super</span>
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-size">
+            
+              <b>size</b>()
+            
+            <a href="../../classes/PacketFu/Packet.html#method-i-size" name="method-i-size" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns the size of the packet (as a binary string)</p>
+            </div>
+          
+          
+          
+            <div class="aka">
+              Also aliased as: <a href="Packet.html#method-i-length">length</a>
+            </div>
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-size_source')" id="l_method-i-size_source">show</a>
+                
+              </p>
+              <div id="method-i-size_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/packet.rb, line 440</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">size</span>
+        <span class="ruby-keyword">self</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">size</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-to_f">
+            
+              <b>to_f</b>(filename=nil,mode='w')
+            
+            <a href="../../classes/PacketFu/Packet.html#method-i-to_f" name="method-i-to_f" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Put the entire packet into a libpcap file. XXX: this is a hack for now just
+to confirm that packets are getting created correctly. Now with append!
+XXX: Document this!</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-to_f_source')" id="l_method-i-to_f_source">show</a>
+                
+              </p>
+              <div id="method-i-to_f_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/packet.rb, line 89</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">to_f</span>(<span class="ruby-identifier">filename</span>=<span class="ruby-keyword">nil</span>,<span class="ruby-identifier">mode</span>=<span class="ruby-string">'w'</span>)
+        <span class="ruby-identifier">filename</span> <span class="ruby-operator">||=</span> <span class="ruby-string">'out.pcap'</span>
+        <span class="ruby-identifier">mode</span> = <span class="ruby-identifier">mode</span>.<span class="ruby-identifier">to_s</span>[<span class="ruby-number">0</span>,<span class="ruby-number">1</span>] <span class="ruby-operator">+</span> <span class="ruby-string">&quot;b&quot;</span>
+        <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;Unknown mode: #{mode.to_s}&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">mode</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">%r^[wa]/</span>
+        <span class="ruby-keyword">if</span>(<span class="ruby-identifier">mode</span> <span class="ruby-operator">==</span> <span class="ruby-string">'w'</span> <span class="ruby-operator">||</span> <span class="ruby-operator">!</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">exists?</span>(<span class="ruby-identifier">filename</span>)))
+                <span class="ruby-identifier">data</span> = [<span class="ruby-constant">PcapHeader</span>.<span class="ruby-identifier">new</span>, <span class="ruby-keyword">self</span>.<span class="ruby-identifier">to_pcap</span>].<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">to_s</span>}.<span class="ruby-identifier">join</span>
+        <span class="ruby-keyword">else</span>
+                <span class="ruby-identifier">data</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">to_pcap</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">filename</span>, <span class="ruby-identifier">mode</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span> <span class="ruby-identifier">f</span>.<span class="ruby-identifier">write</span> <span class="ruby-identifier">data</span>}
+        <span class="ruby-keyword">return</span> [<span class="ruby-identifier">filename</span>, <span class="ruby-number">1</span>, <span class="ruby-identifier">data</span>.<span class="ruby-identifier">size</span>]
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-to_pcap">
+            
+              <b>to_pcap</b>(args={})
+            
+            <a href="../../classes/PacketFu/Packet.html#method-i-to_pcap" name="method-i-to_pcap" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Converts a packet to libpcap format. Bit of a hack?</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-to_pcap_source')" id="l_method-i-to_pcap_source">show</a>
+                
+              </p>
+              <div id="method-i-to_pcap_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/packet.rb, line 78</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">to_pcap</span>(<span class="ruby-identifier">args</span>={})
+        <span class="ruby-identifier">p</span> = <span class="ruby-constant">PcapPacket</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:endian</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">args</span>[<span class="ruby-value">:endian</span>],
+                                                                                <span class="ruby-value">:timestamp</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">Timestamp</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">to_s</span>,
+                                                                                <span class="ruby-value">:incl_len</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">size</span>,
+                                                                                <span class="ruby-value">:orig_len</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">size</span>,
+                                                                                <span class="ruby-value">:data</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">self</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-to_s">
+            
+              <b>to_s</b>()
+            
+            <a href="../../classes/PacketFu/Packet.html#method-i-to_s" name="method-i-to_s" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Get the binary string of the entire packet.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-to_s_source')" id="l_method-i-to_s_source">show</a>
+                
+              </p>
+              <div id="method-i-to_s_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/packet.rb, line 57</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">to_s</span>
+        <span class="ruby-ivar">@headers</span>[<span class="ruby-number">0</span>].<span class="ruby-identifier">to_s</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-to_w">
+            
+              <b>to_w</b>(iface=nil)
+            
+            <a href="../../classes/PacketFu/Packet.html#method-i-to_w" name="method-i-to_w" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Put the entire packet on the wire by creating a temporary <a
+href="Inject.html">PacketFu::Inject</a> object. TODO: Do something with
+auto-checksumming?</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-to_w_source')" id="l_method-i-to_w_source">show</a>
+                
+              </p>
+              <div id="method-i-to_w_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/packet.rb, line 104</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">to_w</span>(<span class="ruby-identifier">iface</span>=<span class="ruby-keyword">nil</span>)
+        <span class="ruby-identifier">iface</span> = (<span class="ruby-identifier">iface</span> <span class="ruby-operator">||</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">iface</span> <span class="ruby-operator">||</span> <span class="ruby-constant">PacketFu</span><span class="ruby-operator">::</span><span class="ruby-constant">Config</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">config</span>[<span class="ruby-value">:iface</span>]).<span class="ruby-identifier">to_s</span>
+        <span class="ruby-identifier">inj</span> = <span class="ruby-constant">PacketFu</span><span class="ruby-operator">::</span><span class="ruby-constant">Inject</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:iface</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">iface</span>)
+        <span class="ruby-identifier">inj</span>.<span class="ruby-identifier">array</span> = [<span class="ruby-ivar">@headers</span>[<span class="ruby-number">0</span>].<span class="ruby-identifier">to_s</span>]
+        <span class="ruby-identifier">inj</span>.<span class="ruby-identifier">inject</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-write">
+            
+              <b>write</b>(io)
+            
+            <a href="../../classes/PacketFu/Packet.html#method-i-write" name="method-i-write" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>In the event of no proper decoding, at least send it to the inner-most
+header.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-write_source')" id="l_method-i-write_source">show</a>
+                
+              </p>
+              <div id="method-i-write_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/packet.rb, line 62</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">write</span>(<span class="ruby-identifier">io</span>)
+        <span class="ruby-ivar">@headers</span>[<span class="ruby-number">0</span>].<span class="ruby-identifier">write</span>(<span class="ruby-identifier">io</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

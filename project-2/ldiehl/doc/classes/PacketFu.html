@@ -1,0 +1,1344 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>PacketFu</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Module</span> 
+            PacketFu 
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/lib/packetfu_rb.html">lib/packetfu.rb</a></li>
+            
+            <li><a href="../files/lib/packetfu/capture_rb.html">lib/packetfu/capture.rb</a></li>
+            
+            <li><a href="../files/lib/packetfu/config_rb.html">lib/packetfu/config.rb</a></li>
+            
+            <li><a href="../files/lib/packetfu/inject_rb.html">lib/packetfu/inject.rb</a></li>
+            
+            <li><a href="../files/lib/packetfu/packet_rb.html">lib/packetfu/packet.rb</a></li>
+            
+            <li><a href="../files/lib/packetfu/pcap_rb.html">lib/packetfu/pcap.rb</a></li>
+            
+            <li><a href="../files/lib/packetfu/protos/arp/header_rb.html">lib/packetfu/protos/arp/header.rb</a></li>
+            
+            <li><a href="../files/lib/packetfu/protos/arp/mixin_rb.html">lib/packetfu/protos/arp/mixin.rb</a></li>
+            
+            <li><a href="../files/lib/packetfu/protos/arp_rb.html">lib/packetfu/protos/arp.rb</a></li>
+            
+            <li><a href="../files/lib/packetfu/protos/eth/header_rb.html">lib/packetfu/protos/eth/header.rb</a></li>
+            
+            <li><a href="../files/lib/packetfu/protos/eth/mixin_rb.html">lib/packetfu/protos/eth/mixin.rb</a></li>
+            
+            <li><a href="../files/lib/packetfu/protos/eth_rb.html">lib/packetfu/protos/eth.rb</a></li>
+            
+            <li><a href="../files/lib/packetfu/protos/hsrp/header_rb.html">lib/packetfu/protos/hsrp/header.rb</a></li>
+            
+            <li><a href="../files/lib/packetfu/protos/hsrp/mixin_rb.html">lib/packetfu/protos/hsrp/mixin.rb</a></li>
+            
+            <li><a href="../files/lib/packetfu/protos/hsrp_rb.html">lib/packetfu/protos/hsrp.rb</a></li>
+            
+            <li><a href="../files/lib/packetfu/protos/icmp/header_rb.html">lib/packetfu/protos/icmp/header.rb</a></li>
+            
+            <li><a href="../files/lib/packetfu/protos/icmp/mixin_rb.html">lib/packetfu/protos/icmp/mixin.rb</a></li>
+            
+            <li><a href="../files/lib/packetfu/protos/icmp_rb.html">lib/packetfu/protos/icmp.rb</a></li>
+            
+            <li><a href="../files/lib/packetfu/protos/invalid_rb.html">lib/packetfu/protos/invalid.rb</a></li>
+            
+            <li><a href="../files/lib/packetfu/protos/ip/header_rb.html">lib/packetfu/protos/ip/header.rb</a></li>
+            
+            <li><a href="../files/lib/packetfu/protos/ip/mixin_rb.html">lib/packetfu/protos/ip/mixin.rb</a></li>
+            
+            <li><a href="../files/lib/packetfu/protos/ip_rb.html">lib/packetfu/protos/ip.rb</a></li>
+            
+            <li><a href="../files/lib/packetfu/protos/ipv6/header_rb.html">lib/packetfu/protos/ipv6/header.rb</a></li>
+            
+            <li><a href="../files/lib/packetfu/protos/ipv6/mixin_rb.html">lib/packetfu/protos/ipv6/mixin.rb</a></li>
+            
+            <li><a href="../files/lib/packetfu/protos/ipv6_rb.html">lib/packetfu/protos/ipv6.rb</a></li>
+            
+            <li><a href="../files/lib/packetfu/protos/tcp/ecn_rb.html">lib/packetfu/protos/tcp/ecn.rb</a></li>
+            
+            <li><a href="../files/lib/packetfu/protos/tcp/flags_rb.html">lib/packetfu/protos/tcp/flags.rb</a></li>
+            
+            <li><a href="../files/lib/packetfu/protos/tcp/header_rb.html">lib/packetfu/protos/tcp/header.rb</a></li>
+            
+            <li><a href="../files/lib/packetfu/protos/tcp/hlen_rb.html">lib/packetfu/protos/tcp/hlen.rb</a></li>
+            
+            <li><a href="../files/lib/packetfu/protos/tcp/mixin_rb.html">lib/packetfu/protos/tcp/mixin.rb</a></li>
+            
+            <li><a href="../files/lib/packetfu/protos/tcp/option_rb.html">lib/packetfu/protos/tcp/option.rb</a></li>
+            
+            <li><a href="../files/lib/packetfu/protos/tcp/options_rb.html">lib/packetfu/protos/tcp/options.rb</a></li>
+            
+            <li><a href="../files/lib/packetfu/protos/tcp/reserved_rb.html">lib/packetfu/protos/tcp/reserved.rb</a></li>
+            
+            <li><a href="../files/lib/packetfu/protos/tcp_rb.html">lib/packetfu/protos/tcp.rb</a></li>
+            
+            <li><a href="../files/lib/packetfu/protos/udp/header_rb.html">lib/packetfu/protos/udp/header.rb</a></li>
+            
+            <li><a href="../files/lib/packetfu/protos/udp/mixin_rb.html">lib/packetfu/protos/udp/mixin.rb</a></li>
+            
+            <li><a href="../files/lib/packetfu/protos/udp_rb.html">lib/packetfu/protos/udp.rb</a></li>
+            
+            <li><a href="../files/lib/packetfu/utils_rb.html">lib/packetfu/utils.rb</a></li>
+            
+            <li><a href="../files/lib/packetfu/version_rb.html">lib/packetfu/version.rb</a></li>
+            
+            <li><a href="../files/examples/packetfu-shell_rb.html">examples/packetfu-shell.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+    <!-- Namespace -->
+    <div class="sectiontitle">Namespace</div>
+    <ul>
+      
+        <li>
+          <span class="type">MODULE</span>
+          <a href="PacketFu/ARPHeaderMixin.html">PacketFu::ARPHeaderMixin</a>
+        </li>
+      
+        <li>
+          <span class="type">MODULE</span>
+          <a href="PacketFu/EthHeaderMixin.html">PacketFu::EthHeaderMixin</a>
+        </li>
+      
+        <li>
+          <span class="type">MODULE</span>
+          <a href="PacketFu/HSRPHeaderMixin.html">PacketFu::HSRPHeaderMixin</a>
+        </li>
+      
+        <li>
+          <span class="type">MODULE</span>
+          <a href="PacketFu/ICMPHeaderMixin.html">PacketFu::ICMPHeaderMixin</a>
+        </li>
+      
+        <li>
+          <span class="type">MODULE</span>
+          <a href="PacketFu/IPHeaderMixin.html">PacketFu::IPHeaderMixin</a>
+        </li>
+      
+        <li>
+          <span class="type">MODULE</span>
+          <a href="PacketFu/IPv6HeaderMixin.html">PacketFu::IPv6HeaderMixin</a>
+        </li>
+      
+        <li>
+          <span class="type">MODULE</span>
+          <a href="PacketFu/TCPHeaderMixin.html">PacketFu::TCPHeaderMixin</a>
+        </li>
+      
+        <li>
+          <span class="type">MODULE</span>
+          <a href="PacketFu/UDPHeaderMixin.html">PacketFu::UDPHeaderMixin</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="PacketFu/ARPHeader.html">PacketFu::ARPHeader</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="PacketFu/ARPPacket.html">PacketFu::ARPPacket</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="PacketFu/AddrIpv6.html">PacketFu::AddrIpv6</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="PacketFu/Capture.html">PacketFu::Capture</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="PacketFu/Config.html">PacketFu::Config</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="PacketFu/EthHeader.html">PacketFu::EthHeader</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="PacketFu/EthMac.html">PacketFu::EthMac</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="PacketFu/EthNic.html">PacketFu::EthNic</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="PacketFu/EthOui.html">PacketFu::EthOui</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="PacketFu/EthPacket.html">PacketFu::EthPacket</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="PacketFu/HSRPHeader.html">PacketFu::HSRPHeader</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="PacketFu/HSRPPacket.html">PacketFu::HSRPPacket</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="PacketFu/ICMPHeader.html">PacketFu::ICMPHeader</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="PacketFu/ICMPPacket.html">PacketFu::ICMPPacket</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="PacketFu/IPHeader.html">PacketFu::IPHeader</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="PacketFu/IPPacket.html">PacketFu::IPPacket</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="PacketFu/IPv6Header.html">PacketFu::IPv6Header</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="PacketFu/IPv6Packet.html">PacketFu::IPv6Packet</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="PacketFu/Inject.html">PacketFu::Inject</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="PacketFu/InvalidHeader.html">PacketFu::InvalidHeader</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="PacketFu/InvalidPacket.html">PacketFu::InvalidPacket</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="PacketFu/Octets.html">PacketFu::Octets</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="PacketFu/Packet.html">PacketFu::Packet</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="PacketFu/PcapFile.html">PacketFu::PcapFile</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="PacketFu/PcapHeader.html">PacketFu::PcapHeader</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="PacketFu/PcapPacket.html">PacketFu::PcapPacket</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="PacketFu/PcapPackets.html">PacketFu::PcapPackets</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="PacketFu/Read.html">PacketFu::Read</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="PacketFu/TCPHeader.html">PacketFu::TCPHeader</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="PacketFu/TCPPacket.html">PacketFu::TCPPacket</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="PacketFu/TcpEcn.html">PacketFu::TcpEcn</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="PacketFu/TcpFlags.html">PacketFu::TcpFlags</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="PacketFu/TcpHlen.html">PacketFu::TcpHlen</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="PacketFu/TcpOption.html">PacketFu::TcpOption</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="PacketFu/TcpOptions.html">PacketFu::TcpOptions</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="PacketFu/TcpReserved.html">PacketFu::TcpReserved</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="PacketFu/Timestamp.html">PacketFu::Timestamp</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="PacketFu/UDPHeader.html">PacketFu::UDPHeader</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="PacketFu/UDPPacket.html">PacketFu::UDPPacket</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="PacketFu/Utils.html">PacketFu::Utils</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="PacketFu/Write.html">PacketFu::Write</a>
+        </li>
+      
+    </ul>
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>A</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-add_packet_class">add_packet_class</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-arp">arp</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-c-at_least-3F">at_least?</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>B</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-binarize_version">binarize_version</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>C</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-classes">classes</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>F</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-force_binary">force_binary</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>I</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-inspect_style">inspect_style</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-c-inspect_style-3D">inspect_style=</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-newer_than-3F">newer_than?</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>O</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-older_than-3F">older_than?</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>P</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-packet_classes">packet_classes</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-c-packet_prefixes">packet_prefixes</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-c-pcaprub_loaded-3F">pcaprub_loaded?</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-c-pcaprub_platform_require">pcaprub_platform_require</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>R</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-remove_packet_class">remove_packet_class</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-c-require_protos">require_protos</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-toggle_inspect">toggle_inspect</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>V</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-version">version</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>W</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-whoami-3F">whoami?</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+      <!-- Section constants -->
+      <div class="sectiontitle">Constants</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class="attr-name">VERSION</td>
+            <td>=</td>
+            <td class="attr-value">&quot;1.1.6&quot;</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>Check the repo’s for version release histories</p></td>
+            </tr>
+          
+        
+      </table>
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-add_packet_class">
+            
+              <b>add_packet_class</b>(klass)
+            
+            <a href="../classes/PacketFu.html#method-c-add_packet_class" name="method-c-add_packet_class" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Adds the class to PacketFu’s list of packet classes – used in packet
+parsing.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-add_packet_class_source')" id="l_method-c-add_packet_class_source">show</a>
+                
+              </p>
+              <div id="method-c-add_packet_class_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu.rb, line 73</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">add_packet_class</span>(<span class="ruby-identifier">klass</span>)
+        <span class="ruby-identifier">raise</span> <span class="ruby-string">&quot;Need a class&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">klass</span>.<span class="ruby-identifier">kind_of?</span> <span class="ruby-constant">Class</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">klass</span>.<span class="ruby-identifier">name</span> <span class="ruby-operator">!~</span> <span class="ruby-regexp">%r[A-Za-z0-9]Packet/</span>
+                <span class="ruby-identifier">raise</span> <span class="ruby-string">&quot;Packet classes should be named 'ProtoPacket'&quot;</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-ivar">@packet_classes</span> <span class="ruby-operator">||=</span> []
+        <span class="ruby-ivar">@packet_classes</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">klass</span>
+        <span class="ruby-ivar">@packet_classes_dirty</span> = <span class="ruby-keyword">true</span>
+        <span class="ruby-ivar">@packet_classes</span>.<span class="ruby-identifier">sort!</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">x</span>,<span class="ruby-identifier">y</span><span class="ruby-operator">|</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">name</span> <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-identifier">y</span>.<span class="ruby-identifier">name</span>}
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-at_least-3F">
+            
+              <b>at_least?</b>(str)
+            
+            <a href="../classes/PacketFu.html#method-c-at_least-3F" name="method-c-at_least-3F" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns true if the version is equal to or greater than the compare
+version. If the current version of <a href="PacketFu.html">PacketFu</a> is
+“0.3.1” for example:</p>
+
+<pre class="ruby"><span class="ruby-constant">PacketFu</span>.<span class="ruby-identifier">at_least?</span> <span class="ruby-string">&quot;0&quot;</span>     <span class="ruby-comment"># =&gt; true </span>
+<span class="ruby-constant">PacketFu</span>.<span class="ruby-identifier">at_least?</span> <span class="ruby-string">&quot;0.2.9&quot;</span> <span class="ruby-comment"># =&gt; true </span>
+<span class="ruby-constant">PacketFu</span>.<span class="ruby-identifier">at_least?</span> <span class="ruby-string">&quot;0.3&quot;</span>   <span class="ruby-comment"># =&gt; true </span>
+<span class="ruby-constant">PacketFu</span>.<span class="ruby-identifier">at_least?</span> <span class="ruby-string">&quot;1&quot;</span>     <span class="ruby-comment"># =&gt; true after 1.0's release</span>
+<span class="ruby-constant">PacketFu</span>.<span class="ruby-identifier">at_least?</span> <span class="ruby-string">&quot;1.12&quot;</span>  <span class="ruby-comment"># =&gt; false</span>
+<span class="ruby-constant">PacketFu</span>.<span class="ruby-identifier">at_least?</span> <span class="ruby-string">&quot;2&quot;</span>     <span class="ruby-comment"># =&gt; false</span>
+</pre>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-at_least-3F_source')" id="l_method-c-at_least-3F_source">show</a>
+                
+              </p>
+              <div id="method-c-at_least-3F_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/version.rb, line 30</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">at_least?</span>(<span class="ruby-identifier">str</span>)
+        <span class="ruby-identifier">this_version</span> = <span class="ruby-identifier">binarize_version</span>(<span class="ruby-keyword">self</span>.<span class="ruby-identifier">version</span>)
+        <span class="ruby-identifier">ask_version</span> = <span class="ruby-identifier">binarize_version</span>(<span class="ruby-identifier">str</span>)
+        <span class="ruby-identifier">this_version</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-identifier">ask_version</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-binarize_version">
+            
+              <b>binarize_version</b>(str)
+            
+            <a href="../classes/PacketFu.html#method-c-binarize_version" name="method-c-binarize_version" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns a version string in a binary format for easy comparisons.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-binarize_version_source')" id="l_method-c-binarize_version_source">show</a>
+                
+              </p>
+              <div id="method-c-binarize_version_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/version.rb, line 12</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">binarize_version</span>(<span class="ruby-identifier">str</span>)
+        <span class="ruby-keyword">if</span>(<span class="ruby-identifier">str</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:split</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">str</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">%r^[0-9]+(\.([0-9]+)(\.[0-9]+)?)?\..+$/</span>)
+                <span class="ruby-identifier">bin_major</span>,<span class="ruby-identifier">bin_minor</span>,<span class="ruby-identifier">bin_teeny</span> = <span class="ruby-identifier">str</span>.<span class="ruby-identifier">split</span>(<span class="ruby-regexp">%r\x2e/</span>).<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">to_i</span>}
+                <span class="ruby-identifier">bin_version</span> = (<span class="ruby-identifier">bin_major</span>.<span class="ruby-identifier">to_i</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-number">16</span>) <span class="ruby-operator">+</span> (<span class="ruby-identifier">bin_minor</span>.<span class="ruby-identifier">to_i</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-number">8</span>) <span class="ruby-operator">+</span> <span class="ruby-identifier">bin_teeny</span>.<span class="ruby-identifier">to_i</span>
+        <span class="ruby-keyword">else</span>
+                <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Compare version malformed. Should be \x22x.y.z\x22&quot;</span>
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-classes">
+            
+              <b>classes</b>()
+            
+            <a href="../classes/PacketFu.html#method-c-classes" name="method-c-classes" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns an array of classes defined in <a href="PacketFu.html">PacketFu</a></p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-classes_source')" id="l_method-c-classes_source">show</a>
+                
+              </p>
+              <div id="method-c-classes_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu.rb, line 68</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">classes</span>
+        <span class="ruby-identifier">constants</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">const</span><span class="ruby-operator">|</span> <span class="ruby-identifier">const_get</span>(<span class="ruby-identifier">const</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">const_get</span>(<span class="ruby-identifier">const</span>).<span class="ruby-identifier">kind_of?</span> <span class="ruby-constant">Class</span>}.<span class="ruby-identifier">compact</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-force_binary">
+            
+              <b>force_binary</b>(str)
+            
+            <a href="../classes/PacketFu.html#method-c-force_binary" name="method-c-force_binary" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Deal with Ruby’s encoding by ignoring it.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-force_binary_source')" id="l_method-c-force_binary_source">show</a>
+                
+              </p>
+              <div id="method-c-force_binary_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu.rb, line 29</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">force_binary</span>(<span class="ruby-identifier">str</span>)
+        <span class="ruby-identifier">str</span>.<span class="ruby-identifier">force_encoding</span> <span class="ruby-constant">Encoding</span><span class="ruby-operator">::</span><span class="ruby-constant">BINARY</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">str</span>.<span class="ruby-identifier">respond_to?</span> <span class="ruby-value">:force_encoding</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-inspect_style">
+            
+              <b>inspect_style</b>()
+            
+            <a href="../classes/PacketFu.html#method-c-inspect_style" name="method-c-inspect_style" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>The current inspect style. One of :hex, :dissect, or :default Note that
+:default means Ruby’s default, which is usually far too long to be useful.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-inspect_style_source')" id="l_method-c-inspect_style_source">show</a>
+                
+              </p>
+              <div id="method-c-inspect_style_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu.rb, line 110</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">inspect_style</span>
+        <span class="ruby-ivar">@inspect_style</span> <span class="ruby-operator">||=</span> <span class="ruby-value">:dissect</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-inspect_style-3D">
+            
+              <b>inspect_style=</b>(arg)
+            
+            <a href="../classes/PacketFu.html#method-c-inspect_style-3D" name="method-c-inspect_style-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Setter for PacketFu’s @<a
+href="PacketFu.html#method-c-inspect_style">::inspect_style</a></p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-inspect_style-3D_source')" id="l_method-c-inspect_style-3D_source">show</a>
+                
+              </p>
+              <div id="method-c-inspect_style-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu.rb, line 115</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">inspect_style=</span>(<span class="ruby-identifier">arg</span>)
+        <span class="ruby-ivar">@inspect_style</span> = <span class="ruby-keyword">case</span> <span class="ruby-identifier">arg</span>
+                <span class="ruby-keyword">when</span> <span class="ruby-value">:hex</span>, <span class="ruby-value">:pretty</span>
+                        <span class="ruby-value">:hex</span>
+                <span class="ruby-keyword">when</span> <span class="ruby-value">:dissect</span>, <span class="ruby-value">:verbose</span>
+                        <span class="ruby-value">:dissect</span>
+                <span class="ruby-keyword">when</span> <span class="ruby-value">:default</span>, <span class="ruby-value">:ugly</span>
+                        <span class="ruby-value">:default</span>
+                <span class="ruby-keyword">else</span>
+                        <span class="ruby-value">:dissect</span>
+                <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-newer_than-3F">
+            
+              <b>newer_than?</b>(str)
+            
+            <a href="../classes/PacketFu.html#method-c-newer_than-3F" name="method-c-newer_than-3F" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns true if the current version is newer than the compare version.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-newer_than-3F_source')" id="l_method-c-newer_than-3F_source">show</a>
+                
+              </p>
+              <div id="method-c-newer_than-3F_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/version.rb, line 45</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">newer_than?</span>(<span class="ruby-identifier">str</span>)
+        <span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">str</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">version</span>
+        <span class="ruby-operator">!</span><span class="ruby-keyword">self</span>.<span class="ruby-identifier">older_than?</span>(<span class="ruby-identifier">str</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-older_than-3F">
+            
+              <b>older_than?</b>(str)
+            
+            <a href="../classes/PacketFu.html#method-c-older_than-3F" name="method-c-older_than-3F" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns true if the current version is older than the compare version.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-older_than-3F_source')" id="l_method-c-older_than-3F_source">show</a>
+                
+              </p>
+              <div id="method-c-older_than-3F_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/version.rb, line 37</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">older_than?</span>(<span class="ruby-identifier">str</span>)
+        <span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">str</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">version</span>
+        <span class="ruby-identifier">this_version</span> = <span class="ruby-identifier">binarize_version</span>(<span class="ruby-keyword">self</span>.<span class="ruby-identifier">version</span>)
+        <span class="ruby-identifier">ask_version</span> = <span class="ruby-identifier">binarize_version</span>(<span class="ruby-identifier">str</span>)
+        <span class="ruby-identifier">this_version</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">ask_version</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-packet_classes">
+            
+              <b>packet_classes</b>()
+            
+            <a href="../classes/PacketFu.html#method-c-packet_classes" name="method-c-packet_classes" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns an array of packet classes</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-packet_classes_source')" id="l_method-c-packet_classes_source">show</a>
+                
+              </p>
+              <div id="method-c-packet_classes_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu.rb, line 94</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">packet_classes</span>
+        <span class="ruby-ivar">@packet_classes</span> <span class="ruby-operator">||</span> []
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-packet_prefixes">
+            
+              <b>packet_prefixes</b>()
+            
+            <a href="../classes/PacketFu.html#method-c-packet_prefixes" name="method-c-packet_prefixes" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns an array of packet types by packet prefix.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-packet_prefixes_source')" id="l_method-c-packet_prefixes_source">show</a>
+                
+              </p>
+              <div id="method-c-packet_prefixes_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu.rb, line 99</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">packet_prefixes</span>
+        <span class="ruby-keyword">return</span> [] <span class="ruby-keyword">if</span> <span class="ruby-ivar">@packet_classes</span>.<span class="ruby-identifier">nil?</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-ivar">@packet_class_prefixes</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@packet_classes_dirty</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">false</span>
+        <span class="ruby-ivar">@packet_classes_dirty</span> = <span class="ruby-keyword">false</span>
+        <span class="ruby-ivar">@packet_class_prefixes</span> = <span class="ruby-ivar">@packet_classes</span>.<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span> <span class="ruby-identifier">p</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">&quot;::&quot;</span>).<span class="ruby-identifier">last</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">downcase</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">%rpacket$/</span>,<span class="ruby-string">&quot;&quot;</span>)}
+        <span class="ruby-keyword">return</span> <span class="ruby-ivar">@packet_class_prefixes</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-pcaprub_loaded-3F">
+            
+              <b>pcaprub_loaded?</b>()
+            
+            <a href="../classes/PacketFu.html#method-c-pcaprub_loaded-3F" name="method-c-pcaprub_loaded-3F" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns the status of pcaprub</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-pcaprub_loaded-3F_source')" id="l_method-c-pcaprub_loaded-3F_source">show</a>
+                
+              </p>
+              <div id="method-c-pcaprub_loaded-3F_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu.rb, line 63</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">pcaprub_loaded?</span>
+        <span class="ruby-ivar">@pcaprub_loaded</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-pcaprub_platform_require">
+            
+              <b>pcaprub_platform_require</b>()
+            
+            <a href="../classes/PacketFu.html#method-c-pcaprub_platform_require" name="method-c-pcaprub_platform_require" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p><a href="PacketFu.html">PacketFu</a> works best with Pcaprub version
+0.8-dev (at least) The current (Aug 01, 2010) pcaprub gem is 0.9, so should
+be fine.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-pcaprub_platform_require_source')" id="l_method-c-pcaprub_platform_require_source">show</a>
+                
+              </p>
+              <div id="method-c-pcaprub_platform_require_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu.rb, line 41</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">pcaprub_platform_require</span>
+        <span class="ruby-keyword">begin</span>
+                <span class="ruby-identifier">require</span> <span class="ruby-string">'pcaprub'</span>
+        <span class="ruby-keyword">rescue</span> <span class="ruby-constant">LoadError</span>
+                <span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-ivar">@pcaprub_loaded</span> = <span class="ruby-keyword">true</span> 
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-remove_packet_class">
+            
+              <b>remove_packet_class</b>(klass)
+            
+            <a href="../classes/PacketFu.html#method-c-remove_packet_class" name="method-c-remove_packet_class" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Presumably, there may be a time where you’d like to remove a packet class.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-remove_packet_class_source')" id="l_method-c-remove_packet_class_source">show</a>
+                
+              </p>
+              <div id="method-c-remove_packet_class_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu.rb, line 85</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">remove_packet_class</span>(<span class="ruby-identifier">klass</span>)
+        <span class="ruby-identifier">raise</span> <span class="ruby-string">&quot;Need a class&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">klass</span>.<span class="ruby-identifier">kind_of?</span> <span class="ruby-constant">Class</span>
+        <span class="ruby-ivar">@packet_classes</span> <span class="ruby-operator">||=</span> []
+        <span class="ruby-ivar">@packet_classes</span>.<span class="ruby-identifier">delete</span> <span class="ruby-identifier">klass</span>
+        <span class="ruby-ivar">@packet_classes_dirty</span> = <span class="ruby-keyword">true</span>
+        <span class="ruby-ivar">@packet_classes</span> 
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-require_protos">
+            
+              <b>require_protos</b>(cwd)
+            
+            <a href="../classes/PacketFu.html#method-c-require_protos" name="method-c-require_protos" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Picks up all the protocols defined in the protos subdirectory</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-require_protos_source')" id="l_method-c-require_protos_source">show</a>
+                
+              </p>
+              <div id="method-c-require_protos_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu.rb, line 16</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">require_protos</span>(<span class="ruby-identifier">cwd</span>)
+        <span class="ruby-identifier">protos_dir</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">cwd</span>, <span class="ruby-string">&quot;packetfu&quot;</span>, <span class="ruby-string">&quot;protos&quot;</span>)
+        <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">protos_dir</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">fname</span><span class="ruby-operator">|</span>
+                <span class="ruby-keyword">next</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">fname</span>[<span class="ruby-regexp">%r\.rb$/</span>]
+                <span class="ruby-keyword">begin</span> 
+                        <span class="ruby-identifier">require</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">protos_dir</span>,<span class="ruby-identifier">fname</span>)
+                <span class="ruby-keyword">rescue</span>
+                        <span class="ruby-identifier">warn</span> <span class="ruby-node">&quot;Warning: Could not load `#{fname}'. Skipping.&quot;</span>
+                <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-version">
+            
+              <b>version</b>()
+            
+            <a href="../classes/PacketFu.html#method-c-version" name="method-c-version" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns PacketFu::VERSION</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-version_source')" id="l_method-c-version_source">show</a>
+                
+              </p>
+              <div id="method-c-version_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/version.rb, line 7</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">version</span>
+        <span class="ruby-constant">VERSION</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-arp">
+            
+              <b>arp</b>(arg)
+            
+            <a href="../classes/PacketFu.html#method-i-arp" name="method-i-arp" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-arp_source')" id="l_method-i-arp_source">show</a>
+                
+              </p>
+              <div id="method-i-arp_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File examples/packetfu-shell.rb, line 54</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">arp</span>(<span class="ruby-identifier">arg</span>)
+        <span class="ruby-constant">Utils</span>.<span class="ruby-identifier">arp</span>(<span class="ruby-identifier">arg</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-toggle_inspect">
+            
+              <b>toggle_inspect</b>()
+            
+            <a href="../classes/PacketFu.html#method-i-toggle_inspect" name="method-i-toggle_inspect" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Switches inspect styles in a round-robin fashion between  :dissect,
+:default, and :hex</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-toggle_inspect_source')" id="l_method-i-toggle_inspect_source">show</a>
+                
+              </p>
+              <div id="method-i-toggle_inspect_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu.rb, line 130</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">toggle_inspect</span>
+        <span class="ruby-keyword">case</span> <span class="ruby-ivar">@inspect_style</span>
+        <span class="ruby-keyword">when</span> <span class="ruby-value">:hex</span>, <span class="ruby-value">:pretty</span>
+                <span class="ruby-ivar">@inspect_style</span> = <span class="ruby-value">:dissect</span>
+        <span class="ruby-keyword">when</span> <span class="ruby-value">:dissect</span>, <span class="ruby-value">:verbose</span>
+                <span class="ruby-ivar">@inspect_style</span> = <span class="ruby-value">:default</span>
+        <span class="ruby-keyword">when</span> <span class="ruby-value">:default</span>, <span class="ruby-value">:ugly</span>
+                <span class="ruby-ivar">@inspect_style</span> = <span class="ruby-value">:hex</span>
+        <span class="ruby-keyword">else</span>
+                <span class="ruby-ivar">@inspect_style</span> = <span class="ruby-value">:dissect</span>
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-whoami-3F">
+            
+              <b>whoami?</b>(args={})
+            
+            <a href="../classes/PacketFu.html#method-i-whoami-3F" name="method-i-whoami-3F" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-whoami-3F_source')" id="l_method-i-whoami-3F_source">show</a>
+                
+              </p>
+              <div id="method-i-whoami-3F_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File examples/packetfu-shell.rb, line 51</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">whoami?</span>(<span class="ruby-identifier">args</span>={})
+        <span class="ruby-constant">Utils</span>.<span class="ruby-identifier">whoami?</span>(<span class="ruby-identifier">args</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

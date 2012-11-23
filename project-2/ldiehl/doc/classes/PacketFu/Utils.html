@@ -1,0 +1,474 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>PacketFu::Utils</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/github.css" type="text/css" media="screen" />
+<script src="../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            PacketFu::Utils 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="../Object.html">Object</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../files/lib/packetfu/utils_rb.html">lib/packetfu/utils.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p><a href="Utils.html">Utils</a> is a collection of various and sundry
+network utilities that are useful for packet manipulation.</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>A</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-arp">arp</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>I</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-ifconfig">ifconfig</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>L</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-lookupdev">lookupdev</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>W</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-whoami-3F">whoami?</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-arp">
+            
+              <b>arp</b>(target_ip,args={})
+            
+            <a href="../../classes/PacketFu/Utils.html#method-c-arp" name="method-c-arp" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns the MAC address of an IP address, or nil if it’s not responsive to
+arp. Takes a dotted-octect notation of the target IP address, as well as a
+number of parameters:</p>
+
+<h3 id="method-c-arp-label-Parameters">Parameters</h3>
+
+<pre class="ruby"> :<span class="ruby-identifier">eth_saddr</span>
+  <span class="ruby-constant">Source</span> <span class="ruby-constant">MAC</span> <span class="ruby-identifier">address</span>. <span class="ruby-constant">Defaults</span> <span class="ruby-identifier">to</span> <span class="ruby-string">&quot;00:00:00:00:00:00&quot;</span>.
+ :<span class="ruby-identifier">ip_saddr</span>
+  <span class="ruby-constant">Source</span> <span class="ruby-constant">IP</span> <span class="ruby-identifier">address</span>. <span class="ruby-constant">Defaults</span> <span class="ruby-identifier">to</span> <span class="ruby-string">&quot;0.0.0.0&quot;</span>
+ :<span class="ruby-identifier">flavor</span>
+  <span class="ruby-constant">The</span> <span class="ruby-identifier">flavor</span> <span class="ruby-identifier">of</span> <span class="ruby-identifier">the</span> <span class="ruby-constant">ARP</span> <span class="ruby-identifier">request</span>. <span class="ruby-constant">Defaults</span> <span class="ruby-identifier">to</span> :<span class="ruby-identifier">none</span>.
+ :<span class="ruby-identifier">timeout</span>
+  <span class="ruby-constant">Timeout</span> <span class="ruby-keyword">in</span> <span class="ruby-identifier">seconds</span>. <span class="ruby-constant">Defaults</span> <span class="ruby-identifier">to</span> <span class="ruby-value">3</span>.
+
+<span class="ruby-operator">===</span> <span class="ruby-constant">Example</span>
+  <span class="ruby-constant">PacketFu</span><span class="ruby-operator">::</span><span class="ruby-constant">Utils</span><span class="ruby-operator">::</span><span class="ruby-identifier">arp</span>(<span class="ruby-string">&quot;192.168.1.1&quot;</span>) <span class="ruby-comment">#=&gt; &quot;00:18:39:01:33:70&quot;</span>
+  <span class="ruby-constant">PacketFu</span><span class="ruby-operator">::</span><span class="ruby-constant">Utils</span><span class="ruby-operator">::</span><span class="ruby-identifier">arp</span>(<span class="ruby-string">&quot;192.168.1.1&quot;</span>, :<span class="ruby-identifier">timeout</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">5</span>, :<span class="ruby-identifier">flavor</span> =<span class="ruby-operator">&gt;</span> :<span class="ruby-identifier">hp_deskjet</span>)
+
+<span class="ruby-operator">===</span> <span class="ruby-constant">Warning</span>
+
+<span class="ruby-constant">It</span> <span class="ruby-identifier">goes</span> <span class="ruby-identifier">without</span> <span class="ruby-identifier">saying</span>, <span class="ruby-identifier">spewing</span> <span class="ruby-identifier">forged</span> <span class="ruby-constant">ARP</span> <span class="ruby-identifier">packets</span> <span class="ruby-identifier">on</span> <span class="ruby-identifier">your</span> <span class="ruby-identifier">network</span> <span class="ruby-identifier">is</span> <span class="ruby-identifier">a</span> <span class="ruby-identifier">great</span> <span class="ruby-identifier">way</span> <span class="ruby-identifier">to</span> <span class="ruby-identifier">really</span>
+<span class="ruby-identifier">irritate</span> <span class="ruby-identifier">your</span> <span class="ruby-identifier">co</span><span class="ruby-operator">-</span><span class="ruby-identifier">workers</span>.
+</pre>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-arp_source')" id="l_method-c-arp_source">show</a>
+                
+              </p>
+              <div id="method-c-arp_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/utils.rb, line 29</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">arp</span>(<span class="ruby-identifier">target_ip</span>,<span class="ruby-identifier">args</span>={})
+        <span class="ruby-identifier">iface</span> = <span class="ruby-identifier">args</span>[<span class="ruby-value">:iface</span>] <span class="ruby-operator">||</span> <span class="ruby-value">:eth0</span>
+        <span class="ruby-identifier">args</span>[<span class="ruby-value">:config</span>] <span class="ruby-operator">||=</span> <span class="ruby-identifier">whoami?</span>(<span class="ruby-value">:iface</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">iface</span>)
+        <span class="ruby-identifier">arp_pkt</span> = <span class="ruby-constant">PacketFu</span><span class="ruby-operator">::</span><span class="ruby-constant">ARPPacket</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:flavor</span> =<span class="ruby-operator">&gt;</span> (<span class="ruby-identifier">args</span>[<span class="ruby-value">:flavor</span>] <span class="ruby-operator">||</span> <span class="ruby-value">:none</span>), <span class="ruby-value">:config</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">args</span>[<span class="ruby-value">:config</span>])
+        <span class="ruby-identifier">arp_pkt</span>.<span class="ruby-identifier">eth_daddr</span> = <span class="ruby-string">&quot;ff:ff:ff:ff:ff:ff&quot;</span>
+        <span class="ruby-identifier">arp_pkt</span>.<span class="ruby-identifier">arp_daddr_mac</span> = <span class="ruby-string">&quot;00:00:00:00:00:00&quot;</span>
+        <span class="ruby-identifier">arp_pkt</span>.<span class="ruby-identifier">arp_daddr_ip</span> = <span class="ruby-identifier">target_ip</span>
+        <span class="ruby-comment"># Stick the Capture object in its own thread.</span>
+        <span class="ruby-identifier">cap_thread</span> = <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">new</span> <span class="ruby-keyword">do</span>
+                <span class="ruby-identifier">target_mac</span> = <span class="ruby-keyword">nil</span>
+                <span class="ruby-identifier">cap</span> = <span class="ruby-constant">PacketFu</span><span class="ruby-operator">::</span><span class="ruby-constant">Capture</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:iface</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">iface</span>, <span class="ruby-value">:start</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>, 
+                <span class="ruby-value">:filter</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;arp src #{target_ip} and ether dst #{arp_pkt.eth_saddr}&quot;</span>)
+                <span class="ruby-identifier">arp_pkt</span>.<span class="ruby-identifier">to_w</span>(<span class="ruby-identifier">iface</span>) <span class="ruby-comment"># Shorthand for sending single packets to the default interface.</span>
+                <span class="ruby-identifier">timeout</span> = <span class="ruby-number">0</span>
+                <span class="ruby-keyword">while</span> <span class="ruby-identifier">target_mac</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">timeout</span> <span class="ruby-operator">&lt;=</span> (<span class="ruby-identifier">args</span>[<span class="ruby-value">:timeout</span>] <span class="ruby-operator">||</span> <span class="ruby-number">3</span>)
+                        <span class="ruby-keyword">if</span> <span class="ruby-identifier">cap</span>.<span class="ruby-identifier">save</span> <span class="ruby-operator">&gt;</span> <span class="ruby-number">0</span>
+                                <span class="ruby-identifier">arp_response</span> = <span class="ruby-constant">PacketFu</span><span class="ruby-operator">::</span><span class="ruby-constant">Packet</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">cap</span>.<span class="ruby-identifier">array</span>[<span class="ruby-number">0</span>])
+                                <span class="ruby-identifier">target_mac</span> = <span class="ruby-identifier">arp_response</span>.<span class="ruby-identifier">arp_saddr_mac</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">arp_response</span>.<span class="ruby-identifier">arp_saddr_ip</span> = <span class="ruby-identifier">target_ip</span>
+                        <span class="ruby-keyword">end</span>
+                        <span class="ruby-identifier">timeout</span> <span class="ruby-operator">+=</span> <span class="ruby-number">0.1</span>
+                        <span class="ruby-identifier">sleep</span> <span class="ruby-number">0.1</span> <span class="ruby-comment"># Check for a response ten times per second.</span>
+                <span class="ruby-keyword">end</span>
+                <span class="ruby-identifier">target_mac</span>
+        <span class="ruby-keyword">end</span> <span class="ruby-comment"># cap_thread</span>
+        <span class="ruby-identifier">cap_thread</span>.<span class="ruby-identifier">value</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-ifconfig">
+            
+              <b>ifconfig</b>(iface='eth0')
+            
+            <a href="../../classes/PacketFu/Utils.html#method-c-ifconfig" name="method-c-ifconfig" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Handles ifconfig for various (okay, two) platforms. Will have Windows done
+shortly.</p>
+
+<p>Takes an argument (either string or symbol) of the interface to look up,
+and  returns a hash which contains at least the :iface element, and if
+configured,  these additional elements:</p>
+
+<pre>:eth_saddr  # A human readable MAC address
+:eth_src    # A packed MAC address
+:ip_saddr   # A dotted-quad string IPv4 address
+:ip_src     # A packed IPv4 address
+:ip4_obj    # An IPAddr object with bitmask
+:ip6_saddr  # A colon-delimited hex IPv6 address, with bitmask
+:ip6_obj    # An IPAddr object with bitmask</pre>
+
+<h3 id="method-c-ifconfig-label-Example">Example</h3>
+
+<pre class="ruby"><span class="ruby-constant">PacketFu</span><span class="ruby-operator">::</span><span class="ruby-constant">Utils</span>.<span class="ruby-identifier">ifconfig</span> :<span class="ruby-identifier">wlan0</span> <span class="ruby-comment"># Not associated yet</span>
+<span class="ruby-comment">#=&gt; {:eth_saddr=&gt;&quot;00:1d:e0:73:9d:ff&quot;, :eth_src=&gt;&quot;\000\035\340s\235\377&quot;, :iface=&gt;&quot;wlan0&quot;}</span>
+<span class="ruby-constant">PacketFu</span><span class="ruby-operator">::</span><span class="ruby-constant">Utils</span>.<span class="ruby-identifier">ifconfig</span>(<span class="ruby-string">&quot;eth0&quot;</span>) <span class="ruby-comment"># Takes 'eth0' as default</span>
+<span class="ruby-comment">#=&gt; {:eth_saddr=&gt;&quot;00:1c:23:35:70:3b&quot;, :eth_src=&gt;&quot;\000\034#5p;&quot;, :ip_saddr=&gt;&quot;10.10.10.9&quot;, :ip4_obj=&gt;#&lt;IPAddr: IPv4:10.10.10.0/255.255.254.0&gt;, :ip_src=&gt;&quot;\n\n\n\t&quot;, :iface=&gt;&quot;eth0&quot;, :ip6_saddr=&gt;&quot;fe80::21c:23ff:fe35:703b/64&quot;, :ip6_obj=&gt;#&lt;IPAddr: IPv6:fe80:0000:0000:0000:0000:0000:0000:0000/ffff:ffff:ffff:ffff:0000:0000:0000:0000&gt;}  </span>
+<span class="ruby-constant">PacketFu</span><span class="ruby-operator">::</span><span class="ruby-constant">Utils</span>.<span class="ruby-identifier">ifconfig</span> :<span class="ruby-identifier">lo</span>
+<span class="ruby-comment">#=&gt; {:ip_saddr=&gt;&quot;127.0.0.1&quot;, :ip4_obj=&gt;#&lt;IPAddr: IPv4:127.0.0.0/255.0.0.0&gt;, :ip_src=&gt;&quot;\177\000\000\001&quot;, :iface=&gt;&quot;lo&quot;, :ip6_saddr=&gt;&quot;::1/128&quot;, :ip6_obj=&gt;#&lt;IPAddr: IPv6:0000:0000:0000:0000:0000:0000:0000:0001/ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff&gt;}</span>
+</pre>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-ifconfig_source')" id="l_method-c-ifconfig_source">show</a>
+                
+              </p>
+              <div id="method-c-ifconfig_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/utils.rb, line 157</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">ifconfig</span>(<span class="ruby-identifier">iface</span>=<span class="ruby-string">'eth0'</span>)
+        <span class="ruby-identifier">ret</span> = {}
+        <span class="ruby-identifier">iface</span> = <span class="ruby-identifier">iface</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">scan</span>(<span class="ruby-regexp">%r[0-9A-Za-z]/</span>).<span class="ruby-identifier">join</span> <span class="ruby-comment"># Sanitizing input, no spaces, semicolons, etc.</span>
+        <span class="ruby-keyword">case</span> <span class="ruby-constant">RUBY_PLATFORM</span>
+        <span class="ruby-keyword">when</span> <span class="ruby-regexp">%rlinux/</span>
+                <span class="ruby-identifier">ifconfig_data</span> = <span class="ruby-node">%x[ifconfig #{iface}]</span>
+                <span class="ruby-keyword">if</span> <span class="ruby-identifier">ifconfig_data</span> <span class="ruby-operator">=~</span> <span class="ruby-node">%r#{iface}/</span>
+                        <span class="ruby-identifier">ifconfig_data</span> = <span class="ruby-identifier">ifconfig_data</span>.<span class="ruby-identifier">split</span>(<span class="ruby-regexp">%r[\s]*\n[\s]*/</span>)
+                <span class="ruby-keyword">else</span>
+                        <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;Cannot ifconfig #{iface}&quot;</span>
+                <span class="ruby-keyword">end</span>
+                <span class="ruby-identifier">real_iface</span> = <span class="ruby-identifier">ifconfig_data</span>.<span class="ruby-identifier">first</span>
+                <span class="ruby-identifier">ret</span>[<span class="ruby-value">:iface</span>] = <span class="ruby-identifier">real_iface</span>.<span class="ruby-identifier">split</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">downcase</span>
+                <span class="ruby-keyword">if</span> <span class="ruby-identifier">real_iface</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">%r[\s]HWaddr[\s]+([0-9a-fA-F:]{17})/</span>
+                        <span class="ruby-identifier">ret</span>[<span class="ruby-value">:eth_saddr</span>] = <span class="ruby-node">$1</span>.<span class="ruby-identifier">downcase</span>
+                        <span class="ruby-identifier">ret</span>[<span class="ruby-value">:eth_src</span>] = <span class="ruby-constant">EthHeader</span>.<span class="ruby-identifier">mac2str</span>(<span class="ruby-identifier">ret</span>[<span class="ruby-value">:eth_saddr</span>])
+                <span class="ruby-keyword">end</span>
+                <span class="ruby-identifier">ifconfig_data</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span>
+                        <span class="ruby-keyword">case</span> <span class="ruby-identifier">s</span>
+                        <span class="ruby-keyword">when</span> <span class="ruby-regexp">%rinet addr:[\s]*([0-9]+\.[0-9]+\.[0-9]+\.[0-9]+)(.*Mask:([0-9]+\.[0-9]+\.[0-9]+\.[0-9]+))?/</span>
+                                <span class="ruby-identifier">ret</span>[<span class="ruby-value">:ip_saddr</span>] = <span class="ruby-node">$1</span>
+                                <span class="ruby-identifier">ret</span>[<span class="ruby-value">:ip_src</span>] = [<span class="ruby-constant">IPAddr</span>.<span class="ruby-identifier">new</span>(<span class="ruby-node">$1</span>).<span class="ruby-identifier">to_i</span>].<span class="ruby-identifier">pack</span>(<span class="ruby-string">&quot;N&quot;</span>)
+                                <span class="ruby-identifier">ret</span>[<span class="ruby-value">:ip4_obj</span>] = <span class="ruby-constant">IPAddr</span>.<span class="ruby-identifier">new</span>(<span class="ruby-node">$1</span>)
+                                <span class="ruby-identifier">ret</span>[<span class="ruby-value">:ip4_obj</span>] = <span class="ruby-identifier">ret</span>[<span class="ruby-value">:ip4_obj</span>].<span class="ruby-identifier">mask</span>(<span class="ruby-node">$3</span>) <span class="ruby-keyword">if</span> <span class="ruby-node">$3</span>
+                        <span class="ruby-keyword">when</span> <span class="ruby-regexp">%rinet6 addr:[\s]*([0-9a-fA-F:\x2f]+)/</span>
+                                <span class="ruby-identifier">ret</span>[<span class="ruby-value">:ip6_saddr</span>] = <span class="ruby-node">$1</span>
+                                <span class="ruby-identifier">ret</span>[<span class="ruby-value">:ip6_obj</span>] = <span class="ruby-constant">IPAddr</span>.<span class="ruby-identifier">new</span>(<span class="ruby-node">$1</span>)
+                        <span class="ruby-keyword">end</span>
+                <span class="ruby-keyword">end</span> <span class="ruby-comment"># linux</span>
+        <span class="ruby-keyword">when</span> <span class="ruby-regexp">%rdarwin/</span>
+                <span class="ruby-identifier">ifconfig_data</span> = <span class="ruby-node">%x[ifconfig #{iface}]</span>
+                <span class="ruby-keyword">if</span> <span class="ruby-identifier">ifconfig_data</span> <span class="ruby-operator">=~</span> <span class="ruby-node">%r#{iface}/</span>
+                        <span class="ruby-identifier">ifconfig_data</span> = <span class="ruby-identifier">ifconfig_data</span>.<span class="ruby-identifier">split</span>(<span class="ruby-regexp">%r[\s]*\n[\s]*/</span>)
+                <span class="ruby-keyword">else</span>
+                        <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;Cannot ifconfig #{iface}&quot;</span>
+                <span class="ruby-keyword">end</span>
+                <span class="ruby-identifier">real_iface</span> = <span class="ruby-identifier">ifconfig_data</span>.<span class="ruby-identifier">first</span>
+                <span class="ruby-identifier">ret</span>[<span class="ruby-value">:iface</span>] = <span class="ruby-identifier">real_iface</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">':'</span>)[<span class="ruby-number">0</span>]
+                <span class="ruby-identifier">ifconfig_data</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span>
+                        <span class="ruby-keyword">case</span> <span class="ruby-identifier">s</span>
+                        <span class="ruby-keyword">when</span> <span class="ruby-regexp">%rether[\s]([0-9a-fA-F:]{17})/</span>
+                                <span class="ruby-identifier">ret</span>[<span class="ruby-value">:eth_saddr</span>] = <span class="ruby-node">$1</span>
+                                <span class="ruby-identifier">ret</span>[<span class="ruby-value">:eth_src</span>] = <span class="ruby-constant">EthHeader</span>.<span class="ruby-identifier">mac2str</span>(<span class="ruby-identifier">ret</span>[<span class="ruby-value">:eth_saddr</span>])
+                        <span class="ruby-keyword">when</span> <span class="ruby-regexp">%rinet[\s]*([0-9]+\.[0-9]+\.[0-9]+\.[0-9]+)(.*Mask:([0-9]+\.[0-9]+\.[0-9]+\.[0-9]+))?/</span>
+                                <span class="ruby-identifier">ret</span>[<span class="ruby-value">:ip_saddr</span>] = <span class="ruby-node">$1</span>
+                                <span class="ruby-identifier">ret</span>[<span class="ruby-value">:ip_src</span>] = [<span class="ruby-constant">IPAddr</span>.<span class="ruby-identifier">new</span>(<span class="ruby-node">$1</span>).<span class="ruby-identifier">to_i</span>].<span class="ruby-identifier">pack</span>(<span class="ruby-string">&quot;N&quot;</span>)
+                                <span class="ruby-identifier">ret</span>[<span class="ruby-value">:ip4_obj</span>] = <span class="ruby-constant">IPAddr</span>.<span class="ruby-identifier">new</span>(<span class="ruby-node">$1</span>)
+                                <span class="ruby-identifier">ret</span>[<span class="ruby-value">:ip4_obj</span>] = <span class="ruby-identifier">ret</span>[<span class="ruby-value">:ip4_obj</span>].<span class="ruby-identifier">mask</span>(<span class="ruby-node">$3</span>) <span class="ruby-keyword">if</span> <span class="ruby-node">$3</span>
+                        <span class="ruby-keyword">when</span> <span class="ruby-regexp">%rinet6[\s]*([0-9a-fA-F:\x2f]+)/</span>
+                                <span class="ruby-identifier">ret</span>[<span class="ruby-value">:ip6_saddr</span>] = <span class="ruby-node">$1</span>
+                                <span class="ruby-identifier">ret</span>[<span class="ruby-value">:ip6_obj</span>] = <span class="ruby-constant">IPAddr</span>.<span class="ruby-identifier">new</span>(<span class="ruby-node">$1</span>)
+                        <span class="ruby-keyword">end</span>
+                <span class="ruby-keyword">end</span> <span class="ruby-comment"># darwin</span>
+        <span class="ruby-keyword">end</span> <span class="ruby-comment"># RUBY_PLATFORM</span>
+        <span class="ruby-identifier">ret</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-lookupdev">
+            
+              <b>lookupdev</b>()
+            
+            <a href="../../classes/PacketFu/Utils.html#method-c-lookupdev" name="method-c-lookupdev" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>This is a brute-force approach at trying to find a suitable interface with
+an IP address.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-lookupdev_source')" id="l_method-c-lookupdev_source">show</a>
+                
+              </p>
+              <div id="method-c-lookupdev_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/utils.rb, line 129</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">lookupdev</span>
+        <span class="ruby-comment"># XXX cycle through eth0-9 and wlan0-9, and if a cap start throws a RuntimeErorr (and we're</span>
+        <span class="ruby-comment"># root), it's not a good interface. Boy, really ought to fix lookupdev directly with another</span>
+        <span class="ruby-comment"># method that returns an array rather than just the first candidate.</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-whoami-3F">
+            
+              <b>whoami?</b>(args={})
+            
+            <a href="../../classes/PacketFu/Utils.html#method-c-whoami-3F" name="method-c-whoami-3F" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Discovers the local IP and Ethernet address, which is useful for writing
+packets you expect to get a response to. Note, this is a noisy operation; a
+UDP packet is generated and dropped on to the default (or named) interface,
+and then captured (which means you need to be root to do this).</p>
+
+<p>whoami? returns a hash of :eth_saddr, :eth_src, :ip_saddr, :ip_src, 
+:ip_src_bin, :eth_dst, and :eth_daddr (the last two are usually suitable 
+for a gateway mac address). It’s most useful as an argument to  <a
+href="Config.html#method-c-new">PacketFu::Config.new</a>, or as an argument
+to the many <a href="Packet.html">Packet</a> constructors.</p>
+
+<p>Note that if you have multiple interfaces with the same route (such as when
+wlan0 and eth0 are associated to the same network), the “first” one
+according to Pcap.lookupdev will be used, regardless of which :iface you 
+pick.</p>
+
+<h3 id="method-c-whoami-3F-label-Parameters">Parameters</h3>
+
+<pre class="ruby">:<span class="ruby-identifier">iface</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;eth0&quot;</span>
+ <span class="ruby-constant">An</span> <span class="ruby-identifier">interface</span> <span class="ruby-identifier">to</span> <span class="ruby-identifier">listen</span> <span class="ruby-keyword">for</span> <span class="ruby-identifier">packets</span> <span class="ruby-identifier">on</span>. <span class="ruby-constant">Note</span> <span class="ruby-identifier">that</span> <span class="ruby-identifier">since</span> <span class="ruby-identifier">we</span> <span class="ruby-identifier">rely</span> <span class="ruby-identifier">on</span> <span class="ruby-identifier">the</span> <span class="ruby-constant">OS</span> <span class="ruby-identifier">to</span> <span class="ruby-identifier">send</span> <span class="ruby-identifier">the</span> <span class="ruby-identifier">probe</span> <span class="ruby-identifier">packet</span>,
+ <span class="ruby-identifier">you</span> <span class="ruby-identifier">will</span> <span class="ruby-identifier">need</span> <span class="ruby-identifier">to</span> <span class="ruby-identifier">specify</span> <span class="ruby-identifier">a</span> <span class="ruby-identifier">target</span> <span class="ruby-identifier">which</span> <span class="ruby-identifier">will</span> <span class="ruby-identifier">use</span> <span class="ruby-identifier">this</span> <span class="ruby-identifier">interface</span>.
+:<span class="ruby-identifier">target</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;1.2.3.4&quot;</span>
+ <span class="ruby-constant">A</span> <span class="ruby-identifier">target</span> <span class="ruby-constant">IP</span> <span class="ruby-identifier">address</span>. <span class="ruby-constant">By</span> <span class="ruby-identifier">default</span>, <span class="ruby-identifier">a</span> <span class="ruby-identifier">packet</span> <span class="ruby-identifier">will</span> <span class="ruby-identifier">be</span> <span class="ruby-identifier">sent</span> <span class="ruby-identifier">to</span> <span class="ruby-identifier">a</span> <span class="ruby-identifier">random</span> <span class="ruby-identifier">address</span> <span class="ruby-keyword">in</span> <span class="ruby-identifier">the</span> <span class="ruby-value">177</span><span class="ruby-operator">/</span><span class="ruby-value">8</span> <span class="ruby-identifier">network</span>.
+ <span class="ruby-constant">Since</span> <span class="ruby-identifier">this</span> <span class="ruby-identifier">network</span> <span class="ruby-identifier">is</span> <span class="ruby-constant">IANA</span> <span class="ruby-identifier">reserved</span> (<span class="ruby-keyword">for</span> <span class="ruby-identifier">now</span>), <span class="ruby-identifier">this</span> <span class="ruby-identifier">network</span> <span class="ruby-identifier">should</span> <span class="ruby-identifier">be</span> <span class="ruby-identifier">handled</span> <span class="ruby-identifier">by</span> <span class="ruby-identifier">your</span> <span class="ruby-identifier">default</span> <span class="ruby-identifier">gateway</span>
+ <span class="ruby-keyword">and</span> <span class="ruby-identifier">default</span> <span class="ruby-identifier">interface</span>.
+</pre>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-whoami-3F_source')" id="l_method-c-whoami-3F_source">show</a>
+                
+              </p>
+              <div id="method-c-whoami-3F_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/utils.rb, line 79</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">whoami?</span>(<span class="ruby-identifier">args</span>={})
+        <span class="ruby-keyword">unless</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">kind_of?</span> <span class="ruby-constant">Hash</span>
+                <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Argument to `whoami?' must be a Hash&quot;</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">args</span>[<span class="ruby-value">:iface</span>].<span class="ruby-identifier">to_s</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">%r^lo/</span> <span class="ruby-comment"># Linux loopback more or less. Need a switch for windows loopback, too.</span>
+                <span class="ruby-identifier">dst_host</span> = <span class="ruby-string">&quot;127.0.0.1&quot;</span>
+        <span class="ruby-keyword">else</span>
+                <span class="ruby-identifier">dst_host</span> = (<span class="ruby-identifier">args</span>[<span class="ruby-value">:target</span>] <span class="ruby-operator">||</span> <span class="ruby-constant">IPAddr</span>.<span class="ruby-identifier">new</span>((<span class="ruby-identifier">rand</span>(<span class="ruby-number">16777216</span>) <span class="ruby-operator">+</span> <span class="ruby-number">2969567232</span>), <span class="ruby-constant">Socket</span><span class="ruby-operator">::</span><span class="ruby-constant">AF_INET</span>).<span class="ruby-identifier">to_s</span>)
+        <span class="ruby-keyword">end</span>
+
+        <span class="ruby-identifier">dst_port</span> = <span class="ruby-identifier">rand</span>(<span class="ruby-number">0xffff</span><span class="ruby-operator">-</span><span class="ruby-number">1024</span>)<span class="ruby-operator">+</span><span class="ruby-number">1024</span>
+        <span class="ruby-identifier">msg</span> = <span class="ruby-node">&quot;PacketFu whoami? packet #{(Time.now.to_i + rand(0xffffff)+1)}&quot;</span>
+        <span class="ruby-identifier">iface</span> = (<span class="ruby-identifier">args</span>[<span class="ruby-value">:iface</span>] <span class="ruby-operator">||</span> <span class="ruby-constant">ENV</span>[<span class="ruby-string">'IFACE'</span>] <span class="ruby-operator">||</span> <span class="ruby-constant">Pcap</span>.<span class="ruby-identifier">lookupdev</span> <span class="ruby-operator">||</span> <span class="ruby-value">:lo</span> ).<span class="ruby-identifier">to_s</span>
+        <span class="ruby-identifier">cap</span> = <span class="ruby-constant">PacketFu</span><span class="ruby-operator">::</span><span class="ruby-constant">Capture</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:iface</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">iface</span>, <span class="ruby-value">:promisc</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">false</span>, <span class="ruby-value">:start</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>, <span class="ruby-value">:filter</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;udp and dst host #{dst_host} and dst port #{dst_port}&quot;</span>)
+        <span class="ruby-identifier">udp_sock</span> = <span class="ruby-constant">UDPSocket</span>.<span class="ruby-identifier">new</span>
+        <span class="ruby-identifier">udp_sock</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">msg</span>,<span class="ruby-number">0</span>,<span class="ruby-identifier">dst_host</span>,<span class="ruby-identifier">dst_port</span>)
+        <span class="ruby-identifier">udp_sock</span> = <span class="ruby-keyword">nil</span>
+        <span class="ruby-identifier">cap</span>.<span class="ruby-identifier">save</span>
+        <span class="ruby-identifier">pkt</span> = <span class="ruby-constant">Packet</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">cap</span>.<span class="ruby-identifier">array</span>[<span class="ruby-number">0</span>]) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">cap</span>.<span class="ruby-identifier">save</span>.<span class="ruby-identifier">zero?</span>
+        <span class="ruby-identifier">timeout</span> = <span class="ruby-number">0</span>
+        <span class="ruby-keyword">while</span> <span class="ruby-identifier">timeout</span> <span class="ruby-operator">&lt;</span> <span class="ruby-number">1</span> <span class="ruby-comment"># Sometimes packet generation can be a little pokey.</span>
+                <span class="ruby-keyword">if</span> <span class="ruby-identifier">pkt</span>
+                        <span class="ruby-identifier">timeout</span> = <span class="ruby-number">1.1</span> <span class="ruby-comment"># Cancel the timeout</span>
+                        <span class="ruby-keyword">if</span> <span class="ruby-identifier">pkt</span>.<span class="ruby-identifier">payload</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">msg</span>
+                        <span class="ruby-identifier">my_data</span> =  {
+                                <span class="ruby-value">:iface</span> =<span class="ruby-operator">&gt;</span> (<span class="ruby-identifier">args</span>[<span class="ruby-value">:iface</span>] <span class="ruby-operator">||</span> <span class="ruby-constant">ENV</span>[<span class="ruby-string">'IFACE'</span>] <span class="ruby-operator">||</span> <span class="ruby-constant">Pcap</span>.<span class="ruby-identifier">lookupdev</span> <span class="ruby-operator">||</span> <span class="ruby-string">&quot;lo&quot;</span>).<span class="ruby-identifier">to_s</span>,
+                                <span class="ruby-value">:pcapfile</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">args</span>[<span class="ruby-value">:pcapfile</span>] <span class="ruby-operator">||</span> <span class="ruby-string">&quot;/tmp/out.pcap&quot;</span>,
+                                <span class="ruby-value">:eth_saddr</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">pkt</span>.<span class="ruby-identifier">eth_saddr</span>,
+                                <span class="ruby-value">:eth_src</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">pkt</span>.<span class="ruby-identifier">eth_src</span>.<span class="ruby-identifier">to_s</span>,
+                                <span class="ruby-value">:ip_saddr</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">pkt</span>.<span class="ruby-identifier">ip_saddr</span>,
+                                <span class="ruby-value">:ip_src</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">pkt</span>.<span class="ruby-identifier">ip_src</span>,
+                                <span class="ruby-value">:ip_src_bin</span> =<span class="ruby-operator">&gt;</span> [<span class="ruby-identifier">pkt</span>.<span class="ruby-identifier">ip_src</span>].<span class="ruby-identifier">pack</span>(<span class="ruby-string">&quot;N&quot;</span>),
+                                <span class="ruby-value">:eth_dst</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">pkt</span>.<span class="ruby-identifier">eth_dst</span>.<span class="ruby-identifier">to_s</span>,
+                                <span class="ruby-value">:eth_daddr</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">pkt</span>.<span class="ruby-identifier">eth_daddr</span>
+                        }
+                        <span class="ruby-keyword">else</span> <span class="ruby-identifier">raise</span> <span class="ruby-constant">SecurityError</span>, 
+                                <span class="ruby-string">&quot;whoami() packet doesn't match sent data. Something fishy's going on.&quot;</span>
+                        <span class="ruby-keyword">end</span>
+                <span class="ruby-keyword">else</span>
+                        <span class="ruby-identifier">sleep</span> <span class="ruby-number">0.1</span>; <span class="ruby-identifier">timeout</span> <span class="ruby-operator">+=</span> <span class="ruby-number">0.1</span>
+                        <span class="ruby-identifier">cap</span>.<span class="ruby-identifier">save</span>
+                        <span class="ruby-identifier">pkt</span> = <span class="ruby-constant">Packet</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">cap</span>.<span class="ruby-identifier">array</span>[<span class="ruby-number">0</span>]) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">cap</span>.<span class="ruby-identifier">save</span>.<span class="ruby-identifier">zero?</span>
+                <span class="ruby-keyword">end</span>
+                <span class="ruby-identifier">raise</span> <span class="ruby-constant">SocketError</span>, <span class="ruby-string">&quot;Didn't receive the whomi() packet, can't automatically configure.&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">pkt</span>
+                <span class="ruby-identifier">cap</span> = <span class="ruby-keyword">nil</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-identifier">my_data</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                        </div>
+
+    </div>
+  </body>
+</html>    

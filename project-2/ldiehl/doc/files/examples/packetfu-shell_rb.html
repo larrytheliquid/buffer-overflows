@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>packetfu-shell.rb</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/github.css" type="text/css" media="screen" />
+<script src="../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            packetfu-shell.rb
+        </h1>
+        <ul class="files">
+            <li>examples/packetfu-shell.rb</li>
+            <li>Last modified: 2012-11-22 16:08:32 -0800</li>
+        </ul>
+    </div>
+
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<h2 id="label-Synopsis">Synopsis</h2>
+
+<p>packetfu-shell.rb is intended for IRB consumption, and providing an
+interactive interface for <a
+href="../../classes/PacketFu.html">PacketFu</a> experimentation.</p>
+
+<h2 id="label-Usage">Usage</h2>
+
+<pre>irb -r packetfu-shell.rb</pre>
+
+<p>or</p>
+
+<pre>sudo irb -r packetfu-shell.rb</pre>
+
+<p>If run as root, packet capturing/injecting is available, which includes
+access to Utils.whoami?</p>
+
+<p>Once loaded, the <a href="../../classes/PacketFu.html">PacketFu</a> module
+is mixed in, and Utils commands are aliased to the <a
+href="../../classes/PacketFu.html">PacketFu</a> module proper. Sessions
+look something like this:</p>
+
+<h2 id="label-Example">Example</h2>
+
+<pre>irb(main):001:0&gt; pkt = TCPPacket.new
+=&gt; 00 1a c5 00 00 00 00 1a c5 00 00 00 08 00 45 00   ..............E.
+00 28 62 9d 00 00 ff 06 59 33 00 00 00 00 00 00   .(b.....Y3......
+00 00 d4 fb 00 00 18 c6 32 86 00 00 00 00 50 00   ........2.....P.
+40 00 4f 9d 00 00                                 @.O...
+irb(main):002:0&gt; pkt.payload=&quot;I am totally up in your stack, twiddling your bits.&quot;
+=&gt; &quot;I am totally up in your stack, twiddling your bits.&quot;
+irb(main):003:0&gt; pkt.ip_saddr=&quot;1.2.3.4&quot;
+=&gt; &quot;1.2.3.4&quot;
+irb(main):004:0&gt; pkt.tcp_sport=13013
+=&gt; 13013
+irb(main):005:0&gt; pkt.tcp_dport=808
+=&gt; 808
+irb(main):006:0&gt; pkt.recalc
+=&gt; {&quot;eth_src&quot;=&gt;{&quot;oui&quot;=&gt;{&quot;local&quot;=&gt;0, &quot;oui&quot;=&gt;6853, &quot;b0&quot;=&gt;0, &quot;b1&quot;=&gt;0, &quot;b2&quot;=&gt;0, &quot;multicast&quot;=&gt;0, &quot;b3&quot;=&gt;0, &quot;b4&quot;=&gt;0, &quot;b5&quot;=&gt;0}, &quot;nic&quot;=&gt;{&quot;n1&quot;=&gt;0, &quot;n2&quot;=&gt;0, &quot;n3&quot;=&gt;0}}, &quot;body&quot;=&gt;{&quot;ip_tos&quot;=&gt;0, &quot;ip_src&quot;=&gt;{&quot;o1&quot;=&gt;1, &quot;o2&quot;=&gt;2, &quot;o3&quot;=&gt;3, &quot;o4&quot;=&gt;4}, &quot;body&quot;=&gt;{&quot;tcp_ecn&quot;=&gt;{&quot;c&quot;=&gt;0, &quot;n&quot;=&gt;0, &quot;e&quot;=&gt;0}, &quot;tcp_dst&quot;=&gt;808, &quot;tcp_win&quot;=&gt;16384, &quot;body&quot;=&gt;&quot;I am totally up in your stack, twiddling your bits.&quot;, &quot;tcp_flags&quot;=&gt;{&quot;fin&quot;=&gt;0, &quot;psh&quot;=&gt;0, &quot;syn&quot;=&gt;0, &quot;rst&quot;=&gt;0, &quot;ack&quot;=&gt;0, &quot;urg&quot;=&gt;0}, &quot;tcp_hlen&quot;=&gt;5, &quot;tcp_ack&quot;=&gt;0, &quot;tcp_urg&quot;=&gt;0, &quot;tcp_seq&quot;=&gt;415642246, &quot;tcp_sum&quot;=&gt;51184, &quot;tcp_reserved&quot;=&gt;0, &quot;tcp_opts&quot;=&gt;&quot;&quot;, &quot;tcp_src&quot;=&gt;13013}, &quot;ip_dst&quot;=&gt;{&quot;o1&quot;=&gt;0, &quot;o2&quot;=&gt;0, &quot;o3&quot;=&gt;0, &quot;o4&quot;=&gt;0}, &quot;ip_frag&quot;=&gt;0, &quot;ip_proto&quot;=&gt;6, &quot;ip_hl&quot;=&gt;5, &quot;ip_len&quot;=&gt;91, &quot;ip_sum&quot;=&gt;21754, &quot;ip_id&quot;=&gt;25245, &quot;ip_v&quot;=&gt;4, &quot;ip_ttl&quot;=&gt;255}, &quot;eth_proto&quot;=&gt;2048, &quot;eth_dst&quot;=&gt;{&quot;oui&quot;=&gt;{&quot;local&quot;=&gt;0, &quot;oui&quot;=&gt;6853, &quot;b0&quot;=&gt;0, &quot;b1&quot;=&gt;0, &quot;b2&quot;=&gt;0, &quot;multicast&quot;=&gt;0, &quot;b3&quot;=&gt;0, &quot;b4&quot;=&gt;0, &quot;b5&quot;=&gt;0}, &quot;nic&quot;=&gt;{&quot;n1&quot;=&gt;0, &quot;n2&quot;=&gt;0, &quot;n3&quot;=&gt;0}}}
+irb(main):007:0&gt; pkt.to_f('/tmp/tcp-example.pcap')
+=&gt; [&quot;/tmp/tcp-example.pcap&quot;, 145, 1, 1220048597, 1]
+irb(main):008:0&gt; puts pkt.inspect_hex(2)
+32 d5 03 28 7c 50 1f 01 00 00 00 00 50 00 40 00   2..(|P......P.@.
+77 eb 00 00 49 20 61 6d 20 74 6f 74 61 6c 6c 79   w...I am totally
+20 75 70 20 69 6e 20 79 6f 75 72 20 73 74 61 63    up in your stac
+6b 2c 20 74 77 69 64 64 6c 69 6e 67 20 79 6f 75   k, twiddling you
+72 20 62 69 74 73 2e                              r bits.
+=&gt; nil
+</pre>
+
+    </div>
+  
+
+
+  
+    <!-- File only: requires -->
+    <div class="sectiontitle">Required Files</div>
+    <ul>
+      
+        <li>examples</li>
+      
+        <li>packetfu</li>
+      
+    </ul>
+  
+
+
+  
+  
+
+
+  
+    <!-- Namespace -->
+    <div class="sectiontitle">Namespace</div>
+    <ul>
+      
+        <li>
+          <span class="type">MODULE</span>
+          <a href="../../classes/PacketFu.html">PacketFu</a>
+        </li>
+      
+    </ul>
+  
+
+
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+              </div>
+
+    </div>
+  </body>
+</html>

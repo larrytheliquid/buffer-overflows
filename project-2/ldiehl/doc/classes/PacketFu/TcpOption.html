@@ -1,0 +1,666 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>PacketFu::TcpOption</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/github.css" type="text/css" media="screen" />
+<script src="../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            PacketFu::TcpOption 
+            
+                <span class="parent">&lt; 
+                    
+                    Struct.new(:kind, :optlen, :value)
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../files/lib/packetfu/protos/tcp/option_rb.html">lib/packetfu/protos/tcp/option.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p><a href="TcpOption.html">TcpOption</a> is the base class for all TCP
+options. Note that <a href="../StructFu.html#method-i-len">StructFu#len</a>
+returns the size of the entire option, while TcpOption#optlen is the struct
+for the TCP Option Length field.</p>
+
+<p>Subclassed options should set the correct TcpOption#kind by redefining 
+initialize. They should also deal with various value types there by setting
+them explicitly with an accompanying <a
+href="../StructFu.html#method-i-typecast">StructFu#typecast</a> for the
+setter.</p>
+
+<p>By default, values are presumed to be strings, unless they are Numeric, in
+which case a guess is made to the width of the Numeric based on the given
+optlen.</p>
+
+<p>Note that normally, optlen is /not/ enforced for directly setting values,
+so the user is perfectly capable of setting incorrect lengths.</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+    <!-- Namespace -->
+    <div class="sectiontitle">Namespace</div>
+    <ul>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="TcpOption/ECHO.html">PacketFu::TcpOption::ECHO</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="TcpOption/ECHOREPLY.html">PacketFu::TcpOption::ECHOREPLY</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="TcpOption/EOL.html">PacketFu::TcpOption::EOL</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="TcpOption/MSS.html">PacketFu::TcpOption::MSS</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="TcpOption/NOP.html">PacketFu::TcpOption::NOP</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="TcpOption/SACK.html">PacketFu::TcpOption::SACK</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="TcpOption/SACKOK.html">PacketFu::TcpOption::SACKOK</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="TcpOption/TS.html">PacketFu::TcpOption::TS</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="TcpOption/WS.html">PacketFu::TcpOption::WS</a>
+        </li>
+      
+    </ul>
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>D</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-decode">decode</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>E</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-encode">encode</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>H</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-has_optlen-3F">has_optlen?</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-has_value-3F">has_value?</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>K</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-kind-3D">kind=</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-new">new</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>O</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-optlen-3D">optlen=</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>R</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-read">read</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-to_s">to_s</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>V</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-value-3D">value=</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+    <!-- Includes -->
+    <div class="sectiontitle">Included Modules</div>
+    <ul>
+      
+        <li>
+          
+            <a href="../StructFu.html">
+              StructFu
+            </a>
+          
+        </li>
+      
+    </ul>
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-new">
+            
+              <b>new</b>(args={})
+            
+            <a href="../../classes/PacketFu/TcpOption.html#method-c-new" name="method-c-new" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
+                
+              </p>
+              <div id="method-c-new_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/tcp/option.rb, line 20</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize</span>(<span class="ruby-identifier">args</span>={})
+        <span class="ruby-keyword">super</span>(
+                <span class="ruby-constant">Int8</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">args</span>[<span class="ruby-value">:kind</span>]),
+                <span class="ruby-constant">Int8</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">args</span>[<span class="ruby-value">:optlen</span>])
+        )
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">args</span>[<span class="ruby-value">:value</span>].<span class="ruby-identifier">kind_of?</span> <span class="ruby-constant">Numeric</span>
+                <span class="ruby-keyword">self</span>[<span class="ruby-value">:value</span>] = <span class="ruby-keyword">case</span> <span class="ruby-identifier">args</span>[<span class="ruby-value">:optlen</span>]
+                                                                         <span class="ruby-keyword">when</span> <span class="ruby-number">3</span>; <span class="ruby-constant">Int8</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">args</span>[<span class="ruby-value">:value</span>])
+                                                                         <span class="ruby-keyword">when</span> <span class="ruby-number">4</span>; <span class="ruby-constant">Int16</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">args</span>[<span class="ruby-value">:value</span>])
+                                                                         <span class="ruby-keyword">when</span> <span class="ruby-number">6</span>; <span class="ruby-constant">Int32</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">args</span>[<span class="ruby-value">:value</span>])
+                                                                         <span class="ruby-keyword">else</span>; <span class="ruby-constant">StructFu</span><span class="ruby-operator">::</span><span class="ruby-constant">String</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">read</span>(<span class="ruby-identifier">args</span>[<span class="ruby-value">:value</span>])
+                                                                         <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">else</span>
+                <span class="ruby-keyword">self</span>[<span class="ruby-value">:value</span>] = <span class="ruby-constant">StructFu</span><span class="ruby-operator">::</span><span class="ruby-constant">String</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">read</span>(<span class="ruby-identifier">args</span>[<span class="ruby-value">:value</span>])
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-decode">
+            
+              <b>decode</b>()
+            
+            <a href="../../classes/PacketFu/TcpOption.html#method-i-decode" name="method-i-decode" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>The default decode for an unknown option. Known options should redefine
+this.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-decode_source')" id="l_method-i-decode_source">show</a>
+                
+              </p>
+              <div id="method-i-decode_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/tcp/option.rb, line 59</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">decode</span>
+        <span class="ruby-identifier">unk</span> = <span class="ruby-node">&quot;unk-#{self.kind.to_i}&quot;</span>
+        (<span class="ruby-keyword">self</span>[<span class="ruby-value">:optlen</span>].<span class="ruby-identifier">to_i</span> <span class="ruby-operator">&gt;</span> <span class="ruby-number">2</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-keyword">self</span>[<span class="ruby-value">:value</span>].<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">&gt;</span> <span class="ruby-number">1</span>) <span class="ruby-operator">?</span> [<span class="ruby-identifier">unk</span>,<span class="ruby-keyword">self</span>[<span class="ruby-value">:value</span>]].<span class="ruby-identifier">join</span>(<span class="ruby-string">&quot;:&quot;</span>) <span class="ruby-operator">:</span> <span class="ruby-identifier">unk</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-encode">
+            
+              <b>encode</b>(str)
+            
+            <a href="../../classes/PacketFu/TcpOption.html#method-i-encode" name="method-i-encode" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Generally, encoding a value is going to be just a read. Some options will
+treat things a little differently; <a href="TcpOption/TS.html">TS</a> for
+example, takes two values and concatenates them.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-encode_source')" id="l_method-i-encode_source">show</a>
+                
+              </p>
+              <div id="method-i-encode_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/tcp/option.rb, line 83</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">encode</span>(<span class="ruby-identifier">str</span>)
+        <span class="ruby-keyword">self</span>[<span class="ruby-value">:value</span>] = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:value</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">str</span>).<span class="ruby-identifier">value</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-has_optlen-3F">
+            
+              <b>has_optlen?</b>()
+            
+            <a href="../../classes/PacketFu/TcpOption.html#method-i-has_optlen-3F" name="method-i-has_optlen-3F" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns true if this option has an optlen. Some don’t.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-has_optlen-3F_source')" id="l_method-i-has_optlen-3F_source">show</a>
+                
+              </p>
+              <div id="method-i-has_optlen-3F_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/tcp/option.rb, line 88</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">has_optlen?</span>
+        (<span class="ruby-identifier">kind</span>.<span class="ruby-identifier">value</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">kind</span>.<span class="ruby-identifier">value</span> <span class="ruby-operator">&lt;</span> <span class="ruby-number">2</span>) <span class="ruby-operator">?</span> <span class="ruby-keyword">false</span> <span class="ruby-operator">:</span> <span class="ruby-keyword">true</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-has_value-3F">
+            
+              <b>has_value?</b>()
+            
+            <a href="../../classes/PacketFu/TcpOption.html#method-i-has_value-3F" name="method-i-has_value-3F" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns true if this option has a value. Some don’t.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-has_value-3F_source')" id="l_method-i-has_value-3F_source">show</a>
+                
+              </p>
+              <div id="method-i-has_value-3F_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/tcp/option.rb, line 93</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">has_value?</span>
+        (<span class="ruby-identifier">value</span>.<span class="ruby-identifier">respond_to?</span> <span class="ruby-value">:to_s</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">&gt;</span> <span class="ruby-number">0</span>) <span class="ruby-operator">?</span> <span class="ruby-keyword">false</span> <span class="ruby-operator">:</span> <span class="ruby-keyword">true</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-kind-3D">
+            
+              <b>kind=</b>(i)
+            
+            <a href="../../classes/PacketFu/TcpOption.html#method-i-kind-3D" name="method-i-kind-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Setter for the “kind” byte of this option.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-kind-3D_source')" id="l_method-i-kind-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-kind-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/tcp/option.rb, line 65</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">kind=</span>(<span class="ruby-identifier">i</span>); <span class="ruby-identifier">typecast</span> <span class="ruby-identifier">i</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-optlen-3D">
+            
+              <b>optlen=</b>(i)
+            
+            <a href="../../classes/PacketFu/TcpOption.html#method-i-optlen-3D" name="method-i-optlen-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Setter for the “option length” byte for this option.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-optlen-3D_source')" id="l_method-i-optlen-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-optlen-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/tcp/option.rb, line 67</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">optlen=</span>(<span class="ruby-identifier">i</span>); <span class="ruby-identifier">typecast</span> <span class="ruby-identifier">i</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-read">
+            
+              <b>read</b>(str)
+            
+            <a href="../../classes/PacketFu/TcpOption.html#method-i-read" name="method-i-read" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Reads a string to populate the object.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-read_source')" id="l_method-i-read_source">show</a>
+                
+              </p>
+              <div id="method-i-read_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/tcp/option.rb, line 45</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">read</span>(<span class="ruby-identifier">str</span>)
+        <span class="ruby-identifier">force_binary</span>(<span class="ruby-identifier">str</span>)
+        <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">str</span>.<span class="ruby-identifier">nil?</span>
+        <span class="ruby-keyword">self</span>[<span class="ruby-value">:kind</span>].<span class="ruby-identifier">read</span>(<span class="ruby-identifier">str</span>[<span class="ruby-number">0</span>,<span class="ruby-number">1</span>])
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">str</span>[<span class="ruby-number">1</span>,<span class="ruby-number">1</span>]
+                <span class="ruby-keyword">self</span>[<span class="ruby-value">:optlen</span>].<span class="ruby-identifier">read</span>(<span class="ruby-identifier">str</span>[<span class="ruby-number">1</span>,<span class="ruby-number">1</span>])
+                <span class="ruby-keyword">if</span> <span class="ruby-identifier">str</span>[<span class="ruby-number">2</span>,<span class="ruby-number">1</span>] <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">optlen</span>.<span class="ruby-identifier">value</span> <span class="ruby-operator">&gt;</span> <span class="ruby-number">2</span>
+                        <span class="ruby-keyword">self</span>[<span class="ruby-value">:value</span>].<span class="ruby-identifier">read</span>(<span class="ruby-identifier">str</span>[<span class="ruby-number">2</span>,<span class="ruby-identifier">optlen</span>.<span class="ruby-identifier">value</span><span class="ruby-operator">-</span><span class="ruby-number">2</span>])
+                <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-to_s">
+            
+              <b>to_s</b>()
+            
+            <a href="../../classes/PacketFu/TcpOption.html#method-i-to_s" name="method-i-to_s" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns the object in string form.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-to_s_source')" id="l_method-i-to_s_source">show</a>
+                
+              </p>
+              <div id="method-i-to_s_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/tcp/option.rb, line 38</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">to_s</span>
+        <span class="ruby-keyword">self</span>[<span class="ruby-value">:kind</span>].<span class="ruby-identifier">to_s</span> <span class="ruby-operator">+</span> 
+        (<span class="ruby-keyword">self</span>[<span class="ruby-value">:optlen</span>].<span class="ruby-identifier">value</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">?</span> <span class="ruby-keyword">nil</span> <span class="ruby-operator">:</span> <span class="ruby-keyword">self</span>[<span class="ruby-value">:optlen</span>]).<span class="ruby-identifier">to_s</span> <span class="ruby-operator">+</span>
+        (<span class="ruby-keyword">self</span>[<span class="ruby-value">:value</span>].<span class="ruby-identifier">nil?</span> <span class="ruby-operator">?</span> <span class="ruby-keyword">nil</span> <span class="ruby-operator">:</span> <span class="ruby-keyword">self</span>[<span class="ruby-value">:value</span>]).<span class="ruby-identifier">to_s</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-value-3D">
+            
+              <b>value=</b>(i)
+            
+            <a href="../../classes/PacketFu/TcpOption.html#method-i-value-3D" name="method-i-value-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Setter for the value of this option.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-value-3D_source')" id="l_method-i-value-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-value-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/tcp/option.rb, line 70</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">value=</span>(<span class="ruby-identifier">i</span>)
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">i</span>.<span class="ruby-identifier">kind_of?</span> <span class="ruby-constant">Numeric</span>
+                <span class="ruby-identifier">typecast</span> <span class="ruby-identifier">i</span>
+        <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">i</span>.<span class="ruby-identifier">respond_to?</span> <span class="ruby-value">:to_s</span>
+                <span class="ruby-keyword">self</span>[<span class="ruby-value">:value</span>] = <span class="ruby-identifier">i</span>
+        <span class="ruby-keyword">else</span>
+                <span class="ruby-keyword">self</span>[<span class="ruby-value">:value</span>] = <span class="ruby-string">''</span>
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

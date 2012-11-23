@@ -1,0 +1,1213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>PacketFu::PcapFile</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/github.css" type="text/css" media="screen" />
+<script src="../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            PacketFu::PcapFile 
+            
+                <span class="parent">&lt; 
+                    
+                    Struct.new(:endian, :head, :body)
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../files/lib/packetfu/pcap_rb.html">lib/packetfu/pcap.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p><a href="PcapFile.html">PcapFile</a> is a complete libpcap file struct,
+made up of two elements, a  <a href="PcapHeader.html">PcapHeader</a> and <a
+href="PcapPackets.html">PcapPackets</a>.</p>
+
+<p>See <a
+href="http://wiki.wireshark.org/Development/LibpcapFileFormat">wiki.wireshark.org/Development/LibpcapFileFormat</a></p>
+
+<p><a href="PcapFile.html">PcapFile</a> also can behave as a singleton class,
+which is usually the better way to handle pcap files of really any size,
+since it doesn't require storing packets before handing them off to a given
+block. This is really the way to go.</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>A</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-a2f">a2f</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-a2f-21">a2f!</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-append">append</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-array_to_file">array_to_file</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-array_to_file-21">array_to_file!</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>C</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-clear">clear</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>F</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-f2a">f2a</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-file_to_array">file_to_array</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-c-file_to_array">file_to_array</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>I</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-init_fields">init_fields</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-new">new</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>R</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-read">read</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-read">read</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-read-21">read!</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-c-read_packet_bytes">read_packet_bytes</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-read_packet_bytes">read_packet_bytes</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-c-read_packets">read_packets</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-read_packets">read_packets</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-readfile">readfile</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-to_f">to_f</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-to_file">to_file</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-to_s">to_s</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>W</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-write">write</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+    <!-- Includes -->
+    <div class="sectiontitle">Included Modules</div>
+    <ul>
+      
+        <li>
+          
+            <a href="../StructFu.html">
+              StructFu
+            </a>
+          
+        </li>
+      
+    </ul>
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-file_to_array">
+            
+              <b>file_to_array</b>(fname)
+            
+            <a href="../../classes/PacketFu/PcapFile.html#method-c-file_to_array" name="method-c-file_to_array" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Takes a given file and returns an array of the packet bytes. Here  for
+backwards compatibilty.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-file_to_array_source')" id="l_method-c-file_to_array_source">show</a>
+                
+              </p>
+              <div id="method-c-file_to_array_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/pcap.rb, line 243</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">file_to_array</span>(<span class="ruby-identifier">fname</span>)
+        <span class="ruby-constant">PcapFile</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">file_to_array</span>(<span class="ruby-value">:f</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">fname</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-new">
+            
+              <b>new</b>(args={})
+            
+            <a href="../../classes/PacketFu/PcapFile.html#method-c-new" name="method-c-new" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
+                
+              </p>
+              <div id="method-c-new_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/pcap.rb, line 321</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize</span>(<span class="ruby-identifier">args</span>={})
+        <span class="ruby-identifier">init_fields</span>(<span class="ruby-identifier">args</span>)
+        <span class="ruby-ivar">@filename</span> = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">delete</span> <span class="ruby-value">:filename</span>
+        <span class="ruby-keyword">super</span>(<span class="ruby-identifier">args</span>[<span class="ruby-value">:endian</span>], <span class="ruby-identifier">args</span>[<span class="ruby-value">:head</span>], <span class="ruby-identifier">args</span>[<span class="ruby-value">:body</span>])
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-read">
+            
+              <b>read</b>(fname,&amp;block)
+            
+            <a href="../../classes/PacketFu/PcapFile.html#method-c-read" name="method-c-read" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Takes a given file name, and reads out the packets. If given a block, it
+will yield back a <a href="PcapPacket.html">PcapPacket</a> object per
+packet found.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-read_source')" id="l_method-c-read_source">show</a>
+                
+              </p>
+              <div id="method-c-read_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/pcap.rb, line 249</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">read</span>(<span class="ruby-identifier">fname</span>,&amp;<span class="ruby-identifier">block</span>) 
+        <span class="ruby-identifier">file_header</span> = <span class="ruby-constant">PcapHeader</span>.<span class="ruby-identifier">new</span>
+        <span class="ruby-identifier">pcap_packets</span> = <span class="ruby-constant">PcapPackets</span>.<span class="ruby-identifier">new</span> 
+        <span class="ruby-keyword">unless</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">readable?</span> <span class="ruby-identifier">fname</span>
+                <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;Cannot read file `#{fname}'&quot;</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">begin</span>
+        <span class="ruby-identifier">file_handle</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">fname</span>, <span class="ruby-string">&quot;rb&quot;</span>)
+        <span class="ruby-identifier">file_header</span>.<span class="ruby-identifier">read</span> <span class="ruby-identifier">file_handle</span>.<span class="ruby-identifier">read</span>(<span class="ruby-number">24</span>)
+        <span class="ruby-identifier">packet_count</span> = <span class="ruby-number">0</span>
+        <span class="ruby-identifier">pcap_packet</span> = <span class="ruby-constant">PcapPacket</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:endian</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">file_header</span>.<span class="ruby-identifier">endian</span>)
+        <span class="ruby-keyword">while</span> <span class="ruby-identifier">pcap_packet</span>.<span class="ruby-identifier">read</span> <span class="ruby-identifier">file_handle</span>.<span class="ruby-identifier">read</span>(<span class="ruby-number">16</span>) <span class="ruby-keyword">do</span>
+                <span class="ruby-identifier">len</span> = <span class="ruby-identifier">pcap_packet</span>.<span class="ruby-identifier">incl_len</span>
+                <span class="ruby-identifier">pcap_packet</span>.<span class="ruby-identifier">data</span> = <span class="ruby-constant">StructFu</span><span class="ruby-operator">::</span><span class="ruby-constant">String</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">read</span>(<span class="ruby-identifier">file_handle</span>.<span class="ruby-identifier">read</span>(<span class="ruby-identifier">len</span>.<span class="ruby-identifier">to_i</span>))
+                <span class="ruby-identifier">packet_count</span> <span class="ruby-operator">+=</span> <span class="ruby-number">1</span>
+                <span class="ruby-keyword">if</span> <span class="ruby-identifier">pcap_packet</span>.<span class="ruby-identifier">data</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">len</span>.<span class="ruby-identifier">to_i</span>
+                        <span class="ruby-identifier">warn</span> <span class="ruby-node">&quot;Packet ##{packet_count} is corrupted: expected #{len.to_i}, got #{pcap_packet.data.size}. Exiting.&quot;</span>
+                        <span class="ruby-keyword">break</span>
+                <span class="ruby-keyword">end</span>
+                <span class="ruby-keyword">if</span> <span class="ruby-identifier">block</span>
+                        <span class="ruby-keyword">yield</span> <span class="ruby-identifier">pcap_packet</span>
+                <span class="ruby-keyword">else</span>
+                        <span class="ruby-identifier">pcap_packets</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">pcap_packet</span>.<span class="ruby-identifier">clone</span>
+                <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">ensure</span>
+                <span class="ruby-identifier">file_handle</span>.<span class="ruby-identifier">close</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-identifier">block</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">packet_count</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">pcap_packets</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-read_packet_bytes">
+            
+              <b>read_packet_bytes</b>(fname,&amp;block)
+            
+            <a href="../../classes/PacketFu/PcapFile.html#method-c-read_packet_bytes" name="method-c-read_packet_bytes" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Takes a filename, and an optional block. If a block is given,  yield back
+the raw packet data from the given file. Otherwise, return an array of
+parsed packets.</p>
+            </div>
+          
+          
+          
+            <div class="aka">
+              Also aliased as: file_to_array
+            </div>
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-read_packet_bytes_source')" id="l_method-c-read_packet_bytes_source">show</a>
+                
+              </p>
+              <div id="method-c-read_packet_bytes_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/pcap.rb, line 283</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">read_packet_bytes</span>(<span class="ruby-identifier">fname</span>,&amp;<span class="ruby-identifier">block</span>)
+        <span class="ruby-identifier">count</span> = <span class="ruby-number">0</span>
+        <span class="ruby-identifier">packets</span> = [] <span class="ruby-keyword">unless</span> <span class="ruby-identifier">block</span>
+        <span class="ruby-identifier">read</span>(<span class="ruby-identifier">fname</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">packet</span><span class="ruby-operator">|</span> 
+                <span class="ruby-keyword">if</span> <span class="ruby-identifier">block</span>
+                        <span class="ruby-identifier">count</span> <span class="ruby-operator">+=</span> <span class="ruby-number">1</span>
+                        <span class="ruby-keyword">yield</span> <span class="ruby-identifier">packet</span>.<span class="ruby-identifier">data</span>.<span class="ruby-identifier">to_s</span>
+                <span class="ruby-keyword">else</span>
+                        <span class="ruby-identifier">packets</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">packet</span>.<span class="ruby-identifier">data</span>.<span class="ruby-identifier">to_s</span>
+                <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-identifier">block</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">count</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">packets</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-read_packets">
+            
+              <b>read_packets</b>(fname,&amp;block)
+            
+            <a href="../../classes/PacketFu/PcapFile.html#method-c-read_packets" name="method-c-read_packets" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Takes a filename, and an optional block. If a block is given, yield back
+parsed packets from the given file. Otherwise, return an array of parsed
+packets.</p>
+
+<p>This is a brazillian times faster than the old methods of extracting
+packets from files.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-read_packets_source')" id="l_method-c-read_packets_source">show</a>
+                
+              </p>
+              <div id="method-c-read_packets_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/pcap.rb, line 305</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">read_packets</span>(<span class="ruby-identifier">fname</span>,&amp;<span class="ruby-identifier">block</span>)
+        <span class="ruby-identifier">count</span> = <span class="ruby-number">0</span>
+        <span class="ruby-identifier">packets</span> = [] <span class="ruby-keyword">unless</span> <span class="ruby-identifier">block</span>
+        <span class="ruby-identifier">read_packet_bytes</span>(<span class="ruby-identifier">fname</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">packet</span><span class="ruby-operator">|</span> 
+                <span class="ruby-keyword">if</span> <span class="ruby-identifier">block</span>
+                        <span class="ruby-identifier">count</span> <span class="ruby-operator">+=</span> <span class="ruby-number">1</span>
+                        <span class="ruby-keyword">yield</span> <span class="ruby-constant">Packet</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">packet</span>)
+                <span class="ruby-keyword">else</span>
+                        <span class="ruby-identifier">packets</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">Packet</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">packet</span>)
+                <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-identifier">block</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">count</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">packets</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-a2f">
+            
+              <b>a2f</b>(args={})
+            
+            <a href="../../classes/PacketFu/PcapFile.html#method-i-a2f" name="method-i-a2f" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-a2f-21">
+            
+              <b>a2f!</b>(arr)
+            
+            <a href="../../classes/PacketFu/PcapFile.html#method-i-a2f-21" name="method-i-a2f-21" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-append">
+            
+              <b>append</b>(filename='out.pcap')
+            
+            <a href="../../classes/PacketFu/PcapFile.html#method-i-append" name="method-i-append" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Shorthand method for appending to a file. Can take either :file =&gt;
+‘name.pcap’ or simply ‘name.pcap’</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-append_source')" id="l_method-i-append_source">show</a>
+                
+              </p>
+              <div id="method-i-append_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/pcap.rb, line 496</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">append</span>(<span class="ruby-identifier">filename</span>=<span class="ruby-string">'out.pcap'</span>)
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">filename</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">Hash</span>)
+                <span class="ruby-identifier">f</span> = <span class="ruby-identifier">filename</span>[<span class="ruby-value">:filename</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">filename</span>[<span class="ruby-value">:file</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">filename</span>[<span class="ruby-value">:f</span>] <span class="ruby-operator">||</span> <span class="ruby-string">'out.pcap'</span>
+        <span class="ruby-keyword">else</span>
+                <span class="ruby-identifier">f</span> = <span class="ruby-identifier">filename</span>.<span class="ruby-identifier">to_s</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">self</span>.<span class="ruby-identifier">to_file</span>(<span class="ruby-value">:filename</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">f</span>, <span class="ruby-value">:append</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-array_to_file">
+            
+              <b>array_to_file</b>(args={})
+            
+            <a href="../../classes/PacketFu/PcapFile.html#method-i-array_to_file" name="method-i-array_to_file" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Takes an array of packets (as generated by <a
+href="PcapFile.html#method-c-file_to_array">::file_to_array</a>), and
+writes them to a file. Valid arguments are:</p>
+
+<pre class="ruby">:<span class="ruby-identifier">filename</span>
+:<span class="ruby-identifier">array</span>      <span class="ruby-comment"># Can either be an array of packet data, or a hash-value pair of timestamp =&gt; data.</span>
+:<span class="ruby-identifier">timestamp</span>  <span class="ruby-comment"># Sets an initial timestamp</span>
+:<span class="ruby-identifier">ts_inc</span>     <span class="ruby-comment"># Sets the increment between timestamps. Defaults to 1 second.</span>
+:<span class="ruby-identifier">append</span>     <span class="ruby-comment"># If true, then the packets are appended to the end of a file.</span>
+</pre>
+            </div>
+          
+          
+          
+            <div class="aka">
+              Also aliased as: <a href="PcapFile.html#method-i-a2f">a2f</a>
+            </div>
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-array_to_file_source')" id="l_method-i-array_to_file_source">show</a>
+                
+              </p>
+              <div id="method-i-array_to_file_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/pcap.rb, line 406</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">array_to_file</span>(<span class="ruby-identifier">args</span>={})
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">kind_of?</span> <span class="ruby-constant">Hash</span>
+                <span class="ruby-identifier">filename</span> = <span class="ruby-identifier">args</span>[<span class="ruby-value">:filename</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">args</span>[<span class="ruby-value">:file</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">args</span>[<span class="ruby-value">:f</span>]
+                <span class="ruby-identifier">arr</span> = <span class="ruby-identifier">args</span>[<span class="ruby-value">:array</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">args</span>[<span class="ruby-value">:arr</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">args</span>[<span class="ruby-value">:a</span>]
+                <span class="ruby-identifier">ts</span> = <span class="ruby-identifier">args</span>[<span class="ruby-value">:timestamp</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">args</span>[<span class="ruby-value">:ts</span>] <span class="ruby-operator">||</span> <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>.<span class="ruby-identifier">to_i</span>
+                <span class="ruby-identifier">ts_inc</span> = <span class="ruby-identifier">args</span>[<span class="ruby-value">:timestamp_increment</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">args</span>[<span class="ruby-value">:ts_inc</span>] <span class="ruby-operator">||</span> <span class="ruby-number">1</span>
+                <span class="ruby-identifier">append</span> = <span class="ruby-operator">!</span><span class="ruby-operator">!</span><span class="ruby-identifier">args</span>[<span class="ruby-value">:append</span>]
+        <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">kind_of?</span> <span class="ruby-constant">Array</span>
+                <span class="ruby-identifier">arr</span> = <span class="ruby-identifier">args</span>
+                <span class="ruby-identifier">filename</span> = <span class="ruby-identifier">append</span> = <span class="ruby-keyword">nil</span>
+        <span class="ruby-keyword">else</span>
+                <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Unknown argument. Need either a Hash or Array.&quot;</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">unless</span> <span class="ruby-identifier">arr</span>.<span class="ruby-identifier">kind_of?</span> <span class="ruby-constant">Array</span>
+                <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Need an array to read packets from&quot;</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-identifier">arr</span>.<span class="ruby-identifier">each_with_index</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">p</span>,<span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+                <span class="ruby-keyword">if</span> <span class="ruby-identifier">p</span>.<span class="ruby-identifier">kind_of?</span> <span class="ruby-constant">Hash</span> <span class="ruby-comment"># Binary timestamps are included</span>
+                        <span class="ruby-identifier">this_ts</span> = <span class="ruby-identifier">p</span>.<span class="ruby-identifier">keys</span>.<span class="ruby-identifier">first</span>
+                        <span class="ruby-identifier">this_incl_len</span> = <span class="ruby-identifier">p</span>.<span class="ruby-identifier">values</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">size</span>
+                        <span class="ruby-identifier">this_orig_len</span> = <span class="ruby-identifier">this_incl_len</span>
+                        <span class="ruby-identifier">this_data</span> = <span class="ruby-identifier">p</span>.<span class="ruby-identifier">values</span>.<span class="ruby-identifier">first</span>
+                <span class="ruby-keyword">else</span> <span class="ruby-comment"># it's an array</span>
+                        <span class="ruby-identifier">this_ts</span> = <span class="ruby-constant">Timestamp</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:endian</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">self</span>[<span class="ruby-value">:endian</span>], <span class="ruby-value">:sec</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">ts</span> <span class="ruby-operator">+</span> (<span class="ruby-identifier">ts_inc</span> * <span class="ruby-identifier">i</span>)).<span class="ruby-identifier">to_s</span>
+                        <span class="ruby-identifier">this_incl_len</span> = <span class="ruby-identifier">p</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">size</span>
+                        <span class="ruby-identifier">this_orig_len</span> = <span class="ruby-identifier">this_incl_len</span>
+                        <span class="ruby-identifier">this_data</span> = <span class="ruby-identifier">p</span>.<span class="ruby-identifier">to_s</span>
+                <span class="ruby-keyword">end</span>
+                <span class="ruby-identifier">this_pkt</span> = <span class="ruby-constant">PcapPacket</span>.<span class="ruby-identifier">new</span>({<span class="ruby-value">:endian</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">self</span>[<span class="ruby-value">:endian</span>],
+                                                                                                                  <span class="ruby-value">:timestamp</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">this_ts</span>,
+                                                                                                                        <span class="ruby-value">:incl_len</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">this_incl_len</span>,
+                                                                                                                        <span class="ruby-value">:orig_len</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">this_orig_len</span>,
+                                                                                                                        <span class="ruby-value">:data</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">this_data</span> }
+                                                                                                                 )
+                <span class="ruby-keyword">self</span>[<span class="ruby-value">:body</span>] <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">this_pkt</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">filename</span>
+                <span class="ruby-keyword">self</span>.<span class="ruby-identifier">to_f</span>(<span class="ruby-value">:filename</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">filename</span>, <span class="ruby-value">:append</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">append</span>)
+        <span class="ruby-keyword">else</span>
+                <span class="ruby-keyword">self</span>
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-array_to_file-21">
+            
+              <b>array_to_file!</b>(arr)
+            
+            <a href="../../classes/PacketFu/PcapFile.html#method-i-array_to_file-21" name="method-i-array_to_file-21" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Just like <a
+href="PcapFile.html#method-i-array_to_file">#array_to_file</a>, but clears
+any existing packets from the array first.</p>
+            </div>
+          
+          
+          
+            <div class="aka">
+              Also aliased as: <a href="PcapFile.html#method-i-a2f-21">a2f!</a>
+            </div>
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-array_to_file-21_source')" id="l_method-i-array_to_file-21_source">show</a>
+                
+              </p>
+              <div id="method-i-array_to_file-21_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/pcap.rb, line 452</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">array_to_file!</span>(<span class="ruby-identifier">arr</span>)
+        <span class="ruby-identifier">clear</span>
+        <span class="ruby-identifier">array_to_file</span>(<span class="ruby-identifier">arr</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-clear">
+            
+              <b>clear</b>()
+            
+            <a href="../../classes/PacketFu/PcapFile.html#method-i-clear" name="method-i-clear" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Clears the contents of the <a href="PcapFile.html">PcapFile</a>.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-clear_source')" id="l_method-i-clear_source">show</a>
+                
+              </p>
+              <div id="method-i-clear_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/pcap.rb, line 340</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">clear</span>
+        <span class="ruby-keyword">self</span>[<span class="ruby-value">:body</span>].<span class="ruby-identifier">clear</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-f2a">
+            
+              <b>f2a</b>(args={})
+            
+            <a href="../../classes/PacketFu/PcapFile.html#method-i-f2a" name="method-i-f2a" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-file_to_array">
+            
+              <b>file_to_array</b>(args={})
+            
+            <a href="../../classes/PacketFu/PcapFile.html#method-i-file_to_array" name="method-i-file_to_array" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p><a href="PcapFile.html#method-c-file_to_array">::file_to_array</a>()
+translates a libpcap file into an array of packets. Note that this strips
+out pcap timestamps -- if you'd like to retain timestamps and other libpcap
+file information, you will want to  use read() instead.</p>
+            </div>
+          
+          
+          
+            <div class="aka">
+              Also aliased as: <a href="PcapFile.html#method-i-f2a">f2a</a>
+            </div>
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-file_to_array_source')" id="l_method-i-file_to_array_source">show</a>
+                
+              </p>
+              <div id="method-i-file_to_array_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/pcap.rb, line 384</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">file_to_array</span>(<span class="ruby-identifier">args</span>={})
+        <span class="ruby-identifier">filename</span> = <span class="ruby-identifier">args</span>[<span class="ruby-value">:filename</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">args</span>[<span class="ruby-value">:file</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">args</span>[<span class="ruby-value">:f</span>]
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">filename</span>
+                <span class="ruby-keyword">self</span>.<span class="ruby-identifier">read!</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">filename</span>, <span class="ruby-string">&quot;rb&quot;</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span> <span class="ruby-identifier">f</span>.<span class="ruby-identifier">read</span>}
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">args</span>[<span class="ruby-value">:keep_timestamps</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">args</span>[<span class="ruby-value">:keep_ts</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">args</span>[<span class="ruby-value">:ts</span>]
+                <span class="ruby-keyword">self</span>[<span class="ruby-value">:body</span>].<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> {<span class="ruby-identifier">x</span>.<span class="ruby-identifier">timestamp</span>.<span class="ruby-identifier">to_s</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">data</span>.<span class="ruby-identifier">to_s</span>} }
+        <span class="ruby-keyword">else</span>
+                <span class="ruby-keyword">self</span>[<span class="ruby-value">:body</span>].<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">data</span>.<span class="ruby-identifier">to_s</span>}
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-init_fields">
+            
+              <b>init_fields</b>(args={})
+            
+            <a href="../../classes/PacketFu/PcapFile.html#method-i-init_fields" name="method-i-init_fields" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Called by initialize to set the initial fields.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-init_fields_source')" id="l_method-i-init_fields_source">show</a>
+                
+              </p>
+              <div id="method-i-init_fields_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/pcap.rb, line 328</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">init_fields</span>(<span class="ruby-identifier">args</span>={})
+        <span class="ruby-identifier">args</span>[<span class="ruby-value">:head</span>] = <span class="ruby-constant">PcapHeader</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:endian</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">args</span>[<span class="ruby-value">:endian</span>]).<span class="ruby-identifier">read</span>(<span class="ruby-identifier">args</span>[<span class="ruby-value">:head</span>])
+        <span class="ruby-identifier">args</span>[<span class="ruby-value">:body</span>] = <span class="ruby-constant">PcapPackets</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:endian</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">args</span>[<span class="ruby-value">:endian</span>]).<span class="ruby-identifier">read</span>(<span class="ruby-identifier">args</span>[<span class="ruby-value">:body</span>])
+        <span class="ruby-keyword">return</span> <span class="ruby-identifier">args</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-read">
+            
+              <b>read</b>(str)
+            
+            <a href="../../classes/PacketFu/PcapFile.html#method-i-read" name="method-i-read" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Reads a string to populate the object. Note that this appends new packets
+to any existing packets in the <a href="PcapFile.html">PcapFile</a>.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-read_source')" id="l_method-i-read_source">show</a>
+                
+              </p>
+              <div id="method-i-read_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/pcap.rb, line 346</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">read</span>(<span class="ruby-identifier">str</span>)
+        <span class="ruby-identifier">force_binary</span>(<span class="ruby-identifier">str</span>)
+        <span class="ruby-keyword">self</span>[<span class="ruby-value">:head</span>].<span class="ruby-identifier">read</span> <span class="ruby-identifier">str</span>[<span class="ruby-number">0</span>,<span class="ruby-number">24</span>]
+        <span class="ruby-keyword">self</span>[<span class="ruby-value">:body</span>].<span class="ruby-identifier">read</span> <span class="ruby-identifier">str</span>
+        <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-read-21">
+            
+              <b>read!</b>(str)
+            
+            <a href="../../classes/PacketFu/PcapFile.html#method-i-read-21" name="method-i-read-21" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Clears the contents of the <a href="PcapFile.html">PcapFile</a> prior to
+reading in a new string.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-read-21_source')" id="l_method-i-read-21_source">show</a>
+                
+              </p>
+              <div id="method-i-read-21_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/pcap.rb, line 354</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">read!</span>(<span class="ruby-identifier">str</span>)
+        <span class="ruby-identifier">clear</span>        
+        <span class="ruby-identifier">force_binary</span>(<span class="ruby-identifier">str</span>)
+        <span class="ruby-keyword">self</span>.<span class="ruby-identifier">read</span> <span class="ruby-identifier">str</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-read_packet_bytes">
+            
+              <b>read_packet_bytes</b>(fname=@filename,&amp;block)
+            
+            <a href="../../classes/PacketFu/PcapFile.html#method-i-read_packet_bytes" name="method-i-read_packet_bytes" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Calls the class method with this object’s @filename</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-read_packet_bytes_source')" id="l_method-i-read_packet_bytes_source">show</a>
+                
+              </p>
+              <div id="method-i-read_packet_bytes_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/pcap.rb, line 369</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">read_packet_bytes</span>(<span class="ruby-identifier">fname</span>=<span class="ruby-ivar">@filename</span>,&amp;<span class="ruby-identifier">block</span>)
+        <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Need a file&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">fname</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">read_packet_bytes</span>(<span class="ruby-identifier">fname</span>, &amp;<span class="ruby-identifier">block</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-read_packets">
+            
+              <b>read_packets</b>(fname=@filename,&amp;block)
+            
+            <a href="../../classes/PacketFu/PcapFile.html#method-i-read_packets" name="method-i-read_packets" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Calls the class method with this object’s @filename</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-read_packets_source')" id="l_method-i-read_packets_source">show</a>
+                
+              </p>
+              <div id="method-i-read_packets_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/pcap.rb, line 375</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">read_packets</span>(<span class="ruby-identifier">fname</span>=<span class="ruby-ivar">@filename</span>,&amp;<span class="ruby-identifier">block</span>)
+        <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Need a file&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">fname</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">read_packets</span>(<span class="ruby-identifier">fname</span>, &amp;<span class="ruby-identifier">block</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-readfile">
+            
+              <b>readfile</b>(file)
+            
+            <a href="../../classes/PacketFu/PcapFile.html#method-i-readfile" name="method-i-readfile" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>A shorthand method for opening a file and reading in the packets. Note that
+readfile clears any existing packets, since that seems to be the typical
+use.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-readfile_source')" id="l_method-i-readfile_source">show</a>
+                
+              </p>
+              <div id="method-i-readfile_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/pcap.rb, line 363</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">readfile</span>(<span class="ruby-identifier">file</span>)
+        <span class="ruby-identifier">fdata</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">file</span>, <span class="ruby-string">&quot;rb&quot;</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span> <span class="ruby-identifier">f</span>.<span class="ruby-identifier">read</span>}
+        <span class="ruby-keyword">self</span>.<span class="ruby-identifier">read!</span> <span class="ruby-identifier">fdata</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-to_f">
+            
+              <b>to_f</b>(args={})
+            
+            <a href="../../classes/PacketFu/PcapFile.html#method-i-to_f" name="method-i-to_f" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-to_file">
+            
+              <b>to_file</b>(args={})
+            
+            <a href="../../classes/PacketFu/PcapFile.html#method-i-to_file" name="method-i-to_file" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Writes the <a href="PcapFile.html">PcapFile</a> to a file. Takes the
+following arguments:</p>
+
+<pre>:filename # The file to write to.
+:append   # If set to true, the packets are appended to the file, rather than overwriting.</pre>
+            </div>
+          
+          
+          
+            <div class="aka">
+              Also aliased as: <a href="PcapFile.html#method-i-to_f">to_f</a>
+            </div>
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-to_file_source')" id="l_method-i-to_file_source">show</a>
+                
+              </p>
+              <div id="method-i-to_file_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/pcap.rb, line 463</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">to_file</span>(<span class="ruby-identifier">args</span>={})
+        <span class="ruby-identifier">filename</span> = <span class="ruby-identifier">args</span>[<span class="ruby-value">:filename</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">args</span>[<span class="ruby-value">:file</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">args</span>[<span class="ruby-value">:f</span>]
+        <span class="ruby-keyword">unless</span> (<span class="ruby-operator">!</span><span class="ruby-identifier">filename</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">filename</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">String</span>))
+                <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;Need a :filename for #{self.class}&quot;</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-identifier">append</span> = <span class="ruby-identifier">args</span>[<span class="ruby-value">:append</span>]
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">append</span>
+                <span class="ruby-keyword">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exists?</span> <span class="ruby-identifier">filename</span>
+                        <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">filename</span>,<span class="ruby-string">'ab'</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">file</span><span class="ruby-operator">|</span> <span class="ruby-identifier">file</span>.<span class="ruby-identifier">write</span>(<span class="ruby-keyword">self</span>.<span class="ruby-identifier">body</span>.<span class="ruby-identifier">to_s</span>)}
+                <span class="ruby-keyword">else</span>
+                        <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">filename</span>,<span class="ruby-string">'wb'</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">file</span><span class="ruby-operator">|</span> <span class="ruby-identifier">file</span>.<span class="ruby-identifier">write</span>(<span class="ruby-keyword">self</span>.<span class="ruby-identifier">to_s</span>)}
+                <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">else</span>
+                <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">filename</span>,<span class="ruby-string">'wb'</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">file</span><span class="ruby-operator">|</span> <span class="ruby-identifier">file</span>.<span class="ruby-identifier">write</span>(<span class="ruby-keyword">self</span>.<span class="ruby-identifier">to_s</span>)}
+        <span class="ruby-keyword">end</span>
+        [<span class="ruby-identifier">filename</span>, <span class="ruby-keyword">self</span>.<span class="ruby-identifier">body</span>.<span class="ruby-identifier">sz</span>, <span class="ruby-keyword">self</span>.<span class="ruby-identifier">body</span>.<span class="ruby-identifier">size</span>]
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-to_s">
+            
+              <b>to_s</b>()
+            
+            <a href="../../classes/PacketFu/PcapFile.html#method-i-to_s" name="method-i-to_s" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns the object in string form.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-to_s_source')" id="l_method-i-to_s_source">show</a>
+                
+              </p>
+              <div id="method-i-to_s_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/pcap.rb, line 335</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">to_s</span>
+        <span class="ruby-keyword">self</span>[<span class="ruby-value">:head</span>].<span class="ruby-identifier">to_s</span> <span class="ruby-operator">+</span> <span class="ruby-keyword">self</span>[<span class="ruby-value">:body</span>].<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span> <span class="ruby-identifier">p</span>.<span class="ruby-identifier">to_s</span>}.<span class="ruby-identifier">join</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-write">
+            
+              <b>write</b>(filename='out.pcap')
+            
+            <a href="../../classes/PacketFu/PcapFile.html#method-i-write" name="method-i-write" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Shorthand method for writing to a file. Can take either :file =&gt;
+‘name.pcap’ or simply ‘name.pcap’</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-write_source')" id="l_method-i-write_source">show</a>
+                
+              </p>
+              <div id="method-i-write_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/pcap.rb, line 485</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">write</span>(<span class="ruby-identifier">filename</span>=<span class="ruby-string">'out.pcap'</span>)
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">filename</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">Hash</span>)
+                <span class="ruby-identifier">f</span> = <span class="ruby-identifier">filename</span>[<span class="ruby-value">:filename</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">filename</span>[<span class="ruby-value">:file</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">filename</span>[<span class="ruby-value">:f</span>] <span class="ruby-operator">||</span> <span class="ruby-string">'out.pcap'</span>
+        <span class="ruby-keyword">else</span>
+                <span class="ruby-identifier">f</span> = <span class="ruby-identifier">filename</span>.<span class="ruby-identifier">to_s</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">self</span>.<span class="ruby-identifier">to_file</span>(<span class="ruby-value">:filename</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">f</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-value">:append</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">false</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

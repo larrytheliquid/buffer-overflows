@@ -1,0 +1,1424 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>PacketFu::IPHeaderMixin</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/github.css" type="text/css" media="screen" />
+<script src="../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Module</span> 
+            PacketFu::IPHeaderMixin 
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../files/lib/packetfu/protos/ip/mixin_rb.html">lib/packetfu/protos/ip/mixin.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>This Mixin simplifies access to the IPHeaders. Mix this in with your 
+packet interface, and it will add methods that essentially delegate to the
+‘ip_header’ method (assuming that it is a <a
+href="IPHeader.html">IPHeader</a> object)</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>I</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-ip_calc_id">ip_calc_id</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-ip_calc_len">ip_calc_len</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-ip_calc_sum">ip_calc_sum</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-ip_daddr">ip_daddr</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-ip_daddr-3D">ip_daddr=</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-ip_dst">ip_dst</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-ip_dst-3D">ip_dst=</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-ip_dst_readable">ip_dst_readable</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-ip_frag">ip_frag</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-ip_frag-3D">ip_frag=</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-ip_hl">ip_hl</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-ip_hl-3D">ip_hl=</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-ip_hlen">ip_hlen</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-ip_id">ip_id</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-ip_id-3D">ip_id=</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-ip_id_readable">ip_id_readable</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-ip_len">ip_len</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-ip_len-3D">ip_len=</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-ip_proto">ip_proto</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-ip_proto-3D">ip_proto=</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-ip_recalc">ip_recalc</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-ip_saddr">ip_saddr</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-ip_saddr-3D">ip_saddr=</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-ip_src">ip_src</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-ip_src-3D">ip_src=</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-ip_src_readable">ip_src_readable</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-ip_sum">ip_sum</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-ip_sum-3D">ip_sum=</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-ip_sum_readable">ip_sum_readable</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-ip_tos">ip_tos</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-ip_tos-3D">ip_tos=</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-ip_ttl">ip_ttl</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-ip_ttl-3D">ip_ttl=</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-ip_v">ip_v</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-ip_v-3D">ip_v=</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-ip_calc_id">
+            
+              <b>ip_calc_id</b>()
+            
+            <a href="../../classes/PacketFu/IPHeaderMixin.html#method-i-ip_calc_id" name="method-i-ip_calc_id" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-ip_calc_id_source')" id="l_method-i-ip_calc_id_source">show</a>
+                
+              </p>
+              <div id="method-i-ip_calc_id_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/ip/mixin.rb, line 7</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">ip_calc_id</span>; <span class="ruby-keyword">self</span>.<span class="ruby-identifier">ip_header</span>.<span class="ruby-identifier">ip_calc_id</span> ; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-ip_calc_len">
+            
+              <b>ip_calc_len</b>()
+            
+            <a href="../../classes/PacketFu/IPHeaderMixin.html#method-i-ip_calc_len" name="method-i-ip_calc_len" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-ip_calc_len_source')" id="l_method-i-ip_calc_len_source">show</a>
+                
+              </p>
+              <div id="method-i-ip_calc_len_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/ip/mixin.rb, line 8</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">ip_calc_len</span>; <span class="ruby-keyword">self</span>.<span class="ruby-identifier">ip_header</span>.<span class="ruby-identifier">ip_calc_len</span> ; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-ip_calc_sum">
+            
+              <b>ip_calc_sum</b>()
+            
+            <a href="../../classes/PacketFu/IPHeaderMixin.html#method-i-ip_calc_sum" name="method-i-ip_calc_sum" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-ip_calc_sum_source')" id="l_method-i-ip_calc_sum_source">show</a>
+                
+              </p>
+              <div id="method-i-ip_calc_sum_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/ip/mixin.rb, line 9</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">ip_calc_sum</span>; <span class="ruby-keyword">self</span>.<span class="ruby-identifier">ip_header</span>.<span class="ruby-identifier">ip_calc_sum</span> ; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-ip_daddr">
+            
+              <b>ip_daddr</b>()
+            
+            <a href="../../classes/PacketFu/IPHeaderMixin.html#method-i-ip_daddr" name="method-i-ip_daddr" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-ip_daddr_source')" id="l_method-i-ip_daddr_source">show</a>
+                
+              </p>
+              <div id="method-i-ip_daddr_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/ip/mixin.rb, line 10</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">ip_daddr</span>; <span class="ruby-keyword">self</span>.<span class="ruby-identifier">ip_header</span>.<span class="ruby-identifier">ip_daddr</span> ; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-ip_daddr-3D">
+            
+              <b>ip_daddr=</b>(v)
+            
+            <a href="../../classes/PacketFu/IPHeaderMixin.html#method-i-ip_daddr-3D" name="method-i-ip_daddr-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-ip_daddr-3D_source')" id="l_method-i-ip_daddr-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-ip_daddr-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/ip/mixin.rb, line 11</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">ip_daddr=</span>(<span class="ruby-identifier">v</span>); <span class="ruby-keyword">self</span>.<span class="ruby-identifier">ip_header</span>.<span class="ruby-identifier">ip_daddr</span>= <span class="ruby-identifier">v</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-ip_dst">
+            
+              <b>ip_dst</b>()
+            
+            <a href="../../classes/PacketFu/IPHeaderMixin.html#method-i-ip_dst" name="method-i-ip_dst" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-ip_dst_source')" id="l_method-i-ip_dst_source">show</a>
+                
+              </p>
+              <div id="method-i-ip_dst_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/ip/mixin.rb, line 12</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">ip_dst</span>; <span class="ruby-keyword">self</span>.<span class="ruby-identifier">ip_header</span>.<span class="ruby-identifier">ip_dst</span> ; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-ip_dst-3D">
+            
+              <b>ip_dst=</b>(v)
+            
+            <a href="../../classes/PacketFu/IPHeaderMixin.html#method-i-ip_dst-3D" name="method-i-ip_dst-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-ip_dst-3D_source')" id="l_method-i-ip_dst-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-ip_dst-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/ip/mixin.rb, line 13</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">ip_dst=</span>(<span class="ruby-identifier">v</span>); <span class="ruby-keyword">self</span>.<span class="ruby-identifier">ip_header</span>.<span class="ruby-identifier">ip_dst</span>= <span class="ruby-identifier">v</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-ip_dst_readable">
+            
+              <b>ip_dst_readable</b>()
+            
+            <a href="../../classes/PacketFu/IPHeaderMixin.html#method-i-ip_dst_readable" name="method-i-ip_dst_readable" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-ip_dst_readable_source')" id="l_method-i-ip_dst_readable_source">show</a>
+                
+              </p>
+              <div id="method-i-ip_dst_readable_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/ip/mixin.rb, line 14</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">ip_dst_readable</span>; <span class="ruby-keyword">self</span>.<span class="ruby-identifier">ip_header</span>.<span class="ruby-identifier">ip_dst_readable</span> ; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-ip_frag">
+            
+              <b>ip_frag</b>()
+            
+            <a href="../../classes/PacketFu/IPHeaderMixin.html#method-i-ip_frag" name="method-i-ip_frag" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-ip_frag_source')" id="l_method-i-ip_frag_source">show</a>
+                
+              </p>
+              <div id="method-i-ip_frag_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/ip/mixin.rb, line 15</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">ip_frag</span>; <span class="ruby-keyword">self</span>.<span class="ruby-identifier">ip_header</span>.<span class="ruby-identifier">ip_frag</span> ; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-ip_frag-3D">
+            
+              <b>ip_frag=</b>(v)
+            
+            <a href="../../classes/PacketFu/IPHeaderMixin.html#method-i-ip_frag-3D" name="method-i-ip_frag-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-ip_frag-3D_source')" id="l_method-i-ip_frag-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-ip_frag-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/ip/mixin.rb, line 16</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">ip_frag=</span>(<span class="ruby-identifier">v</span>); <span class="ruby-keyword">self</span>.<span class="ruby-identifier">ip_header</span>.<span class="ruby-identifier">ip_frag</span>= <span class="ruby-identifier">v</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-ip_hl">
+            
+              <b>ip_hl</b>()
+            
+            <a href="../../classes/PacketFu/IPHeaderMixin.html#method-i-ip_hl" name="method-i-ip_hl" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-ip_hl_source')" id="l_method-i-ip_hl_source">show</a>
+                
+              </p>
+              <div id="method-i-ip_hl_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/ip/mixin.rb, line 17</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">ip_hl</span>; <span class="ruby-keyword">self</span>.<span class="ruby-identifier">ip_header</span>.<span class="ruby-identifier">ip_hl</span> ; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-ip_hl-3D">
+            
+              <b>ip_hl=</b>(v)
+            
+            <a href="../../classes/PacketFu/IPHeaderMixin.html#method-i-ip_hl-3D" name="method-i-ip_hl-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-ip_hl-3D_source')" id="l_method-i-ip_hl-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-ip_hl-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/ip/mixin.rb, line 18</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">ip_hl=</span>(<span class="ruby-identifier">v</span>); <span class="ruby-keyword">self</span>.<span class="ruby-identifier">ip_header</span>.<span class="ruby-identifier">ip_hl</span>= <span class="ruby-identifier">v</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-ip_hlen">
+            
+              <b>ip_hlen</b>()
+            
+            <a href="../../classes/PacketFu/IPHeaderMixin.html#method-i-ip_hlen" name="method-i-ip_hlen" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-ip_hlen_source')" id="l_method-i-ip_hlen_source">show</a>
+                
+              </p>
+              <div id="method-i-ip_hlen_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/ip/mixin.rb, line 19</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">ip_hlen</span>; <span class="ruby-keyword">self</span>.<span class="ruby-identifier">ip_header</span>.<span class="ruby-identifier">ip_hlen</span> ; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-ip_id">
+            
+              <b>ip_id</b>()
+            
+            <a href="../../classes/PacketFu/IPHeaderMixin.html#method-i-ip_id" name="method-i-ip_id" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-ip_id_source')" id="l_method-i-ip_id_source">show</a>
+                
+              </p>
+              <div id="method-i-ip_id_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/ip/mixin.rb, line 20</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">ip_id</span>; <span class="ruby-keyword">self</span>.<span class="ruby-identifier">ip_header</span>.<span class="ruby-identifier">ip_id</span> ; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-ip_id-3D">
+            
+              <b>ip_id=</b>(v)
+            
+            <a href="../../classes/PacketFu/IPHeaderMixin.html#method-i-ip_id-3D" name="method-i-ip_id-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-ip_id-3D_source')" id="l_method-i-ip_id-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-ip_id-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/ip/mixin.rb, line 21</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">ip_id=</span>(<span class="ruby-identifier">v</span>); <span class="ruby-keyword">self</span>.<span class="ruby-identifier">ip_header</span>.<span class="ruby-identifier">ip_id</span>= <span class="ruby-identifier">v</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-ip_id_readable">
+            
+              <b>ip_id_readable</b>()
+            
+            <a href="../../classes/PacketFu/IPHeaderMixin.html#method-i-ip_id_readable" name="method-i-ip_id_readable" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-ip_id_readable_source')" id="l_method-i-ip_id_readable_source">show</a>
+                
+              </p>
+              <div id="method-i-ip_id_readable_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/ip/mixin.rb, line 22</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">ip_id_readable</span>; <span class="ruby-keyword">self</span>.<span class="ruby-identifier">ip_header</span>.<span class="ruby-identifier">ip_id_readable</span> ; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-ip_len">
+            
+              <b>ip_len</b>()
+            
+            <a href="../../classes/PacketFu/IPHeaderMixin.html#method-i-ip_len" name="method-i-ip_len" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-ip_len_source')" id="l_method-i-ip_len_source">show</a>
+                
+              </p>
+              <div id="method-i-ip_len_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/ip/mixin.rb, line 23</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">ip_len</span>; <span class="ruby-keyword">self</span>.<span class="ruby-identifier">ip_header</span>.<span class="ruby-identifier">ip_len</span> ; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-ip_len-3D">
+            
+              <b>ip_len=</b>(v)
+            
+            <a href="../../classes/PacketFu/IPHeaderMixin.html#method-i-ip_len-3D" name="method-i-ip_len-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-ip_len-3D_source')" id="l_method-i-ip_len-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-ip_len-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/ip/mixin.rb, line 24</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">ip_len=</span>(<span class="ruby-identifier">v</span>); <span class="ruby-keyword">self</span>.<span class="ruby-identifier">ip_header</span>.<span class="ruby-identifier">ip_len</span>= <span class="ruby-identifier">v</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-ip_proto">
+            
+              <b>ip_proto</b>()
+            
+            <a href="../../classes/PacketFu/IPHeaderMixin.html#method-i-ip_proto" name="method-i-ip_proto" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-ip_proto_source')" id="l_method-i-ip_proto_source">show</a>
+                
+              </p>
+              <div id="method-i-ip_proto_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/ip/mixin.rb, line 25</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">ip_proto</span>; <span class="ruby-keyword">self</span>.<span class="ruby-identifier">ip_header</span>.<span class="ruby-identifier">ip_proto</span> ; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-ip_proto-3D">
+            
+              <b>ip_proto=</b>(v)
+            
+            <a href="../../classes/PacketFu/IPHeaderMixin.html#method-i-ip_proto-3D" name="method-i-ip_proto-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-ip_proto-3D_source')" id="l_method-i-ip_proto-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-ip_proto-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/ip/mixin.rb, line 26</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">ip_proto=</span>(<span class="ruby-identifier">v</span>); <span class="ruby-keyword">self</span>.<span class="ruby-identifier">ip_header</span>.<span class="ruby-identifier">ip_proto</span>= <span class="ruby-identifier">v</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-ip_recalc">
+            
+              <b>ip_recalc</b>(*args)
+            
+            <a href="../../classes/PacketFu/IPHeaderMixin.html#method-i-ip_recalc" name="method-i-ip_recalc" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-ip_recalc_source')" id="l_method-i-ip_recalc_source">show</a>
+                
+              </p>
+              <div id="method-i-ip_recalc_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/ip/mixin.rb, line 27</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">ip_recalc</span>(*<span class="ruby-identifier">args</span>); <span class="ruby-keyword">self</span>.<span class="ruby-identifier">ip_header</span>.<span class="ruby-identifier">ip_recalc</span>(*<span class="ruby-identifier">args</span>) ; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-ip_saddr">
+            
+              <b>ip_saddr</b>()
+            
+            <a href="../../classes/PacketFu/IPHeaderMixin.html#method-i-ip_saddr" name="method-i-ip_saddr" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-ip_saddr_source')" id="l_method-i-ip_saddr_source">show</a>
+                
+              </p>
+              <div id="method-i-ip_saddr_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/ip/mixin.rb, line 28</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">ip_saddr</span>; <span class="ruby-keyword">self</span>.<span class="ruby-identifier">ip_header</span>.<span class="ruby-identifier">ip_saddr</span> ; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-ip_saddr-3D">
+            
+              <b>ip_saddr=</b>(v)
+            
+            <a href="../../classes/PacketFu/IPHeaderMixin.html#method-i-ip_saddr-3D" name="method-i-ip_saddr-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-ip_saddr-3D_source')" id="l_method-i-ip_saddr-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-ip_saddr-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/ip/mixin.rb, line 29</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">ip_saddr=</span>(<span class="ruby-identifier">v</span>); <span class="ruby-keyword">self</span>.<span class="ruby-identifier">ip_header</span>.<span class="ruby-identifier">ip_saddr</span>= <span class="ruby-identifier">v</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-ip_src">
+            
+              <b>ip_src</b>()
+            
+            <a href="../../classes/PacketFu/IPHeaderMixin.html#method-i-ip_src" name="method-i-ip_src" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-ip_src_source')" id="l_method-i-ip_src_source">show</a>
+                
+              </p>
+              <div id="method-i-ip_src_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/ip/mixin.rb, line 30</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">ip_src</span>; <span class="ruby-keyword">self</span>.<span class="ruby-identifier">ip_header</span>.<span class="ruby-identifier">ip_src</span> ; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-ip_src-3D">
+            
+              <b>ip_src=</b>(v)
+            
+            <a href="../../classes/PacketFu/IPHeaderMixin.html#method-i-ip_src-3D" name="method-i-ip_src-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-ip_src-3D_source')" id="l_method-i-ip_src-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-ip_src-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/ip/mixin.rb, line 31</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">ip_src=</span>(<span class="ruby-identifier">v</span>); <span class="ruby-keyword">self</span>.<span class="ruby-identifier">ip_header</span>.<span class="ruby-identifier">ip_src</span>= <span class="ruby-identifier">v</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-ip_src_readable">
+            
+              <b>ip_src_readable</b>()
+            
+            <a href="../../classes/PacketFu/IPHeaderMixin.html#method-i-ip_src_readable" name="method-i-ip_src_readable" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-ip_src_readable_source')" id="l_method-i-ip_src_readable_source">show</a>
+                
+              </p>
+              <div id="method-i-ip_src_readable_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/ip/mixin.rb, line 32</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">ip_src_readable</span>; <span class="ruby-keyword">self</span>.<span class="ruby-identifier">ip_header</span>.<span class="ruby-identifier">ip_src_readable</span> ; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-ip_sum">
+            
+              <b>ip_sum</b>()
+            
+            <a href="../../classes/PacketFu/IPHeaderMixin.html#method-i-ip_sum" name="method-i-ip_sum" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-ip_sum_source')" id="l_method-i-ip_sum_source">show</a>
+                
+              </p>
+              <div id="method-i-ip_sum_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/ip/mixin.rb, line 33</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">ip_sum</span>; <span class="ruby-keyword">self</span>.<span class="ruby-identifier">ip_header</span>.<span class="ruby-identifier">ip_sum</span> ; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-ip_sum-3D">
+            
+              <b>ip_sum=</b>(v)
+            
+            <a href="../../classes/PacketFu/IPHeaderMixin.html#method-i-ip_sum-3D" name="method-i-ip_sum-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-ip_sum-3D_source')" id="l_method-i-ip_sum-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-ip_sum-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/ip/mixin.rb, line 34</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">ip_sum=</span>(<span class="ruby-identifier">v</span>); <span class="ruby-keyword">self</span>.<span class="ruby-identifier">ip_header</span>.<span class="ruby-identifier">ip_sum</span>= <span class="ruby-identifier">v</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-ip_sum_readable">
+            
+              <b>ip_sum_readable</b>()
+            
+            <a href="../../classes/PacketFu/IPHeaderMixin.html#method-i-ip_sum_readable" name="method-i-ip_sum_readable" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-ip_sum_readable_source')" id="l_method-i-ip_sum_readable_source">show</a>
+                
+              </p>
+              <div id="method-i-ip_sum_readable_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/ip/mixin.rb, line 35</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">ip_sum_readable</span>; <span class="ruby-keyword">self</span>.<span class="ruby-identifier">ip_header</span>.<span class="ruby-identifier">ip_sum_readable</span> ; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-ip_tos">
+            
+              <b>ip_tos</b>()
+            
+            <a href="../../classes/PacketFu/IPHeaderMixin.html#method-i-ip_tos" name="method-i-ip_tos" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-ip_tos_source')" id="l_method-i-ip_tos_source">show</a>
+                
+              </p>
+              <div id="method-i-ip_tos_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/ip/mixin.rb, line 36</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">ip_tos</span>; <span class="ruby-keyword">self</span>.<span class="ruby-identifier">ip_header</span>.<span class="ruby-identifier">ip_tos</span> ; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-ip_tos-3D">
+            
+              <b>ip_tos=</b>(v)
+            
+            <a href="../../classes/PacketFu/IPHeaderMixin.html#method-i-ip_tos-3D" name="method-i-ip_tos-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-ip_tos-3D_source')" id="l_method-i-ip_tos-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-ip_tos-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/ip/mixin.rb, line 37</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">ip_tos=</span>(<span class="ruby-identifier">v</span>); <span class="ruby-keyword">self</span>.<span class="ruby-identifier">ip_header</span>.<span class="ruby-identifier">ip_tos</span>= <span class="ruby-identifier">v</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-ip_ttl">
+            
+              <b>ip_ttl</b>()
+            
+            <a href="../../classes/PacketFu/IPHeaderMixin.html#method-i-ip_ttl" name="method-i-ip_ttl" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-ip_ttl_source')" id="l_method-i-ip_ttl_source">show</a>
+                
+              </p>
+              <div id="method-i-ip_ttl_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/ip/mixin.rb, line 38</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">ip_ttl</span>; <span class="ruby-keyword">self</span>.<span class="ruby-identifier">ip_header</span>.<span class="ruby-identifier">ip_ttl</span> ; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-ip_ttl-3D">
+            
+              <b>ip_ttl=</b>(v)
+            
+            <a href="../../classes/PacketFu/IPHeaderMixin.html#method-i-ip_ttl-3D" name="method-i-ip_ttl-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-ip_ttl-3D_source')" id="l_method-i-ip_ttl-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-ip_ttl-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/ip/mixin.rb, line 39</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">ip_ttl=</span>(<span class="ruby-identifier">v</span>); <span class="ruby-keyword">self</span>.<span class="ruby-identifier">ip_header</span>.<span class="ruby-identifier">ip_ttl</span>= <span class="ruby-identifier">v</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-ip_v">
+            
+              <b>ip_v</b>()
+            
+            <a href="../../classes/PacketFu/IPHeaderMixin.html#method-i-ip_v" name="method-i-ip_v" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-ip_v_source')" id="l_method-i-ip_v_source">show</a>
+                
+              </p>
+              <div id="method-i-ip_v_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/ip/mixin.rb, line 40</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">ip_v</span>; <span class="ruby-keyword">self</span>.<span class="ruby-identifier">ip_header</span>.<span class="ruby-identifier">ip_v</span> ; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-ip_v-3D">
+            
+              <b>ip_v=</b>(v)
+            
+            <a href="../../classes/PacketFu/IPHeaderMixin.html#method-i-ip_v-3D" name="method-i-ip_v-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-ip_v-3D_source')" id="l_method-i-ip_v-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-ip_v-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/ip/mixin.rb, line 41</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">ip_v=</span>(<span class="ruby-identifier">v</span>); <span class="ruby-keyword">self</span>.<span class="ruby-identifier">ip_header</span>.<span class="ruby-identifier">ip_v</span>= <span class="ruby-identifier">v</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

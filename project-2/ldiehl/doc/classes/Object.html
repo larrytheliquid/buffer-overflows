@@ -1,0 +1,808 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Object</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            Object 
+            
+                <span class="parent">&lt; 
+                    
+                    BasicObject
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/examples/100kpackets_rb.html">examples/100kpackets.rb</a></li>
+            
+            <li><a href="../files/examples/ackscan_rb.html">examples/ackscan.rb</a></li>
+            
+            <li><a href="../files/examples/arp_rb.html">examples/arp.rb</a></li>
+            
+            <li><a href="../files/examples/arphood_rb.html">examples/arphood.rb</a></li>
+            
+            <li><a href="../files/examples/dissect_thinger_rb.html">examples/dissect_thinger.rb</a></li>
+            
+            <li><a href="../files/examples/new-simple-stats_rb.html">examples/new-simple-stats.rb</a></li>
+            
+            <li><a href="../files/examples/packetfu-shell_rb.html">examples/packetfu-shell.rb</a></li>
+            
+            <li><a href="../files/examples/simple-sniffer_rb.html">examples/simple-sniffer.rb</a></li>
+            
+            <li><a href="../files/examples/simple-stats_rb.html">examples/simple-stats.rb</a></li>
+            
+            <li><a href="../files/examples/slammer_rb.html">examples/slammer.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>A</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-arp">arp</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-arp_everyone">arp_everyone</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>B</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-banner">banner</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-build_oui_list">build_oui_list</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>C</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-count_packet_types">count_packet_types</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>D</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-do_scan">do_scan</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>G</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-gen_packets">gen_packets</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>P</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-packetfu_ascii_art">packetfu_ascii_art</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-print_results">print_results</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>R</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-rand_source_ip">rand_source_ip</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-sniff">sniff</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>U</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-usage">usage</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+    <!-- Includes -->
+    <div class="sectiontitle">Included Modules</div>
+    <ul>
+      
+        <li>
+          
+            <a href="PacketFu.html">
+              PacketFu
+            </a>
+          
+        </li>
+      
+    </ul>
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-arp">
+            
+              <b>arp</b>(target_ip)
+            
+            <a href="../classes/Object.html#method-i-arp" name="method-i-arp" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-arp_source')" id="l_method-i-arp_source">show</a>
+                
+              </p>
+              <div id="method-i-arp_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File examples/arp.rb, line 24</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">arp</span>(<span class="ruby-identifier">target_ip</span>)
+
+        <span class="ruby-identifier">arp_pkt</span> = <span class="ruby-constant">PacketFu</span><span class="ruby-operator">::</span><span class="ruby-constant">ARPPacket</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:flavor</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;Windows&quot;</span>)
+        <span class="ruby-identifier">arp_pkt</span>.<span class="ruby-identifier">eth_saddr</span> = <span class="ruby-identifier">arp_pkt</span>.<span class="ruby-identifier">arp_saddr_mac</span> = <span class="ruby-identifier">$packetfu_default</span>[<span class="ruby-value">:eth_saddr</span>]
+        <span class="ruby-identifier">arp_pkt</span>.<span class="ruby-identifier">eth_daddr</span> = <span class="ruby-string">&quot;ff:ff:ff:ff:ff:ff&quot;</span>
+        <span class="ruby-identifier">arp_pkt</span>.<span class="ruby-identifier">arp_daddr_mac</span> = <span class="ruby-string">&quot;00:00:00:00:00:00&quot;</span>
+
+        <span class="ruby-identifier">arp_pkt</span>.<span class="ruby-identifier">arp_saddr_ip</span> = <span class="ruby-identifier">$packetfu_default</span>[<span class="ruby-value">:ip_saddr</span>]
+        <span class="ruby-identifier">arp_pkt</span>.<span class="ruby-identifier">arp_daddr_ip</span> = <span class="ruby-identifier">target_ip</span> 
+
+        <span class="ruby-comment"># Stick the Capture object in its own thread.</span>
+
+        <span class="ruby-identifier">cap_thread</span> = <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">new</span> <span class="ruby-keyword">do</span>
+                <span class="ruby-identifier">cap</span> = <span class="ruby-constant">PacketFu</span><span class="ruby-operator">::</span><span class="ruby-constant">Capture</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:start</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>, 
+                                                                                                                                <span class="ruby-value">:filter</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;arp src #{target_ip} and ether dst #{arp_pkt.eth_saddr}&quot;</span>)
+                <span class="ruby-identifier">arp_pkt</span>.<span class="ruby-identifier">to_w</span> <span class="ruby-comment"># Shorthand for sending single packets to the default interface.</span>
+                <span class="ruby-identifier">target_mac</span> = <span class="ruby-keyword">nil</span>
+                <span class="ruby-keyword">while</span> <span class="ruby-identifier">target_mac</span>.<span class="ruby-identifier">nil?</span>
+                        <span class="ruby-keyword">if</span> <span class="ruby-identifier">cap</span>.<span class="ruby-identifier">save</span> <span class="ruby-operator">&gt;</span> <span class="ruby-number">0</span>
+                                <span class="ruby-identifier">arp_response</span> = <span class="ruby-constant">PacketFu</span><span class="ruby-operator">::</span><span class="ruby-constant">Packet</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">cap</span>.<span class="ruby-identifier">array</span>[<span class="ruby-number">0</span>])
+                                <span class="ruby-identifier">target_mac</span> = <span class="ruby-identifier">arp_response</span>.<span class="ruby-identifier">arp_saddr_mac</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">arp_response</span>.<span class="ruby-identifier">arp_saddr_ip</span> = <span class="ruby-identifier">target_ip</span>
+                        <span class="ruby-keyword">end</span>
+                        <span class="ruby-identifier">sleep</span> <span class="ruby-number">0.1</span> <span class="ruby-comment"># Check for a response ten times per second.</span>
+                <span class="ruby-keyword">end</span>
+                <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;#{target_ip} is-at #{target_mac}&quot;</span>
+                <span class="ruby-comment"># That's all we need.</span>
+                <span class="ruby-identifier">exit</span> <span class="ruby-number">0</span>
+        <span class="ruby-keyword">end</span>
+
+        <span class="ruby-comment"># Timeout for cap_thread</span>
+        <span class="ruby-identifier">sleep</span> <span class="ruby-number">3</span>; <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Oh noes! Couldn't get an arp out of #{target_ip}. Maybe it's not here.&quot;</span>
+        <span class="ruby-identifier">exit</span> <span class="ruby-number">1</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-arp_everyone">
+            
+              <b>arp_everyone</b>()
+            
+            <a href="../classes/Object.html#method-i-arp_everyone" name="method-i-arp_everyone" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-arp_everyone_source')" id="l_method-i-arp_everyone_source">show</a>
+                
+              </p>
+              <div id="method-i-arp_everyone_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File examples/arphood.rb, line 32</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">arp_everyone</span>
+        <span class="ruby-identifier">my_net</span> = <span class="ruby-constant">PacketFu</span><span class="ruby-operator">::</span><span class="ruby-constant">Config</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">PacketFu</span><span class="ruby-operator">::</span><span class="ruby-constant">Utils</span>.<span class="ruby-identifier">whoami?</span>(<span class="ruby-value">:iface</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'wlan0'</span>))
+        <span class="ruby-identifier">threads</span> = []
+        <span class="ruby-identifier">network</span> = <span class="ruby-string">&quot;192.168.2&quot;</span>
+        <span class="ruby-identifier">print</span> <span class="ruby-string">&quot;Arping around...&quot;</span>
+        <span class="ruby-number">253</span>.<span class="ruby-identifier">times</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+                <span class="ruby-identifier">threads</span>[<span class="ruby-identifier">i</span>] = <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">new</span> <span class="ruby-keyword">do</span>
+                        <span class="ruby-identifier">this_host</span> = <span class="ruby-identifier">network</span> <span class="ruby-operator">+</span> <span class="ruby-node">&quot;.#{i+1}&quot;</span>
+                        <span class="ruby-identifier">print</span> <span class="ruby-string">&quot;.&quot;</span> 
+                        <span class="ruby-identifier">colon_mac</span> = <span class="ruby-constant">PacketFu</span><span class="ruby-operator">::</span><span class="ruby-constant">Utils</span>.<span class="ruby-identifier">arp</span>(<span class="ruby-identifier">this_host</span>,<span class="ruby-identifier">my_net</span>.<span class="ruby-identifier">config</span>)
+                        <span class="ruby-keyword">unless</span> <span class="ruby-identifier">colon_mac</span>.<span class="ruby-identifier">nil?</span>
+                                <span class="ruby-identifier">hyphen_mac</span> = <span class="ruby-identifier">colon_mac</span>.<span class="ruby-identifier">tr</span>(<span class="ruby-string">':'</span>,<span class="ruby-string">'-'</span>).<span class="ruby-identifier">upcase</span>[<span class="ruby-number">0</span>,<span class="ruby-number">8</span>]
+                        <span class="ruby-keyword">else</span>
+                                <span class="ruby-identifier">hyphen_mac</span> = <span class="ruby-identifier">colon_mac</span> = <span class="ruby-string">&quot;NOTHERE&quot;</span>
+                        <span class="ruby-keyword">end</span>
+                        <span class="ruby-identifier">$arp_results</span> <span class="ruby-operator">&lt;&lt;</span>  <span class="ruby-string">&quot;%s : %s / %s&quot;</span> <span class="ruby-operator">%</span> [<span class="ruby-identifier">this_host</span>,<span class="ruby-identifier">colon_mac</span>,<span class="ruby-identifier">$oui_prefixes</span>[<span class="ruby-identifier">hyphen_mac</span>]]
+                <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-identifier">threads</span>.<span class="ruby-identifier">join</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-banner">
+            
+              <b>banner</b>()
+            
+            <a href="../classes/Object.html#method-i-banner" name="method-i-banner" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Displays a helpful banner.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-banner_source')" id="l_method-i-banner_source">show</a>
+                
+              </p>
+              <div id="method-i-banner_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File examples/packetfu-shell.rb, line 88</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">banner</span>
+        <span class="ruby-identifier">packetfu_ascii_art</span>
+        <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;&gt;&gt;&gt; PacketFu Shell #{PacketFu.version}.&quot;</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-constant">Process</span>.<span class="ruby-identifier">euid</span>.<span class="ruby-identifier">zero?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@pcaprub_loaded</span>
+                <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;&gt;&gt;&gt; Use $packetfu_default.config for salient networking details.&quot;</span>
+                <span class="ruby-identifier">print</span> <span class="ruby-string">&quot;IP:  %-15s Mac: %s&quot;</span> <span class="ruby-operator">%</span> [<span class="ruby-identifier">$packetfu_default</span>.<span class="ruby-identifier">ip_saddr</span>, <span class="ruby-identifier">$packetfu_default</span>.<span class="ruby-identifier">eth_saddr</span>]
+                <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;   Gateway: %s&quot;</span> <span class="ruby-operator">%</span> <span class="ruby-identifier">$packetfu_default</span>.<span class="ruby-identifier">eth_daddr</span>
+                <span class="ruby-identifier">print</span> <span class="ruby-string">&quot;Net: %-15s&quot;</span> <span class="ruby-operator">%</span> [<span class="ruby-constant">Pcap</span>.<span class="ruby-identifier">lookupnet</span>(<span class="ruby-identifier">$packetfu_default</span>.<span class="ruby-identifier">iface</span>)][<span class="ruby-number">0</span>]
+                <span class="ruby-identifier">print</span> <span class="ruby-string">&quot;  &quot;</span> * <span class="ruby-number">13</span> 
+                <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Iface:   %s&quot;</span> <span class="ruby-operator">%</span> [(<span class="ruby-identifier">$packetfu_default</span>.<span class="ruby-identifier">iface</span>)]
+                <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;&gt;&gt;&gt; Packet capturing/injecting enabled.&quot;</span>
+        <span class="ruby-keyword">else</span>
+                <span class="ruby-identifier">print</span> <span class="ruby-string">&quot;&gt;&gt;&gt; Packet capturing/injecting disabled. &quot;</span>
+                <span class="ruby-identifier">puts</span> <span class="ruby-constant">Process</span>.<span class="ruby-identifier">euid</span>.<span class="ruby-identifier">zero?</span> <span class="ruby-operator">?</span> <span class="ruby-string">&quot;(no PcapRub)&quot;</span> <span class="ruby-operator">:</span> <span class="ruby-string">&quot;(not root)&quot;</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;&lt;&gt;&quot;</span> * <span class="ruby-number">36</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-build_oui_list">
+            
+              <b>build_oui_list</b>()
+            
+            <a href="../classes/Object.html#method-i-build_oui_list" name="method-i-build_oui_list" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-build_oui_list_source')" id="l_method-i-build_oui_list_source">show</a>
+                
+              </p>
+              <div id="method-i-build_oui_list_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File examples/arphood.rb, line 11</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">build_oui_list</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-constant">ARGV</span>[<span class="ruby-number">0</span>].<span class="ruby-identifier">nil?</span>
+                <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Fetching the oui.txt from IEEE, it'll be a second. Avoid this with #{$0} &lt;filename&gt;.&quot;</span>
+        <span class="ruby-identifier">oui_file</span> = <span class="ruby-identifier">open</span>(<span class="ruby-string">&quot;http://standards.ieee.org/regauth/oui/oui.txt&quot;</span>)
+        <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">oui_file</span> =     <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-constant">ARGV</span>[<span class="ruby-number">0</span>], <span class="ruby-string">&quot;rb&quot;</span>)
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-identifier">oui_file</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">oui_line</span><span class="ruby-operator">|</span>
+                <span class="ruby-identifier">maybe_oui</span> = <span class="ruby-identifier">oui_line</span>.<span class="ruby-identifier">scan</span>(<span class="ruby-regexp">%r^[0-9a-f]{2}\-[0-9a-f]{2}\-[0-9a-f]{2}/</span>)[<span class="ruby-number">0</span>]
+                <span class="ruby-keyword">unless</span> <span class="ruby-identifier">maybe_oui</span>.<span class="ruby-identifier">nil?</span>
+                        <span class="ruby-identifier">oui_value</span> = <span class="ruby-identifier">maybe_oui</span>
+                        <span class="ruby-identifier">oui_vendor</span> = <span class="ruby-identifier">oui_line</span>.<span class="ruby-identifier">split</span>(<span class="ruby-regexp">%r\(hex\)\s*/</span>)[<span class="ruby-number">1</span>] <span class="ruby-operator">||</span> <span class="ruby-string">&quot;PRIVATE&quot;</span>
+                        <span class="ruby-identifier">$oui_prefixes</span>[<span class="ruby-identifier">oui_value</span>] = <span class="ruby-identifier">oui_vendor</span>.<span class="ruby-identifier">chomp</span>
+                <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-count_packet_types">
+            
+              <b>count_packet_types</b>(file)
+            
+            <a href="../classes/Object.html#method-i-count_packet_types" name="method-i-count_packet_types" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Takes a file name, parses the packets, and records the packet type based on
+its <a href="PacketFu.html">PacketFu</a> class.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-count_packet_types_source')" id="l_method-i-count_packet_types_source">show</a>
+                
+              </p>
+              <div id="method-i-count_packet_types_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File examples/new-simple-stats.rb, line 20</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">count_packet_types</span>(<span class="ruby-identifier">file</span>)
+        <span class="ruby-identifier">stats</span> = {}
+        <span class="ruby-identifier">count</span> = <span class="ruby-number">0</span>
+        <span class="ruby-identifier">elapsed</span> = <span class="ruby-number">0</span>
+        <span class="ruby-identifier">start_time</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>
+        <span class="ruby-constant">PacketFu</span><span class="ruby-operator">::</span><span class="ruby-constant">PcapFile</span>.<span class="ruby-identifier">read_packets</span>(<span class="ruby-identifier">file</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">pkt</span><span class="ruby-operator">|</span>
+                <span class="ruby-identifier">kind</span> = <span class="ruby-identifier">pkt</span>.<span class="ruby-identifier">proto</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">to_sym</span>
+                <span class="ruby-identifier">stats</span>[<span class="ruby-identifier">kind</span>] <span class="ruby-operator">?</span> <span class="ruby-identifier">stats</span>[<span class="ruby-identifier">kind</span>] <span class="ruby-operator">+=</span> <span class="ruby-number">1</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">stats</span>[<span class="ruby-identifier">kind</span>] = <span class="ruby-number">1</span>
+                <span class="ruby-identifier">count</span> <span class="ruby-operator">+=</span> <span class="ruby-number">1</span>
+                <span class="ruby-identifier">elapsed</span> = (<span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">start_time</span>).<span class="ruby-identifier">to_i</span>
+                <span class="ruby-keyword">if</span> <span class="ruby-identifier">count</span> <span class="ruby-operator">%</span> <span class="ruby-number">5_000</span> <span class="ruby-operator">==</span> <span class="ruby-number">0</span>
+                        <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;After #{count} packets (#{elapsed} seconds elapsed):&quot;</span>
+                        <span class="ruby-identifier">print_results</span>(<span class="ruby-identifier">stats</span>)
+                <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Final results for #{count} packets (#{elapsed} seconds elapsed):&quot;</span>
+        <span class="ruby-identifier">print_results</span>(<span class="ruby-identifier">stats</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-do_scan">
+            
+              <b>do_scan</b>()
+            
+            <a href="../classes/Object.html#method-i-do_scan" name="method-i-do_scan" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <pre>Portscanning!
+Run this on one machine</pre>
+
+<p>cap = Capture.new(:iface=&gt;‘wlan0’) # or whatever your interface is
+cap.show_live(:filter =&gt; ‘src net 209.85.165’)</p>
+
+<pre>Run this on another:</pre>
+
+<p>cap = Capture.new(:iface=&gt;‘wlan0’) # or whatever your interface is cap =
+Capture.new(:iface=&gt;‘wlan0’) # or whatever your interface is</p>
+
+<pre>Run this on the third</pre>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-do_scan_source')" id="l_method-i-do_scan_source">show</a>
+                
+              </p>
+              <div id="method-i-do_scan_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File examples/ackscan.rb, line 11</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">do_scan</span>
+        <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Generating packets...&quot;</span>
+        <span class="ruby-identifier">pkt_array</span> = <span class="ruby-identifier">gen_packets</span>.<span class="ruby-identifier">sort_by</span> {<span class="ruby-identifier">rand</span>}
+        <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Dumping them on the wire...&quot;</span>
+        <span class="ruby-identifier">inj</span> = <span class="ruby-constant">PacketFu</span><span class="ruby-operator">::</span><span class="ruby-constant">Inject</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:iface</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">ARGV</span>[<span class="ruby-number">0</span>])
+        <span class="ruby-identifier">inj</span>.<span class="ruby-identifier">array_to_wire</span>(<span class="ruby-value">:array=</span><span class="ruby-operator">&gt;</span><span class="ruby-identifier">pkt_array</span>)
+        <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Done!&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-gen_packets">
+            
+              <b>gen_packets</b>()
+            
+            <a href="../classes/Object.html#method-i-gen_packets" name="method-i-gen_packets" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-gen_packets_source')" id="l_method-i-gen_packets_source">show</a>
+                
+              </p>
+              <div id="method-i-gen_packets_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File examples/ackscan.rb, line 20</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">gen_packets</span>
+        <span class="ruby-identifier">config</span> = <span class="ruby-constant">PacketFu</span><span class="ruby-operator">::</span><span class="ruby-constant">Utils</span>.<span class="ruby-identifier">whoami?</span>(<span class="ruby-value">:iface=</span><span class="ruby-operator">&gt;</span><span class="ruby-constant">ARGV</span>[<span class="ruby-number">0</span>])
+        <span class="ruby-identifier">pkt</span> = <span class="ruby-constant">PacketFu</span><span class="ruby-operator">::</span><span class="ruby-constant">TCPPacket</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:config=</span><span class="ruby-operator">&gt;</span><span class="ruby-identifier">config</span>, <span class="ruby-value">:flavor=</span><span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;Windows&quot;</span>)
+        <span class="ruby-identifier">pkt</span>.<span class="ruby-identifier">payload</span> =<span class="ruby-string">&quot;all I wanna do is ACK ACK ACK and a RST and take your money&quot;</span>
+        <span class="ruby-identifier">pkt</span>.<span class="ruby-identifier">ip_daddr</span>=<span class="ruby-string">&quot;209.85.165.0&quot;</span>    <span class="ruby-comment"># One of Google's networks</span>
+        <span class="ruby-identifier">pkt</span>.<span class="ruby-identifier">tcp_flags</span>.<span class="ruby-identifier">ack</span>=<span class="ruby-number">1</span>
+        <span class="ruby-identifier">pkt</span>.<span class="ruby-identifier">tcp_dst</span>=<span class="ruby-number">81</span>
+        <span class="ruby-identifier">pkt_array</span> = []
+        <span class="ruby-number">256</span>.<span class="ruby-identifier">times</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+         <span class="ruby-identifier">pkt</span>.<span class="ruby-identifier">ip_dst</span>.<span class="ruby-identifier">o4</span>=<span class="ruby-identifier">i</span>
+         <span class="ruby-identifier">pkt</span>.<span class="ruby-identifier">tcp_src</span> = <span class="ruby-identifier">rand</span>(<span class="ruby-number">5000</span> <span class="ruby-operator">-</span> <span class="ruby-number">1025</span>) <span class="ruby-operator">+</span> <span class="ruby-number">1025</span>
+         <span class="ruby-identifier">pkt</span>.<span class="ruby-identifier">recalc</span>
+         <span class="ruby-identifier">pkt_array</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">pkt</span>.<span class="ruby-identifier">to_s</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-identifier">pkt_array</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-packetfu_ascii_art">
+            
+              <b>packetfu_ascii_art</b>()
+            
+            <a href="../classes/Object.html#method-i-packetfu_ascii_art" name="method-i-packetfu_ascii_art" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Draws a picture. Includes a nunchuck, so you know that it’s serious. I
+/think/ this is how you’re supposed to spell it in a kana charset. <a
+href="http://jisho.org/words?jap=+%E3%83%91%E3%82%B1%E3%83%83%E3%83%88%E3%83%95&eng=&dict=edict">jisho.org/words?jap=+%E3%83%91%E3%82%B1%E3%83%83%E3%83%88%E3%83%95&eng=&dict=edict</a></p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-packetfu_ascii_art_source')" id="l_method-i-packetfu_ascii_art_source">show</a>
+                
+              </p>
+              <div id="method-i-packetfu_ascii_art_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File examples/packetfu-shell.rb, line 65</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">packetfu_ascii_art</span>
+        <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot; _______  _______  _______  _        _______ _________ _______          
+(  ____ )(  ___  )(  ____ \\| \\    /\\(  ____ \\\\__   __/(  ____ \\|\\     /|
+| (    )|| (   ) || (    \\/|  \\  / /| (    \\/   ) (   | (    \\/| )   ( |
+| (____)|| (___) || |      |  (_/ / | (__       | |   | (__    | |   | |
+|  _____)|  ___  || |      |   _ (  |  __)      | |   |  __)   | |   | |
+| (      | (   ) || |      |  ( \\ \\ | (         | |   | (      | |   | |
+| )      | )   ( || (____/\\|  /  \\ \\| (____/\\   | |   | )      | (___) |
+|/       |/     \\|(_______/|_/    \\/(_______/   )_(   |/       (_______)
+ ____________________________              ____________________________
+(                            )            (                            )
+| 01000001 00101101 01001000 )( )( )( )( )( 00101101 01000001 00100001 |
+|                            )( )( )( )( )(                            |
+(____________________________)            (____________________________)
+                               PacketFu
+             a mid-level packet manipulation library for ruby
+
+&quot;</span>
+        <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-print_results">
+            
+              <b>print_results</b>(stats)
+            
+            <a href="../classes/Object.html#method-i-print_results" name="method-i-print_results" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-print_results_source')" id="l_method-i-print_results_source">show</a>
+                
+              </p>
+              <div id="method-i-print_results_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File examples/new-simple-stats.rb, line 14</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">print_results</span>(<span class="ruby-identifier">stats</span>)
+        <span class="ruby-identifier">stats</span>.<span class="ruby-identifier">each_pair</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>,<span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;%-12s: %10d&quot;</span> <span class="ruby-operator">%</span> [<span class="ruby-identifier">k</span>,<span class="ruby-identifier">v</span>] }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-rand_source_ip">
+            
+              <b>rand_source_ip</b>()
+            
+            <a href="../classes/Object.html#method-i-rand_source_ip" name="method-i-rand_source_ip" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-rand_source_ip_source')" id="l_method-i-rand_source_ip_source">show</a>
+                
+              </p>
+              <div id="method-i-rand_source_ip_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File examples/slammer.rb, line 15</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">rand_source_ip</span>
+        [<span class="ruby-identifier">rand</span>(<span class="ruby-number">0xffffffff</span>)].<span class="ruby-identifier">pack</span>(<span class="ruby-string">&quot;N&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-sniff">
+            
+              <b>sniff</b>(iface)
+            
+            <a href="../classes/Object.html#method-i-sniff" name="method-i-sniff" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-sniff_source')" id="l_method-i-sniff_source">show</a>
+                
+              </p>
+              <div id="method-i-sniff_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File examples/simple-sniffer.rb, line 9</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">sniff</span>(<span class="ruby-identifier">iface</span>)
+        <span class="ruby-identifier">cap</span> = <span class="ruby-constant">Capture</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:iface</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">iface</span>, <span class="ruby-value">:start</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>)
+        <span class="ruby-identifier">cap</span>.<span class="ruby-identifier">stream</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span>
+                <span class="ruby-identifier">pkt</span> = <span class="ruby-constant">Packet</span>.<span class="ruby-identifier">parse</span> <span class="ruby-identifier">p</span>
+                <span class="ruby-keyword">if</span> <span class="ruby-identifier">pkt</span>.<span class="ruby-identifier">is_ip?</span>
+                        <span class="ruby-keyword">next</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">pkt</span>.<span class="ruby-identifier">ip_saddr</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Utils</span>.<span class="ruby-identifier">ifconfig</span>[<span class="ruby-value">:ip_saddr</span>]
+                        <span class="ruby-identifier">packet_info</span> = [<span class="ruby-identifier">pkt</span>.<span class="ruby-identifier">ip_saddr</span>, <span class="ruby-identifier">pkt</span>.<span class="ruby-identifier">ip_daddr</span>, <span class="ruby-identifier">pkt</span>.<span class="ruby-identifier">size</span>, <span class="ruby-identifier">pkt</span>.<span class="ruby-identifier">proto</span>.<span class="ruby-identifier">last</span>]
+                        <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;%-15s -&gt; %-15s %-4d %s&quot;</span> <span class="ruby-operator">%</span> <span class="ruby-identifier">packet_info</span>
+                <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-usage">
+            
+              <b>usage</b>()
+            
+            <a href="../classes/Object.html#method-i-usage" name="method-i-usage" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-usage_source')" id="l_method-i-usage_source">show</a>
+                
+              </p>
+              <div id="method-i-usage_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File examples/arp.rb, line 10</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">usage</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-constant">ARGV</span>[<span class="ruby-number">0</span>].<span class="ruby-identifier">nil?</span>
+                <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;You need an IP address to start with.&quot;</span>
+        <span class="ruby-keyword">elsif</span> <span class="ruby-operator">!</span><span class="ruby-constant">Process</span>.<span class="ruby-identifier">euid</span>.<span class="ruby-identifier">zero?</span>
+                <span class="ruby-identifier">raise</span> <span class="ruby-constant">SecurityError</span>, <span class="ruby-string">&quot;You need to be root to run this.&quot;</span>
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

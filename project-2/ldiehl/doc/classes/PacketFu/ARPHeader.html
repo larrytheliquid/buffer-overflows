@@ -1,0 +1,1460 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>PacketFu::ARPHeader</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/github.css" type="text/css" media="screen" />
+<script src="../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            PacketFu::ARPHeader 
+            
+                <span class="parent">&lt; 
+                    
+                    Struct.new(:arp_hw, :arp_proto, :arp_hw_len,                                                                                                                          :arp_proto_len, :arp_opcode,                                                                                                                          :arp_src_mac, :arp_src_ip,                                                                                                                          :arp_dst_mac, :arp_dst_ip,                                                                                                                          :body)
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../files/lib/packetfu/protos/arp/header_rb.html">lib/packetfu/protos/arp/header.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p><a href="ARPHeader.html">ARPHeader</a> is a complete ARP struct, used in <a
+href="ARPPacket.html">ARPPacket</a>.</p>
+
+<p>ARP is used to discover the machine address of nearby devices.</p>
+
+<p>See <a
+href="http://www.networksorcery.com/enp/protocol/arp.htm">www.networksorcery.com/enp/protocol/arp.htm</a>
+for details.</p>
+
+<h4 id="label-Header+Definition">Header Definition</h4>
+
+<pre>Int16   :arp_hw          Default: 1       # Ethernet
+Int16   :arp_proto,      Default: 0x8000  # IP
+Int8    :arp_hw_len,     Default: 6
+Int8    :arp_proto_len,  Default: 4
+Int16   :arp_opcode,     Default: 1       # 1: Request, 2: Reply, 3: Request-Reverse, 4: Reply-Reverse
+EthMac  :arp_src_mac                      # From eth.rb
+Octets  :arp_src_ip                       # From ip.rb
+EthMac  :arp_dst_mac                      # From eth.rb
+Octets  :arp_dst_ip                       # From ip.rb
+String  :body</pre>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>A</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-arp_daddr_ip">arp_daddr_ip</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-arp_daddr_ip-3D">arp_daddr_ip=</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-arp_daddr_mac">arp_daddr_mac</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-arp_daddr_mac-3D">arp_daddr_mac=</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-arp_dst_ip">arp_dst_ip</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-arp_dst_ip-3D">arp_dst_ip=</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-arp_dst_ip_readable">arp_dst_ip_readable</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-arp_dst_mac">arp_dst_mac</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-arp_dst_mac-3D">arp_dst_mac=</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-arp_dst_mac_readable">arp_dst_mac_readable</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-arp_hw">arp_hw</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-arp_hw-3D">arp_hw=</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-arp_hw_len">arp_hw_len</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-arp_hw_len-3D">arp_hw_len=</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-arp_opcode">arp_opcode</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-arp_opcode-3D">arp_opcode=</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-arp_proto">arp_proto</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-arp_proto-3D">arp_proto=</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-arp_proto_len">arp_proto_len</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-arp_proto_len-3D">arp_proto_len=</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-arp_proto_readable">arp_proto_readable</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-arp_saddr_ip">arp_saddr_ip</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-arp_saddr_ip-3D">arp_saddr_ip=</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-arp_saddr_mac">arp_saddr_mac</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-arp_saddr_mac-3D">arp_saddr_mac=</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-arp_src_ip">arp_src_ip</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-arp_src_ip-3D">arp_src_ip=</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-arp_src_ip_readable">arp_src_ip_readable</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-arp_src_mac">arp_src_mac</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-arp_src_mac-3D">arp_src_mac=</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-arp_src_mac_readable">arp_src_mac_readable</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-new">new</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>R</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-read">read</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-to_s">to_s</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+    <!-- Includes -->
+    <div class="sectiontitle">Included Modules</div>
+    <ul>
+      
+        <li>
+          
+            <a href="../StructFu.html">
+              StructFu
+            </a>
+          
+        </li>
+      
+    </ul>
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-new">
+            
+              <b>new</b>(args={})
+            
+            <a href="../../classes/PacketFu/ARPHeader.html#method-c-new" name="method-c-new" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
+                
+              </p>
+              <div id="method-c-new_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/arp/header.rb, line 27</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize</span>(<span class="ruby-identifier">args</span>={})
+        <span class="ruby-identifier">src_mac</span> = <span class="ruby-identifier">args</span>[<span class="ruby-value">:arp_src_mac</span>] <span class="ruby-operator">||</span> (<span class="ruby-identifier">args</span>[<span class="ruby-value">:config</span>][<span class="ruby-value">:eth_src</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">args</span>[<span class="ruby-value">:config</span>])
+        <span class="ruby-identifier">src_ip_bin</span> = <span class="ruby-identifier">args</span>[<span class="ruby-value">:arp_src_ip</span>]   <span class="ruby-operator">||</span> (<span class="ruby-identifier">args</span>[<span class="ruby-value">:config</span>][<span class="ruby-value">:ip_src_bin</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">args</span>[<span class="ruby-value">:config</span>])
+
+        <span class="ruby-keyword">super</span>( 
+                <span class="ruby-constant">Int16</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">args</span>[<span class="ruby-value">:arp_hw</span>] <span class="ruby-operator">||</span> <span class="ruby-number">1</span>), 
+                <span class="ruby-constant">Int16</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">args</span>[<span class="ruby-value">:arp_proto</span>] <span class="ruby-operator">||</span><span class="ruby-number">0x0800</span>),
+                <span class="ruby-constant">Int8</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">args</span>[<span class="ruby-value">:arp_hw_len</span>] <span class="ruby-operator">||</span> <span class="ruby-number">6</span>), 
+                <span class="ruby-constant">Int8</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">args</span>[<span class="ruby-value">:arp_proto_len</span>] <span class="ruby-operator">||</span> <span class="ruby-number">4</span>), 
+                <span class="ruby-constant">Int16</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">args</span>[<span class="ruby-value">:arp_opcode</span>] <span class="ruby-operator">||</span> <span class="ruby-number">1</span>),
+                <span class="ruby-constant">EthMac</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">read</span>(<span class="ruby-identifier">src_mac</span>),
+                <span class="ruby-constant">Octets</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">read</span>(<span class="ruby-identifier">src_ip_bin</span>),
+                <span class="ruby-constant">EthMac</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">read</span>(<span class="ruby-identifier">args</span>[<span class="ruby-value">:arp_dst_mac</span>]),
+                <span class="ruby-constant">Octets</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">read</span>(<span class="ruby-identifier">args</span>[<span class="ruby-value">:arp_dst_ip</span>]),
+                <span class="ruby-constant">StructFu</span><span class="ruby-operator">::</span><span class="ruby-constant">String</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">read</span>(<span class="ruby-identifier">args</span>[<span class="ruby-value">:body</span>])
+        )
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-arp_daddr_ip">
+            
+              <b>arp_daddr_ip</b>()
+            
+            <a href="../../classes/PacketFu/ARPHeader.html#method-i-arp_daddr_ip" name="method-i-arp_daddr_ip" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Get a more readable destination IP address.</p>
+            </div>
+          
+          
+          
+            <div class="aka">
+              Also aliased as: <a href="ARPHeader.html#method-i-arp_dst_ip_readable">arp_dst_ip_readable</a>
+            </div>
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-arp_daddr_ip_source')" id="l_method-i-arp_daddr_ip_source">show</a>
+                
+              </p>
+              <div id="method-i-arp_daddr_ip_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/arp/header.rb, line 144</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">arp_daddr_ip</span>
+        <span class="ruby-keyword">self</span>[<span class="ruby-value">:arp_dst_ip</span>].<span class="ruby-identifier">to_x</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-arp_daddr_ip-3D">
+            
+              <b>arp_daddr_ip=</b>(addr)
+            
+            <a href="../../classes/PacketFu/ARPHeader.html#method-i-arp_daddr_ip-3D" name="method-i-arp_daddr_ip-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Set a more readable destination IP address.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-arp_daddr_ip-3D_source')" id="l_method-i-arp_daddr_ip-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-arp_daddr_ip-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/arp/header.rb, line 139</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">arp_daddr_ip=</span>(<span class="ruby-identifier">addr</span>)
+        <span class="ruby-keyword">self</span>[<span class="ruby-value">:arp_dst_ip</span>].<span class="ruby-identifier">read_quad</span>(<span class="ruby-identifier">addr</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-arp_daddr_mac">
+            
+              <b>arp_daddr_mac</b>()
+            
+            <a href="../../classes/PacketFu/ARPHeader.html#method-i-arp_daddr_mac" name="method-i-arp_daddr_mac" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Get a more readable source MAC address.</p>
+            </div>
+          
+          
+          
+            <div class="aka">
+              Also aliased as: <a href="ARPHeader.html#method-i-arp_dst_mac_readable">arp_dst_mac_readable</a>
+            </div>
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-arp_daddr_mac_source')" id="l_method-i-arp_daddr_mac_source">show</a>
+                
+              </p>
+              <div id="method-i-arp_daddr_mac_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/arp/header.rb, line 124</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">arp_daddr_mac</span>
+        <span class="ruby-constant">EthHeader</span>.<span class="ruby-identifier">str2mac</span>(<span class="ruby-keyword">self</span>[<span class="ruby-value">:arp_dst_mac</span>].<span class="ruby-identifier">to_s</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-arp_daddr_mac-3D">
+            
+              <b>arp_daddr_mac=</b>(mac)
+            
+            <a href="../../classes/PacketFu/ARPHeader.html#method-i-arp_daddr_mac-3D" name="method-i-arp_daddr_mac-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Set the destination MAC address in a more readable way.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-arp_daddr_mac-3D_source')" id="l_method-i-arp_daddr_mac-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-arp_daddr_mac-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/arp/header.rb, line 117</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">arp_daddr_mac=</span>(<span class="ruby-identifier">mac</span>)
+        <span class="ruby-identifier">mac</span> = <span class="ruby-constant">EthHeader</span>.<span class="ruby-identifier">mac2str</span>(<span class="ruby-identifier">mac</span>)
+        <span class="ruby-keyword">self</span>[<span class="ruby-value">:arp_dst_mac</span>].<span class="ruby-identifier">read</span>(<span class="ruby-identifier">mac</span>)
+        <span class="ruby-keyword">self</span>.<span class="ruby-identifier">arp_dst_mac</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-arp_dst_ip">
+            
+              <b>arp_dst_ip</b>()
+            
+            <a href="../../classes/PacketFu/ARPHeader.html#method-i-arp_dst_ip" name="method-i-arp_dst_ip" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Getter for the ARP destination IP address.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-arp_dst_ip_source')" id="l_method-i-arp_dst_ip_source">show</a>
+                
+              </p>
+              <div id="method-i-arp_dst_ip_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/arp/header.rb, line 102</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">arp_dst_ip</span>; <span class="ruby-keyword">self</span>[<span class="ruby-value">:arp_dst_ip</span>].<span class="ruby-identifier">to_s</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-arp_dst_ip-3D">
+            
+              <b>arp_dst_ip=</b>(i)
+            
+            <a href="../../classes/PacketFu/ARPHeader.html#method-i-arp_dst_ip-3D" name="method-i-arp_dst_ip-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Setter for the ARP destination IP address.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-arp_dst_ip-3D_source')" id="l_method-i-arp_dst_ip-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-arp_dst_ip-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/arp/header.rb, line 100</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">arp_dst_ip=</span>(<span class="ruby-identifier">i</span>); <span class="ruby-identifier">typecast</span> <span class="ruby-identifier">i</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-arp_dst_ip_readable">
+            
+              <b>arp_dst_ip_readable</b>()
+            
+            <a href="../../classes/PacketFu/ARPHeader.html#method-i-arp_dst_ip_readable" name="method-i-arp_dst_ip_readable" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-arp_dst_mac">
+            
+              <b>arp_dst_mac</b>()
+            
+            <a href="../../classes/PacketFu/ARPHeader.html#method-i-arp_dst_mac" name="method-i-arp_dst_mac" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Setter for the ARP destination MAC address.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-arp_dst_mac_source')" id="l_method-i-arp_dst_mac_source">show</a>
+                
+              </p>
+              <div id="method-i-arp_dst_mac_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/arp/header.rb, line 98</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">arp_dst_mac</span>; <span class="ruby-keyword">self</span>[<span class="ruby-value">:arp_dst_mac</span>].<span class="ruby-identifier">to_s</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-arp_dst_mac-3D">
+            
+              <b>arp_dst_mac=</b>(i)
+            
+            <a href="../../classes/PacketFu/ARPHeader.html#method-i-arp_dst_mac-3D" name="method-i-arp_dst_mac-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Setter for the ARP destination MAC address.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-arp_dst_mac-3D_source')" id="l_method-i-arp_dst_mac-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-arp_dst_mac-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/arp/header.rb, line 96</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">arp_dst_mac=</span>(<span class="ruby-identifier">i</span>); <span class="ruby-identifier">typecast</span> <span class="ruby-identifier">i</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-arp_dst_mac_readable">
+            
+              <b>arp_dst_mac_readable</b>()
+            
+            <a href="../../classes/PacketFu/ARPHeader.html#method-i-arp_dst_mac_readable" name="method-i-arp_dst_mac_readable" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-arp_hw">
+            
+              <b>arp_hw</b>()
+            
+            <a href="../../classes/PacketFu/ARPHeader.html#method-i-arp_hw" name="method-i-arp_hw" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Getter for the ARP hardware type.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-arp_hw_source')" id="l_method-i-arp_hw_source">show</a>
+                
+              </p>
+              <div id="method-i-arp_hw_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/arp/header.rb, line 70</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">arp_hw</span>; <span class="ruby-keyword">self</span>[<span class="ruby-value">:arp_hw</span>].<span class="ruby-identifier">to_i</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-arp_hw-3D">
+            
+              <b>arp_hw=</b>(i)
+            
+            <a href="../../classes/PacketFu/ARPHeader.html#method-i-arp_hw-3D" name="method-i-arp_hw-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Setter for the ARP hardware type.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-arp_hw-3D_source')" id="l_method-i-arp_hw-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-arp_hw-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/arp/header.rb, line 68</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">arp_hw=</span>(<span class="ruby-identifier">i</span>); <span class="ruby-identifier">typecast</span> <span class="ruby-identifier">i</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-arp_hw_len">
+            
+              <b>arp_hw_len</b>()
+            
+            <a href="../../classes/PacketFu/ARPHeader.html#method-i-arp_hw_len" name="method-i-arp_hw_len" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Getter for the ARP hardware type length.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-arp_hw_len_source')" id="l_method-i-arp_hw_len_source">show</a>
+                
+              </p>
+              <div id="method-i-arp_hw_len_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/arp/header.rb, line 78</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">arp_hw_len</span>; <span class="ruby-keyword">self</span>[<span class="ruby-value">:arp_hw_len</span>].<span class="ruby-identifier">to_i</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-arp_hw_len-3D">
+            
+              <b>arp_hw_len=</b>(i)
+            
+            <a href="../../classes/PacketFu/ARPHeader.html#method-i-arp_hw_len-3D" name="method-i-arp_hw_len-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Setter for the ARP hardware type length.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-arp_hw_len-3D_source')" id="l_method-i-arp_hw_len-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-arp_hw_len-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/arp/header.rb, line 76</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">arp_hw_len=</span>(<span class="ruby-identifier">i</span>); <span class="ruby-identifier">typecast</span> <span class="ruby-identifier">i</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-arp_opcode">
+            
+              <b>arp_opcode</b>()
+            
+            <a href="../../classes/PacketFu/ARPHeader.html#method-i-arp_opcode" name="method-i-arp_opcode" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Getter for the ARP opcode.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-arp_opcode_source')" id="l_method-i-arp_opcode_source">show</a>
+                
+              </p>
+              <div id="method-i-arp_opcode_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/arp/header.rb, line 86</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">arp_opcode</span>; <span class="ruby-keyword">self</span>[<span class="ruby-value">:arp_opcode</span>].<span class="ruby-identifier">to_i</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-arp_opcode-3D">
+            
+              <b>arp_opcode=</b>(i)
+            
+            <a href="../../classes/PacketFu/ARPHeader.html#method-i-arp_opcode-3D" name="method-i-arp_opcode-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Setter for the ARP opcode.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-arp_opcode-3D_source')" id="l_method-i-arp_opcode-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-arp_opcode-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/arp/header.rb, line 84</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">arp_opcode=</span>(<span class="ruby-identifier">i</span>); <span class="ruby-identifier">typecast</span> <span class="ruby-identifier">i</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-arp_proto">
+            
+              <b>arp_proto</b>()
+            
+            <a href="../../classes/PacketFu/ARPHeader.html#method-i-arp_proto" name="method-i-arp_proto" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Getter for the ARP protocol.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-arp_proto_source')" id="l_method-i-arp_proto_source">show</a>
+                
+              </p>
+              <div id="method-i-arp_proto_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/arp/header.rb, line 74</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">arp_proto</span>; <span class="ruby-keyword">self</span>[<span class="ruby-value">:arp_proto</span>].<span class="ruby-identifier">to_i</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-arp_proto-3D">
+            
+              <b>arp_proto=</b>(i)
+            
+            <a href="../../classes/PacketFu/ARPHeader.html#method-i-arp_proto-3D" name="method-i-arp_proto-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Setter for the ARP protocol.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-arp_proto-3D_source')" id="l_method-i-arp_proto-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-arp_proto-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/arp/header.rb, line 72</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">arp_proto=</span>(<span class="ruby-identifier">i</span>); <span class="ruby-identifier">typecast</span> <span class="ruby-identifier">i</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-arp_proto_len">
+            
+              <b>arp_proto_len</b>()
+            
+            <a href="../../classes/PacketFu/ARPHeader.html#method-i-arp_proto_len" name="method-i-arp_proto_len" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Getter for the ARP protocol length.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-arp_proto_len_source')" id="l_method-i-arp_proto_len_source">show</a>
+                
+              </p>
+              <div id="method-i-arp_proto_len_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/arp/header.rb, line 82</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">arp_proto_len</span>; <span class="ruby-keyword">self</span>[<span class="ruby-value">:arp_proto_len</span>].<span class="ruby-identifier">to_i</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-arp_proto_len-3D">
+            
+              <b>arp_proto_len=</b>(i)
+            
+            <a href="../../classes/PacketFu/ARPHeader.html#method-i-arp_proto_len-3D" name="method-i-arp_proto_len-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Setter for the ARP protocol length.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-arp_proto_len-3D_source')" id="l_method-i-arp_proto_len-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-arp_proto_len-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/arp/header.rb, line 80</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">arp_proto_len=</span>(<span class="ruby-identifier">i</span>); <span class="ruby-identifier">typecast</span> <span class="ruby-identifier">i</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-arp_proto_readable">
+            
+              <b>arp_proto_readable</b>()
+            
+            <a href="../../classes/PacketFu/ARPHeader.html#method-i-arp_proto_readable" name="method-i-arp_proto_readable" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-arp_proto_readable_source')" id="l_method-i-arp_proto_readable_source">show</a>
+                
+              </p>
+              <div id="method-i-arp_proto_readable_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/arp/header.rb, line 155</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">arp_proto_readable</span>
+        <span class="ruby-string">&quot;0x%04x&quot;</span> <span class="ruby-operator">%</span> <span class="ruby-identifier">arp_proto</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-arp_saddr_ip">
+            
+              <b>arp_saddr_ip</b>()
+            
+            <a href="../../classes/PacketFu/ARPHeader.html#method-i-arp_saddr_ip" name="method-i-arp_saddr_ip" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Get a more readable source IP address.</p>
+            </div>
+          
+          
+          
+            <div class="aka">
+              Also aliased as: <a href="ARPHeader.html#method-i-arp_src_ip_readable">arp_src_ip_readable</a>
+            </div>
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-arp_saddr_ip_source')" id="l_method-i-arp_saddr_ip_source">show</a>
+                
+              </p>
+              <div id="method-i-arp_saddr_ip_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/arp/header.rb, line 134</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">arp_saddr_ip</span>
+        <span class="ruby-keyword">self</span>[<span class="ruby-value">:arp_src_ip</span>].<span class="ruby-identifier">to_x</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-arp_saddr_ip-3D">
+            
+              <b>arp_saddr_ip=</b>(addr)
+            
+            <a href="../../classes/PacketFu/ARPHeader.html#method-i-arp_saddr_ip-3D" name="method-i-arp_saddr_ip-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Set a more readable source IP address.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-arp_saddr_ip-3D_source')" id="l_method-i-arp_saddr_ip-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-arp_saddr_ip-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/arp/header.rb, line 129</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">arp_saddr_ip=</span>(<span class="ruby-identifier">addr</span>)
+        <span class="ruby-keyword">self</span>[<span class="ruby-value">:arp_src_ip</span>].<span class="ruby-identifier">read_quad</span>(<span class="ruby-identifier">addr</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-arp_saddr_mac">
+            
+              <b>arp_saddr_mac</b>()
+            
+            <a href="../../classes/PacketFu/ARPHeader.html#method-i-arp_saddr_mac" name="method-i-arp_saddr_mac" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Get a more readable source MAC address.</p>
+            </div>
+          
+          
+          
+            <div class="aka">
+              Also aliased as: <a href="ARPHeader.html#method-i-arp_src_mac_readable">arp_src_mac_readable</a>
+            </div>
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-arp_saddr_mac_source')" id="l_method-i-arp_saddr_mac_source">show</a>
+                
+              </p>
+              <div id="method-i-arp_saddr_mac_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/arp/header.rb, line 112</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">arp_saddr_mac</span>
+        <span class="ruby-constant">EthHeader</span>.<span class="ruby-identifier">str2mac</span>(<span class="ruby-keyword">self</span>[<span class="ruby-value">:arp_src_mac</span>].<span class="ruby-identifier">to_s</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-arp_saddr_mac-3D">
+            
+              <b>arp_saddr_mac=</b>(mac)
+            
+            <a href="../../classes/PacketFu/ARPHeader.html#method-i-arp_saddr_mac-3D" name="method-i-arp_saddr_mac-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Set the source MAC address in a more readable way.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-arp_saddr_mac-3D_source')" id="l_method-i-arp_saddr_mac-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-arp_saddr_mac-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/arp/header.rb, line 105</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">arp_saddr_mac=</span>(<span class="ruby-identifier">mac</span>)
+        <span class="ruby-identifier">mac</span> = <span class="ruby-constant">EthHeader</span>.<span class="ruby-identifier">mac2str</span>(<span class="ruby-identifier">mac</span>)
+        <span class="ruby-keyword">self</span>[<span class="ruby-value">:arp_src_mac</span>].<span class="ruby-identifier">read</span>(<span class="ruby-identifier">mac</span>)
+        <span class="ruby-keyword">self</span>.<span class="ruby-identifier">arp_src_mac</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-arp_src_ip">
+            
+              <b>arp_src_ip</b>()
+            
+            <a href="../../classes/PacketFu/ARPHeader.html#method-i-arp_src_ip" name="method-i-arp_src_ip" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Setter for the ARP source IP address.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-arp_src_ip_source')" id="l_method-i-arp_src_ip_source">show</a>
+                
+              </p>
+              <div id="method-i-arp_src_ip_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/arp/header.rb, line 94</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">arp_src_ip</span>; <span class="ruby-keyword">self</span>[<span class="ruby-value">:arp_src_ip</span>].<span class="ruby-identifier">to_s</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-arp_src_ip-3D">
+            
+              <b>arp_src_ip=</b>(i)
+            
+            <a href="../../classes/PacketFu/ARPHeader.html#method-i-arp_src_ip-3D" name="method-i-arp_src_ip-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Getter for the ARP source IP address.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-arp_src_ip-3D_source')" id="l_method-i-arp_src_ip-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-arp_src_ip-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/arp/header.rb, line 92</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">arp_src_ip=</span>(<span class="ruby-identifier">i</span>); <span class="ruby-identifier">typecast</span> <span class="ruby-identifier">i</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-arp_src_ip_readable">
+            
+              <b>arp_src_ip_readable</b>()
+            
+            <a href="../../classes/PacketFu/ARPHeader.html#method-i-arp_src_ip_readable" name="method-i-arp_src_ip_readable" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-arp_src_mac">
+            
+              <b>arp_src_mac</b>()
+            
+            <a href="../../classes/PacketFu/ARPHeader.html#method-i-arp_src_mac" name="method-i-arp_src_mac" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Getter for the ARP source MAC address.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-arp_src_mac_source')" id="l_method-i-arp_src_mac_source">show</a>
+                
+              </p>
+              <div id="method-i-arp_src_mac_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/arp/header.rb, line 90</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">arp_src_mac</span>; <span class="ruby-keyword">self</span>[<span class="ruby-value">:arp_src_mac</span>].<span class="ruby-identifier">to_s</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-arp_src_mac-3D">
+            
+              <b>arp_src_mac=</b>(i)
+            
+            <a href="../../classes/PacketFu/ARPHeader.html#method-i-arp_src_mac-3D" name="method-i-arp_src_mac-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Setter for the ARP source MAC address.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-arp_src_mac-3D_source')" id="l_method-i-arp_src_mac-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-arp_src_mac-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/arp/header.rb, line 88</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">arp_src_mac=</span>(<span class="ruby-identifier">i</span>); <span class="ruby-identifier">typecast</span> <span class="ruby-identifier">i</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-arp_src_mac_readable">
+            
+              <b>arp_src_mac_readable</b>()
+            
+            <a href="../../classes/PacketFu/ARPHeader.html#method-i-arp_src_mac_readable" name="method-i-arp_src_mac_readable" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Readability aliases</p>
+            </div>
+          
+          
+          
+          
+          
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-read">
+            
+              <b>read</b>(str)
+            
+            <a href="../../classes/PacketFu/ARPHeader.html#method-i-read" name="method-i-read" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Reads a string to populate the object.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-read_source')" id="l_method-i-read_source">show</a>
+                
+              </p>
+              <div id="method-i-read_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/arp/header.rb, line 51</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">read</span>(<span class="ruby-identifier">str</span>)
+        <span class="ruby-identifier">force_binary</span>(<span class="ruby-identifier">str</span>)
+        <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">str</span>.<span class="ruby-identifier">nil?</span>
+        <span class="ruby-keyword">self</span>[<span class="ruby-value">:arp_hw</span>].<span class="ruby-identifier">read</span>(<span class="ruby-identifier">str</span>[<span class="ruby-number">0</span>,<span class="ruby-number">2</span>])
+        <span class="ruby-keyword">self</span>[<span class="ruby-value">:arp_proto</span>].<span class="ruby-identifier">read</span>(<span class="ruby-identifier">str</span>[<span class="ruby-number">2</span>,<span class="ruby-number">2</span>])
+        <span class="ruby-keyword">self</span>[<span class="ruby-value">:arp_hw_len</span>].<span class="ruby-identifier">read</span>(<span class="ruby-identifier">str</span>[<span class="ruby-number">4</span>,<span class="ruby-number">1</span>])
+        <span class="ruby-keyword">self</span>[<span class="ruby-value">:arp_proto_len</span>].<span class="ruby-identifier">read</span>(<span class="ruby-identifier">str</span>[<span class="ruby-number">5</span>,<span class="ruby-number">1</span>])
+        <span class="ruby-keyword">self</span>[<span class="ruby-value">:arp_opcode</span>].<span class="ruby-identifier">read</span>(<span class="ruby-identifier">str</span>[<span class="ruby-number">6</span>,<span class="ruby-number">2</span>])
+        <span class="ruby-keyword">self</span>[<span class="ruby-value">:arp_src_mac</span>].<span class="ruby-identifier">read</span>(<span class="ruby-identifier">str</span>[<span class="ruby-number">8</span>,<span class="ruby-number">6</span>])
+        <span class="ruby-keyword">self</span>[<span class="ruby-value">:arp_src_ip</span>].<span class="ruby-identifier">read</span>(<span class="ruby-identifier">str</span>[<span class="ruby-number">14</span>,<span class="ruby-number">4</span>])
+        <span class="ruby-keyword">self</span>[<span class="ruby-value">:arp_dst_mac</span>].<span class="ruby-identifier">read</span>(<span class="ruby-identifier">str</span>[<span class="ruby-number">18</span>,<span class="ruby-number">6</span>])
+        <span class="ruby-keyword">self</span>[<span class="ruby-value">:arp_dst_ip</span>].<span class="ruby-identifier">read</span>(<span class="ruby-identifier">str</span>[<span class="ruby-number">24</span>,<span class="ruby-number">4</span>])
+        <span class="ruby-keyword">self</span>[<span class="ruby-value">:body</span>].<span class="ruby-identifier">read</span>(<span class="ruby-identifier">str</span>[<span class="ruby-number">28</span>,<span class="ruby-identifier">str</span>.<span class="ruby-identifier">size</span>])
+        <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-to_s">
+            
+              <b>to_s</b>()
+            
+            <a href="../../classes/PacketFu/ARPHeader.html#method-i-to_s" name="method-i-to_s" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns the object in string form.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-to_s_source')" id="l_method-i-to_s_source">show</a>
+                
+              </p>
+              <div id="method-i-to_s_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/arp/header.rb, line 46</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">to_s</span>
+        <span class="ruby-keyword">self</span>.<span class="ruby-identifier">to_a</span>.<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">to_s</span>}.<span class="ruby-identifier">join</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

@@ -1,0 +1,30 @@
+# PacketFu Resources
+
+I put the PacketFu docs in the ./docs directory. Open index.html.
+The code will give you an array of PacketFu::Packet objects as the
+superclass, and probably a subclass like PacketFu::TCPPacket.
+
+Slides covering the library: http://prezi.com/mw0_9qfb2d6d/packetfu-by-example/
+
+The github repo: https://github.com/todb/packetfu
+
+# Running the code / getting a repl
+
+## To install a modern Ruby (open a new shell after this):
+$ curl -L https://get.rvm.io | bash -s stable --ruby
+
+## The first time, run this command in this directory:
+$ bundle
+
+## Now you can run this to get a REPL:
+$ bundle exec irb ./part1.rb PATH_TO_PCAP
+
+Packets is an array of parsed packets. So you can look at a particular
+packet like Packets[42]. You may want to do something like look at a
+source ip address:
+Packets[42].ip_saddr
+# => "128.12.173.14"
+Or see what type of packet class this is:
+Packets[42].class
+# => => PacketFu::TCPPacket
+

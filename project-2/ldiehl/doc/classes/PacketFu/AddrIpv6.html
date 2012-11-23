@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>PacketFu::AddrIpv6</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/github.css" type="text/css" media="screen" />
+<script src="../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            PacketFu::AddrIpv6 
+            
+                <span class="parent">&lt; 
+                    
+                    Struct.new(:a1, :a2, :a3, :a4)
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../files/lib/packetfu/protos/ipv6/header_rb.html">lib/packetfu/protos/ipv6/header.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p><a href="AddrIpv6.html">AddrIpv6</a> handles addressing for <a
+href="IPv6Header.html">IPv6Header</a></p>
+
+<h4 id="label-Header+Definition">Header Definition</h4>
+
+<pre>Int32 :a1
+Int32 :a2
+Int32 :a3
+Int32 :a4</pre>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-new">new</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>R</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-read">read</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-read_x">read_x</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-to_i">to_i</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-to_s">to_s</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-to_x">to_x</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+    <!-- Includes -->
+    <div class="sectiontitle">Included Modules</div>
+    <ul>
+      
+        <li>
+          
+            <a href="../StructFu.html">
+              StructFu
+            </a>
+          
+        </li>
+      
+    </ul>
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-new">
+            
+              <b>new</b>(args={})
+            
+            <a href="../../classes/PacketFu/AddrIpv6.html#method-c-new" name="method-c-new" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
+                
+              </p>
+              <div id="method-c-new_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/ipv6/header.rb, line 14</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize</span>(<span class="ruby-identifier">args</span>={})
+        <span class="ruby-keyword">super</span>(
+                <span class="ruby-constant">Int32</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">args</span>[<span class="ruby-value">:a1</span>]),
+                <span class="ruby-constant">Int32</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">args</span>[<span class="ruby-value">:a2</span>]),
+                <span class="ruby-constant">Int32</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">args</span>[<span class="ruby-value">:a3</span>]),
+                <span class="ruby-constant">Int32</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">args</span>[<span class="ruby-value">:a4</span>]))
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-read">
+            
+              <b>read</b>(str)
+            
+            <a href="../../classes/PacketFu/AddrIpv6.html#method-i-read" name="method-i-read" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Reads in a string and casts it as an IPv6 address</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-read_source')" id="l_method-i-read_source">show</a>
+                
+              </p>
+              <div id="method-i-read_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/ipv6/header.rb, line 38</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">read</span>(<span class="ruby-identifier">str</span>)
+        <span class="ruby-identifier">force_binary</span>(<span class="ruby-identifier">str</span>)
+        <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">str</span>.<span class="ruby-identifier">nil?</span>
+        <span class="ruby-keyword">self</span>[<span class="ruby-value">:a1</span>].<span class="ruby-identifier">read</span> <span class="ruby-identifier">str</span>[<span class="ruby-number">0</span>,<span class="ruby-number">4</span>]
+        <span class="ruby-keyword">self</span>[<span class="ruby-value">:a2</span>].<span class="ruby-identifier">read</span> <span class="ruby-identifier">str</span>[<span class="ruby-number">4</span>,<span class="ruby-number">4</span>]
+        <span class="ruby-keyword">self</span>[<span class="ruby-value">:a3</span>].<span class="ruby-identifier">read</span> <span class="ruby-identifier">str</span>[<span class="ruby-number">8</span>,<span class="ruby-number">4</span>]
+        <span class="ruby-keyword">self</span>[<span class="ruby-value">:a4</span>].<span class="ruby-identifier">read</span> <span class="ruby-identifier">str</span>[<span class="ruby-number">12</span>,<span class="ruby-number">4</span>]
+        <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-read_x">
+            
+              <b>read_x</b>(str)
+            
+            <a href="../../classes/PacketFu/AddrIpv6.html#method-i-read_x" name="method-i-read_x" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Reads in a colon-delimited hex string and casts it as an IPv6 address.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-read_x_source')" id="l_method-i-read_x_source">show</a>
+                
+              </p>
+              <div id="method-i-read_x_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/ipv6/header.rb, line 49</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">read_x</span>(<span class="ruby-identifier">str</span>)
+        <span class="ruby-identifier">addr</span> = <span class="ruby-constant">IPAddr</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">str</span>).<span class="ruby-identifier">to_i</span>
+        <span class="ruby-keyword">self</span>[<span class="ruby-value">:a1</span>]=<span class="ruby-constant">Int32</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">addr</span> <span class="ruby-operator">&gt;&gt;</span> <span class="ruby-number">96</span>)
+        <span class="ruby-keyword">self</span>[<span class="ruby-value">:a2</span>]=<span class="ruby-constant">Int32</span>.<span class="ruby-identifier">new</span>((<span class="ruby-identifier">addr</span> &amp; <span class="ruby-number">0x00000000ffffffff0000000000000000</span>) <span class="ruby-operator">&gt;&gt;</span> <span class="ruby-number">64</span>)
+        <span class="ruby-keyword">self</span>[<span class="ruby-value">:a3</span>]=<span class="ruby-constant">Int32</span>.<span class="ruby-identifier">new</span>((<span class="ruby-identifier">addr</span> &amp; <span class="ruby-number">0x0000000000000000ffffffff00000000</span>) <span class="ruby-operator">&gt;&gt;</span> <span class="ruby-number">32</span>)
+        <span class="ruby-keyword">self</span>[<span class="ruby-value">:a4</span>]=<span class="ruby-constant">Int32</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">addr</span> &amp; <span class="ruby-number">0x000000000000000000000000ffffffff</span>)
+        <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-to_i">
+            
+              <b>to_i</b>()
+            
+            <a href="../../classes/PacketFu/AddrIpv6.html#method-i-to_i" name="method-i-to_i" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns the address as a fairly ginormous integer.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-to_i_source')" id="l_method-i-to_i_source">show</a>
+                
+              </p>
+              <div id="method-i-to_i_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/ipv6/header.rb, line 28</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">to_i</span>
+        (<span class="ruby-identifier">a1</span>.<span class="ruby-identifier">to_i</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-number">96</span>) <span class="ruby-operator">+</span> (<span class="ruby-identifier">a2</span>.<span class="ruby-identifier">to_i</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-number">64</span>) <span class="ruby-operator">+</span> (<span class="ruby-identifier">a3</span>.<span class="ruby-identifier">to_i</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-number">32</span>) <span class="ruby-operator">+</span> <span class="ruby-identifier">a4</span>.<span class="ruby-identifier">to_i</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-to_s">
+            
+              <b>to_s</b>()
+            
+            <a href="../../classes/PacketFu/AddrIpv6.html#method-i-to_s" name="method-i-to_s" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns the address in string format.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-to_s_source')" id="l_method-i-to_s_source">show</a>
+                
+              </p>
+              <div id="method-i-to_s_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/ipv6/header.rb, line 23</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">to_s</span>
+        <span class="ruby-keyword">self</span>.<span class="ruby-identifier">to_a</span>.<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">to_s</span>}.<span class="ruby-identifier">join</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-to_x">
+            
+              <b>to_x</b>()
+            
+            <a href="../../classes/PacketFu/AddrIpv6.html#method-i-to_x" name="method-i-to_x" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns the address as a colon-delimited hex string.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-to_x_source')" id="l_method-i-to_x_source">show</a>
+                
+              </p>
+              <div id="method-i-to_x_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/ipv6/header.rb, line 33</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">to_x</span>
+        <span class="ruby-constant">IPAddr</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">self</span>.<span class="ruby-identifier">to_i</span>, <span class="ruby-constant">Socket</span><span class="ruby-operator">::</span><span class="ruby-constant">AF_INET6</span>).<span class="ruby-identifier">to_s</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

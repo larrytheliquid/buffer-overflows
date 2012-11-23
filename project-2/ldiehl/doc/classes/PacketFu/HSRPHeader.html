@@ -1,0 +1,1056 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>PacketFu::HSRPHeader</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/github.css" type="text/css" media="screen" />
+<script src="../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            PacketFu::HSRPHeader 
+            
+                <span class="parent">&lt; 
+                    
+                    Struct.new(:hsrp_version, :hsrp_opcode, :hsrp_state,                                                                   :hsrp_hellotime, :hsrp_holdtime,                                                                   :hsrp_priority, :hsrp_group,                                                                   :hsrp_reserved, :hsrp_password,                                                                   :hsrp_vip, :body)
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../files/lib/packetfu/protos/hsrp/header_rb.html">lib/packetfu/protos/hsrp/header.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p><a href="HSRPHeader.html">HSRPHeader</a> is a complete HSRP struct, used in
+<a href="HSRPPacket.html">HSRPPacket</a>. HSRP is typically used for
+fault-tolerant default gateway in IP routing environment.</p>
+
+<p>For more on HSRP packets, see <a
+href="http://www.networksorcery.com/enp/protocol/hsrp.htm">www.networksorcery.com/enp/protocol/hsrp.htm</a></p>
+
+<p>Submitted by fropert@packetfault.org. Thanks, Francois!</p>
+
+<h4 id="label-Header+Definition">Header Definition</h4>
+
+<pre>Int8    :hsrp_version      Default: 0     # Version
+Int8    :hsrp_opcode                      # Opcode
+Int8    :hsrp_state                       # State
+Int8    :hsrp_hellotime    Default: 3     # Hello Time
+Int8    :hsrp_holdtime     Default: 10    # Hold Time
+Int8    :hsrp_priority                    # Priority
+Int8    :hsrp_group                       # Group
+Int8    :hsrp_reserved     Default: 0     # Reserved
+String  :hsrp_password                    # Authentication Data
+Octets  :hsrp_vip                         # Virtual IP Address
+String  :body</pre>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>H</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-hsrp_addr">hsrp_addr</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-hsrp_addr-3D">hsrp_addr=</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-hsrp_group">hsrp_group</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-hsrp_group-3D">hsrp_group=</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-hsrp_hellotime">hsrp_hellotime</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-hsrp_hellotime-3D">hsrp_hellotime=</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-hsrp_holdtime">hsrp_holdtime</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-hsrp_holdtime-3D">hsrp_holdtime=</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-hsrp_opcode">hsrp_opcode</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-hsrp_opcode-3D">hsrp_opcode=</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-hsrp_password_readable">hsrp_password_readable</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-hsrp_priority">hsrp_priority</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-hsrp_priority-3D">hsrp_priority=</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-hsrp_reserved">hsrp_reserved</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-hsrp_reserved-3D">hsrp_reserved=</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-hsrp_state">hsrp_state</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-hsrp_state-3D">hsrp_state=</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-hsrp_version">hsrp_version</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-hsrp_version-3D">hsrp_version=</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-hsrp_vip_readable">hsrp_vip_readable</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-new">new</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>R</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-read">read</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-to_s">to_s</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+    <!-- Includes -->
+    <div class="sectiontitle">Included Modules</div>
+    <ul>
+      
+        <li>
+          
+            <a href="../StructFu.html">
+              StructFu
+            </a>
+          
+        </li>
+      
+    </ul>
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-new">
+            
+              <b>new</b>(args={})
+            
+            <a href="../../classes/PacketFu/HSRPHeader.html#method-c-new" name="method-c-new" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
+                
+              </p>
+              <div id="method-c-new_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/hsrp/header.rb, line 30</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize</span>(<span class="ruby-identifier">args</span>={})
+        <span class="ruby-keyword">super</span>(
+                <span class="ruby-constant">Int8</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">args</span>[<span class="ruby-value">:hsrp_version</span>] <span class="ruby-operator">||</span> <span class="ruby-number">0</span>),
+                <span class="ruby-constant">Int8</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">args</span>[<span class="ruby-value">:hsrp_opcode</span>]),
+                <span class="ruby-constant">Int8</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">args</span>[<span class="ruby-value">:hsrp_state</span>]),
+                <span class="ruby-constant">Int8</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">args</span>[<span class="ruby-value">:hsrp_hellotime</span>] <span class="ruby-operator">||</span> <span class="ruby-number">3</span>),
+                <span class="ruby-constant">Int8</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">args</span>[<span class="ruby-value">:hsrp_holdtime</span>] <span class="ruby-operator">||</span> <span class="ruby-number">10</span>),
+                <span class="ruby-constant">Int8</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">args</span>[<span class="ruby-value">:hsrp_priority</span>]),
+                <span class="ruby-constant">Int8</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">args</span>[<span class="ruby-value">:hsrp_group</span>]),
+                <span class="ruby-constant">Int8</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">args</span>[<span class="ruby-value">:hsrp_reserved</span>] <span class="ruby-operator">||</span> <span class="ruby-number">0</span>),
+                <span class="ruby-constant">StructFu</span><span class="ruby-operator">::</span><span class="ruby-constant">String</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">read</span>(<span class="ruby-identifier">args</span>[<span class="ruby-value">:hsrp_password</span>] <span class="ruby-operator">||</span> <span class="ruby-string">&quot;cisco\x00\x00\x00&quot;</span>),
+                <span class="ruby-constant">Octets</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">read</span>(<span class="ruby-identifier">args</span>[<span class="ruby-value">:hsrp_vip</span>] <span class="ruby-operator">||</span> (<span class="ruby-string">&quot;\x00&quot;</span> * <span class="ruby-number">4</span>)),
+                <span class="ruby-constant">StructFu</span><span class="ruby-operator">::</span><span class="ruby-constant">String</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">read</span>(<span class="ruby-identifier">args</span>[<span class="ruby-value">:body</span>])
+        )
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-hsrp_addr">
+            
+              <b>hsrp_addr</b>()
+            
+            <a href="../../classes/PacketFu/HSRPHeader.html#method-i-hsrp_addr" name="method-i-hsrp_addr" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns a more readable IP source address.</p>
+            </div>
+          
+          
+          
+            <div class="aka">
+              Also aliased as: <a href="HSRPHeader.html#method-i-hsrp_vip_readable">hsrp_vip_readable</a>
+            </div>
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-hsrp_addr_source')" id="l_method-i-hsrp_addr_source">show</a>
+                
+              </p>
+              <div id="method-i-hsrp_addr_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/hsrp/header.rb, line 107</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">hsrp_addr</span>
+        <span class="ruby-keyword">self</span>[<span class="ruby-value">:hsrp_vip</span>].<span class="ruby-identifier">to_x</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-hsrp_addr-3D">
+            
+              <b>hsrp_addr=</b>(addr)
+            
+            <a href="../../classes/PacketFu/HSRPHeader.html#method-i-hsrp_addr-3D" name="method-i-hsrp_addr-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-hsrp_addr-3D_source')" id="l_method-i-hsrp_addr-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-hsrp_addr-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/hsrp/header.rb, line 102</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">hsrp_addr=</span>(<span class="ruby-identifier">addr</span>)
+        <span class="ruby-keyword">self</span>[<span class="ruby-value">:hsrp_vip</span>].<span class="ruby-identifier">read_quad</span>(<span class="ruby-identifier">addr</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-hsrp_group">
+            
+              <b>hsrp_group</b>()
+            
+            <a href="../../classes/PacketFu/HSRPHeader.html#method-i-hsrp_group" name="method-i-hsrp_group" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Getter for the type.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-hsrp_group_source')" id="l_method-i-hsrp_group_source">show</a>
+                
+              </p>
+              <div id="method-i-hsrp_group_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/hsrp/header.rb, line 96</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">hsrp_group</span>; <span class="ruby-keyword">self</span>[<span class="ruby-value">:hsrp_group</span>].<span class="ruby-identifier">to_i</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-hsrp_group-3D">
+            
+              <b>hsrp_group=</b>(i)
+            
+            <a href="../../classes/PacketFu/HSRPHeader.html#method-i-hsrp_group-3D" name="method-i-hsrp_group-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Setter for the type.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-hsrp_group-3D_source')" id="l_method-i-hsrp_group-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-hsrp_group-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/hsrp/header.rb, line 94</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">hsrp_group=</span>(<span class="ruby-identifier">i</span>); <span class="ruby-identifier">typecast</span> <span class="ruby-identifier">i</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-hsrp_hellotime">
+            
+              <b>hsrp_hellotime</b>()
+            
+            <a href="../../classes/PacketFu/HSRPHeader.html#method-i-hsrp_hellotime" name="method-i-hsrp_hellotime" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Getter for the type.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-hsrp_hellotime_source')" id="l_method-i-hsrp_hellotime_source">show</a>
+                
+              </p>
+              <div id="method-i-hsrp_hellotime_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/hsrp/header.rb, line 84</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">hsrp_hellotime</span>; <span class="ruby-keyword">self</span>[<span class="ruby-value">:hsrp_hellotime</span>].<span class="ruby-identifier">to_i</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-hsrp_hellotime-3D">
+            
+              <b>hsrp_hellotime=</b>(i)
+            
+            <a href="../../classes/PacketFu/HSRPHeader.html#method-i-hsrp_hellotime-3D" name="method-i-hsrp_hellotime-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Setter for the type.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-hsrp_hellotime-3D_source')" id="l_method-i-hsrp_hellotime-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-hsrp_hellotime-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/hsrp/header.rb, line 82</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">hsrp_hellotime=</span>(<span class="ruby-identifier">i</span>); <span class="ruby-identifier">typecast</span> <span class="ruby-identifier">i</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-hsrp_holdtime">
+            
+              <b>hsrp_holdtime</b>()
+            
+            <a href="../../classes/PacketFu/HSRPHeader.html#method-i-hsrp_holdtime" name="method-i-hsrp_holdtime" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Getter for the type.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-hsrp_holdtime_source')" id="l_method-i-hsrp_holdtime_source">show</a>
+                
+              </p>
+              <div id="method-i-hsrp_holdtime_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/hsrp/header.rb, line 88</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">hsrp_holdtime</span>; <span class="ruby-keyword">self</span>[<span class="ruby-value">:hsrp_holdtime</span>].<span class="ruby-identifier">to_i</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-hsrp_holdtime-3D">
+            
+              <b>hsrp_holdtime=</b>(i)
+            
+            <a href="../../classes/PacketFu/HSRPHeader.html#method-i-hsrp_holdtime-3D" name="method-i-hsrp_holdtime-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Setter for the type.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-hsrp_holdtime-3D_source')" id="l_method-i-hsrp_holdtime-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-hsrp_holdtime-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/hsrp/header.rb, line 86</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">hsrp_holdtime=</span>(<span class="ruby-identifier">i</span>); <span class="ruby-identifier">typecast</span> <span class="ruby-identifier">i</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-hsrp_opcode">
+            
+              <b>hsrp_opcode</b>()
+            
+            <a href="../../classes/PacketFu/HSRPHeader.html#method-i-hsrp_opcode" name="method-i-hsrp_opcode" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Getter for the type.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-hsrp_opcode_source')" id="l_method-i-hsrp_opcode_source">show</a>
+                
+              </p>
+              <div id="method-i-hsrp_opcode_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/hsrp/header.rb, line 76</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">hsrp_opcode</span>; <span class="ruby-keyword">self</span>[<span class="ruby-value">:hsrp_opcode</span>].<span class="ruby-identifier">to_i</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-hsrp_opcode-3D">
+            
+              <b>hsrp_opcode=</b>(i)
+            
+            <a href="../../classes/PacketFu/HSRPHeader.html#method-i-hsrp_opcode-3D" name="method-i-hsrp_opcode-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Setter for the type.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-hsrp_opcode-3D_source')" id="l_method-i-hsrp_opcode-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-hsrp_opcode-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/hsrp/header.rb, line 74</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">hsrp_opcode=</span>(<span class="ruby-identifier">i</span>); <span class="ruby-identifier">typecast</span> <span class="ruby-identifier">i</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-hsrp_password_readable">
+            
+              <b>hsrp_password_readable</b>()
+            
+            <a href="../../classes/PacketFu/HSRPHeader.html#method-i-hsrp_password_readable" name="method-i-hsrp_password_readable" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-hsrp_password_readable_source')" id="l_method-i-hsrp_password_readable_source">show</a>
+                
+              </p>
+              <div id="method-i-hsrp_password_readable_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/hsrp/header.rb, line 115</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">hsrp_password_readable</span>
+        <span class="ruby-identifier">hsrp_password</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">inspect</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-hsrp_priority">
+            
+              <b>hsrp_priority</b>()
+            
+            <a href="../../classes/PacketFu/HSRPHeader.html#method-i-hsrp_priority" name="method-i-hsrp_priority" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Getter for the type.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-hsrp_priority_source')" id="l_method-i-hsrp_priority_source">show</a>
+                
+              </p>
+              <div id="method-i-hsrp_priority_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/hsrp/header.rb, line 92</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">hsrp_priority</span>; <span class="ruby-keyword">self</span>[<span class="ruby-value">:hsrp_priority</span>].<span class="ruby-identifier">to_i</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-hsrp_priority-3D">
+            
+              <b>hsrp_priority=</b>(i)
+            
+            <a href="../../classes/PacketFu/HSRPHeader.html#method-i-hsrp_priority-3D" name="method-i-hsrp_priority-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Setter for the type.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-hsrp_priority-3D_source')" id="l_method-i-hsrp_priority-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-hsrp_priority-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/hsrp/header.rb, line 90</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">hsrp_priority=</span>(<span class="ruby-identifier">i</span>); <span class="ruby-identifier">typecast</span> <span class="ruby-identifier">i</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-hsrp_reserved">
+            
+              <b>hsrp_reserved</b>()
+            
+            <a href="../../classes/PacketFu/HSRPHeader.html#method-i-hsrp_reserved" name="method-i-hsrp_reserved" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Getter for the type.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-hsrp_reserved_source')" id="l_method-i-hsrp_reserved_source">show</a>
+                
+              </p>
+              <div id="method-i-hsrp_reserved_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/hsrp/header.rb, line 100</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">hsrp_reserved</span>; <span class="ruby-keyword">self</span>[<span class="ruby-value">:hsrp_reserved</span>].<span class="ruby-identifier">to_i</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-hsrp_reserved-3D">
+            
+              <b>hsrp_reserved=</b>(i)
+            
+            <a href="../../classes/PacketFu/HSRPHeader.html#method-i-hsrp_reserved-3D" name="method-i-hsrp_reserved-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Setter for the type.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-hsrp_reserved-3D_source')" id="l_method-i-hsrp_reserved-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-hsrp_reserved-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/hsrp/header.rb, line 98</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">hsrp_reserved=</span>(<span class="ruby-identifier">i</span>); <span class="ruby-identifier">typecast</span> <span class="ruby-identifier">i</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-hsrp_state">
+            
+              <b>hsrp_state</b>()
+            
+            <a href="../../classes/PacketFu/HSRPHeader.html#method-i-hsrp_state" name="method-i-hsrp_state" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Getter for the type.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-hsrp_state_source')" id="l_method-i-hsrp_state_source">show</a>
+                
+              </p>
+              <div id="method-i-hsrp_state_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/hsrp/header.rb, line 80</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">hsrp_state</span>; <span class="ruby-keyword">self</span>[<span class="ruby-value">:hsrp_state</span>].<span class="ruby-identifier">to_i</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-hsrp_state-3D">
+            
+              <b>hsrp_state=</b>(i)
+            
+            <a href="../../classes/PacketFu/HSRPHeader.html#method-i-hsrp_state-3D" name="method-i-hsrp_state-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Setter for the type.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-hsrp_state-3D_source')" id="l_method-i-hsrp_state-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-hsrp_state-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/hsrp/header.rb, line 78</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">hsrp_state=</span>(<span class="ruby-identifier">i</span>); <span class="ruby-identifier">typecast</span> <span class="ruby-identifier">i</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-hsrp_version">
+            
+              <b>hsrp_version</b>()
+            
+            <a href="../../classes/PacketFu/HSRPHeader.html#method-i-hsrp_version" name="method-i-hsrp_version" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Getter for the type.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-hsrp_version_source')" id="l_method-i-hsrp_version_source">show</a>
+                
+              </p>
+              <div id="method-i-hsrp_version_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/hsrp/header.rb, line 72</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">hsrp_version</span>; <span class="ruby-keyword">self</span>[<span class="ruby-value">:hsrp_version</span>].<span class="ruby-identifier">to_i</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-hsrp_version-3D">
+            
+              <b>hsrp_version=</b>(i)
+            
+            <a href="../../classes/PacketFu/HSRPHeader.html#method-i-hsrp_version-3D" name="method-i-hsrp_version-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Setter for the type.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-hsrp_version-3D_source')" id="l_method-i-hsrp_version-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-hsrp_version-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/hsrp/header.rb, line 70</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">hsrp_version=</span>(<span class="ruby-identifier">i</span>); <span class="ruby-identifier">typecast</span> <span class="ruby-identifier">i</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-hsrp_vip_readable">
+            
+              <b>hsrp_vip_readable</b>()
+            
+            <a href="../../classes/PacketFu/HSRPHeader.html#method-i-hsrp_vip_readable" name="method-i-hsrp_vip_readable" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Readability aliases</p>
+            </div>
+          
+          
+          
+          
+          
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-read">
+            
+              <b>read</b>(str)
+            
+            <a href="../../classes/PacketFu/HSRPHeader.html#method-i-read" name="method-i-read" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Reads a string to populate the object.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-read_source')" id="l_method-i-read_source">show</a>
+                
+              </p>
+              <div id="method-i-read_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/hsrp/header.rb, line 52</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">read</span>(<span class="ruby-identifier">str</span>)
+        <span class="ruby-identifier">force_binary</span>(<span class="ruby-identifier">str</span>)
+        <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">str</span>.<span class="ruby-identifier">nil?</span>
+        <span class="ruby-keyword">self</span>[<span class="ruby-value">:hsrp_version</span>].<span class="ruby-identifier">read</span>(<span class="ruby-identifier">str</span>[<span class="ruby-number">0</span>,<span class="ruby-number">1</span>])
+        <span class="ruby-keyword">self</span>[<span class="ruby-value">:hsrp_opcode</span>].<span class="ruby-identifier">read</span>(<span class="ruby-identifier">str</span>[<span class="ruby-number">1</span>,<span class="ruby-number">1</span>])
+        <span class="ruby-keyword">self</span>[<span class="ruby-value">:hsrp_state</span>].<span class="ruby-identifier">read</span>(<span class="ruby-identifier">str</span>[<span class="ruby-number">2</span>,<span class="ruby-number">1</span>])
+        <span class="ruby-keyword">self</span>[<span class="ruby-value">:hsrp_hellotime</span>].<span class="ruby-identifier">read</span>(<span class="ruby-identifier">str</span>[<span class="ruby-number">3</span>,<span class="ruby-number">1</span>])
+        <span class="ruby-keyword">self</span>[<span class="ruby-value">:hsrp_holdtime</span>].<span class="ruby-identifier">read</span>(<span class="ruby-identifier">str</span>[<span class="ruby-number">4</span>,<span class="ruby-number">1</span>])
+        <span class="ruby-keyword">self</span>[<span class="ruby-value">:hsrp_priority</span>].<span class="ruby-identifier">read</span>(<span class="ruby-identifier">str</span>[<span class="ruby-number">5</span>,<span class="ruby-number">1</span>])
+        <span class="ruby-keyword">self</span>[<span class="ruby-value">:hsrp_group</span>].<span class="ruby-identifier">read</span>(<span class="ruby-identifier">str</span>[<span class="ruby-number">6</span>,<span class="ruby-number">1</span>])
+        <span class="ruby-keyword">self</span>[<span class="ruby-value">:hsrp_reserved</span>].<span class="ruby-identifier">read</span>(<span class="ruby-identifier">str</span>[<span class="ruby-number">7</span>,<span class="ruby-number">1</span>])
+        <span class="ruby-keyword">self</span>[<span class="ruby-value">:hsrp_password</span>].<span class="ruby-identifier">read</span>(<span class="ruby-identifier">str</span>[<span class="ruby-number">8</span>,<span class="ruby-number">8</span>])
+        <span class="ruby-keyword">self</span>[<span class="ruby-value">:hsrp_vip</span>].<span class="ruby-identifier">read</span>(<span class="ruby-identifier">str</span>[<span class="ruby-number">16</span>,<span class="ruby-number">4</span>])
+        <span class="ruby-keyword">self</span>[<span class="ruby-value">:body</span>].<span class="ruby-identifier">read</span>(<span class="ruby-identifier">str</span>[<span class="ruby-number">20</span>,<span class="ruby-identifier">str</span>.<span class="ruby-identifier">size</span>]) <span class="ruby-keyword">if</span> <span class="ruby-identifier">str</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">&gt;</span> <span class="ruby-number">20</span>
+        <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-to_s">
+            
+              <b>to_s</b>()
+            
+            <a href="../../classes/PacketFu/HSRPHeader.html#method-i-to_s" name="method-i-to_s" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns the object in string form.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-to_s_source')" id="l_method-i-to_s_source">show</a>
+                
+              </p>
+              <div id="method-i-to_s_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/hsrp/header.rb, line 47</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">to_s</span>
+        <span class="ruby-keyword">self</span>.<span class="ruby-identifier">to_a</span>.<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">to_s</span>}.<span class="ruby-identifier">join</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

@@ -1,0 +1,1652 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>PacketFu::TCPHeaderMixin</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/github.css" type="text/css" media="screen" />
+<script src="../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Module</span> 
+            PacketFu::TCPHeaderMixin 
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../files/lib/packetfu/protos/tcp/mixin_rb.html">lib/packetfu/protos/tcp/mixin.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>This Mixin simplifies access to the TCPHeaders. Mix this in with your 
+packet interface, and it will add methods that essentially delegate to the
+‘tcp_header’ method (assuming that it is a <a
+href="TCPHeader.html">TCPHeader</a> object)</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-tcp_ack">tcp_ack</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-tcp_ack-3D">tcp_ack=</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-tcp_ack_readable">tcp_ack_readable</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-tcp_calc_hlen">tcp_calc_hlen</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-tcp_calc_seq">tcp_calc_seq</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-tcp_calc_src">tcp_calc_src</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-tcp_dport">tcp_dport</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-tcp_dport-3D">tcp_dport=</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-tcp_dst">tcp_dst</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-tcp_dst-3D">tcp_dst=</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-tcp_ecn">tcp_ecn</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-tcp_ecn-3D">tcp_ecn=</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-tcp_flags">tcp_flags</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-tcp_flags-3D">tcp_flags=</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-tcp_flags_dotmap">tcp_flags_dotmap</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-tcp_flags_readable">tcp_flags_readable</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-tcp_hlen">tcp_hlen</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-tcp_hlen-3D">tcp_hlen=</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-tcp_options">tcp_options</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-tcp_options-3D">tcp_options=</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-tcp_opts">tcp_opts</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-tcp_opts-3D">tcp_opts=</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-tcp_opts_len">tcp_opts_len</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-tcp_opts_readable">tcp_opts_readable</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-tcp_recalc">tcp_recalc</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-tcp_reserved">tcp_reserved</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-tcp_reserved-3D">tcp_reserved=</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-tcp_seq">tcp_seq</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-tcp_seq-3D">tcp_seq=</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-tcp_seq_readable">tcp_seq_readable</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-tcp_sport">tcp_sport</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-tcp_sport-3D">tcp_sport=</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-tcp_src">tcp_src</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-tcp_src-3D">tcp_src=</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-tcp_sum">tcp_sum</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-tcp_sum-3D">tcp_sum=</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-tcp_sum_readable">tcp_sum_readable</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-tcp_urg">tcp_urg</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-tcp_urg-3D">tcp_urg=</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-tcp_win">tcp_win</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-tcp_win-3D">tcp_win=</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-tcp_ack">
+            
+              <b>tcp_ack</b>()
+            
+            <a href="../../classes/PacketFu/TCPHeaderMixin.html#method-i-tcp_ack" name="method-i-tcp_ack" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-tcp_ack_source')" id="l_method-i-tcp_ack_source">show</a>
+                
+              </p>
+              <div id="method-i-tcp_ack_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/tcp/mixin.rb, line 13</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">tcp_ack</span>; <span class="ruby-keyword">self</span>.<span class="ruby-identifier">tcp_header</span>.<span class="ruby-identifier">tcp_ack</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-tcp_ack-3D">
+            
+              <b>tcp_ack=</b>(v)
+            
+            <a href="../../classes/PacketFu/TCPHeaderMixin.html#method-i-tcp_ack-3D" name="method-i-tcp_ack-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-tcp_ack-3D_source')" id="l_method-i-tcp_ack-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-tcp_ack-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/tcp/mixin.rb, line 12</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">tcp_ack=</span>(<span class="ruby-identifier">v</span>); <span class="ruby-keyword">self</span>.<span class="ruby-identifier">tcp_header</span>.<span class="ruby-identifier">tcp_ack</span>= <span class="ruby-identifier">v</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-tcp_ack_readable">
+            
+              <b>tcp_ack_readable</b>()
+            
+            <a href="../../classes/PacketFu/TCPHeaderMixin.html#method-i-tcp_ack_readable" name="method-i-tcp_ack_readable" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-tcp_ack_readable_source')" id="l_method-i-tcp_ack_readable_source">show</a>
+                
+              </p>
+              <div id="method-i-tcp_ack_readable_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/tcp/mixin.rb, line 41</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">tcp_ack_readable</span>; <span class="ruby-keyword">self</span>.<span class="ruby-identifier">tcp_header</span>.<span class="ruby-identifier">tcp_ack_readable</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-tcp_calc_hlen">
+            
+              <b>tcp_calc_hlen</b>()
+            
+            <a href="../../classes/PacketFu/TCPHeaderMixin.html#method-i-tcp_calc_hlen" name="method-i-tcp_calc_hlen" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-tcp_calc_hlen_source')" id="l_method-i-tcp_calc_hlen_source">show</a>
+                
+              </p>
+              <div id="method-i-tcp_calc_hlen_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/tcp/mixin.rb, line 31</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">tcp_calc_hlen</span>; <span class="ruby-keyword">self</span>.<span class="ruby-identifier">tcp_header</span>.<span class="ruby-identifier">tcp_calc_hlen</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-tcp_calc_seq">
+            
+              <b>tcp_calc_seq</b>()
+            
+            <a href="../../classes/PacketFu/TCPHeaderMixin.html#method-i-tcp_calc_seq" name="method-i-tcp_calc_seq" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-tcp_calc_seq_source')" id="l_method-i-tcp_calc_seq_source">show</a>
+                
+              </p>
+              <div id="method-i-tcp_calc_seq_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/tcp/mixin.rb, line 28</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">tcp_calc_seq</span>; <span class="ruby-keyword">self</span>.<span class="ruby-identifier">tcp_header</span>.<span class="ruby-identifier">tcp_calc_seq</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-tcp_calc_src">
+            
+              <b>tcp_calc_src</b>()
+            
+            <a href="../../classes/PacketFu/TCPHeaderMixin.html#method-i-tcp_calc_src" name="method-i-tcp_calc_src" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-tcp_calc_src_source')" id="l_method-i-tcp_calc_src_source">show</a>
+                
+              </p>
+              <div id="method-i-tcp_calc_src_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/tcp/mixin.rb, line 29</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">tcp_calc_src</span>; <span class="ruby-keyword">self</span>.<span class="ruby-identifier">tcp_header</span>.<span class="ruby-identifier">tcp_calc_src</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-tcp_dport">
+            
+              <b>tcp_dport</b>()
+            
+            <a href="../../classes/PacketFu/TCPHeaderMixin.html#method-i-tcp_dport" name="method-i-tcp_dport" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-tcp_dport_source')" id="l_method-i-tcp_dport_source">show</a>
+                
+              </p>
+              <div id="method-i-tcp_dport_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/tcp/mixin.rb, line 37</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">tcp_dport</span>; <span class="ruby-keyword">self</span>.<span class="ruby-identifier">tcp_header</span>.<span class="ruby-identifier">tcp_dport</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-tcp_dport-3D">
+            
+              <b>tcp_dport=</b>(v)
+            
+            <a href="../../classes/PacketFu/TCPHeaderMixin.html#method-i-tcp_dport-3D" name="method-i-tcp_dport-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-tcp_dport-3D_source')" id="l_method-i-tcp_dport-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-tcp_dport-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/tcp/mixin.rb, line 38</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">tcp_dport=</span>(<span class="ruby-identifier">v</span>); <span class="ruby-keyword">self</span>.<span class="ruby-identifier">tcp_header</span>.<span class="ruby-identifier">tcp_dport</span>= <span class="ruby-identifier">v</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-tcp_dst">
+            
+              <b>tcp_dst</b>()
+            
+            <a href="../../classes/PacketFu/TCPHeaderMixin.html#method-i-tcp_dst" name="method-i-tcp_dst" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-tcp_dst_source')" id="l_method-i-tcp_dst_source">show</a>
+                
+              </p>
+              <div id="method-i-tcp_dst_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/tcp/mixin.rb, line 9</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">tcp_dst</span>; <span class="ruby-keyword">self</span>.<span class="ruby-identifier">tcp_header</span>.<span class="ruby-identifier">tcp_dst</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-tcp_dst-3D">
+            
+              <b>tcp_dst=</b>(v)
+            
+            <a href="../../classes/PacketFu/TCPHeaderMixin.html#method-i-tcp_dst-3D" name="method-i-tcp_dst-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-tcp_dst-3D_source')" id="l_method-i-tcp_dst-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-tcp_dst-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/tcp/mixin.rb, line 8</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">tcp_dst=</span>(<span class="ruby-identifier">v</span>); <span class="ruby-keyword">self</span>.<span class="ruby-identifier">tcp_header</span>.<span class="ruby-identifier">tcp_dst</span>= <span class="ruby-identifier">v</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-tcp_ecn">
+            
+              <b>tcp_ecn</b>()
+            
+            <a href="../../classes/PacketFu/TCPHeaderMixin.html#method-i-tcp_ecn" name="method-i-tcp_ecn" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-tcp_ecn_source')" id="l_method-i-tcp_ecn_source">show</a>
+                
+              </p>
+              <div id="method-i-tcp_ecn_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/tcp/mixin.rb, line 24</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">tcp_ecn</span>; <span class="ruby-keyword">self</span>.<span class="ruby-identifier">tcp_header</span>.<span class="ruby-identifier">tcp_ecn</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-tcp_ecn-3D">
+            
+              <b>tcp_ecn=</b>(v)
+            
+            <a href="../../classes/PacketFu/TCPHeaderMixin.html#method-i-tcp_ecn-3D" name="method-i-tcp_ecn-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-tcp_ecn-3D_source')" id="l_method-i-tcp_ecn-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-tcp_ecn-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/tcp/mixin.rb, line 25</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">tcp_ecn=</span>(<span class="ruby-identifier">v</span>); <span class="ruby-keyword">self</span>.<span class="ruby-identifier">tcp_header</span>.<span class="ruby-identifier">tcp_ecn</span>= <span class="ruby-identifier">v</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-tcp_flags">
+            
+              <b>tcp_flags</b>()
+            
+            <a href="../../classes/PacketFu/TCPHeaderMixin.html#method-i-tcp_flags" name="method-i-tcp_flags" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-tcp_flags_source')" id="l_method-i-tcp_flags_source">show</a>
+                
+              </p>
+              <div id="method-i-tcp_flags_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/tcp/mixin.rb, line 45</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">tcp_flags</span>; <span class="ruby-keyword">self</span>.<span class="ruby-identifier">tcp_header</span>.<span class="ruby-identifier">tcp_flags</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-tcp_flags-3D">
+            
+              <b>tcp_flags=</b>(v)
+            
+            <a href="../../classes/PacketFu/TCPHeaderMixin.html#method-i-tcp_flags-3D" name="method-i-tcp_flags-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-tcp_flags-3D_source')" id="l_method-i-tcp_flags-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-tcp_flags-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/tcp/mixin.rb, line 46</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">tcp_flags=</span>(<span class="ruby-identifier">v</span>); <span class="ruby-keyword">self</span>.<span class="ruby-identifier">tcp_header</span>.<span class="ruby-identifier">tcp_flags</span>= <span class="ruby-identifier">v</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-tcp_flags_dotmap">
+            
+              <b>tcp_flags_dotmap</b>()
+            
+            <a href="../../classes/PacketFu/TCPHeaderMixin.html#method-i-tcp_flags_dotmap" name="method-i-tcp_flags_dotmap" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-tcp_flags_dotmap_source')" id="l_method-i-tcp_flags_dotmap_source">show</a>
+                
+              </p>
+              <div id="method-i-tcp_flags_dotmap_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/tcp/mixin.rb, line 33</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">tcp_flags_dotmap</span>; <span class="ruby-keyword">self</span>.<span class="ruby-identifier">tcp_header</span>.<span class="ruby-identifier">tcp_flags_dotmap</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-tcp_flags_readable">
+            
+              <b>tcp_flags_readable</b>()
+            
+            <a href="../../classes/PacketFu/TCPHeaderMixin.html#method-i-tcp_flags_readable" name="method-i-tcp_flags_readable" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-tcp_flags_readable_source')" id="l_method-i-tcp_flags_readable_source">show</a>
+                
+              </p>
+              <div id="method-i-tcp_flags_readable_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/tcp/mixin.rb, line 40</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">tcp_flags_readable</span>; <span class="ruby-keyword">self</span>.<span class="ruby-identifier">tcp_header</span>.<span class="ruby-identifier">tcp_flags_readable</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-tcp_hlen">
+            
+              <b>tcp_hlen</b>()
+            
+            <a href="../../classes/PacketFu/TCPHeaderMixin.html#method-i-tcp_hlen" name="method-i-tcp_hlen" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-tcp_hlen_source')" id="l_method-i-tcp_hlen_source">show</a>
+                
+              </p>
+              <div id="method-i-tcp_hlen_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/tcp/mixin.rb, line 20</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">tcp_hlen</span>; <span class="ruby-keyword">self</span>.<span class="ruby-identifier">tcp_header</span>.<span class="ruby-identifier">tcp_hlen</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-tcp_hlen-3D">
+            
+              <b>tcp_hlen=</b>(v)
+            
+            <a href="../../classes/PacketFu/TCPHeaderMixin.html#method-i-tcp_hlen-3D" name="method-i-tcp_hlen-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-tcp_hlen-3D_source')" id="l_method-i-tcp_hlen-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-tcp_hlen-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/tcp/mixin.rb, line 21</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">tcp_hlen=</span>(<span class="ruby-identifier">v</span>); <span class="ruby-keyword">self</span>.<span class="ruby-identifier">tcp_header</span>.<span class="ruby-identifier">tcp_hlen</span>= <span class="ruby-identifier">v</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-tcp_options">
+            
+              <b>tcp_options</b>()
+            
+            <a href="../../classes/PacketFu/TCPHeaderMixin.html#method-i-tcp_options" name="method-i-tcp_options" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-tcp_options_source')" id="l_method-i-tcp_options_source">show</a>
+                
+              </p>
+              <div id="method-i-tcp_options_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/tcp/mixin.rb, line 32</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">tcp_options</span>; <span class="ruby-keyword">self</span>.<span class="ruby-identifier">tcp_header</span>.<span class="ruby-identifier">tcp_options</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-tcp_options-3D">
+            
+              <b>tcp_options=</b>(v)
+            
+            <a href="../../classes/PacketFu/TCPHeaderMixin.html#method-i-tcp_options-3D" name="method-i-tcp_options-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-tcp_options-3D_source')" id="l_method-i-tcp_options-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-tcp_options-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/tcp/mixin.rb, line 34</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">tcp_options=</span>(<span class="ruby-identifier">v</span>); <span class="ruby-keyword">self</span>.<span class="ruby-identifier">tcp_header</span>.<span class="ruby-identifier">tcp_options</span>= <span class="ruby-identifier">v</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-tcp_opts">
+            
+              <b>tcp_opts</b>()
+            
+            <a href="../../classes/PacketFu/TCPHeaderMixin.html#method-i-tcp_opts" name="method-i-tcp_opts" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-tcp_opts_source')" id="l_method-i-tcp_opts_source">show</a>
+                
+              </p>
+              <div id="method-i-tcp_opts_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/tcp/mixin.rb, line 26</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">tcp_opts</span>; <span class="ruby-keyword">self</span>.<span class="ruby-identifier">tcp_header</span>.<span class="ruby-identifier">tcp_opts</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-tcp_opts-3D">
+            
+              <b>tcp_opts=</b>(v)
+            
+            <a href="../../classes/PacketFu/TCPHeaderMixin.html#method-i-tcp_opts-3D" name="method-i-tcp_opts-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-tcp_opts-3D_source')" id="l_method-i-tcp_opts-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-tcp_opts-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/tcp/mixin.rb, line 27</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">tcp_opts=</span>(<span class="ruby-identifier">v</span>); <span class="ruby-keyword">self</span>.<span class="ruby-identifier">tcp_header</span>.<span class="ruby-identifier">tcp_opts</span>= <span class="ruby-identifier">v</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-tcp_opts_len">
+            
+              <b>tcp_opts_len</b>()
+            
+            <a href="../../classes/PacketFu/TCPHeaderMixin.html#method-i-tcp_opts_len" name="method-i-tcp_opts_len" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-tcp_opts_len_source')" id="l_method-i-tcp_opts_len_source">show</a>
+                
+              </p>
+              <div id="method-i-tcp_opts_len_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/tcp/mixin.rb, line 30</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">tcp_opts_len</span>; <span class="ruby-keyword">self</span>.<span class="ruby-identifier">tcp_header</span>.<span class="ruby-identifier">tcp_opts_len</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-tcp_opts_readable">
+            
+              <b>tcp_opts_readable</b>()
+            
+            <a href="../../classes/PacketFu/TCPHeaderMixin.html#method-i-tcp_opts_readable" name="method-i-tcp_opts_readable" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-tcp_opts_readable_source')" id="l_method-i-tcp_opts_readable_source">show</a>
+                
+              </p>
+              <div id="method-i-tcp_opts_readable_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/tcp/mixin.rb, line 44</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">tcp_opts_readable</span>; <span class="ruby-keyword">self</span>.<span class="ruby-identifier">tcp_header</span>.<span class="ruby-identifier">tcp_opts_readable</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-tcp_recalc">
+            
+              <b>tcp_recalc</b>(*v)
+            
+            <a href="../../classes/PacketFu/TCPHeaderMixin.html#method-i-tcp_recalc" name="method-i-tcp_recalc" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-tcp_recalc_source')" id="l_method-i-tcp_recalc_source">show</a>
+                
+              </p>
+              <div id="method-i-tcp_recalc_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/tcp/mixin.rb, line 39</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">tcp_recalc</span>(*<span class="ruby-identifier">v</span>); <span class="ruby-keyword">self</span>.<span class="ruby-identifier">tcp_header</span>.<span class="ruby-identifier">tcp_recalc</span>(*<span class="ruby-identifier">v</span>); <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-tcp_reserved">
+            
+              <b>tcp_reserved</b>()
+            
+            <a href="../../classes/PacketFu/TCPHeaderMixin.html#method-i-tcp_reserved" name="method-i-tcp_reserved" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-tcp_reserved_source')" id="l_method-i-tcp_reserved_source">show</a>
+                
+              </p>
+              <div id="method-i-tcp_reserved_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/tcp/mixin.rb, line 22</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">tcp_reserved</span>; <span class="ruby-keyword">self</span>.<span class="ruby-identifier">tcp_header</span>.<span class="ruby-identifier">tcp_reserved</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-tcp_reserved-3D">
+            
+              <b>tcp_reserved=</b>(v)
+            
+            <a href="../../classes/PacketFu/TCPHeaderMixin.html#method-i-tcp_reserved-3D" name="method-i-tcp_reserved-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-tcp_reserved-3D_source')" id="l_method-i-tcp_reserved-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-tcp_reserved-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/tcp/mixin.rb, line 23</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">tcp_reserved=</span>(<span class="ruby-identifier">v</span>); <span class="ruby-keyword">self</span>.<span class="ruby-identifier">tcp_header</span>.<span class="ruby-identifier">tcp_reserved</span>= <span class="ruby-identifier">v</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-tcp_seq">
+            
+              <b>tcp_seq</b>()
+            
+            <a href="../../classes/PacketFu/TCPHeaderMixin.html#method-i-tcp_seq" name="method-i-tcp_seq" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-tcp_seq_source')" id="l_method-i-tcp_seq_source">show</a>
+                
+              </p>
+              <div id="method-i-tcp_seq_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/tcp/mixin.rb, line 11</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">tcp_seq</span>; <span class="ruby-keyword">self</span>.<span class="ruby-identifier">tcp_header</span>.<span class="ruby-identifier">tcp_seq</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-tcp_seq-3D">
+            
+              <b>tcp_seq=</b>(v)
+            
+            <a href="../../classes/PacketFu/TCPHeaderMixin.html#method-i-tcp_seq-3D" name="method-i-tcp_seq-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-tcp_seq-3D_source')" id="l_method-i-tcp_seq-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-tcp_seq-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/tcp/mixin.rb, line 10</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">tcp_seq=</span>(<span class="ruby-identifier">v</span>); <span class="ruby-keyword">self</span>.<span class="ruby-identifier">tcp_header</span>.<span class="ruby-identifier">tcp_seq</span>= <span class="ruby-identifier">v</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-tcp_seq_readable">
+            
+              <b>tcp_seq_readable</b>()
+            
+            <a href="../../classes/PacketFu/TCPHeaderMixin.html#method-i-tcp_seq_readable" name="method-i-tcp_seq_readable" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-tcp_seq_readable_source')" id="l_method-i-tcp_seq_readable_source">show</a>
+                
+              </p>
+              <div id="method-i-tcp_seq_readable_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/tcp/mixin.rb, line 42</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">tcp_seq_readable</span>; <span class="ruby-keyword">self</span>.<span class="ruby-identifier">tcp_header</span>.<span class="ruby-identifier">tcp_seq_readable</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-tcp_sport">
+            
+              <b>tcp_sport</b>()
+            
+            <a href="../../classes/PacketFu/TCPHeaderMixin.html#method-i-tcp_sport" name="method-i-tcp_sport" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-tcp_sport_source')" id="l_method-i-tcp_sport_source">show</a>
+                
+              </p>
+              <div id="method-i-tcp_sport_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/tcp/mixin.rb, line 35</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">tcp_sport</span>; <span class="ruby-keyword">self</span>.<span class="ruby-identifier">tcp_header</span>.<span class="ruby-identifier">tcp_sport</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-tcp_sport-3D">
+            
+              <b>tcp_sport=</b>(v)
+            
+            <a href="../../classes/PacketFu/TCPHeaderMixin.html#method-i-tcp_sport-3D" name="method-i-tcp_sport-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-tcp_sport-3D_source')" id="l_method-i-tcp_sport-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-tcp_sport-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/tcp/mixin.rb, line 36</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">tcp_sport=</span>(<span class="ruby-identifier">v</span>); <span class="ruby-keyword">self</span>.<span class="ruby-identifier">tcp_header</span>.<span class="ruby-identifier">tcp_sport</span>= <span class="ruby-identifier">v</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-tcp_src">
+            
+              <b>tcp_src</b>()
+            
+            <a href="../../classes/PacketFu/TCPHeaderMixin.html#method-i-tcp_src" name="method-i-tcp_src" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-tcp_src_source')" id="l_method-i-tcp_src_source">show</a>
+                
+              </p>
+              <div id="method-i-tcp_src_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/tcp/mixin.rb, line 7</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">tcp_src</span>; <span class="ruby-keyword">self</span>.<span class="ruby-identifier">tcp_header</span>.<span class="ruby-identifier">tcp_src</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-tcp_src-3D">
+            
+              <b>tcp_src=</b>(v)
+            
+            <a href="../../classes/PacketFu/TCPHeaderMixin.html#method-i-tcp_src-3D" name="method-i-tcp_src-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-tcp_src-3D_source')" id="l_method-i-tcp_src-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-tcp_src-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/tcp/mixin.rb, line 6</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">tcp_src=</span>(<span class="ruby-identifier">v</span>); <span class="ruby-keyword">self</span>.<span class="ruby-identifier">tcp_header</span>.<span class="ruby-identifier">tcp_src</span>= <span class="ruby-identifier">v</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-tcp_sum">
+            
+              <b>tcp_sum</b>()
+            
+            <a href="../../classes/PacketFu/TCPHeaderMixin.html#method-i-tcp_sum" name="method-i-tcp_sum" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-tcp_sum_source')" id="l_method-i-tcp_sum_source">show</a>
+                
+              </p>
+              <div id="method-i-tcp_sum_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/tcp/mixin.rb, line 17</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">tcp_sum</span>; <span class="ruby-keyword">self</span>.<span class="ruby-identifier">tcp_header</span>.<span class="ruby-identifier">tcp_sum</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-tcp_sum-3D">
+            
+              <b>tcp_sum=</b>(v)
+            
+            <a href="../../classes/PacketFu/TCPHeaderMixin.html#method-i-tcp_sum-3D" name="method-i-tcp_sum-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-tcp_sum-3D_source')" id="l_method-i-tcp_sum-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-tcp_sum-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/tcp/mixin.rb, line 16</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">tcp_sum=</span>(<span class="ruby-identifier">v</span>); <span class="ruby-keyword">self</span>.<span class="ruby-identifier">tcp_header</span>.<span class="ruby-identifier">tcp_sum</span>= <span class="ruby-identifier">v</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-tcp_sum_readable">
+            
+              <b>tcp_sum_readable</b>()
+            
+            <a href="../../classes/PacketFu/TCPHeaderMixin.html#method-i-tcp_sum_readable" name="method-i-tcp_sum_readable" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-tcp_sum_readable_source')" id="l_method-i-tcp_sum_readable_source">show</a>
+                
+              </p>
+              <div id="method-i-tcp_sum_readable_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/tcp/mixin.rb, line 43</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">tcp_sum_readable</span>; <span class="ruby-keyword">self</span>.<span class="ruby-identifier">tcp_header</span>.<span class="ruby-identifier">tcp_sum_readable</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-tcp_urg">
+            
+              <b>tcp_urg</b>()
+            
+            <a href="../../classes/PacketFu/TCPHeaderMixin.html#method-i-tcp_urg" name="method-i-tcp_urg" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-tcp_urg_source')" id="l_method-i-tcp_urg_source">show</a>
+                
+              </p>
+              <div id="method-i-tcp_urg_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/tcp/mixin.rb, line 19</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">tcp_urg</span>; <span class="ruby-keyword">self</span>.<span class="ruby-identifier">tcp_header</span>.<span class="ruby-identifier">tcp_urg</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-tcp_urg-3D">
+            
+              <b>tcp_urg=</b>(v)
+            
+            <a href="../../classes/PacketFu/TCPHeaderMixin.html#method-i-tcp_urg-3D" name="method-i-tcp_urg-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-tcp_urg-3D_source')" id="l_method-i-tcp_urg-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-tcp_urg-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/tcp/mixin.rb, line 18</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">tcp_urg=</span>(<span class="ruby-identifier">v</span>); <span class="ruby-keyword">self</span>.<span class="ruby-identifier">tcp_header</span>.<span class="ruby-identifier">tcp_urg</span>= <span class="ruby-identifier">v</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-tcp_win">
+            
+              <b>tcp_win</b>()
+            
+            <a href="../../classes/PacketFu/TCPHeaderMixin.html#method-i-tcp_win" name="method-i-tcp_win" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-tcp_win_source')" id="l_method-i-tcp_win_source">show</a>
+                
+              </p>
+              <div id="method-i-tcp_win_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/tcp/mixin.rb, line 15</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">tcp_win</span>; <span class="ruby-keyword">self</span>.<span class="ruby-identifier">tcp_header</span>.<span class="ruby-identifier">tcp_win</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-tcp_win-3D">
+            
+              <b>tcp_win=</b>(v)
+            
+            <a href="../../classes/PacketFu/TCPHeaderMixin.html#method-i-tcp_win-3D" name="method-i-tcp_win-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-tcp_win-3D_source')" id="l_method-i-tcp_win-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-tcp_win-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/tcp/mixin.rb, line 14</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">tcp_win=</span>(<span class="ruby-identifier">v</span>); <span class="ruby-keyword">self</span>.<span class="ruby-identifier">tcp_header</span>.<span class="ruby-identifier">tcp_win</span>= <span class="ruby-identifier">v</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

@@ -1,0 +1,734 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>PacketFu::Capture</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/github.css" type="text/css" media="screen" />
+<script src="../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            PacketFu::Capture 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="../Object.html">Object</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../files/lib/packetfu/capture_rb.html">lib/packetfu/capture.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>The <a href="Capture.html">Capture</a> class is used to construct PcapRub
+objects in order to collect packets from an interface.</p>
+
+<p>This class requires PcapRub. In addition, you will need root (or root-like)
+privileges  in order to capture from the interface.</p>
+
+<p>Note, on some wireless cards, setting :promisc =&gt; true will disable
+capturing.</p>
+
+<h2 id="label-Example">Example</h2>
+
+<pre class="ruby"><span class="ruby-comment"># Typical use</span>
+<span class="ruby-identifier">cap</span> = <span class="ruby-constant">PacketFu</span><span class="ruby-operator">::</span><span class="ruby-constant">Capture</span>.<span class="ruby-identifier">new</span>(:<span class="ruby-identifier">iface</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'eth0'</span>, :<span class="ruby-identifier">promisc</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>)
+<span class="ruby-identifier">cap</span>.<span class="ruby-identifier">start</span>
+<span class="ruby-identifier">sleep</span> <span class="ruby-value">10</span>
+<span class="ruby-identifier">cap</span>.<span class="ruby-identifier">save</span>
+<span class="ruby-identifier">first_packet</span> = <span class="ruby-identifier">cap</span>.<span class="ruby-identifier">array</span>[<span class="ruby-value">0</span>]
+
+<span class="ruby-comment"># Tcpdump-like use</span>
+<span class="ruby-identifier">cap</span> = <span class="ruby-constant">PacketFu</span><span class="ruby-operator">::</span><span class="ruby-constant">Capture</span>.<span class="ruby-identifier">new</span>(:<span class="ruby-identifier">start</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>)
+<span class="ruby-identifier">cap</span>.<span class="ruby-identifier">show_live</span>(:<span class="ruby-identifier">save</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>, :<span class="ruby-identifier">filter</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'tcp and not port 22'</span>)
+</pre>
+
+<h2 id="label-See+Also">See Also</h2>
+
+<p><a href="Read.html">Read</a>, <a href="Write.html">Write</a></p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>B</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-bpf">bpf</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>C</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-capture">capture</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-clear">clear</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-new">new</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-next">next</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-save">save</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-setup_params">setup_params</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-show_live">show_live</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-start">start</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>W</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-w2a">w2a</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-wire_to_array">wire_to_array</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+      <!-- Section attributes -->
+      <div class="sectiontitle">Attributes</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [RW]
+            </td>
+            <td class='attr-name'>array</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [R]
+            </td>
+            <td class='attr-name'>iface</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [R]
+            </td>
+            <td class='attr-name'>promisc</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [R]
+            </td>
+            <td class='attr-name'>snaplen</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [RW]
+            </td>
+            <td class='attr-name'>stream</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [R]
+            </td>
+            <td class='attr-name'>timeout</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+      </table>
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-new">
+            
+              <b>new</b>(args={})
+            
+            <a href="../../classes/PacketFu/Capture.html#method-c-new" name="method-c-new" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
+                
+              </p>
+              <div id="method-c-new_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/capture.rb, line 31</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize</span>(<span class="ruby-identifier">args</span>={})
+        <span class="ruby-ivar">@array</span> = [] <span class="ruby-comment"># Where the packet array goes.</span>
+        <span class="ruby-ivar">@stream</span> = [] <span class="ruby-comment"># Where the stream goes.</span>
+        <span class="ruby-ivar">@iface</span> = (<span class="ruby-identifier">args</span>[<span class="ruby-value">:iface</span>] <span class="ruby-operator">||</span> <span class="ruby-constant">ENV</span>[<span class="ruby-string">'IFACE'</span>] <span class="ruby-operator">||</span> <span class="ruby-constant">Pcap</span>.<span class="ruby-identifier">lookupdev</span> <span class="ruby-operator">||</span> <span class="ruby-string">&quot;lo&quot;</span>).<span class="ruby-identifier">to_s</span>
+        <span class="ruby-ivar">@snaplen</span> = <span class="ruby-identifier">args</span>[<span class="ruby-value">:snaplen</span>] <span class="ruby-operator">||</span> <span class="ruby-number">0xffff</span>
+        <span class="ruby-ivar">@promisc</span> = <span class="ruby-identifier">args</span>[<span class="ruby-value">:promisc</span>] <span class="ruby-operator">||</span> <span class="ruby-keyword">false</span> <span class="ruby-comment"># Sensible for some Intel wifi cards</span>
+        <span class="ruby-ivar">@timeout</span> = <span class="ruby-identifier">args</span>[<span class="ruby-value">:timeout</span>] <span class="ruby-operator">||</span> <span class="ruby-number">1</span>
+
+        <span class="ruby-identifier">setup_params</span>(<span class="ruby-identifier">args</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-bpf">
+            
+              <b>bpf</b>(args={})
+            
+            <a href="../../classes/PacketFu/Capture.html#method-i-bpf" name="method-i-bpf" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>bpf() sets a bpf filter on a capture session. Valid arugments are:</p>
+
+<pre>:filter
+  Provide a bpf filter to enable for the capture. For example, 'ip and not tcp'</pre>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-bpf_source')" id="l_method-i-bpf_source">show</a>
+                
+              </p>
+              <div id="method-i-bpf_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/capture.rb, line 100</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">bpf</span>(<span class="ruby-identifier">args</span>={})
+        <span class="ruby-identifier">filter</span> = <span class="ruby-identifier">args</span>[<span class="ruby-value">:filter</span>]
+        <span class="ruby-identifier">capture</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@stream</span>.<span class="ruby-identifier">class</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Array</span>
+        <span class="ruby-ivar">@stream</span>.<span class="ruby-identifier">setfilter</span>(<span class="ruby-identifier">filter</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-capture">
+            
+              <b>capture</b>(args={})
+            
+            <a href="../../classes/PacketFu/Capture.html#method-i-capture" name="method-i-capture" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>capture() initializes the @stream varaible. Valid arguments are:</p>
+
+<pre>:filter
+  Provide a bpf filter to enable for the capture. For example, 'ip and not tcp'
+:start
+  When true, start capturing packets to the @stream variable. Defaults to true</pre>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-capture_source')" id="l_method-i-capture_source">show</a>
+                
+              </p>
+              <div id="method-i-capture_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/capture.rb, line 56</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">capture</span>(<span class="ruby-identifier">args</span>={})
+        <span class="ruby-keyword">if</span> <span class="ruby-constant">Process</span>.<span class="ruby-identifier">euid</span>.<span class="ruby-identifier">zero?</span>
+                <span class="ruby-identifier">filter</span> = <span class="ruby-identifier">args</span>[<span class="ruby-value">:filter</span>]
+                <span class="ruby-identifier">start</span> = <span class="ruby-identifier">args</span>[<span class="ruby-value">:start</span>] <span class="ruby-operator">||</span> <span class="ruby-keyword">true</span>
+                <span class="ruby-keyword">if</span> <span class="ruby-identifier">start</span>
+                        <span class="ruby-keyword">begin</span>
+                                <span class="ruby-ivar">@stream</span> = <span class="ruby-constant">Pcap</span>.<span class="ruby-identifier">open_live</span>(<span class="ruby-ivar">@iface</span>,<span class="ruby-ivar">@snaplen</span>,<span class="ruby-ivar">@promisc</span>,<span class="ruby-ivar">@timeout</span>)
+                        <span class="ruby-keyword">rescue</span> <span class="ruby-constant">RuntimeError</span>
+                                <span class="ruby-identifier">$stderr</span>.<span class="ruby-identifier">print</span> <span class="ruby-string">&quot;Are you sure you're root? Error: &quot;</span>
+                                <span class="ruby-identifier">raise</span>
+                        <span class="ruby-keyword">end</span>
+                        <span class="ruby-identifier">bpf</span>(<span class="ruby-value">:filter=</span><span class="ruby-operator">&gt;</span><span class="ruby-identifier">filter</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">filter</span>
+                <span class="ruby-keyword">else</span>
+                        <span class="ruby-ivar">@stream</span> = []
+                <span class="ruby-keyword">end</span>
+                <span class="ruby-ivar">@stream</span>
+        <span class="ruby-keyword">else</span>
+                <span class="ruby-identifier">raise</span> <span class="ruby-constant">RuntimeError</span>,<span class="ruby-string">&quot;Not root, so can't capture packets. Error: &quot;</span>
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-clear">
+            
+              <b>clear</b>(args={})
+            
+            <a href="../../classes/PacketFu/Capture.html#method-i-clear" name="method-i-clear" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>clear() clears the @stream and @array variables, essentially starting the
+capture session over. Valid arguments are:</p>
+
+<pre>:array 
+  If true, the @array is cleared.
+:stream
+  If true, the @stream is cleared.</pre>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-clear_source')" id="l_method-i-clear_source">show</a>
+                
+              </p>
+              <div id="method-i-clear_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/capture.rb, line 89</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">clear</span>(<span class="ruby-identifier">args</span>={})
+        <span class="ruby-identifier">array</span> = <span class="ruby-identifier">args</span>[<span class="ruby-value">:array</span>] <span class="ruby-operator">||</span> <span class="ruby-keyword">true</span>
+        <span class="ruby-identifier">stream</span> = <span class="ruby-identifier">args</span>[<span class="ruby-value">:stream</span>] <span class="ruby-operator">||</span> <span class="ruby-keyword">true</span>
+        <span class="ruby-ivar">@array</span> = [] <span class="ruby-keyword">if</span> <span class="ruby-identifier">array</span>
+        <span class="ruby-ivar">@stream</span> = [] <span class="ruby-keyword">if</span> <span class="ruby-identifier">stream</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-next">
+            
+              <b>next</b>()
+            
+            <a href="../../classes/PacketFu/Capture.html#method-i-next" name="method-i-next" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>next() exposes the Stream object’s next method to the outside world.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-next_source')" id="l_method-i-next_source">show</a>
+                
+              </p>
+              <div id="method-i-next_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/capture.rb, line 124</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">next</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-ivar">@stream</span>.<span class="ruby-identifier">next</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-save">
+            
+              <b>save</b>(args={})
+            
+            <a href="../../classes/PacketFu/Capture.html#method-i-save" name="method-i-save" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>save() is a equivalent to <a
+href="Capture.html#method-i-wire_to_array">#wire_to_array</a>()</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-save_source')" id="l_method-i-save_source">show</a>
+                
+              </p>
+              <div id="method-i-save_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/capture.rb, line 134</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">save</span>(<span class="ruby-identifier">args</span>={})
+        <span class="ruby-identifier">wire_to_array</span>(<span class="ruby-identifier">args</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-setup_params">
+            
+              <b>setup_params</b>(args={})
+            
+            <a href="../../classes/PacketFu/Capture.html#method-i-setup_params" name="method-i-setup_params" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Used by new().</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-setup_params_source')" id="l_method-i-setup_params_source">show</a>
+                
+              </p>
+              <div id="method-i-setup_params_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/capture.rb, line 43</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">setup_params</span>(<span class="ruby-identifier">args</span>={})
+        <span class="ruby-identifier">filter</span> = <span class="ruby-identifier">args</span>[<span class="ruby-value">:filter</span>] <span class="ruby-comment"># Not global; filter criteria can change.</span>
+        <span class="ruby-identifier">start</span> = <span class="ruby-identifier">args</span>[<span class="ruby-value">:start</span>] <span class="ruby-operator">||</span> <span class="ruby-keyword">false</span>
+        <span class="ruby-identifier">capture</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">start</span>
+        <span class="ruby-identifier">bpf</span>(<span class="ruby-value">:filter=</span><span class="ruby-operator">&gt;</span><span class="ruby-identifier">filter</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">filter</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-show_live">
+            
+              <b>show_live</b>(args={})
+            
+            <a href="../../classes/PacketFu/Capture.html#method-i-show_live" name="method-i-show_live" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p><a href="Capture.html#method-i-show_live">#show_live</a>() is a method to
+capture packets and display peek() data to stdout. Valid arguments are:</p>
+
+<pre>:filter
+  Provide a bpf filter to captured packets.
+:save
+  Save the capture in @array
+:verbose
+  TODO: Not implemented yet; do more than just peek() at the packets.
+:quiet
+  TODO: Not implemented yet; do less than peek() at the packets.</pre>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-show_live_source')" id="l_method-i-show_live_source">show</a>
+                
+              </p>
+              <div id="method-i-show_live_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/capture.rb, line 148</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">show_live</span>(<span class="ruby-identifier">args</span>={})
+        <span class="ruby-identifier">filter</span> = <span class="ruby-identifier">args</span>[<span class="ruby-value">:filter</span>]
+        <span class="ruby-identifier">save</span> = <span class="ruby-identifier">args</span>[<span class="ruby-value">:save</span>]
+        <span class="ruby-identifier">verbose</span> = <span class="ruby-identifier">args</span>[<span class="ruby-value">:verbose</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">args</span>[<span class="ruby-value">:v</span>] <span class="ruby-operator">||</span> <span class="ruby-keyword">false</span>
+        <span class="ruby-identifier">quiet</span> = <span class="ruby-identifier">args</span>[<span class="ruby-value">:quiet</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">args</span>[<span class="ruby-value">:q</span>] <span class="ruby-operator">||</span> <span class="ruby-keyword">false</span> <span class="ruby-comment"># Setting q and v doesn't make a lot of sense but hey.</span>
+
+        <span class="ruby-comment"># Ensure the capture's started.</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-ivar">@stream</span>.<span class="ruby-identifier">class</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Array</span>
+                <span class="ruby-identifier">capture</span>
+        <span class="ruby-keyword">end</span>
+
+        <span class="ruby-ivar">@stream</span>.<span class="ruby-identifier">setfilter</span>(<span class="ruby-identifier">filter</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">filter</span>
+        <span class="ruby-keyword">while</span> <span class="ruby-keyword">true</span>
+                <span class="ruby-ivar">@stream</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">pkt</span><span class="ruby-operator">|</span>
+                        <span class="ruby-identifier">puts</span> <span class="ruby-constant">Packet</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">pkt</span>).<span class="ruby-identifier">peek</span>
+                        <span class="ruby-ivar">@array</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">pkt</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">args</span>[<span class="ruby-value">:save</span>]
+                <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-start">
+            
+              <b>start</b>(args={})
+            
+            <a href="../../classes/PacketFu/Capture.html#method-i-start" name="method-i-start" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>start() is equivalent to capture().</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-start_source')" id="l_method-i-start_source">show</a>
+                
+              </p>
+              <div id="method-i-start_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/capture.rb, line 78</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">start</span>(<span class="ruby-identifier">args</span>={})
+        <span class="ruby-identifier">capture</span>(<span class="ruby-identifier">args</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-w2a">
+            
+              <b>w2a</b>(args={})
+            
+            <a href="../../classes/PacketFu/Capture.html#method-i-w2a" name="method-i-w2a" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>w2a() is a equivalent to <a
+href="Capture.html#method-i-wire_to_array">#wire_to_array</a>()</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-w2a_source')" id="l_method-i-w2a_source">show</a>
+                
+              </p>
+              <div id="method-i-w2a_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/capture.rb, line 129</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">w2a</span>(<span class="ruby-identifier">args</span>={})
+        <span class="ruby-identifier">wire_to_array</span>(<span class="ruby-identifier">args</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-wire_to_array">
+            
+              <b>wire_to_array</b>(args={})
+            
+            <a href="../../classes/PacketFu/Capture.html#method-i-wire_to_array" name="method-i-wire_to_array" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p><a href="Capture.html#method-i-wire_to_array">#wire_to_array</a>() saves a
+packet stream as an array of binary strings. From here, packets may
+accessed by other functions. Note that the <a
+href="Capture.html#method-i-wire_to_array">#wire_to_array</a> empties the
+stream, so multiple calls will append new packets to @array. Valid
+arguments are:</p>
+
+<pre>:filter
+  Provide a bpf filter to apply to packets moving from @stream to @array.</pre>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-wire_to_array_source')" id="l_method-i-wire_to_array_source">show</a>
+                
+              </p>
+              <div id="method-i-wire_to_array_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/capture.rb, line 113</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">wire_to_array</span>(<span class="ruby-identifier">args</span>={})
+        <span class="ruby-identifier">filter</span> = <span class="ruby-identifier">args</span>[<span class="ruby-value">:filter</span>] 
+        <span class="ruby-identifier">bpf</span>(<span class="ruby-value">:filter=</span><span class="ruby-operator">&gt;</span><span class="ruby-identifier">filter</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">filter</span>
+
+        <span class="ruby-keyword">while</span> <span class="ruby-identifier">this_pkt</span> = <span class="ruby-ivar">@stream</span>.<span class="ruby-identifier">next</span>
+                <span class="ruby-ivar">@array</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">this_pkt</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-ivar">@array</span>.<span class="ruby-identifier">size</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

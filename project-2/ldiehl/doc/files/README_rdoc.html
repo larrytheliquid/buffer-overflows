@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>README.rdoc</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            README.rdoc
+        </h1>
+        <ul class="files">
+            <li>README.rdoc</li>
+            <li>Last modified: 2012-11-22 16:08:32 -0800</li>
+        </ul>
+    </div>
+
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<h1 id="label-PacketFu"><a href="../classes/PacketFu.html">PacketFu</a></h1>
+
+<p>A library for reading a writing packets to an interface or to a
+libpcap-formatted file.</p>
+
+<p>It is maintained at <a
+href="http://code.google.com/p/packetfu">code.google.com/p/packetfu</a> and
+<a href="https://github.com/todb/packetfu">github.com/todb/packetfu</a>
+(which repository will win?)</p>
+
+<h2 id="label-Documentation">Documentation</h2>
+
+<p><a href="../classes/PacketFu.html">PacketFu</a> is rdoc-compatible, which
+means it's sdoc compatible. In the same directory as this file, run "sdoc"
+by itself (gem install sdoc), and then view doc/index.html with your
+favored browser. Once that's done, navigate at the top, and read up on how
+to create a Packet or Capture from an interface with show_live or whatever.</p>
+
+<h2 id="label-Requirements">Requirements</h2>
+
+<p>PcapRub:</p>
+
+<p>$ svn co <a
+href="http://www.metasploit.com/svn/framework3/trunk/external/pcaprub">www.metasploit.com/svn/framework3/trunk/external/pcaprub</a></p>
+
+<p>or</p>
+
+<p>$ rvm gem install pcaprub</p>
+
+<p>Marshall Beddoe’s PcapRub is required only for packet reading and writing
+from a network interfaces (which is a pretty big only). PcapRub itself
+relies on libpcap 0.9.8 or later for packet injection. PcapRub also
+requires root privilieges to access the interface directly.</p>
+
+<h3 id="label-Platforms">Platforms</h3>
+
+<p>I tend to test with the following (with bash):</p>
+
+<pre>date &gt; /tmp/tests.txt; for i in default 1.8.6-p420 1.8.7-p334 1.9.1-p431 1.9.2-p180 1.9.3-head
+do rvm use $i &gt;&gt; /tmp/tests.txt
+echo Testing with $i
+echo $i &gt;&gt; /tmp/tests.txt; echo +++++++++++++++++++++++ &gt;&gt; /tmp/tests.txt
+rvmsudo ./all_tests.rb &gt;&gt; /tmp/tests.txt; rspec . &gt;&gt; /tmp/tests.txt
+done</pre>
+
+<h4 id="label-Passing+Platforms">Passing Platforms</h4>
+<ul><li>
+<p>1.9.1-p378</p>
+</li><li>
+<p>1.8.7-p334</p>
+</li><li>
+<p>1.9.2-p180 (suggested version)</p>
+</li><li>
+<p>1.9.3-head</p>
+</li></ul>
+
+<h4 id="label-Problem+Platforms">Problem Platforms</h4>
+<ul><li>
+<p>1.8.6-p420 – Has problems with pcaprub and capture/inject</p>
+</li><li>
+<p>1.9.1-p431 – Has problems with loading gems in general, see <a
+href="http://redmine.ruby-lang.org/issues/2404">redmine.ruby-lang.org/issues/2404</a></p>
+</li></ul>
+
+<p>Technically, these are pcaprub problems and not <a
+href="../classes/PacketFu.html">PacketFu</a> problems, but <a
+href="../classes/PacketFu.html">PacketFu</a> should at least fail better at
+them.</p>
+
+<p>Incidentally, I suspect these Ruby problems are the crux of the Mac OSX
+problems that people report. Try a different Ruby build and please let me
+know what works for you.</p>
+
+<h2 id="label-Examples">Examples</h2>
+
+<p><a href="../classes/PacketFu.html">PacketFu</a> ships with dozens and
+dozens of tests, built on Test::Unit. These should give good pointers on
+how you're expected to use it. See the /tests directory. Furthermore, <a
+href="../classes/PacketFu.html">PacketFu</a> also ships with
+packetfu-shell.rb, which should be run via IRB (as root, if you intend to
+use your interfaces).</p>
+
+<h2 id="label-Author">Author</h2>
+
+<p><a href="../classes/PacketFu.html">PacketFu</a> is maintained primarily by
+Tod Beardsley todb@planb-security.net, with help from Open Source Land.</p>
+
+<p>See <a href="LICENSE_txt.html">LICENSE</a> for licensing details.</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+              </div>
+
+    </div>
+  </body>
+</html>

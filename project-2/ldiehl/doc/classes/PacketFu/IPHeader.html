@@ -1,0 +1,1747 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>PacketFu::IPHeader</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/github.css" type="text/css" media="screen" />
+<script src="../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            PacketFu::IPHeader 
+            
+                <span class="parent">&lt; 
+                    
+                    Struct.new(:ip_v, :ip_hl, :ip_tos, :ip_len,                                                                                                                         :ip_id, :ip_frag, :ip_ttl, :ip_proto,                                                                                                                         :ip_sum, :ip_src, :ip_dst, :body)
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../files/lib/packetfu/protos/ip/header_rb.html">lib/packetfu/protos/ip/header.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p><a href="IPHeader.html">IPHeader</a> is a complete IP struct, used in <a
+href="IPPacket.html">IPPacket</a>. Most traffic on most networks today is
+IP-based.</p>
+
+<p>For more on IP packets, see <a
+href="http://www.networksorcery.com/enp/protocol/ip.htm">www.networksorcery.com/enp/protocol/ip.htm</a></p>
+
+<h4 id="label-Header+Definition">Header Definition</h4>
+
+<pre>Fixnum (4 bits)  :ip_v,     Default: 4
+Fixnum (4 bits)  :ip_hl,    Default: 5
+Int8             :ip_tos,   Default: 0           # TODO: Break out the bits
+Int16            :ip_len,   Default: calculated 
+Int16            :ip_id,    Default: calculated  # IRL, hardly random. 
+Int16            :ip_frag,  Default: 0           # TODO: Break out the bits
+Int8             :ip_ttl,   Default: 0xff        # Changes per flavor
+Int8             :ip_proto, Default: 0x01        # TCP: 0x06, UDP 0x11, ICMP 0x01
+Int16            :ip_sum,   Default: calculated 
+Octets           :ip_src                       
+Octets           :ip_dst                      
+String           :body</pre>
+
+<p>Note that IPPackets will always be somewhat incorrect upon initalization, 
+and want an IPHeader#recalc() to become correct before a  <a
+href="Packet.html#method-i-to_f">PacketFu::Packet#to_f</a> or <a
+href="Packet.html#method-i-to_w">PacketFu::Packet#to_w</a>.</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>I</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-ip_calc_id">ip_calc_id</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-ip_calc_len">ip_calc_len</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-ip_calc_sum">ip_calc_sum</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-ip_daddr">ip_daddr</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-ip_daddr-3D">ip_daddr=</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-ip_dst">ip_dst</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-ip_dst-3D">ip_dst=</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-ip_dst_readable">ip_dst_readable</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-ip_frag">ip_frag</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-ip_frag-3D">ip_frag=</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-ip_hl">ip_hl</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-ip_hl-3D">ip_hl=</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-ip_hlen">ip_hlen</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-ip_id">ip_id</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-ip_id-3D">ip_id=</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-ip_id_readable">ip_id_readable</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-ip_len">ip_len</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-ip_len-3D">ip_len=</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-ip_proto">ip_proto</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-ip_proto-3D">ip_proto=</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-ip_recalc">ip_recalc</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-ip_saddr">ip_saddr</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-ip_saddr-3D">ip_saddr=</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-ip_src">ip_src</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-ip_src-3D">ip_src=</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-ip_src_readable">ip_src_readable</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-ip_sum">ip_sum</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-ip_sum-3D">ip_sum=</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-ip_sum_readable">ip_sum_readable</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-ip_tos">ip_tos</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-ip_tos-3D">ip_tos=</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-ip_ttl">ip_ttl</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-ip_ttl-3D">ip_ttl=</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-ip_v">ip_v</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-ip_v-3D">ip_v=</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-new">new</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>O</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-octet_array">octet_array</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>R</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-read">read</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-to_s">to_s</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+    <!-- Includes -->
+    <div class="sectiontitle">Included Modules</div>
+    <ul>
+      
+        <li>
+          
+            <a href="../StructFu.html">
+              StructFu
+            </a>
+          
+        </li>
+      
+    </ul>
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-new">
+            
+              <b>new</b>(args={})
+            
+            <a href="../../classes/PacketFu/IPHeader.html#method-c-new" name="method-c-new" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
+                
+              </p>
+              <div id="method-c-new_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/ip/header.rb, line 124</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize</span>(<span class="ruby-identifier">args</span>={})
+        <span class="ruby-ivar">@random_id</span> = <span class="ruby-identifier">rand</span>(<span class="ruby-number">0xffff</span>)
+        <span class="ruby-keyword">super</span>(
+                (<span class="ruby-identifier">args</span>[<span class="ruby-value">:ip_v</span>] <span class="ruby-operator">||</span> <span class="ruby-number">4</span>),
+                (<span class="ruby-identifier">args</span>[<span class="ruby-value">:ip_hl</span>] <span class="ruby-operator">||</span> <span class="ruby-number">5</span>),
+                <span class="ruby-constant">Int8</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">args</span>[<span class="ruby-value">:ip_tos</span>]),
+                <span class="ruby-constant">Int16</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">args</span>[<span class="ruby-value">:ip_len</span>] <span class="ruby-operator">||</span> <span class="ruby-number">20</span>),
+                <span class="ruby-constant">Int16</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">args</span>[<span class="ruby-value">:ip_id</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">ip_calc_id</span>),
+                <span class="ruby-constant">Int16</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">args</span>[<span class="ruby-value">:ip_frag</span>]),
+                <span class="ruby-constant">Int8</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">args</span>[<span class="ruby-value">:ip_ttl</span>] <span class="ruby-operator">||</span> <span class="ruby-number">32</span>),
+                <span class="ruby-constant">Int8</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">args</span>[<span class="ruby-value">:ip_proto</span>]),
+                <span class="ruby-constant">Int16</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">args</span>[<span class="ruby-value">:ip_sum</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">ip_calc_sum</span>),
+                <span class="ruby-constant">Octets</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">read</span>(<span class="ruby-identifier">args</span>[<span class="ruby-value">:ip_src</span>] <span class="ruby-operator">||</span> <span class="ruby-string">&quot;\x00\x00\x00\x00&quot;</span>),
+                <span class="ruby-constant">Octets</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">read</span>(<span class="ruby-identifier">args</span>[<span class="ruby-value">:ip_dst</span>] <span class="ruby-operator">||</span> <span class="ruby-string">&quot;\x00\x00\x00\x00&quot;</span>),
+                <span class="ruby-constant">StructFu</span><span class="ruby-operator">::</span><span class="ruby-constant">String</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">read</span>(<span class="ruby-identifier">args</span>[<span class="ruby-value">:body</span>])
+        )
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-octet_array">
+            
+              <b>octet_array</b>(addr)
+            
+            <a href="../../classes/PacketFu/IPHeader.html#method-c-octet_array" name="method-c-octet_array" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Translate various formats of IPv4 Addresses to an array of digits.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-octet_array_source')" id="l_method-c-octet_array_source">show</a>
+                
+              </p>
+              <div id="method-c-octet_array_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/ip/header.rb, line 285</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">octet_array</span>(<span class="ruby-identifier">addr</span>)
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">addr</span>.<span class="ruby-identifier">class</span> <span class="ruby-operator">==</span> <span class="ruby-constant">String</span>
+                <span class="ruby-identifier">oa</span> = <span class="ruby-identifier">addr</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">'.'</span>).<span class="ruby-identifier">collect</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">to_i</span>}
+        <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">addr</span>.<span class="ruby-identifier">class</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Fixnum</span>
+                <span class="ruby-identifier">oa</span> = <span class="ruby-constant">IPAddr</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">addr</span>, <span class="ruby-constant">Socket</span><span class="ruby-operator">::</span><span class="ruby-constant">AF_INET</span>).<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">'.'</span>)
+        <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">addr</span>.<span class="ruby-identifier">class</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Bignum</span>
+                <span class="ruby-identifier">oa</span> = <span class="ruby-constant">IPAddr</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">addr</span>, <span class="ruby-constant">Socket</span><span class="ruby-operator">::</span><span class="ruby-constant">AF_INET</span>).<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">'.'</span>)
+        <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">addr</span>.<span class="ruby-identifier">class</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Array</span>
+                <span class="ruby-identifier">oa</span> = <span class="ruby-identifier">addr</span>
+        <span class="ruby-keyword">else</span>
+                <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;IP Address should be a dotted quad string, an array of ints, or a bignum&quot;</span>
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-ip_calc_id">
+            
+              <b>ip_calc_id</b>()
+            
+            <a href="../../classes/PacketFu/IPHeader.html#method-i-ip_calc_id" name="method-i-ip_calc_id" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Retrieve the IP ID</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-ip_calc_id_source')" id="l_method-i-ip_calc_id_source">show</a>
+                
+              </p>
+              <div id="method-i-ip_calc_id_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/ip/header.rb, line 258</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">ip_calc_id</span>
+        <span class="ruby-ivar">@random_id</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-ip_calc_len">
+            
+              <b>ip_calc_len</b>()
+            
+            <a href="../../classes/PacketFu/IPHeader.html#method-i-ip_calc_len" name="method-i-ip_calc_len" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Calulcate the true length of the packet.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-ip_calc_len_source')" id="l_method-i-ip_calc_len_source">show</a>
+                
+              </p>
+              <div id="method-i-ip_calc_len_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/ip/header.rb, line 231</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">ip_calc_len</span>
+        (<span class="ruby-identifier">ip_hl</span> * <span class="ruby-number">4</span>) <span class="ruby-operator">+</span> <span class="ruby-identifier">body</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">length</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-ip_calc_sum">
+            
+              <b>ip_calc_sum</b>()
+            
+            <a href="../../classes/PacketFu/IPHeader.html#method-i-ip_calc_sum" name="method-i-ip_calc_sum" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Calculate the true checksum of the packet. (Yes, this is the long way to do
+it, but it’s e-z-2-read for mathtards like me.)</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-ip_calc_sum_source')" id="l_method-i-ip_calc_sum_source">show</a>
+                
+              </p>
+              <div id="method-i-ip_calc_sum_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/ip/header.rb, line 242</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">ip_calc_sum</span>
+        <span class="ruby-identifier">checksum</span> =  (((<span class="ruby-keyword">self</span>.<span class="ruby-identifier">ip_v</span>  <span class="ruby-operator">&lt;&lt;</span>  <span class="ruby-number">4</span>) <span class="ruby-operator">+</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">ip_hl</span>) <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-number">8</span>) <span class="ruby-operator">+</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">ip_tos</span>
+        <span class="ruby-identifier">checksum</span> <span class="ruby-operator">+=</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">ip_len</span>
+        <span class="ruby-identifier">checksum</span> <span class="ruby-operator">+=</span>  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">ip_id</span>
+        <span class="ruby-identifier">checksum</span> <span class="ruby-operator">+=</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">ip_frag</span>
+        <span class="ruby-identifier">checksum</span> <span class="ruby-operator">+=</span>  (<span class="ruby-keyword">self</span>.<span class="ruby-identifier">ip_ttl</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-number">8</span>) <span class="ruby-operator">+</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">ip_proto</span>
+        <span class="ruby-identifier">checksum</span> <span class="ruby-operator">+=</span> (<span class="ruby-keyword">self</span>.<span class="ruby-identifier">ip_src</span> <span class="ruby-operator">&gt;&gt;</span> <span class="ruby-number">16</span>)
+        <span class="ruby-identifier">checksum</span> <span class="ruby-operator">+=</span> (<span class="ruby-keyword">self</span>.<span class="ruby-identifier">ip_src</span> &amp; <span class="ruby-number">0xffff</span>)
+        <span class="ruby-identifier">checksum</span> <span class="ruby-operator">+=</span> (<span class="ruby-keyword">self</span>.<span class="ruby-identifier">ip_dst</span> <span class="ruby-operator">&gt;&gt;</span> <span class="ruby-number">16</span>)
+        <span class="ruby-identifier">checksum</span> <span class="ruby-operator">+=</span> (<span class="ruby-keyword">self</span>.<span class="ruby-identifier">ip_dst</span> &amp; <span class="ruby-number">0xffff</span>)
+        <span class="ruby-identifier">checksum</span> = <span class="ruby-identifier">checksum</span> <span class="ruby-operator">%</span> <span class="ruby-number">0xffff</span> 
+        <span class="ruby-identifier">checksum</span> = <span class="ruby-number">0xffff</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">checksum</span>
+        <span class="ruby-identifier">checksum</span> <span class="ruby-operator">==</span> <span class="ruby-number">0</span> <span class="ruby-operator">?</span> <span class="ruby-number">0xffff</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">checksum</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-ip_daddr">
+            
+              <b>ip_daddr</b>()
+            
+            <a href="../../classes/PacketFu/IPHeader.html#method-i-ip_daddr" name="method-i-ip_daddr" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns a more readable IP destination address.</p>
+            </div>
+          
+          
+          
+            <div class="aka">
+              Also aliased as: <a href="IPHeader.html#method-i-ip_dst_readable">ip_dst_readable</a>
+            </div>
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-ip_daddr_source')" id="l_method-i-ip_daddr_source">show</a>
+                
+              </p>
+              <div id="method-i-ip_daddr_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/ip/header.rb, line 280</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">ip_daddr</span>
+        <span class="ruby-keyword">self</span>[<span class="ruby-value">:ip_dst</span>].<span class="ruby-identifier">to_x</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-ip_daddr-3D">
+            
+              <b>ip_daddr=</b>(addr)
+            
+            <a href="../../classes/PacketFu/IPHeader.html#method-i-ip_daddr-3D" name="method-i-ip_daddr-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Sets a more readable IP address.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-ip_daddr-3D_source')" id="l_method-i-ip_daddr-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-ip_daddr-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/ip/header.rb, line 275</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">ip_daddr=</span>(<span class="ruby-identifier">addr</span>)
+        <span class="ruby-keyword">self</span>[<span class="ruby-value">:ip_dst</span>].<span class="ruby-identifier">read_quad</span>(<span class="ruby-identifier">addr</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-ip_dst">
+            
+              <b>ip_dst</b>()
+            
+            <a href="../../classes/PacketFu/IPHeader.html#method-i-ip_dst" name="method-i-ip_dst" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Getter for the destination IP address.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-ip_dst_source')" id="l_method-i-ip_dst_source">show</a>
+                
+              </p>
+              <div id="method-i-ip_dst_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/ip/header.rb, line 228</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">ip_dst</span>; <span class="ruby-keyword">self</span>[<span class="ruby-value">:ip_dst</span>].<span class="ruby-identifier">to_i</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-ip_dst-3D">
+            
+              <b>ip_dst=</b>(i)
+            
+            <a href="../../classes/PacketFu/IPHeader.html#method-i-ip_dst-3D" name="method-i-ip_dst-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Setter for the destination IP address.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-ip_dst-3D_source')" id="l_method-i-ip_dst-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-ip_dst-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/ip/header.rb, line 217</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">ip_dst=</span>(<span class="ruby-identifier">i</span>)
+        <span class="ruby-keyword">case</span> <span class="ruby-identifier">i</span>
+        <span class="ruby-keyword">when</span> <span class="ruby-constant">Numeric</span>
+                <span class="ruby-keyword">self</span>[<span class="ruby-value">:ip_dst</span>] = <span class="ruby-constant">Octets</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">read</span>([<span class="ruby-identifier">i</span>].<span class="ruby-identifier">pack</span>(<span class="ruby-string">&quot;N&quot;</span>))
+        <span class="ruby-keyword">when</span> <span class="ruby-constant">Octets</span>
+                <span class="ruby-keyword">self</span>[<span class="ruby-value">:ip_dst</span>] = <span class="ruby-identifier">i</span>
+        <span class="ruby-keyword">else</span>
+                <span class="ruby-identifier">typecast</span> <span class="ruby-identifier">i</span>
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-ip_dst_readable">
+            
+              <b>ip_dst_readable</b>()
+            
+            <a href="../../classes/PacketFu/IPHeader.html#method-i-ip_dst_readable" name="method-i-ip_dst_readable" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-ip_frag">
+            
+              <b>ip_frag</b>()
+            
+            <a href="../../classes/PacketFu/IPHeader.html#method-i-ip_frag" name="method-i-ip_frag" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Getter for the fragmentation ID.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-ip_frag_source')" id="l_method-i-ip_frag_source">show</a>
+                
+              </p>
+              <div id="method-i-ip_frag_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/ip/header.rb, line 190</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">ip_frag</span>; <span class="ruby-keyword">self</span>[<span class="ruby-value">:ip_frag</span>].<span class="ruby-identifier">to_i</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-ip_frag-3D">
+            
+              <b>ip_frag=</b>(i)
+            
+            <a href="../../classes/PacketFu/IPHeader.html#method-i-ip_frag-3D" name="method-i-ip_frag-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Setter for the fragmentation ID.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-ip_frag-3D_source')" id="l_method-i-ip_frag-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-ip_frag-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/ip/header.rb, line 188</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">ip_frag=</span>(<span class="ruby-identifier">i</span>); <span class="ruby-identifier">typecast</span> <span class="ruby-identifier">i</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-ip_hl">
+            
+              <b>ip_hl</b>()
+            
+            <a href="../../classes/PacketFu/IPHeader.html#method-i-ip_hl" name="method-i-ip_hl" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Getter for the header length (multiply by 4)</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-ip_hl_source')" id="l_method-i-ip_hl_source">show</a>
+                
+              </p>
+              <div id="method-i-ip_hl_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/ip/header.rb, line 174</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">ip_hl</span>; <span class="ruby-keyword">self</span>[<span class="ruby-value">:ip_hl</span>].<span class="ruby-identifier">to_i</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-ip_hl-3D">
+            
+              <b>ip_hl=</b>(i)
+            
+            <a href="../../classes/PacketFu/IPHeader.html#method-i-ip_hl-3D" name="method-i-ip_hl-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Setter for the header length (divide by 4)</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-ip_hl-3D_source')" id="l_method-i-ip_hl-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-ip_hl-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/ip/header.rb, line 172</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">ip_hl=</span>(<span class="ruby-identifier">i</span>); <span class="ruby-keyword">self</span>[<span class="ruby-value">:ip_hl</span>] = <span class="ruby-identifier">i</span>.<span class="ruby-identifier">to_i</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-ip_hlen">
+            
+              <b>ip_hlen</b>()
+            
+            <a href="../../classes/PacketFu/IPHeader.html#method-i-ip_hlen" name="method-i-ip_hlen" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Return the claimed header length</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-ip_hlen_source')" id="l_method-i-ip_hlen_source">show</a>
+                
+              </p>
+              <div id="method-i-ip_hlen_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/ip/header.rb, line 236</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">ip_hlen</span>
+        (<span class="ruby-identifier">ip_hl</span> * <span class="ruby-number">4</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-ip_id">
+            
+              <b>ip_id</b>()
+            
+            <a href="../../classes/PacketFu/IPHeader.html#method-i-ip_id" name="method-i-ip_id" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Getter for the identication number.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-ip_id_source')" id="l_method-i-ip_id_source">show</a>
+                
+              </p>
+              <div id="method-i-ip_id_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/ip/header.rb, line 186</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">ip_id</span>; <span class="ruby-keyword">self</span>[<span class="ruby-value">:ip_id</span>].<span class="ruby-identifier">to_i</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-ip_id-3D">
+            
+              <b>ip_id=</b>(i)
+            
+            <a href="../../classes/PacketFu/IPHeader.html#method-i-ip_id-3D" name="method-i-ip_id-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Setter for the identication number.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-ip_id-3D_source')" id="l_method-i-ip_id-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-ip_id-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/ip/header.rb, line 184</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">ip_id=</span>(<span class="ruby-identifier">i</span>); <span class="ruby-identifier">typecast</span> <span class="ruby-identifier">i</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-ip_id_readable">
+            
+              <b>ip_id_readable</b>()
+            
+            <a href="../../classes/PacketFu/IPHeader.html#method-i-ip_id_readable" name="method-i-ip_id_readable" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-ip_id_readable_source')" id="l_method-i-ip_id_readable_source">show</a>
+                
+              </p>
+              <div id="method-i-ip_id_readable_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/ip/header.rb, line 326</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">ip_id_readable</span>
+        <span class="ruby-string">&quot;0x%04x&quot;</span> <span class="ruby-operator">%</span> <span class="ruby-identifier">ip_id</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-ip_len">
+            
+              <b>ip_len</b>()
+            
+            <a href="../../classes/PacketFu/IPHeader.html#method-i-ip_len" name="method-i-ip_len" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Getter for total length.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-ip_len_source')" id="l_method-i-ip_len_source">show</a>
+                
+              </p>
+              <div id="method-i-ip_len_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/ip/header.rb, line 182</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">ip_len</span>; <span class="ruby-keyword">self</span>[<span class="ruby-value">:ip_len</span>].<span class="ruby-identifier">to_i</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-ip_len-3D">
+            
+              <b>ip_len=</b>(i)
+            
+            <a href="../../classes/PacketFu/IPHeader.html#method-i-ip_len-3D" name="method-i-ip_len-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Setter for total length.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-ip_len-3D_source')" id="l_method-i-ip_len-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-ip_len-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/ip/header.rb, line 180</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">ip_len=</span>(<span class="ruby-identifier">i</span>); <span class="ruby-identifier">typecast</span> <span class="ruby-identifier">i</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-ip_proto">
+            
+              <b>ip_proto</b>()
+            
+            <a href="../../classes/PacketFu/IPHeader.html#method-i-ip_proto" name="method-i-ip_proto" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Getter for the protocol number.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-ip_proto_source')" id="l_method-i-ip_proto_source">show</a>
+                
+              </p>
+              <div id="method-i-ip_proto_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/ip/header.rb, line 198</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">ip_proto</span>; <span class="ruby-keyword">self</span>[<span class="ruby-value">:ip_proto</span>].<span class="ruby-identifier">to_i</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-ip_proto-3D">
+            
+              <b>ip_proto=</b>(i)
+            
+            <a href="../../classes/PacketFu/IPHeader.html#method-i-ip_proto-3D" name="method-i-ip_proto-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Setter for the protocol number.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-ip_proto-3D_source')" id="l_method-i-ip_proto-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-ip_proto-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/ip/header.rb, line 196</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">ip_proto=</span>(<span class="ruby-identifier">i</span>); <span class="ruby-identifier">typecast</span> <span class="ruby-identifier">i</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-ip_recalc">
+            
+              <b>ip_recalc</b>(arg=:all)
+            
+            <a href="../../classes/PacketFu/IPHeader.html#method-i-ip_recalc" name="method-i-ip_recalc" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Recalculate the calculated IP fields. Valid arguments are:</p>
+
+<pre>:all 
+:ip_len 
+:ip_sum 
+:ip_id</pre>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-ip_recalc_source')" id="l_method-i-ip_recalc_source">show</a>
+                
+              </p>
+              <div id="method-i-ip_recalc_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/ip/header.rb, line 304</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">ip_recalc</span>(<span class="ruby-identifier">arg</span>=<span class="ruby-value">:all</span>)
+        <span class="ruby-keyword">case</span> <span class="ruby-identifier">arg</span>
+        <span class="ruby-keyword">when</span> <span class="ruby-value">:ip_len</span>
+                <span class="ruby-keyword">self</span>.<span class="ruby-identifier">ip_len</span>=<span class="ruby-identifier">ip_calc_len</span>
+        <span class="ruby-keyword">when</span> <span class="ruby-value">:ip_sum</span>
+                <span class="ruby-keyword">self</span>.<span class="ruby-identifier">ip_sum</span>=<span class="ruby-identifier">ip_calc_sum</span>
+        <span class="ruby-keyword">when</span> <span class="ruby-value">:ip_id</span>
+                <span class="ruby-ivar">@random_id</span> = <span class="ruby-identifier">rand</span>(<span class="ruby-number">0xffff</span>)
+        <span class="ruby-keyword">when</span> <span class="ruby-value">:all</span>
+                <span class="ruby-keyword">self</span>.<span class="ruby-identifier">ip_id</span>=         <span class="ruby-identifier">ip_calc_id</span>
+                <span class="ruby-keyword">self</span>.<span class="ruby-identifier">ip_len</span>=        <span class="ruby-identifier">ip_calc_len</span>
+                <span class="ruby-keyword">self</span>.<span class="ruby-identifier">ip_sum</span>=        <span class="ruby-identifier">ip_calc_sum</span>
+        <span class="ruby-keyword">else</span>
+                <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;No such field `#{arg}'&quot;</span>
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-ip_saddr">
+            
+              <b>ip_saddr</b>()
+            
+            <a href="../../classes/PacketFu/IPHeader.html#method-i-ip_saddr" name="method-i-ip_saddr" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns a more readable IP source address.</p>
+            </div>
+          
+          
+          
+            <div class="aka">
+              Also aliased as: <a href="IPHeader.html#method-i-ip_src_readable">ip_src_readable</a>
+            </div>
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-ip_saddr_source')" id="l_method-i-ip_saddr_source">show</a>
+                
+              </p>
+              <div id="method-i-ip_saddr_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/ip/header.rb, line 270</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">ip_saddr</span>
+        <span class="ruby-keyword">self</span>[<span class="ruby-value">:ip_src</span>].<span class="ruby-identifier">to_x</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-ip_saddr-3D">
+            
+              <b>ip_saddr=</b>(addr)
+            
+            <a href="../../classes/PacketFu/IPHeader.html#method-i-ip_saddr-3D" name="method-i-ip_saddr-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Sets a more readable IP address. If you wants to manipulate individual
+octets,  (eg, for host scanning in one network), it would be better use
+ip_src.o1 through  ip_src.o4 instead.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-ip_saddr-3D_source')" id="l_method-i-ip_saddr-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-ip_saddr-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/ip/header.rb, line 265</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">ip_saddr=</span>(<span class="ruby-identifier">addr</span>)
+        <span class="ruby-keyword">self</span>[<span class="ruby-value">:ip_src</span>].<span class="ruby-identifier">read_quad</span>(<span class="ruby-identifier">addr</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-ip_src">
+            
+              <b>ip_src</b>()
+            
+            <a href="../../classes/PacketFu/IPHeader.html#method-i-ip_src" name="method-i-ip_src" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Getter for the source IP address.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-ip_src_source')" id="l_method-i-ip_src_source">show</a>
+                
+              </p>
+              <div id="method-i-ip_src_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/ip/header.rb, line 215</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">ip_src</span>; <span class="ruby-keyword">self</span>[<span class="ruby-value">:ip_src</span>].<span class="ruby-identifier">to_i</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-ip_src-3D">
+            
+              <b>ip_src=</b>(i)
+            
+            <a href="../../classes/PacketFu/IPHeader.html#method-i-ip_src-3D" name="method-i-ip_src-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Setter for the source IP address.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-ip_src-3D_source')" id="l_method-i-ip_src-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-ip_src-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/ip/header.rb, line 204</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">ip_src=</span>(<span class="ruby-identifier">i</span>)
+        <span class="ruby-keyword">case</span> <span class="ruby-identifier">i</span>
+        <span class="ruby-keyword">when</span> <span class="ruby-constant">Numeric</span>
+                <span class="ruby-keyword">self</span>[<span class="ruby-value">:ip_src</span>] = <span class="ruby-constant">Octets</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">read</span>([<span class="ruby-identifier">i</span>].<span class="ruby-identifier">pack</span>(<span class="ruby-string">&quot;N&quot;</span>))
+        <span class="ruby-keyword">when</span> <span class="ruby-constant">Octets</span>
+                <span class="ruby-keyword">self</span>[<span class="ruby-value">:ip_src</span>] = <span class="ruby-identifier">i</span>
+        <span class="ruby-keyword">else</span>
+                <span class="ruby-identifier">typecast</span> <span class="ruby-identifier">i</span>
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-ip_src_readable">
+            
+              <b>ip_src_readable</b>()
+            
+            <a href="../../classes/PacketFu/IPHeader.html#method-i-ip_src_readable" name="method-i-ip_src_readable" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Readability aliases</p>
+            </div>
+          
+          
+          
+          
+          
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-ip_sum">
+            
+              <b>ip_sum</b>()
+            
+            <a href="../../classes/PacketFu/IPHeader.html#method-i-ip_sum" name="method-i-ip_sum" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Getter for the checksum.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-ip_sum_source')" id="l_method-i-ip_sum_source">show</a>
+                
+              </p>
+              <div id="method-i-ip_sum_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/ip/header.rb, line 202</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">ip_sum</span>; <span class="ruby-keyword">self</span>[<span class="ruby-value">:ip_sum</span>].<span class="ruby-identifier">to_i</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-ip_sum-3D">
+            
+              <b>ip_sum=</b>(i)
+            
+            <a href="../../classes/PacketFu/IPHeader.html#method-i-ip_sum-3D" name="method-i-ip_sum-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Setter for the checksum.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-ip_sum-3D_source')" id="l_method-i-ip_sum-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-ip_sum-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/ip/header.rb, line 200</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">ip_sum=</span>(<span class="ruby-identifier">i</span>); <span class="ruby-identifier">typecast</span> <span class="ruby-identifier">i</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-ip_sum_readable">
+            
+              <b>ip_sum_readable</b>()
+            
+            <a href="../../classes/PacketFu/IPHeader.html#method-i-ip_sum_readable" name="method-i-ip_sum_readable" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-ip_sum_readable_source')" id="l_method-i-ip_sum_readable_source">show</a>
+                
+              </p>
+              <div id="method-i-ip_sum_readable_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/ip/header.rb, line 330</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">ip_sum_readable</span>
+        <span class="ruby-string">&quot;0x%04x&quot;</span> <span class="ruby-operator">%</span> <span class="ruby-identifier">ip_sum</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-ip_tos">
+            
+              <b>ip_tos</b>()
+            
+            <a href="../../classes/PacketFu/IPHeader.html#method-i-ip_tos" name="method-i-ip_tos" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Getter for the differentiated services</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-ip_tos_source')" id="l_method-i-ip_tos_source">show</a>
+                
+              </p>
+              <div id="method-i-ip_tos_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/ip/header.rb, line 178</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">ip_tos</span>; <span class="ruby-keyword">self</span>[<span class="ruby-value">:ip_tos</span>].<span class="ruby-identifier">to_i</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-ip_tos-3D">
+            
+              <b>ip_tos=</b>(i)
+            
+            <a href="../../classes/PacketFu/IPHeader.html#method-i-ip_tos-3D" name="method-i-ip_tos-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Setter for the differentiated services</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-ip_tos-3D_source')" id="l_method-i-ip_tos-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-ip_tos-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/ip/header.rb, line 176</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">ip_tos=</span>(<span class="ruby-identifier">i</span>); <span class="ruby-identifier">typecast</span> <span class="ruby-identifier">i</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-ip_ttl">
+            
+              <b>ip_ttl</b>()
+            
+            <a href="../../classes/PacketFu/IPHeader.html#method-i-ip_ttl" name="method-i-ip_ttl" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Getter for the time to live.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-ip_ttl_source')" id="l_method-i-ip_ttl_source">show</a>
+                
+              </p>
+              <div id="method-i-ip_ttl_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/ip/header.rb, line 194</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">ip_ttl</span>; <span class="ruby-keyword">self</span>[<span class="ruby-value">:ip_ttl</span>].<span class="ruby-identifier">to_i</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-ip_ttl-3D">
+            
+              <b>ip_ttl=</b>(i)
+            
+            <a href="../../classes/PacketFu/IPHeader.html#method-i-ip_ttl-3D" name="method-i-ip_ttl-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Setter for the time to live.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-ip_ttl-3D_source')" id="l_method-i-ip_ttl-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-ip_ttl-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/ip/header.rb, line 192</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">ip_ttl=</span>(<span class="ruby-identifier">i</span>); <span class="ruby-identifier">typecast</span> <span class="ruby-identifier">i</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-ip_v">
+            
+              <b>ip_v</b>()
+            
+            <a href="../../classes/PacketFu/IPHeader.html#method-i-ip_v" name="method-i-ip_v" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Getter for the version.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-ip_v_source')" id="l_method-i-ip_v_source">show</a>
+                
+              </p>
+              <div id="method-i-ip_v_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/ip/header.rb, line 170</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">ip_v</span>; <span class="ruby-keyword">self</span>[<span class="ruby-value">:ip_v</span>].<span class="ruby-identifier">to_i</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-ip_v-3D">
+            
+              <b>ip_v=</b>(i)
+            
+            <a href="../../classes/PacketFu/IPHeader.html#method-i-ip_v-3D" name="method-i-ip_v-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Setter for the version.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-ip_v-3D_source')" id="l_method-i-ip_v-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-ip_v-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/ip/header.rb, line 168</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">ip_v=</span>(<span class="ruby-identifier">i</span>); <span class="ruby-keyword">self</span>[<span class="ruby-value">:ip_v</span>] = <span class="ruby-identifier">i</span>.<span class="ruby-identifier">to_i</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-read">
+            
+              <b>read</b>(str)
+            
+            <a href="../../classes/PacketFu/IPHeader.html#method-i-read" name="method-i-read" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Reads a string to populate the object.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-read_source')" id="l_method-i-read_source">show</a>
+                
+              </p>
+              <div id="method-i-read_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/ip/header.rb, line 149</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">read</span>(<span class="ruby-identifier">str</span>)
+        <span class="ruby-identifier">force_binary</span>(<span class="ruby-identifier">str</span>)
+        <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">str</span>.<span class="ruby-identifier">nil?</span>
+        <span class="ruby-keyword">self</span>[<span class="ruby-value">:ip_v</span>] = <span class="ruby-identifier">str</span>[<span class="ruby-number">0</span>,<span class="ruby-number">1</span>].<span class="ruby-identifier">unpack</span>(<span class="ruby-string">&quot;C&quot;</span>).<span class="ruby-identifier">first</span> <span class="ruby-operator">&gt;&gt;</span> <span class="ruby-number">4</span>
+        <span class="ruby-keyword">self</span>[<span class="ruby-value">:ip_hl</span>] = <span class="ruby-identifier">str</span>[<span class="ruby-number">0</span>,<span class="ruby-number">1</span>].<span class="ruby-identifier">unpack</span>(<span class="ruby-string">&quot;C&quot;</span>).<span class="ruby-identifier">first</span>.<span class="ruby-identifier">to_i</span> &amp; <span class="ruby-number">0x0f</span>
+        <span class="ruby-keyword">self</span>[<span class="ruby-value">:ip_tos</span>].<span class="ruby-identifier">read</span>(<span class="ruby-identifier">str</span>[<span class="ruby-number">1</span>,<span class="ruby-number">1</span>])
+        <span class="ruby-keyword">self</span>[<span class="ruby-value">:ip_len</span>].<span class="ruby-identifier">read</span>(<span class="ruby-identifier">str</span>[<span class="ruby-number">2</span>,<span class="ruby-number">2</span>])
+        <span class="ruby-keyword">self</span>[<span class="ruby-value">:ip_id</span>].<span class="ruby-identifier">read</span>(<span class="ruby-identifier">str</span>[<span class="ruby-number">4</span>,<span class="ruby-number">2</span>])
+        <span class="ruby-keyword">self</span>[<span class="ruby-value">:ip_frag</span>].<span class="ruby-identifier">read</span>(<span class="ruby-identifier">str</span>[<span class="ruby-number">6</span>,<span class="ruby-number">2</span>])
+        <span class="ruby-keyword">self</span>[<span class="ruby-value">:ip_ttl</span>].<span class="ruby-identifier">read</span>(<span class="ruby-identifier">str</span>[<span class="ruby-number">8</span>,<span class="ruby-number">1</span>])
+        <span class="ruby-keyword">self</span>[<span class="ruby-value">:ip_proto</span>].<span class="ruby-identifier">read</span>(<span class="ruby-identifier">str</span>[<span class="ruby-number">9</span>,<span class="ruby-number">1</span>])
+        <span class="ruby-keyword">self</span>[<span class="ruby-value">:ip_sum</span>].<span class="ruby-identifier">read</span>(<span class="ruby-identifier">str</span>[<span class="ruby-number">10</span>,<span class="ruby-number">2</span>])
+        <span class="ruby-keyword">self</span>[<span class="ruby-value">:ip_src</span>].<span class="ruby-identifier">read</span>(<span class="ruby-identifier">str</span>[<span class="ruby-number">12</span>,<span class="ruby-number">4</span>])
+        <span class="ruby-keyword">self</span>[<span class="ruby-value">:ip_dst</span>].<span class="ruby-identifier">read</span>(<span class="ruby-identifier">str</span>[<span class="ruby-number">16</span>,<span class="ruby-number">4</span>])
+        <span class="ruby-keyword">self</span>[<span class="ruby-value">:body</span>].<span class="ruby-identifier">read</span>(<span class="ruby-identifier">str</span>[<span class="ruby-number">20</span>,<span class="ruby-identifier">str</span>.<span class="ruby-identifier">size</span>]) <span class="ruby-keyword">if</span> <span class="ruby-identifier">str</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">&gt;</span> <span class="ruby-number">20</span>
+        <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-to_s">
+            
+              <b>to_s</b>()
+            
+            <a href="../../classes/PacketFu/IPHeader.html#method-i-to_s" name="method-i-to_s" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns the object in string form.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-to_s_source')" id="l_method-i-to_s_source">show</a>
+                
+              </p>
+              <div id="method-i-to_s_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/ip/header.rb, line 143</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">to_s</span>
+        <span class="ruby-identifier">byte_v_hl</span> = [(<span class="ruby-keyword">self</span>.<span class="ruby-identifier">ip_v</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-number">4</span>) <span class="ruby-operator">+</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">ip_hl</span>].<span class="ruby-identifier">pack</span>(<span class="ruby-string">&quot;C&quot;</span>)
+        <span class="ruby-identifier">byte_v_hl</span> <span class="ruby-operator">+</span> (<span class="ruby-keyword">self</span>.<span class="ruby-identifier">to_a</span>[<span class="ruby-number">2</span>,<span class="ruby-number">10</span>].<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">to_s</span>}.<span class="ruby-identifier">join</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

@@ -1,0 +1,524 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>StructFu::IntString</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/github.css" type="text/css" media="screen" />
+<script src="../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            StructFu::IntString 
+            
+                <span class="parent">&lt; 
+                    
+                    Struct.new(:int, :string, :mode)
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../files/lib/packetfu/structfu_rb.html">lib/packetfu/structfu.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>Provides a primitive for creating strings, preceeded by an <a
+href="Int.html">Int</a> type of length. By default, a string of length zero
+with a one-byte length is presumed.</p>
+
+<p>Note that IntStrings aren’t used for much, but it seemed like a good idea
+at the time.</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>C</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-calc">calc</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>L</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-len">len</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-len-3D">len=</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-new">new</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>P</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-parse">parse</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>R</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-read">read</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-string-3D">string=</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-to_s">to_s</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-new">
+            
+              <b>new</b>(string='',int=Int8,mode=nil)
+            
+            <a href="../../classes/StructFu/IntString.html#method-c-new" name="method-c-new" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
+                
+              </p>
+              <div id="method-c-new_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/structfu.rb, line 184</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize</span>(<span class="ruby-identifier">string</span>=<span class="ruby-string">''</span>,<span class="ruby-identifier">int</span>=<span class="ruby-constant">Int8</span>,<span class="ruby-identifier">mode</span>=<span class="ruby-keyword">nil</span>)
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">int</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">Int</span>
+                <span class="ruby-keyword">super</span>(<span class="ruby-identifier">int</span>.<span class="ruby-identifier">new</span>,<span class="ruby-identifier">string</span>,<span class="ruby-identifier">mode</span>)
+                <span class="ruby-identifier">calc</span>
+        <span class="ruby-keyword">else</span>
+                <span class="ruby-identifier">raise</span> <span class="ruby-string">&quot;IntStrings need a StructFu::Int for a length.&quot;</span>
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-calc">
+            
+              <b>calc</b>()
+            
+            <a href="../../classes/StructFu/IntString.html#method-i-calc" name="method-i-calc" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Calculates the size of a string, and sets it as the value.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-calc_source')" id="l_method-i-calc_source">show</a>
+                
+              </p>
+              <div id="method-i-calc_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/structfu.rb, line 194</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">calc</span>
+        <span class="ruby-identifier">int</span>.<span class="ruby-identifier">v</span> = <span class="ruby-identifier">string</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">size</span>
+        <span class="ruby-keyword">self</span>.<span class="ruby-identifier">to_s</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-len">
+            
+              <b>len</b>()
+            
+            <a href="../../classes/StructFu/IntString.html#method-i-len" name="method-i-len" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Shorthand for querying a length. Note that the usual “length” and “size”
+refer to the number of elements of this struct.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-len_source')" id="l_method-i-len_source">show</a>
+                
+              </p>
+              <div id="method-i-len_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/structfu.rb, line 225</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">len</span>
+        <span class="ruby-keyword">self</span>[<span class="ruby-value">:int</span>].<span class="ruby-identifier">value</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-len-3D">
+            
+              <b>len=</b>(i)
+            
+            <a href="../../classes/StructFu/IntString.html#method-i-len-3D" name="method-i-len-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Override the size, if you must.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-len-3D_source')" id="l_method-i-len-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-len-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/structfu.rb, line 230</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">len=</span>(<span class="ruby-identifier">i</span>)
+        <span class="ruby-keyword">self</span>[<span class="ruby-value">:int</span>].<span class="ruby-identifier">value</span>=<span class="ruby-identifier">i</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-parse">
+            
+              <b>parse</b>(s)
+            
+            <a href="../../classes/StructFu/IntString.html#method-i-parse" name="method-i-parse" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>parse() is like read(), except that it interprets the string, either based
+on the declared length, or the actual length. Which strategy is used is
+dependant on which :mode is set (with self.mode).</p>
+
+<p>:parse : Read the length, and then read in that many bytes of the string. 
+The string may be truncated or padded out with nulls, as dictated by the
+value.</p>
+
+<p>:fix   : Skip the length, read the rest of the string, then set the length 
+to what it ought to be.</p>
+
+<p>else   : If neither of these modes are set, just perfom a normal read().
+This is the default.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-parse_source')" id="l_method-i-parse_source">show</a>
+                
+              </p>
+              <div id="method-i-parse_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/structfu.rb, line 260</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">parse</span>(<span class="ruby-identifier">s</span>)
+        <span class="ruby-keyword">unless</span> <span class="ruby-identifier">s</span>[<span class="ruby-number">0</span>,<span class="ruby-identifier">int</span>.<span class="ruby-identifier">width</span>].<span class="ruby-identifier">size</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">int</span>.<span class="ruby-identifier">width</span>
+                <span class="ruby-identifier">raise</span> <span class="ruby-constant">StandardError</span>, <span class="ruby-node">&quot;String is too short for type #{int.class}&quot;</span>
+        <span class="ruby-keyword">else</span>
+                <span class="ruby-keyword">case</span> <span class="ruby-identifier">mode</span> 
+                <span class="ruby-keyword">when</span> <span class="ruby-value">:parse</span>
+                        <span class="ruby-identifier">int</span>.<span class="ruby-identifier">read</span>(<span class="ruby-identifier">s</span>[<span class="ruby-number">0</span>,<span class="ruby-identifier">int</span>.<span class="ruby-identifier">width</span>])
+                        <span class="ruby-keyword">self</span>[<span class="ruby-value">:string</span>] = <span class="ruby-identifier">s</span>[<span class="ruby-identifier">int</span>.<span class="ruby-identifier">width</span>,<span class="ruby-identifier">int</span>.<span class="ruby-identifier">value</span>]
+                        <span class="ruby-keyword">if</span> <span class="ruby-identifier">string</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">int</span>.<span class="ruby-identifier">value</span>
+                                <span class="ruby-keyword">self</span>[<span class="ruby-value">:string</span>] <span class="ruby-operator">+=</span> (<span class="ruby-string">&quot;\x00&quot;</span> * (<span class="ruby-identifier">int</span>.<span class="ruby-identifier">value</span> <span class="ruby-operator">-</span> <span class="ruby-keyword">self</span>[<span class="ruby-value">:string</span>].<span class="ruby-identifier">size</span>))
+                        <span class="ruby-keyword">end</span>
+                <span class="ruby-keyword">when</span> <span class="ruby-value">:fix</span>
+                        <span class="ruby-keyword">self</span>.<span class="ruby-identifier">string</span> = <span class="ruby-identifier">s</span>[<span class="ruby-identifier">int</span>.<span class="ruby-identifier">width</span>,<span class="ruby-identifier">s</span>.<span class="ruby-identifier">size</span>]
+                <span class="ruby-keyword">else</span>
+                        <span class="ruby-keyword">return</span> <span class="ruby-identifier">read</span>(<span class="ruby-identifier">s</span>)
+                <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">self</span>.<span class="ruby-identifier">to_s</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-read">
+            
+              <b>read</b>(s)
+            
+            <a href="../../classes/StructFu/IntString.html#method-i-read" name="method-i-read" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Read takes a string, assumes an int width as previously defined upon
+initialization, but makes no guarantees the int value isn’t lying. You’re
+on your own to test for that (or use parse() with a :mode set).</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-read_source')" id="l_method-i-read_source">show</a>
+                
+              </p>
+              <div id="method-i-read_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/structfu.rb, line 238</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">read</span>(<span class="ruby-identifier">s</span>)
+        <span class="ruby-keyword">unless</span> <span class="ruby-identifier">s</span>[<span class="ruby-number">0</span>,<span class="ruby-identifier">int</span>.<span class="ruby-identifier">width</span>].<span class="ruby-identifier">size</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">int</span>.<span class="ruby-identifier">width</span>
+                <span class="ruby-identifier">raise</span> <span class="ruby-constant">StandardError</span>, <span class="ruby-node">&quot;String is too short for type #{int.class}&quot;</span>
+        <span class="ruby-keyword">else</span>
+                <span class="ruby-identifier">int</span>.<span class="ruby-identifier">read</span>(<span class="ruby-identifier">s</span>[<span class="ruby-number">0</span>,<span class="ruby-identifier">int</span>.<span class="ruby-identifier">width</span>])
+                <span class="ruby-keyword">self</span>[<span class="ruby-value">:string</span>] = <span class="ruby-identifier">s</span>[<span class="ruby-identifier">int</span>.<span class="ruby-identifier">width</span>,<span class="ruby-identifier">s</span>.<span class="ruby-identifier">size</span>]
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">self</span>.<span class="ruby-identifier">to_s</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-string-3D">
+            
+              <b>string=</b>(s)
+            
+            <a href="../../classes/StructFu/IntString.html#method-i-string-3D" name="method-i-string-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>By redefining <a href="IntString.html#method-i-string-3D">string=</a>, we
+can ensure the correct value is calculated upon assignment. If you’d prefer
+to have an incorrect value, use the syntax, <a
+href="http://:string">obj</a>=“value” instead. Note, by using the alternate
+form, you must <a href="IntString.html#method-i-calc">calc</a> before you
+can trust the int’s value. Think of the =  assignment as “set to equal,”
+while the []= assignment as “boxing in” the value. Maybe.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-string-3D_source')" id="l_method-i-string-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-string-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/structfu.rb, line 218</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">string=</span>(<span class="ruby-identifier">s</span>)
+        <span class="ruby-keyword">self</span>[<span class="ruby-value">:string</span>] = <span class="ruby-identifier">s</span>
+        <span class="ruby-identifier">calc</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-to_s">
+            
+              <b>to_s</b>()
+            
+            <a href="../../classes/StructFu/IntString.html#method-i-to_s" name="method-i-to_s" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns the object as a string, depending on the mode set upon object
+creation.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-to_s_source')" id="l_method-i-to_s_source">show</a>
+                
+              </p>
+              <div id="method-i-to_s_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/structfu.rb, line 200</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">to_s</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">mode</span> <span class="ruby-operator">==</span> <span class="ruby-value">:parse</span>
+                <span class="ruby-node">&quot;#{int}&quot;</span> <span class="ruby-operator">+</span> [<span class="ruby-identifier">string</span>].<span class="ruby-identifier">pack</span>(<span class="ruby-node">&quot;a#{len}&quot;</span>)
+        <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">mode</span> <span class="ruby-operator">==</span> <span class="ruby-value">:fix</span>
+                <span class="ruby-keyword">self</span>.<span class="ruby-identifier">int</span>.<span class="ruby-identifier">v</span> = <span class="ruby-identifier">string</span>.<span class="ruby-identifier">size</span>
+                <span class="ruby-node">&quot;#{int}#{string}&quot;</span>
+        <span class="ruby-keyword">else</span>
+                <span class="ruby-node">&quot;#{int}#{string}&quot;</span>
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

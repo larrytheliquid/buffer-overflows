@@ -1,0 +1,588 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>PacketFu::EthHeaderMixin</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/github.css" type="text/css" media="screen" />
+<script src="../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Module</span> 
+            PacketFu::EthHeaderMixin 
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../files/lib/packetfu/protos/eth/mixin_rb.html">lib/packetfu/protos/eth/mixin.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>This Mixin simplifies access to the EthHeaders. Mix this in with your 
+packet interface, and it will add methods that essentially delegate to the
+‘eth_header’ method (assuming that it is a <a
+href="EthHeader.html">EthHeader</a> object)</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>E</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-eth_daddr">eth_daddr</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-eth_daddr-3D">eth_daddr=</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-eth_dst">eth_dst</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-eth_dst-3D">eth_dst=</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-eth_dst_readable">eth_dst_readable</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-eth_proto">eth_proto</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-eth_proto-3D">eth_proto=</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-eth_proto_readable">eth_proto_readable</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-eth_saddr">eth_saddr</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-eth_saddr-3D">eth_saddr=</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-eth_src">eth_src</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-eth_src-3D">eth_src=</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-eth_src_readable">eth_src_readable</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-eth_daddr">
+            
+              <b>eth_daddr</b>()
+            
+            <a href="../../classes/PacketFu/EthHeaderMixin.html#method-i-eth_daddr" name="method-i-eth_daddr" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-eth_daddr_source')" id="l_method-i-eth_daddr_source">show</a>
+                
+              </p>
+              <div id="method-i-eth_daddr_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/eth/mixin.rb, line 6</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">eth_daddr</span>; <span class="ruby-keyword">self</span>.<span class="ruby-identifier">eth_header</span>.<span class="ruby-identifier">eth_daddr</span> ; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-eth_daddr-3D">
+            
+              <b>eth_daddr=</b>(v)
+            
+            <a href="../../classes/PacketFu/EthHeaderMixin.html#method-i-eth_daddr-3D" name="method-i-eth_daddr-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-eth_daddr-3D_source')" id="l_method-i-eth_daddr-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-eth_daddr-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/eth/mixin.rb, line 7</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">eth_daddr=</span>(<span class="ruby-identifier">v</span>); <span class="ruby-keyword">self</span>.<span class="ruby-identifier">eth_header</span>.<span class="ruby-identifier">eth_daddr</span>= <span class="ruby-identifier">v</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-eth_dst">
+            
+              <b>eth_dst</b>()
+            
+            <a href="../../classes/PacketFu/EthHeaderMixin.html#method-i-eth_dst" name="method-i-eth_dst" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-eth_dst_source')" id="l_method-i-eth_dst_source">show</a>
+                
+              </p>
+              <div id="method-i-eth_dst_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/eth/mixin.rb, line 8</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">eth_dst</span>; <span class="ruby-keyword">self</span>.<span class="ruby-identifier">eth_header</span>.<span class="ruby-identifier">eth_dst</span> ; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-eth_dst-3D">
+            
+              <b>eth_dst=</b>(v)
+            
+            <a href="../../classes/PacketFu/EthHeaderMixin.html#method-i-eth_dst-3D" name="method-i-eth_dst-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-eth_dst-3D_source')" id="l_method-i-eth_dst-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-eth_dst-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/eth/mixin.rb, line 9</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">eth_dst=</span>(<span class="ruby-identifier">v</span>); <span class="ruby-keyword">self</span>.<span class="ruby-identifier">eth_header</span>.<span class="ruby-identifier">eth_dst</span>= <span class="ruby-identifier">v</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-eth_dst_readable">
+            
+              <b>eth_dst_readable</b>()
+            
+            <a href="../../classes/PacketFu/EthHeaderMixin.html#method-i-eth_dst_readable" name="method-i-eth_dst_readable" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-eth_dst_readable_source')" id="l_method-i-eth_dst_readable_source">show</a>
+                
+              </p>
+              <div id="method-i-eth_dst_readable_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/eth/mixin.rb, line 10</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">eth_dst_readable</span>; <span class="ruby-keyword">self</span>.<span class="ruby-identifier">eth_header</span>.<span class="ruby-identifier">eth_dst_readable</span> ; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-eth_proto">
+            
+              <b>eth_proto</b>()
+            
+            <a href="../../classes/PacketFu/EthHeaderMixin.html#method-i-eth_proto" name="method-i-eth_proto" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-eth_proto_source')" id="l_method-i-eth_proto_source">show</a>
+                
+              </p>
+              <div id="method-i-eth_proto_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/eth/mixin.rb, line 11</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">eth_proto</span>; <span class="ruby-keyword">self</span>.<span class="ruby-identifier">eth_header</span>.<span class="ruby-identifier">eth_proto</span> ; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-eth_proto-3D">
+            
+              <b>eth_proto=</b>(v)
+            
+            <a href="../../classes/PacketFu/EthHeaderMixin.html#method-i-eth_proto-3D" name="method-i-eth_proto-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-eth_proto-3D_source')" id="l_method-i-eth_proto-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-eth_proto-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/eth/mixin.rb, line 12</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">eth_proto=</span>(<span class="ruby-identifier">v</span>); <span class="ruby-keyword">self</span>.<span class="ruby-identifier">eth_header</span>.<span class="ruby-identifier">eth_proto</span>= <span class="ruby-identifier">v</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-eth_proto_readable">
+            
+              <b>eth_proto_readable</b>()
+            
+            <a href="../../classes/PacketFu/EthHeaderMixin.html#method-i-eth_proto_readable" name="method-i-eth_proto_readable" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-eth_proto_readable_source')" id="l_method-i-eth_proto_readable_source">show</a>
+                
+              </p>
+              <div id="method-i-eth_proto_readable_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/eth/mixin.rb, line 13</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">eth_proto_readable</span>; <span class="ruby-keyword">self</span>.<span class="ruby-identifier">eth_header</span>.<span class="ruby-identifier">eth_proto_readable</span> ; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-eth_saddr">
+            
+              <b>eth_saddr</b>()
+            
+            <a href="../../classes/PacketFu/EthHeaderMixin.html#method-i-eth_saddr" name="method-i-eth_saddr" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-eth_saddr_source')" id="l_method-i-eth_saddr_source">show</a>
+                
+              </p>
+              <div id="method-i-eth_saddr_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/eth/mixin.rb, line 14</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">eth_saddr</span>; <span class="ruby-keyword">self</span>.<span class="ruby-identifier">eth_header</span>.<span class="ruby-identifier">eth_saddr</span> ; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-eth_saddr-3D">
+            
+              <b>eth_saddr=</b>(v)
+            
+            <a href="../../classes/PacketFu/EthHeaderMixin.html#method-i-eth_saddr-3D" name="method-i-eth_saddr-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-eth_saddr-3D_source')" id="l_method-i-eth_saddr-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-eth_saddr-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/eth/mixin.rb, line 15</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">eth_saddr=</span>(<span class="ruby-identifier">v</span>); <span class="ruby-keyword">self</span>.<span class="ruby-identifier">eth_header</span>.<span class="ruby-identifier">eth_saddr</span>= <span class="ruby-identifier">v</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-eth_src">
+            
+              <b>eth_src</b>()
+            
+            <a href="../../classes/PacketFu/EthHeaderMixin.html#method-i-eth_src" name="method-i-eth_src" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-eth_src_source')" id="l_method-i-eth_src_source">show</a>
+                
+              </p>
+              <div id="method-i-eth_src_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/eth/mixin.rb, line 16</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">eth_src</span>; <span class="ruby-keyword">self</span>.<span class="ruby-identifier">eth_header</span>.<span class="ruby-identifier">eth_src</span> ; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-eth_src-3D">
+            
+              <b>eth_src=</b>(v)
+            
+            <a href="../../classes/PacketFu/EthHeaderMixin.html#method-i-eth_src-3D" name="method-i-eth_src-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-eth_src-3D_source')" id="l_method-i-eth_src-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-eth_src-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/eth/mixin.rb, line 17</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">eth_src=</span>(<span class="ruby-identifier">v</span>); <span class="ruby-keyword">self</span>.<span class="ruby-identifier">eth_header</span>.<span class="ruby-identifier">eth_src</span>= <span class="ruby-identifier">v</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-eth_src_readable">
+            
+              <b>eth_src_readable</b>()
+            
+            <a href="../../classes/PacketFu/EthHeaderMixin.html#method-i-eth_src_readable" name="method-i-eth_src_readable" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-eth_src_readable_source')" id="l_method-i-eth_src_readable_source">show</a>
+                
+              </p>
+              <div id="method-i-eth_src_readable_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/eth/mixin.rb, line 18</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">eth_src_readable</span>; <span class="ruby-keyword">self</span>.<span class="ruby-identifier">eth_header</span>.<span class="ruby-identifier">eth_src_readable</span> ; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

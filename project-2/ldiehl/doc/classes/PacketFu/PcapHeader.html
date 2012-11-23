@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>PacketFu::PcapHeader</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/github.css" type="text/css" media="screen" />
+<script src="../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            PacketFu::PcapHeader 
+            
+                <span class="parent">&lt; 
+                    
+                    Struct.new(:endian, :magic, :ver_major, :ver_minor,                                                                                                                                 :thiszone, :sigfigs, :snaplen, :network)
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../files/lib/packetfu/pcap_rb.html">lib/packetfu/pcap.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p><a href="PcapHeader.html">PcapHeader</a> represents the header portion of a
+libpcap file (the packets themselves are in the <a
+href="PcapPackets.html">PcapPackets</a> array). See  <a
+href="http://wiki.wireshark.org/Development/LibpcapFileFormat">wiki.wireshark.org/Development/LibpcapFileFormat</a>
+for details.</p>
+
+<p>Depending on the endianness (set with :endian), elements are either :little
+endian or :big endian.</p>
+
+<h4 id="label-PcapHeader+Definition"><a href="PcapHeader.html">PcapHeader</a> Definition</h4>
+
+<pre>Symbol  :endian     Default: :little
+Int32   :magic      Default: 0xa1b2c3d4 # :big is 0xd4c3b2a1
+Int16   :ver_major  Default: 2
+Int16   :ver_minor  Default: 4
+Int32   :thiszone
+Int32   :sigfigs
+Int32   :snaplen    Default: 0xffff
+Int32   :network    Default: 1</pre>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>I</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-init_fields">init_fields</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-new">new</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>R</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-read">read</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-to_s">to_s</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+    <!-- Includes -->
+    <div class="sectiontitle">Included Modules</div>
+    <ul>
+      
+        <li>
+          
+            <a href="../StructFu.html">
+              StructFu
+            </a>
+          
+        </li>
+      
+    </ul>
+  
+
+
+
+  
+
+    
+
+    
+
+    
+      <!-- Section constants -->
+      <div class="sectiontitle">Constants</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class="attr-name">MAGIC_INT32</td>
+            <td>=</td>
+            <td class="attr-value">0xa1b2c3d4</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">MAGIC_LITTLE</td>
+            <td>=</td>
+            <td class="attr-value">[MAGIC_INT32].pack(&quot;V&quot;)</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">MAGIC_BIG</td>
+            <td>=</td>
+            <td class="attr-value">[MAGIC_INT32].pack(&quot;N&quot;)</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+      </table>
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-new">
+            
+              <b>new</b>(args={})
+            
+            <a href="../../classes/PacketFu/PcapHeader.html#method-c-new" name="method-c-new" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
+                
+              </p>
+              <div id="method-c-new_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/pcap.rb, line 51</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize</span>(<span class="ruby-identifier">args</span>={})
+        <span class="ruby-identifier">set_endianness</span>(<span class="ruby-identifier">args</span>[<span class="ruby-value">:endian</span>] <span class="ruby-operator">||=</span> <span class="ruby-value">:little</span>)
+        <span class="ruby-identifier">init_fields</span>(<span class="ruby-identifier">args</span>) 
+        <span class="ruby-keyword">super</span>(<span class="ruby-identifier">args</span>[<span class="ruby-value">:endian</span>], <span class="ruby-identifier">args</span>[<span class="ruby-value">:magic</span>], <span class="ruby-identifier">args</span>[<span class="ruby-value">:ver_major</span>], 
+                                <span class="ruby-identifier">args</span>[<span class="ruby-value">:ver_minor</span>], <span class="ruby-identifier">args</span>[<span class="ruby-value">:thiszone</span>], <span class="ruby-identifier">args</span>[<span class="ruby-value">:sigfigs</span>], 
+                                <span class="ruby-identifier">args</span>[<span class="ruby-value">:snaplen</span>], <span class="ruby-identifier">args</span>[<span class="ruby-value">:network</span>])
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-init_fields">
+            
+              <b>init_fields</b>(args={})
+            
+            <a href="../../classes/PacketFu/PcapHeader.html#method-i-init_fields" name="method-i-init_fields" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Called by initialize to set the initial fields.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-init_fields_source')" id="l_method-i-init_fields_source">show</a>
+                
+              </p>
+              <div id="method-i-init_fields_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/pcap.rb, line 60</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">init_fields</span>(<span class="ruby-identifier">args</span>={})
+        <span class="ruby-identifier">args</span>[<span class="ruby-value">:magic</span>] = <span class="ruby-ivar">@int32</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">args</span>[<span class="ruby-value">:magic</span>] <span class="ruby-operator">||</span> <span class="ruby-constant">PcapHeader</span><span class="ruby-operator">::</span><span class="ruby-constant">MAGIC_INT32</span>)
+        <span class="ruby-identifier">args</span>[<span class="ruby-value">:ver_major</span>] = <span class="ruby-ivar">@int16</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">args</span>[<span class="ruby-value">:ver_major</span>] <span class="ruby-operator">||</span> <span class="ruby-number">2</span>)
+        <span class="ruby-identifier">args</span>[<span class="ruby-value">:ver_minor</span>] <span class="ruby-operator">||=</span> <span class="ruby-ivar">@int16</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">args</span>[<span class="ruby-value">:ver_minor</span>] <span class="ruby-operator">||</span> <span class="ruby-number">4</span>)
+        <span class="ruby-identifier">args</span>[<span class="ruby-value">:thiszone</span>] <span class="ruby-operator">||=</span> <span class="ruby-ivar">@int32</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">args</span>[<span class="ruby-value">:thiszone</span>])
+        <span class="ruby-identifier">args</span>[<span class="ruby-value">:sigfigs</span>] <span class="ruby-operator">||=</span> <span class="ruby-ivar">@int32</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">args</span>[<span class="ruby-value">:sigfigs</span>])
+        <span class="ruby-identifier">args</span>[<span class="ruby-value">:snaplen</span>] <span class="ruby-operator">||=</span> <span class="ruby-ivar">@int32</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">args</span>[<span class="ruby-value">:snaplen</span>] <span class="ruby-operator">||</span> <span class="ruby-number">0xffff</span>)
+        <span class="ruby-identifier">args</span>[<span class="ruby-value">:network</span>] <span class="ruby-operator">||=</span> <span class="ruby-ivar">@int32</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">args</span>[<span class="ruby-value">:network</span>] <span class="ruby-operator">||</span> <span class="ruby-number">1</span>)
+        <span class="ruby-keyword">return</span> <span class="ruby-identifier">args</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-read">
+            
+              <b>read</b>(str)
+            
+            <a href="../../classes/PacketFu/PcapHeader.html#method-i-read" name="method-i-read" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Reads a string to populate the object. TODO: Need to test this by getting a
+hold of a big endian pcap file. Conversion from big to little shouldn’t be
+that big of a deal.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-read_source')" id="l_method-i-read_source">show</a>
+                
+              </p>
+              <div id="method-i-read_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/pcap.rb, line 79</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">read</span>(<span class="ruby-identifier">str</span>)
+        <span class="ruby-identifier">force_binary</span>(<span class="ruby-identifier">str</span>)
+        <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">str</span>.<span class="ruby-identifier">nil?</span>
+        <span class="ruby-identifier">str</span>.<span class="ruby-identifier">force_encoding</span>(<span class="ruby-constant">Encoding</span><span class="ruby-operator">::</span><span class="ruby-constant">BINARY</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">str</span>.<span class="ruby-identifier">respond_to?</span> <span class="ruby-value">:force_encoding</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">str</span>[<span class="ruby-number">0</span>,<span class="ruby-number">4</span>] <span class="ruby-operator">==</span> <span class="ruby-keyword">self</span>[<span class="ruby-value">:magic</span>].<span class="ruby-identifier">to_s</span> 
+                <span class="ruby-keyword">self</span>[<span class="ruby-value">:magic</span>].<span class="ruby-identifier">read</span> <span class="ruby-identifier">str</span>[<span class="ruby-number">0</span>,<span class="ruby-number">4</span>]
+                <span class="ruby-keyword">self</span>[<span class="ruby-value">:ver_major</span>].<span class="ruby-identifier">read</span> <span class="ruby-identifier">str</span>[<span class="ruby-number">4</span>,<span class="ruby-number">2</span>]
+                <span class="ruby-keyword">self</span>[<span class="ruby-value">:ver_minor</span>].<span class="ruby-identifier">read</span> <span class="ruby-identifier">str</span>[<span class="ruby-number">6</span>,<span class="ruby-number">2</span>]
+                <span class="ruby-keyword">self</span>[<span class="ruby-value">:thiszone</span>].<span class="ruby-identifier">read</span> <span class="ruby-identifier">str</span>[<span class="ruby-number">8</span>,<span class="ruby-number">4</span>]
+                <span class="ruby-keyword">self</span>[<span class="ruby-value">:sigfigs</span>].<span class="ruby-identifier">read</span> <span class="ruby-identifier">str</span>[<span class="ruby-number">12</span>,<span class="ruby-number">4</span>]
+                <span class="ruby-keyword">self</span>[<span class="ruby-value">:snaplen</span>].<span class="ruby-identifier">read</span> <span class="ruby-identifier">str</span>[<span class="ruby-number">16</span>,<span class="ruby-number">4</span>]
+                <span class="ruby-keyword">self</span>[<span class="ruby-value">:network</span>].<span class="ruby-identifier">read</span> <span class="ruby-identifier">str</span>[<span class="ruby-number">20</span>,<span class="ruby-number">4</span>]
+        <span class="ruby-keyword">else</span>
+                <span class="ruby-identifier">raise</span> <span class="ruby-string">&quot;Incorrect magic for libpcap&quot;</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-to_s">
+            
+              <b>to_s</b>()
+            
+            <a href="../../classes/PacketFu/PcapHeader.html#method-i-to_s" name="method-i-to_s" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns the object in string form.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-to_s_source')" id="l_method-i-to_s_source">show</a>
+                
+              </p>
+              <div id="method-i-to_s_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/pcap.rb, line 72</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">to_s</span>
+        <span class="ruby-keyword">self</span>.<span class="ruby-identifier">to_a</span>[<span class="ruby-number">1</span>,<span class="ruby-number">7</span>].<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">to_s</span>}.<span class="ruby-identifier">join</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

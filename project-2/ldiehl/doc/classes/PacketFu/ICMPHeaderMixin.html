@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>PacketFu::ICMPHeaderMixin</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/github.css" type="text/css" media="screen" />
+<script src="../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Module</span> 
+            PacketFu::ICMPHeaderMixin 
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../files/lib/packetfu/protos/icmp/mixin_rb.html">lib/packetfu/protos/icmp/mixin.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>This Mixin simplifies access to the ICMPHeaders. Mix this in with your 
+packet interface, and it will add methods that essentially delegate to the
+‘icmp_header’ method (assuming that it is a <a
+href="ICMPHeader.html">ICMPHeader</a> object)</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>I</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-icmp_calc_sum">icmp_calc_sum</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-icmp_code">icmp_code</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-icmp_code-3D">icmp_code=</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-icmp_recalc">icmp_recalc</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-icmp_sum">icmp_sum</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-icmp_sum-3D">icmp_sum=</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-icmp_sum_readable">icmp_sum_readable</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-icmp_type">icmp_type</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-icmp_type-3D">icmp_type=</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-icmp_calc_sum">
+            
+              <b>icmp_calc_sum</b>()
+            
+            <a href="../../classes/PacketFu/ICMPHeaderMixin.html#method-i-icmp_calc_sum" name="method-i-icmp_calc_sum" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-icmp_calc_sum_source')" id="l_method-i-icmp_calc_sum_source">show</a>
+                
+              </p>
+              <div id="method-i-icmp_calc_sum_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/icmp/mixin.rb, line 12</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">icmp_calc_sum</span>; <span class="ruby-keyword">self</span>.<span class="ruby-identifier">icmp_header</span>.<span class="ruby-identifier">icmp_calc_sum</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-icmp_code">
+            
+              <b>icmp_code</b>()
+            
+            <a href="../../classes/PacketFu/ICMPHeaderMixin.html#method-i-icmp_code" name="method-i-icmp_code" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-icmp_code_source')" id="l_method-i-icmp_code_source">show</a>
+                
+              </p>
+              <div id="method-i-icmp_code_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/icmp/mixin.rb, line 9</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">icmp_code</span>; <span class="ruby-keyword">self</span>.<span class="ruby-identifier">icmp_header</span>.<span class="ruby-identifier">icmp_code</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-icmp_code-3D">
+            
+              <b>icmp_code=</b>(v)
+            
+            <a href="../../classes/PacketFu/ICMPHeaderMixin.html#method-i-icmp_code-3D" name="method-i-icmp_code-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-icmp_code-3D_source')" id="l_method-i-icmp_code-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-icmp_code-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/icmp/mixin.rb, line 8</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">icmp_code=</span>(<span class="ruby-identifier">v</span>); <span class="ruby-keyword">self</span>.<span class="ruby-identifier">icmp_header</span>.<span class="ruby-identifier">icmp_code</span>= <span class="ruby-identifier">v</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-icmp_recalc">
+            
+              <b>icmp_recalc</b>(*v)
+            
+            <a href="../../classes/PacketFu/ICMPHeaderMixin.html#method-i-icmp_recalc" name="method-i-icmp_recalc" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-icmp_recalc_source')" id="l_method-i-icmp_recalc_source">show</a>
+                
+              </p>
+              <div id="method-i-icmp_recalc_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/icmp/mixin.rb, line 13</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">icmp_recalc</span>(*<span class="ruby-identifier">v</span>); <span class="ruby-keyword">self</span>.<span class="ruby-identifier">icmp_header</span>.<span class="ruby-identifier">icmp_recalc</span>(*<span class="ruby-identifier">v</span>); <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-icmp_sum">
+            
+              <b>icmp_sum</b>()
+            
+            <a href="../../classes/PacketFu/ICMPHeaderMixin.html#method-i-icmp_sum" name="method-i-icmp_sum" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-icmp_sum_source')" id="l_method-i-icmp_sum_source">show</a>
+                
+              </p>
+              <div id="method-i-icmp_sum_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/icmp/mixin.rb, line 11</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">icmp_sum</span>; <span class="ruby-keyword">self</span>.<span class="ruby-identifier">icmp_header</span>.<span class="ruby-identifier">icmp_sum</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-icmp_sum-3D">
+            
+              <b>icmp_sum=</b>(v)
+            
+            <a href="../../classes/PacketFu/ICMPHeaderMixin.html#method-i-icmp_sum-3D" name="method-i-icmp_sum-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-icmp_sum-3D_source')" id="l_method-i-icmp_sum-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-icmp_sum-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/icmp/mixin.rb, line 10</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">icmp_sum=</span>(<span class="ruby-identifier">v</span>); <span class="ruby-keyword">self</span>.<span class="ruby-identifier">icmp_header</span>.<span class="ruby-identifier">icmp_sum</span>= <span class="ruby-identifier">v</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-icmp_sum_readable">
+            
+              <b>icmp_sum_readable</b>()
+            
+            <a href="../../classes/PacketFu/ICMPHeaderMixin.html#method-i-icmp_sum_readable" name="method-i-icmp_sum_readable" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-icmp_sum_readable_source')" id="l_method-i-icmp_sum_readable_source">show</a>
+                
+              </p>
+              <div id="method-i-icmp_sum_readable_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/icmp/mixin.rb, line 14</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">icmp_sum_readable</span>; <span class="ruby-keyword">self</span>.<span class="ruby-identifier">icmp_header</span>.<span class="ruby-identifier">icmp_sum_readable</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-icmp_type">
+            
+              <b>icmp_type</b>()
+            
+            <a href="../../classes/PacketFu/ICMPHeaderMixin.html#method-i-icmp_type" name="method-i-icmp_type" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-icmp_type_source')" id="l_method-i-icmp_type_source">show</a>
+                
+              </p>
+              <div id="method-i-icmp_type_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/icmp/mixin.rb, line 7</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">icmp_type</span>; <span class="ruby-keyword">self</span>.<span class="ruby-identifier">icmp_header</span>.<span class="ruby-identifier">icmp_type</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-icmp_type-3D">
+            
+              <b>icmp_type=</b>(v)
+            
+            <a href="../../classes/PacketFu/ICMPHeaderMixin.html#method-i-icmp_type-3D" name="method-i-icmp_type-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-icmp_type-3D_source')" id="l_method-i-icmp_type-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-icmp_type-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/icmp/mixin.rb, line 6</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">icmp_type=</span>(<span class="ruby-identifier">v</span>); <span class="ruby-keyword">self</span>.<span class="ruby-identifier">icmp_header</span>.<span class="ruby-identifier">icmp_type</span>= <span class="ruby-identifier">v</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

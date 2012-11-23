@@ -1,0 +1,645 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>PacketFu::ICMPHeader</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/github.css" type="text/css" media="screen" />
+<script src="../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            PacketFu::ICMPHeader 
+            
+                <span class="parent">&lt; 
+                    
+                    Struct.new(:icmp_type, :icmp_code, :icmp_sum, :body)
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../files/lib/packetfu/protos/icmp/header_rb.html">lib/packetfu/protos/icmp/header.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p><a href="ICMPHeader.html">ICMPHeader</a> is a complete ICMP struct, used in
+<a href="ICMPPacket.html">ICMPPacket</a>. ICMP is  typically used for
+network administration and connectivity testing.</p>
+
+<p>For more on ICMP packets, see  <a
+href="http://www.networksorcery.com/enp/protocol/icmp.htm">www.networksorcery.com/enp/protocol/icmp.htm</a></p>
+
+<h4 id="label-Header+Definition">Header Definition</h4>
+
+<pre>Int8    :icmp_type                        # Type
+Int8    :icmp_code                        # Code
+Int16   :icmp_sum    Default: calculated  # Checksum
+String  :body</pre>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>I</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-icmp_calc_sum">icmp_calc_sum</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-icmp_code">icmp_code</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-icmp_code-3D">icmp_code=</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-icmp_recalc">icmp_recalc</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-icmp_sum">icmp_sum</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-icmp_sum-3D">icmp_sum=</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-icmp_sum_readable">icmp_sum_readable</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-icmp_type">icmp_type</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-icmp_type-3D">icmp_type=</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-new">new</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>R</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-read">read</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-to_s">to_s</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+    <!-- Includes -->
+    <div class="sectiontitle">Included Modules</div>
+    <ul>
+      
+        <li>
+          
+            <a href="../StructFu.html">
+              StructFu
+            </a>
+          
+        </li>
+      
+    </ul>
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-new">
+            
+              <b>new</b>(args={})
+            
+            <a href="../../classes/PacketFu/ICMPHeader.html#method-c-new" name="method-c-new" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
+                
+              </p>
+              <div id="method-c-new_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/icmp/header.rb, line 18</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize</span>(<span class="ruby-identifier">args</span>={})
+        <span class="ruby-keyword">super</span>(
+                <span class="ruby-constant">Int8</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">args</span>[<span class="ruby-value">:icmp_type</span>]),
+                <span class="ruby-constant">Int8</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">args</span>[<span class="ruby-value">:icmp_code</span>]),
+                <span class="ruby-constant">Int16</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">args</span>[<span class="ruby-value">:icmp_sum</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">icmp_calc_sum</span>),
+                <span class="ruby-constant">StructFu</span><span class="ruby-operator">::</span><span class="ruby-constant">String</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">read</span>(<span class="ruby-identifier">args</span>[<span class="ruby-value">:body</span>])
+        )
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-icmp_calc_sum">
+            
+              <b>icmp_calc_sum</b>()
+            
+            <a href="../../classes/PacketFu/ICMPHeader.html#method-i-icmp_calc_sum" name="method-i-icmp_calc_sum" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Calculates and sets the checksum for the object.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-icmp_calc_sum_source')" id="l_method-i-icmp_calc_sum_source">show</a>
+                
+              </p>
+              <div id="method-i-icmp_calc_sum_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/icmp/header.rb, line 58</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">icmp_calc_sum</span>
+        <span class="ruby-identifier">checksum</span> = (<span class="ruby-identifier">icmp_type</span>.<span class="ruby-identifier">to_i</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-number">8</span>)     <span class="ruby-operator">+</span> <span class="ruby-identifier">icmp_code</span>.<span class="ruby-identifier">to_i</span>
+        <span class="ruby-identifier">chk_body</span> = (<span class="ruby-identifier">body</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">%</span> <span class="ruby-number">2</span> <span class="ruby-operator">==</span> <span class="ruby-number">0</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">body</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">body</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">+</span> <span class="ruby-string">&quot;\x00&quot;</span>)
+        <span class="ruby-keyword">if</span> <span class="ruby-number">1</span>.<span class="ruby-identifier">respond_to?</span> <span class="ruby-value">:ord</span>
+                <span class="ruby-identifier">chk_body</span>.<span class="ruby-identifier">scan</span>(<span class="ruby-regexp">%r../</span>).<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> (<span class="ruby-identifier">x</span>[<span class="ruby-number">0</span>].<span class="ruby-identifier">ord</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-number">8</span>) <span class="ruby-operator">+</span> <span class="ruby-identifier">x</span>[<span class="ruby-number">1</span>].<span class="ruby-identifier">ord</span> }.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">y</span><span class="ruby-operator">|</span> <span class="ruby-identifier">checksum</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">y</span> }
+        <span class="ruby-keyword">else</span>
+                <span class="ruby-identifier">chk_body</span>.<span class="ruby-identifier">scan</span>(<span class="ruby-regexp">%r../</span>).<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> (<span class="ruby-identifier">x</span>[<span class="ruby-number">0</span>] <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-number">8</span>) <span class="ruby-operator">+</span> <span class="ruby-identifier">x</span>[<span class="ruby-number">1</span>] }.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">y</span><span class="ruby-operator">|</span> <span class="ruby-identifier">checksum</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">y</span> }
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-identifier">checksum</span> = <span class="ruby-identifier">checksum</span> <span class="ruby-operator">%</span> <span class="ruby-number">0xffff</span>
+        <span class="ruby-identifier">checksum</span> = <span class="ruby-number">0xffff</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">checksum</span>
+        <span class="ruby-identifier">checksum</span> <span class="ruby-operator">==</span> <span class="ruby-number">0</span> <span class="ruby-operator">?</span> <span class="ruby-number">0xffff</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">checksum</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-icmp_code">
+            
+              <b>icmp_code</b>()
+            
+            <a href="../../classes/PacketFu/ICMPHeader.html#method-i-icmp_code" name="method-i-icmp_code" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Getter for the code.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-icmp_code_source')" id="l_method-i-icmp_code_source">show</a>
+                
+              </p>
+              <div id="method-i-icmp_code_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/icmp/header.rb, line 50</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">icmp_code</span>; <span class="ruby-keyword">self</span>[<span class="ruby-value">:icmp_code</span>].<span class="ruby-identifier">to_i</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-icmp_code-3D">
+            
+              <b>icmp_code=</b>(i)
+            
+            <a href="../../classes/PacketFu/ICMPHeader.html#method-i-icmp_code-3D" name="method-i-icmp_code-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Setter for the code.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-icmp_code-3D_source')" id="l_method-i-icmp_code-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-icmp_code-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/icmp/header.rb, line 48</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">icmp_code=</span>(<span class="ruby-identifier">i</span>); <span class="ruby-identifier">typecast</span> <span class="ruby-identifier">i</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-icmp_recalc">
+            
+              <b>icmp_recalc</b>(arg=:all)
+            
+            <a href="../../classes/PacketFu/ICMPHeader.html#method-i-icmp_recalc" name="method-i-icmp_recalc" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Recalculates the calculatable fields for ICMP.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-icmp_recalc_source')" id="l_method-i-icmp_recalc_source">show</a>
+                
+              </p>
+              <div id="method-i-icmp_recalc_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/icmp/header.rb, line 72</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">icmp_recalc</span>(<span class="ruby-identifier">arg</span>=<span class="ruby-value">:all</span>)
+        <span class="ruby-comment"># How silly is this, you can't intern a symbol in ruby 1.8.7pl72?</span>
+        <span class="ruby-comment"># I'm this close to monkey patching Symbol so you can force it...</span>
+        <span class="ruby-identifier">arg</span> = <span class="ruby-identifier">arg</span>.<span class="ruby-identifier">intern</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">arg</span>.<span class="ruby-identifier">respond_to?</span> <span class="ruby-value">:intern</span>
+        <span class="ruby-keyword">case</span> <span class="ruby-identifier">arg</span>
+        <span class="ruby-keyword">when</span> <span class="ruby-value">:icmp_sum</span>
+                <span class="ruby-keyword">self</span>.<span class="ruby-identifier">icmp_sum</span>=<span class="ruby-identifier">icmp_calc_sum</span>
+        <span class="ruby-keyword">when</span> <span class="ruby-value">:all</span>
+                <span class="ruby-keyword">self</span>.<span class="ruby-identifier">icmp_sum</span>=<span class="ruby-identifier">icmp_calc_sum</span>
+        <span class="ruby-keyword">else</span>
+                <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;No such field `#{arg}'&quot;</span>
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-icmp_sum">
+            
+              <b>icmp_sum</b>()
+            
+            <a href="../../classes/PacketFu/ICMPHeader.html#method-i-icmp_sum" name="method-i-icmp_sum" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Getter for the checksum.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-icmp_sum_source')" id="l_method-i-icmp_sum_source">show</a>
+                
+              </p>
+              <div id="method-i-icmp_sum_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/icmp/header.rb, line 55</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">icmp_sum</span>; <span class="ruby-keyword">self</span>[<span class="ruby-value">:icmp_sum</span>].<span class="ruby-identifier">to_i</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-icmp_sum-3D">
+            
+              <b>icmp_sum=</b>(i)
+            
+            <a href="../../classes/PacketFu/ICMPHeader.html#method-i-icmp_sum-3D" name="method-i-icmp_sum-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Setter for the checksum. Note, this is calculated automatically with 
+icmp_calc_sum.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-icmp_sum-3D_source')" id="l_method-i-icmp_sum-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-icmp_sum-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/icmp/header.rb, line 53</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">icmp_sum=</span>(<span class="ruby-identifier">i</span>); <span class="ruby-identifier">typecast</span> <span class="ruby-identifier">i</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-icmp_sum_readable">
+            
+              <b>icmp_sum_readable</b>()
+            
+            <a href="../../classes/PacketFu/ICMPHeader.html#method-i-icmp_sum_readable" name="method-i-icmp_sum_readable" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Readability aliases</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-icmp_sum_readable_source')" id="l_method-i-icmp_sum_readable_source">show</a>
+                
+              </p>
+              <div id="method-i-icmp_sum_readable_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/icmp/header.rb, line 88</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">icmp_sum_readable</span>
+        <span class="ruby-string">&quot;0x%04x&quot;</span> <span class="ruby-operator">%</span> <span class="ruby-identifier">icmp_sum</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-icmp_type">
+            
+              <b>icmp_type</b>()
+            
+            <a href="../../classes/PacketFu/ICMPHeader.html#method-i-icmp_type" name="method-i-icmp_type" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Getter for the type.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-icmp_type_source')" id="l_method-i-icmp_type_source">show</a>
+                
+              </p>
+              <div id="method-i-icmp_type_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/icmp/header.rb, line 46</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">icmp_type</span>; <span class="ruby-keyword">self</span>[<span class="ruby-value">:icmp_type</span>].<span class="ruby-identifier">to_i</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-icmp_type-3D">
+            
+              <b>icmp_type=</b>(i)
+            
+            <a href="../../classes/PacketFu/ICMPHeader.html#method-i-icmp_type-3D" name="method-i-icmp_type-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Setter for the type.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-icmp_type-3D_source')" id="l_method-i-icmp_type-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-icmp_type-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/icmp/header.rb, line 44</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">icmp_type=</span>(<span class="ruby-identifier">i</span>); <span class="ruby-identifier">typecast</span> <span class="ruby-identifier">i</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-read">
+            
+              <b>read</b>(str)
+            
+            <a href="../../classes/PacketFu/ICMPHeader.html#method-i-read" name="method-i-read" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Reads a string to populate the object.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-read_source')" id="l_method-i-read_source">show</a>
+                
+              </p>
+              <div id="method-i-read_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/icmp/header.rb, line 33</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">read</span>(<span class="ruby-identifier">str</span>)
+        <span class="ruby-identifier">force_binary</span>(<span class="ruby-identifier">str</span>)
+        <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">str</span>.<span class="ruby-identifier">nil?</span>
+        <span class="ruby-keyword">self</span>[<span class="ruby-value">:icmp_type</span>].<span class="ruby-identifier">read</span>(<span class="ruby-identifier">str</span>[<span class="ruby-number">0</span>,<span class="ruby-number">1</span>])
+        <span class="ruby-keyword">self</span>[<span class="ruby-value">:icmp_code</span>].<span class="ruby-identifier">read</span>(<span class="ruby-identifier">str</span>[<span class="ruby-number">1</span>,<span class="ruby-number">1</span>])
+        <span class="ruby-keyword">self</span>[<span class="ruby-value">:icmp_sum</span>].<span class="ruby-identifier">read</span>(<span class="ruby-identifier">str</span>[<span class="ruby-number">2</span>,<span class="ruby-number">2</span>])
+        <span class="ruby-keyword">self</span>[<span class="ruby-value">:body</span>].<span class="ruby-identifier">read</span>(<span class="ruby-identifier">str</span>[<span class="ruby-number">4</span>,<span class="ruby-identifier">str</span>.<span class="ruby-identifier">size</span>])
+        <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-to_s">
+            
+              <b>to_s</b>()
+            
+            <a href="../../classes/PacketFu/ICMPHeader.html#method-i-to_s" name="method-i-to_s" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns the object in string form.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-to_s_source')" id="l_method-i-to_s_source">show</a>
+                
+              </p>
+              <div id="method-i-to_s_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/icmp/header.rb, line 28</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">to_s</span>
+        <span class="ruby-keyword">self</span>.<span class="ruby-identifier">to_a</span>.<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">to_s</span>}.<span class="ruby-identifier">join</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

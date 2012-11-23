@@ -1,0 +1,1988 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>PacketFu::TCPHeader</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/github.css" type="text/css" media="screen" />
+<script src="../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            PacketFu::TCPHeader 
+            
+                <span class="parent">&lt; 
+                    
+                    Struct.new(:tcp_src, :tcp_dst,                                                                                                                          :tcp_seq,                                                                                                                          :tcp_ack,                                                                                                                          :tcp_hlen, :tcp_reserved, :tcp_ecn, :tcp_flags, :tcp_win,                                                                                                                           :tcp_sum, :tcp_urg,                                                                                                                           :tcp_opts, :body)
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../files/lib/packetfu/protos/tcp/header_rb.html">lib/packetfu/protos/tcp/header.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p><a href="TCPHeader.html">TCPHeader</a> is a complete TCP struct, used in <a
+href="TCPPacket.html">TCPPacket</a>. Most IP traffic is TCP-based, by
+volume.</p>
+
+<p>For more on TCP packets, see <a
+href="http://www.networksorcery.com/enp/protocol/tcp.htm">www.networksorcery.com/enp/protocol/tcp.htm</a></p>
+
+<h4 id="label-Header+Definition">Header Definition</h4>
+
+<pre>Int16        :tcp_src       Default: random 
+Int16        :tcp_dst
+Int32        :tcp_seq       Default: random
+Int32        :tcp_ack
+TcpHlen      :tcp_hlen      Default: 5           # Must recalc as options are set. 
+TcpReserved  :tcp_reserved  Default: 0
+TcpEcn       :tcp_ecn
+TcpFlags     :tcp_flags
+Int16        :tcp_win,      Default: 0           # WinXP's default syn packet
+Int16        :tcp_sum,      Default: calculated  # Must set this upon generation.
+Int16        :tcp_urg
+TcpOptions   :tcp_opts
+String       :body</pre>
+
+<p>See also <a href="TcpHlen.html">TcpHlen</a>, <a
+href="TcpReserved.html">TcpReserved</a>, <a href="TcpEcn.html">TcpEcn</a>,
+<a href="TcpFlags.html">TcpFlags</a>, TcpOpts</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>B</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-bits_to_s">bits_to_s</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-new">new</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>R</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-rand_port">rand_port</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-read">read</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-tcp_ack">tcp_ack</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-tcp_ack-3D">tcp_ack=</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-tcp_ack_readable">tcp_ack_readable</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-tcp_calc_hlen">tcp_calc_hlen</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-tcp_calc_seq">tcp_calc_seq</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-tcp_calc_src">tcp_calc_src</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-tcp_dport">tcp_dport</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-tcp_dport-3D">tcp_dport=</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-tcp_dst">tcp_dst</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-tcp_dst-3D">tcp_dst=</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-tcp_ecn">tcp_ecn</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-tcp_ecn-3D">tcp_ecn=</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-tcp_flags_dotmap">tcp_flags_dotmap</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-tcp_flags_readable">tcp_flags_readable</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-tcp_hlen">tcp_hlen</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-tcp_hlen-3D">tcp_hlen=</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-tcp_options">tcp_options</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-tcp_options-3D">tcp_options=</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-tcp_opts">tcp_opts</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-tcp_opts-3D">tcp_opts=</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-tcp_opts_len">tcp_opts_len</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-tcp_opts_readable">tcp_opts_readable</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-tcp_recalc">tcp_recalc</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-tcp_reserved">tcp_reserved</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-tcp_reserved-3D">tcp_reserved=</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-tcp_seq">tcp_seq</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-tcp_seq-3D">tcp_seq=</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-tcp_seq_readable">tcp_seq_readable</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-tcp_sport">tcp_sport</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-tcp_sport-3D">tcp_sport=</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-tcp_src">tcp_src</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-tcp_src-3D">tcp_src=</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-tcp_sum">tcp_sum</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-tcp_sum-3D">tcp_sum=</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-tcp_sum_readable">tcp_sum_readable</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-tcp_urg">tcp_urg</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-tcp_urg-3D">tcp_urg=</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-tcp_win">tcp_win</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-tcp_win-3D">tcp_win=</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-to_s">to_s</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+    <!-- Includes -->
+    <div class="sectiontitle">Included Modules</div>
+    <ul>
+      
+        <li>
+          
+            <a href="../StructFu.html">
+              StructFu
+            </a>
+          
+        </li>
+      
+    </ul>
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+      <!-- Section attributes -->
+      <div class="sectiontitle">Attributes</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [RW]
+            </td>
+            <td class='attr-name'>flavor</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+      </table>
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-new">
+            
+              <b>new</b>(args={})
+            
+            <a href="../../classes/PacketFu/TCPHeader.html#method-c-new" name="method-c-new" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
+                
+              </p>
+              <div id="method-c-new_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/tcp/header.rb, line 40</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize</span>(<span class="ruby-identifier">args</span>={})
+        <span class="ruby-ivar">@random_seq</span> = <span class="ruby-identifier">rand</span>(<span class="ruby-number">0xffffffff</span>)
+        <span class="ruby-ivar">@random_src</span> = <span class="ruby-identifier">rand_port</span>
+        <span class="ruby-keyword">super</span>(
+                <span class="ruby-constant">Int16</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">args</span>[<span class="ruby-value">:tcp_src</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">tcp_calc_src</span>),
+                <span class="ruby-constant">Int16</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">args</span>[<span class="ruby-value">:tcp_dst</span>]),
+                <span class="ruby-constant">Int32</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">args</span>[<span class="ruby-value">:tcp_seq</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">tcp_calc_seq</span>),
+                <span class="ruby-constant">Int32</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">args</span>[<span class="ruby-value">:tcp_ack</span>]),
+                <span class="ruby-constant">TcpHlen</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:hlen</span> =<span class="ruby-operator">&gt;</span> (<span class="ruby-identifier">args</span>[<span class="ruby-value">:tcp_hlen</span>] <span class="ruby-operator">||</span> <span class="ruby-number">5</span>)),
+                <span class="ruby-constant">TcpReserved</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">args</span>[<span class="ruby-value">:tcp_reserved</span>] <span class="ruby-operator">||</span> <span class="ruby-number">0</span>),
+                <span class="ruby-constant">TcpEcn</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">args</span>[<span class="ruby-value">:tcp_ecn</span>]),
+                <span class="ruby-constant">TcpFlags</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">args</span>[<span class="ruby-value">:tcp_flags</span>]),
+                <span class="ruby-constant">Int16</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">args</span>[<span class="ruby-value">:tcp_win</span>] <span class="ruby-operator">||</span> <span class="ruby-number">0x4000</span>),
+                <span class="ruby-constant">Int16</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">args</span>[<span class="ruby-value">:tcp_sum</span>] <span class="ruby-operator">||</span> <span class="ruby-number">0</span>),
+                <span class="ruby-constant">Int16</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">args</span>[<span class="ruby-value">:tcp_urg</span>]),
+                <span class="ruby-constant">TcpOptions</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">read</span>(<span class="ruby-identifier">args</span>[<span class="ruby-value">:tcp_opts</span>]),
+                <span class="ruby-constant">StructFu</span><span class="ruby-operator">::</span><span class="ruby-constant">String</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">read</span>(<span class="ruby-identifier">args</span>[<span class="ruby-value">:body</span>])
+        )
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-bits_to_s">
+            
+              <b>bits_to_s</b>()
+            
+            <a href="../../classes/PacketFu/TCPHeader.html#method-i-bits_to_s" name="method-i-bits_to_s" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Helper function to create the string for Hlen, Reserved, ECN, and Flags.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-bits_to_s_source')" id="l_method-i-bits_to_s_source">show</a>
+                
+              </p>
+              <div id="method-i-bits_to_s_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/tcp/header.rb, line 63</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">bits_to_s</span>
+        <span class="ruby-identifier">bytes</span> = []
+        <span class="ruby-identifier">bytes</span>[<span class="ruby-number">0</span>] = (<span class="ruby-keyword">self</span>[<span class="ruby-value">:tcp_hlen</span>].<span class="ruby-identifier">to_i</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-number">4</span>) <span class="ruby-operator">+</span>
+                (<span class="ruby-keyword">self</span>[<span class="ruby-value">:tcp_reserved</span>].<span class="ruby-identifier">to_i</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-number">1</span>) <span class="ruby-operator">+</span>
+                <span class="ruby-keyword">self</span>[<span class="ruby-value">:tcp_ecn</span>].<span class="ruby-identifier">n</span>.<span class="ruby-identifier">to_i</span>
+        <span class="ruby-identifier">bytes</span>[<span class="ruby-number">1</span>] = (<span class="ruby-keyword">self</span>[<span class="ruby-value">:tcp_ecn</span>].<span class="ruby-identifier">c</span>.<span class="ruby-identifier">to_i</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-number">7</span>) <span class="ruby-operator">+</span>
+                (<span class="ruby-keyword">self</span>[<span class="ruby-value">:tcp_ecn</span>].<span class="ruby-identifier">e</span>.<span class="ruby-identifier">to_i</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-number">6</span>) <span class="ruby-operator">+</span>
+                <span class="ruby-keyword">self</span>[<span class="ruby-value">:tcp_flags</span>].<span class="ruby-identifier">to_i</span>
+        <span class="ruby-identifier">bytes</span>.<span class="ruby-identifier">pack</span>(<span class="ruby-string">&quot;CC&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-rand_port">
+            
+              <b>rand_port</b>()
+            
+            <a href="../../classes/PacketFu/TCPHeader.html#method-i-rand_port" name="method-i-rand_port" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Generates a random high port. This is affected by packet flavor.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-rand_port_source')" id="l_method-i-rand_port_source">show</a>
+                
+              </p>
+              <div id="method-i-rand_port_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/tcp/header.rb, line 222</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">rand_port</span>
+        <span class="ruby-identifier">rand</span>(<span class="ruby-number">0xffff</span> <span class="ruby-operator">-</span> <span class="ruby-number">1025</span>) <span class="ruby-operator">+</span> <span class="ruby-number">1025</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-read">
+            
+              <b>read</b>(str)
+            
+            <a href="../../classes/PacketFu/TCPHeader.html#method-i-read" name="method-i-read" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Reads a string to populate the object.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-read_source')" id="l_method-i-read_source">show</a>
+                
+              </p>
+              <div id="method-i-read_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/tcp/header.rb, line 93</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">read</span>(<span class="ruby-identifier">str</span>)
+        <span class="ruby-identifier">force_binary</span>(<span class="ruby-identifier">str</span>)
+        <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">str</span>.<span class="ruby-identifier">nil?</span>
+        <span class="ruby-keyword">self</span>[<span class="ruby-value">:tcp_src</span>].<span class="ruby-identifier">read</span>(<span class="ruby-identifier">str</span>[<span class="ruby-number">0</span>,<span class="ruby-number">2</span>])
+        <span class="ruby-keyword">self</span>[<span class="ruby-value">:tcp_dst</span>].<span class="ruby-identifier">read</span>(<span class="ruby-identifier">str</span>[<span class="ruby-number">2</span>,<span class="ruby-number">2</span>])
+        <span class="ruby-keyword">self</span>[<span class="ruby-value">:tcp_seq</span>].<span class="ruby-identifier">read</span>(<span class="ruby-identifier">str</span>[<span class="ruby-number">4</span>,<span class="ruby-number">4</span>])
+        <span class="ruby-keyword">self</span>[<span class="ruby-value">:tcp_ack</span>].<span class="ruby-identifier">read</span>(<span class="ruby-identifier">str</span>[<span class="ruby-number">8</span>,<span class="ruby-number">4</span>])
+        <span class="ruby-keyword">self</span>[<span class="ruby-value">:tcp_hlen</span>].<span class="ruby-identifier">read</span>(<span class="ruby-identifier">str</span>[<span class="ruby-number">12</span>,<span class="ruby-number">1</span>])
+        <span class="ruby-keyword">self</span>[<span class="ruby-value">:tcp_reserved</span>].<span class="ruby-identifier">read</span>(<span class="ruby-identifier">str</span>[<span class="ruby-number">12</span>,<span class="ruby-number">1</span>])
+        <span class="ruby-keyword">self</span>[<span class="ruby-value">:tcp_ecn</span>].<span class="ruby-identifier">read</span>(<span class="ruby-identifier">str</span>[<span class="ruby-number">12</span>,<span class="ruby-number">2</span>])
+        <span class="ruby-keyword">self</span>[<span class="ruby-value">:tcp_flags</span>].<span class="ruby-identifier">read</span>(<span class="ruby-identifier">str</span>[<span class="ruby-number">13</span>,<span class="ruby-number">1</span>])
+        <span class="ruby-keyword">self</span>[<span class="ruby-value">:tcp_win</span>].<span class="ruby-identifier">read</span>(<span class="ruby-identifier">str</span>[<span class="ruby-number">14</span>,<span class="ruby-number">2</span>])
+        <span class="ruby-keyword">self</span>[<span class="ruby-value">:tcp_sum</span>].<span class="ruby-identifier">read</span>(<span class="ruby-identifier">str</span>[<span class="ruby-number">16</span>,<span class="ruby-number">2</span>])
+        <span class="ruby-keyword">self</span>[<span class="ruby-value">:tcp_urg</span>].<span class="ruby-identifier">read</span>(<span class="ruby-identifier">str</span>[<span class="ruby-number">18</span>,<span class="ruby-number">2</span>])
+        <span class="ruby-keyword">self</span>[<span class="ruby-value">:tcp_opts</span>].<span class="ruby-identifier">read</span>(<span class="ruby-identifier">str</span>[<span class="ruby-number">20</span>,((<span class="ruby-keyword">self</span>[<span class="ruby-value">:tcp_hlen</span>].<span class="ruby-identifier">to_i</span> * <span class="ruby-number">4</span>) <span class="ruby-operator">-</span> <span class="ruby-number">20</span>)])
+        <span class="ruby-keyword">self</span>[<span class="ruby-value">:body</span>].<span class="ruby-identifier">read</span>(<span class="ruby-identifier">str</span>[(<span class="ruby-keyword">self</span>[<span class="ruby-value">:tcp_hlen</span>].<span class="ruby-identifier">to_i</span> * <span class="ruby-number">4</span>),<span class="ruby-identifier">str</span>.<span class="ruby-identifier">size</span>])
+        <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-tcp_ack">
+            
+              <b>tcp_ack</b>()
+            
+            <a href="../../classes/PacketFu/TCPHeader.html#method-i-tcp_ack" name="method-i-tcp_ack" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Getter for the TCP ackowlegement number.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-tcp_ack_source')" id="l_method-i-tcp_ack_source">show</a>
+                
+              </p>
+              <div id="method-i-tcp_ack_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/tcp/header.rb, line 127</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">tcp_ack</span>; <span class="ruby-keyword">self</span>[<span class="ruby-value">:tcp_ack</span>].<span class="ruby-identifier">to_i</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-tcp_ack-3D">
+            
+              <b>tcp_ack=</b>(i)
+            
+            <a href="../../classes/PacketFu/TCPHeader.html#method-i-tcp_ack-3D" name="method-i-tcp_ack-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Setter for the TCP ackowlegement number.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-tcp_ack-3D_source')" id="l_method-i-tcp_ack-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-tcp_ack-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/tcp/header.rb, line 125</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">tcp_ack=</span>(<span class="ruby-identifier">i</span>); <span class="ruby-identifier">typecast</span> <span class="ruby-identifier">i</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-tcp_ack_readable">
+            
+              <b>tcp_ack_readable</b>()
+            
+            <a href="../../classes/PacketFu/TCPHeader.html#method-i-tcp_ack_readable" name="method-i-tcp_ack_readable" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-tcp_ack_readable_source')" id="l_method-i-tcp_ack_readable_source">show</a>
+                
+              </p>
+              <div id="method-i-tcp_ack_readable_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/tcp/header.rb, line 289</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">tcp_ack_readable</span>
+        <span class="ruby-string">&quot;0x%08x&quot;</span> <span class="ruby-operator">%</span> <span class="ruby-identifier">tcp_ack</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-tcp_calc_hlen">
+            
+              <b>tcp_calc_hlen</b>()
+            
+            <a href="../../classes/PacketFu/TCPHeader.html#method-i-tcp_calc_hlen" name="method-i-tcp_calc_hlen" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Sets and returns the true length of the TCP Header. TODO: Think about
+making all the option stuff safer.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-tcp_calc_hlen_source')" id="l_method-i-tcp_calc_hlen_source">show</a>
+                
+              </p>
+              <div id="method-i-tcp_calc_hlen_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/tcp/header.rb, line 217</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">tcp_calc_hlen</span>
+        <span class="ruby-keyword">self</span>[<span class="ruby-value">:tcp_hlen</span>] = <span class="ruby-constant">TcpHlen</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:hlen</span> =<span class="ruby-operator">&gt;</span> ((<span class="ruby-number">20</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">tcp_opts_len</span>) <span class="ruby-operator">/</span> <span class="ruby-number">4</span>))
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-tcp_calc_seq">
+            
+              <b>tcp_calc_seq</b>()
+            
+            <a href="../../classes/PacketFu/TCPHeader.html#method-i-tcp_calc_seq" name="method-i-tcp_calc_seq" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Resets the sequence number to a new random number.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-tcp_calc_seq_source')" id="l_method-i-tcp_calc_seq_source">show</a>
+                
+              </p>
+              <div id="method-i-tcp_calc_seq_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/tcp/header.rb, line 206</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">tcp_calc_seq</span>; <span class="ruby-ivar">@random_seq</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-tcp_calc_src">
+            
+              <b>tcp_calc_src</b>()
+            
+            <a href="../../classes/PacketFu/TCPHeader.html#method-i-tcp_calc_src" name="method-i-tcp_calc_src" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Resets the source port to a new random number.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-tcp_calc_src_source')" id="l_method-i-tcp_calc_src_source">show</a>
+                
+              </p>
+              <div id="method-i-tcp_calc_src_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/tcp/header.rb, line 208</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">tcp_calc_src</span>; <span class="ruby-ivar">@random_src</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-tcp_dport">
+            
+              <b>tcp_dport</b>()
+            
+            <a href="../../classes/PacketFu/TCPHeader.html#method-i-tcp_dport" name="method-i-tcp_dport" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Equivalent to tcp_dst.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-tcp_dport_source')" id="l_method-i-tcp_dport_source">show</a>
+                
+              </p>
+              <div id="method-i-tcp_dport_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/tcp/header.rb, line 256</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">tcp_dport</span>
+        <span class="ruby-keyword">self</span>.<span class="ruby-identifier">tcp_dst</span>.<span class="ruby-identifier">to_i</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-tcp_dport-3D">
+            
+              <b>tcp_dport=</b>(arg)
+            
+            <a href="../../classes/PacketFu/TCPHeader.html#method-i-tcp_dport-3D" name="method-i-tcp_dport-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Equivalent to <a href="TCPHeader.html#method-i-tcp_dst">#tcp_dst</a>=.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-tcp_dport-3D_source')" id="l_method-i-tcp_dport-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-tcp_dport-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/tcp/header.rb, line 261</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">tcp_dport=</span>(<span class="ruby-identifier">arg</span>)
+        <span class="ruby-keyword">self</span>.<span class="ruby-identifier">tcp_dst</span>=(<span class="ruby-identifier">arg</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-tcp_dst">
+            
+              <b>tcp_dst</b>()
+            
+            <a href="../../classes/PacketFu/TCPHeader.html#method-i-tcp_dst" name="method-i-tcp_dst" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Getter for the TCP destination port.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-tcp_dst_source')" id="l_method-i-tcp_dst_source">show</a>
+                
+              </p>
+              <div id="method-i-tcp_dst_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/tcp/header.rb, line 119</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">tcp_dst</span>; <span class="ruby-keyword">self</span>[<span class="ruby-value">:tcp_dst</span>].<span class="ruby-identifier">to_i</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-tcp_dst-3D">
+            
+              <b>tcp_dst=</b>(i)
+            
+            <a href="../../classes/PacketFu/TCPHeader.html#method-i-tcp_dst-3D" name="method-i-tcp_dst-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Setter for the TCP destination port.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-tcp_dst-3D_source')" id="l_method-i-tcp_dst-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-tcp_dst-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/tcp/header.rb, line 117</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">tcp_dst=</span>(<span class="ruby-identifier">i</span>); <span class="ruby-identifier">typecast</span> <span class="ruby-identifier">i</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-tcp_ecn">
+            
+              <b>tcp_ecn</b>()
+            
+            <a href="../../classes/PacketFu/TCPHeader.html#method-i-tcp_ecn" name="method-i-tcp_ecn" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Getter for the ECN bits.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-tcp_ecn_source')" id="l_method-i-tcp_ecn_source">show</a>
+                
+              </p>
+              <div id="method-i-tcp_ecn_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/tcp/header.rb, line 176</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">tcp_ecn</span>; <span class="ruby-keyword">self</span>[<span class="ruby-value">:tcp_ecn</span>].<span class="ruby-identifier">to_i</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-tcp_ecn-3D">
+            
+              <b>tcp_ecn=</b>(i)
+            
+            <a href="../../classes/PacketFu/TCPHeader.html#method-i-tcp_ecn-3D" name="method-i-tcp_ecn-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Setter for the ECN bits.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-tcp_ecn-3D_source')" id="l_method-i-tcp_ecn-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-tcp_ecn-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/tcp/header.rb, line 178</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">tcp_ecn=</span>(<span class="ruby-identifier">i</span>)
+        <span class="ruby-keyword">case</span> <span class="ruby-identifier">i</span>
+        <span class="ruby-keyword">when</span> <span class="ruby-constant">PacketFu</span><span class="ruby-operator">::</span><span class="ruby-constant">TcpEcn</span>
+                <span class="ruby-keyword">self</span>[<span class="ruby-value">:tcp_ecn</span>]=<span class="ruby-identifier">i</span>
+        <span class="ruby-keyword">when</span> <span class="ruby-constant">Numeric</span>
+                <span class="ruby-identifier">args</span> = {}
+                <span class="ruby-identifier">args</span>[<span class="ruby-value">:n</span>] = (<span class="ruby-identifier">i</span> &amp; <span class="ruby-number">0b100</span>) <span class="ruby-operator">&gt;&gt;</span> <span class="ruby-number">2</span>
+                <span class="ruby-identifier">args</span>[<span class="ruby-value">:c</span>] = (<span class="ruby-identifier">i</span> &amp; <span class="ruby-number">0b010</span>) <span class="ruby-operator">&gt;&gt;</span> <span class="ruby-number">1</span>
+                <span class="ruby-identifier">args</span>[<span class="ruby-value">:e</span>] = (<span class="ruby-identifier">i</span> &amp; <span class="ruby-number">0b001</span>)
+                <span class="ruby-keyword">self</span>[<span class="ruby-value">:tcp_ecn</span>] = <span class="ruby-constant">TcpEcn</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">args</span>)
+        <span class="ruby-keyword">else</span>
+                <span class="ruby-keyword">self</span>[<span class="ruby-value">:tcp_ecn</span>].<span class="ruby-identifier">read</span>(<span class="ruby-identifier">i</span>)
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-tcp_flags_dotmap">
+            
+              <b>tcp_flags_dotmap</b>()
+            
+            <a href="../../classes/PacketFu/TCPHeader.html#method-i-tcp_flags_dotmap" name="method-i-tcp_flags_dotmap" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Gets a more readable flags list</p>
+            </div>
+          
+          
+          
+            <div class="aka">
+              Also aliased as: <a href="TCPHeader.html#method-i-tcp_flags_readable">tcp_flags_readable</a>
+            </div>
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-tcp_flags_dotmap_source')" id="l_method-i-tcp_flags_dotmap_source">show</a>
+                
+              </p>
+              <div id="method-i-tcp_flags_dotmap_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/tcp/header.rb, line 232</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">tcp_flags_dotmap</span>
+        <span class="ruby-identifier">dotmap</span> = <span class="ruby-identifier">tcp_flags</span>.<span class="ruby-identifier">members</span>.<span class="ruby-identifier">map</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">flag</span><span class="ruby-operator">|</span>
+                <span class="ruby-identifier">status</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">tcp_flags</span>.<span class="ruby-identifier">send</span> <span class="ruby-identifier">flag</span>
+                <span class="ruby-identifier">status</span> <span class="ruby-operator">==</span> <span class="ruby-number">0</span> <span class="ruby-operator">?</span> <span class="ruby-string">&quot;.&quot;</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">flag</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">upcase</span>[<span class="ruby-number">0</span>].<span class="ruby-identifier">chr</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-identifier">dotmap</span>.<span class="ruby-identifier">join</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-tcp_flags_readable">
+            
+              <b>tcp_flags_readable</b>()
+            
+            <a href="../../classes/PacketFu/TCPHeader.html#method-i-tcp_flags_readable" name="method-i-tcp_flags_readable" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Readability aliases</p>
+            </div>
+          
+          
+          
+          
+          
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-tcp_hlen">
+            
+              <b>tcp_hlen</b>()
+            
+            <a href="../../classes/PacketFu/TCPHeader.html#method-i-tcp_hlen" name="method-i-tcp_hlen" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Getter for the TCP Header Length value.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-tcp_hlen_source')" id="l_method-i-tcp_hlen_source">show</a>
+                
+              </p>
+              <div id="method-i-tcp_hlen_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/tcp/header.rb, line 142</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">tcp_hlen</span>; <span class="ruby-keyword">self</span>[<span class="ruby-value">:tcp_hlen</span>].<span class="ruby-identifier">to_i</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-tcp_hlen-3D">
+            
+              <b>tcp_hlen=</b>(i)
+            
+            <a href="../../classes/PacketFu/TCPHeader.html#method-i-tcp_hlen-3D" name="method-i-tcp_hlen-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Setter for the TCP Header Length value. Can take either a string or an
+integer. Note that if it’s a string, the top four bits are used.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-tcp_hlen-3D_source')" id="l_method-i-tcp_hlen-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-tcp_hlen-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/tcp/header.rb, line 146</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">tcp_hlen=</span>(<span class="ruby-identifier">i</span>)
+        <span class="ruby-keyword">case</span> <span class="ruby-identifier">i</span>
+        <span class="ruby-keyword">when</span> <span class="ruby-constant">PacketFu</span><span class="ruby-operator">::</span><span class="ruby-constant">TcpHlen</span>
+                <span class="ruby-keyword">self</span>[<span class="ruby-value">:tcp_hlen</span>] = <span class="ruby-identifier">i</span>
+        <span class="ruby-keyword">when</span> <span class="ruby-constant">Numeric</span>
+                <span class="ruby-keyword">self</span>[<span class="ruby-value">:tcp_hlen</span>] = <span class="ruby-constant">TcpHlen</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:hlen</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">i</span>.<span class="ruby-identifier">to_i</span>)
+        <span class="ruby-keyword">else</span>
+                <span class="ruby-keyword">self</span>[<span class="ruby-value">:tcp_hlen</span>].<span class="ruby-identifier">read</span>(<span class="ruby-identifier">i</span>)
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-tcp_options">
+            
+              <b>tcp_options</b>()
+            
+            <a href="../../classes/PacketFu/TCPHeader.html#method-i-tcp_options" name="method-i-tcp_options" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Gets a more readable option list.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-tcp_options_source')" id="l_method-i-tcp_options_source">show</a>
+                
+              </p>
+              <div id="method-i-tcp_options_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/tcp/header.rb, line 227</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">tcp_options</span>
+ <span class="ruby-keyword">self</span>[<span class="ruby-value">:tcp_opts</span>].<span class="ruby-identifier">decode</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-tcp_options-3D">
+            
+              <b>tcp_options=</b>(arg)
+            
+            <a href="../../classes/PacketFu/TCPHeader.html#method-i-tcp_options-3D" name="method-i-tcp_options-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Sets a more readable option list.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-tcp_options-3D_source')" id="l_method-i-tcp_options-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-tcp_options-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/tcp/header.rb, line 241</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">tcp_options=</span>(<span class="ruby-identifier">arg</span>)
+        <span class="ruby-keyword">self</span>[<span class="ruby-value">:tcp_opts</span>].<span class="ruby-identifier">encode</span> <span class="ruby-identifier">arg</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-tcp_opts">
+            
+              <b>tcp_opts</b>()
+            
+            <a href="../../classes/PacketFu/TCPHeader.html#method-i-tcp_opts" name="method-i-tcp_opts" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Getter for TCP Options.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-tcp_opts_source')" id="l_method-i-tcp_opts_source">show</a>
+                
+              </p>
+              <div id="method-i-tcp_opts_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/tcp/header.rb, line 194</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">tcp_opts</span>; <span class="ruby-keyword">self</span>[<span class="ruby-value">:tcp_opts</span>].<span class="ruby-identifier">to_s</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-tcp_opts-3D">
+            
+              <b>tcp_opts=</b>(i)
+            
+            <a href="../../classes/PacketFu/TCPHeader.html#method-i-tcp_opts-3D" name="method-i-tcp_opts-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Setter for TCP Options.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-tcp_opts-3D_source')" id="l_method-i-tcp_opts-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-tcp_opts-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/tcp/header.rb, line 196</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">tcp_opts=</span>(<span class="ruby-identifier">i</span>)
+        <span class="ruby-keyword">case</span> <span class="ruby-identifier">i</span>
+        <span class="ruby-keyword">when</span> <span class="ruby-constant">PacketFu</span><span class="ruby-operator">::</span><span class="ruby-constant">TcpOptions</span>
+                <span class="ruby-keyword">self</span>[<span class="ruby-value">:tcp_opts</span>]=<span class="ruby-identifier">i</span>
+        <span class="ruby-keyword">else</span>
+                <span class="ruby-keyword">self</span>[<span class="ruby-value">:tcp_opts</span>].<span class="ruby-identifier">read</span>(<span class="ruby-identifier">i</span>)
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-tcp_opts_len">
+            
+              <b>tcp_opts_len</b>()
+            
+            <a href="../../classes/PacketFu/TCPHeader.html#method-i-tcp_opts_len" name="method-i-tcp_opts_len" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns the actual length of the TCP options.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-tcp_opts_len_source')" id="l_method-i-tcp_opts_len_source">show</a>
+                
+              </p>
+              <div id="method-i-tcp_opts_len_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/tcp/header.rb, line 211</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">tcp_opts_len</span>
+        <span class="ruby-keyword">self</span>[<span class="ruby-value">:tcp_opts</span>].<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">size</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-tcp_opts_readable">
+            
+              <b>tcp_opts_readable</b>()
+            
+            <a href="../../classes/PacketFu/TCPHeader.html#method-i-tcp_opts_readable" name="method-i-tcp_opts_readable" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-tcp_opts_readable_source')" id="l_method-i-tcp_opts_readable_source">show</a>
+                
+              </p>
+              <div id="method-i-tcp_opts_readable_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/tcp/header.rb, line 301</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">tcp_opts_readable</span>
+        <span class="ruby-identifier">tcp_options</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-tcp_recalc">
+            
+              <b>tcp_recalc</b>(arg=:all)
+            
+            <a href="../../classes/PacketFu/TCPHeader.html#method-i-tcp_recalc" name="method-i-tcp_recalc" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Recalculates calculated fields for TCP (except checksum which is at the <a
+href="Packet.html">Packet</a> level).</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-tcp_recalc_source')" id="l_method-i-tcp_recalc_source">show</a>
+                
+              </p>
+              <div id="method-i-tcp_recalc_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/tcp/header.rb, line 266</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">tcp_recalc</span>(<span class="ruby-identifier">arg</span>=<span class="ruby-value">:all</span>)
+        <span class="ruby-keyword">case</span> <span class="ruby-identifier">arg</span>
+        <span class="ruby-keyword">when</span> <span class="ruby-value">:tcp_hlen</span>
+                <span class="ruby-identifier">tcp_calc_hlen</span>
+        <span class="ruby-keyword">when</span> <span class="ruby-value">:tcp_src</span>
+                <span class="ruby-ivar">@random_tcp_src</span> = <span class="ruby-identifier">rand_port</span>
+        <span class="ruby-keyword">when</span> <span class="ruby-value">:tcp_sport</span>
+                <span class="ruby-ivar">@random_tcp_src</span> = <span class="ruby-identifier">rand_port</span>
+        <span class="ruby-keyword">when</span> <span class="ruby-value">:tcp_seq</span>
+                <span class="ruby-ivar">@random_tcp_seq</span> = <span class="ruby-identifier">rand</span>(<span class="ruby-number">0xffffffff</span>) 
+        <span class="ruby-keyword">when</span> <span class="ruby-value">:all</span>
+                <span class="ruby-identifier">tcp_calc_hlen</span>
+                <span class="ruby-ivar">@random_tcp_src</span> = <span class="ruby-identifier">rand_port</span>
+                <span class="ruby-ivar">@random_tcp_seq</span> = <span class="ruby-identifier">rand</span>(<span class="ruby-number">0xffffffff</span>) 
+        <span class="ruby-keyword">else</span>
+                <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;No such field `#{arg}'&quot;</span>
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-tcp_reserved">
+            
+              <b>tcp_reserved</b>()
+            
+            <a href="../../classes/PacketFu/TCPHeader.html#method-i-tcp_reserved" name="method-i-tcp_reserved" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Getter for the TCP Reserved field.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-tcp_reserved_source')" id="l_method-i-tcp_reserved_source">show</a>
+                
+              </p>
+              <div id="method-i-tcp_reserved_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/tcp/header.rb, line 158</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">tcp_reserved</span>; <span class="ruby-keyword">self</span>[<span class="ruby-value">:tcp_reserved</span>].<span class="ruby-identifier">to_i</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-tcp_reserved-3D">
+            
+              <b>tcp_reserved=</b>(i)
+            
+            <a href="../../classes/PacketFu/TCPHeader.html#method-i-tcp_reserved-3D" name="method-i-tcp_reserved-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Setter for the TCP Reserved field.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-tcp_reserved-3D_source')" id="l_method-i-tcp_reserved-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-tcp_reserved-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/tcp/header.rb, line 160</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">tcp_reserved=</span>(<span class="ruby-identifier">i</span>)
+        <span class="ruby-keyword">case</span> <span class="ruby-identifier">i</span>
+        <span class="ruby-keyword">when</span> <span class="ruby-constant">PacketFu</span><span class="ruby-operator">::</span><span class="ruby-constant">TcpReserved</span>
+                <span class="ruby-keyword">self</span>[<span class="ruby-value">:tcp_reserved</span>]=<span class="ruby-identifier">i</span>
+        <span class="ruby-keyword">when</span> <span class="ruby-constant">Numeric</span>
+                <span class="ruby-identifier">args</span> = {}
+                <span class="ruby-identifier">args</span>[<span class="ruby-value">:r1</span>] = (<span class="ruby-identifier">i</span> &amp; <span class="ruby-number">0b100</span>) <span class="ruby-operator">&gt;&gt;</span> <span class="ruby-number">2</span>
+                <span class="ruby-identifier">args</span>[<span class="ruby-value">:r2</span>] = (<span class="ruby-identifier">i</span> &amp; <span class="ruby-number">0b010</span>) <span class="ruby-operator">&gt;&gt;</span> <span class="ruby-number">1</span>
+                <span class="ruby-identifier">args</span>[<span class="ruby-value">:r3</span>] = (<span class="ruby-identifier">i</span> &amp; <span class="ruby-number">0b001</span>)
+                <span class="ruby-keyword">self</span>[<span class="ruby-value">:tcp_reserved</span>] = <span class="ruby-constant">TcpReserved</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">args</span>)
+        <span class="ruby-keyword">else</span>
+                <span class="ruby-keyword">self</span>[<span class="ruby-value">:tcp_reserved</span>].<span class="ruby-identifier">read</span>(<span class="ruby-identifier">i</span>)
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-tcp_seq">
+            
+              <b>tcp_seq</b>()
+            
+            <a href="../../classes/PacketFu/TCPHeader.html#method-i-tcp_seq" name="method-i-tcp_seq" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Getter for the TCP sequence number.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-tcp_seq_source')" id="l_method-i-tcp_seq_source">show</a>
+                
+              </p>
+              <div id="method-i-tcp_seq_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/tcp/header.rb, line 123</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">tcp_seq</span>; <span class="ruby-keyword">self</span>[<span class="ruby-value">:tcp_seq</span>].<span class="ruby-identifier">to_i</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-tcp_seq-3D">
+            
+              <b>tcp_seq=</b>(i)
+            
+            <a href="../../classes/PacketFu/TCPHeader.html#method-i-tcp_seq-3D" name="method-i-tcp_seq-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Setter for the TCP sequence number.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-tcp_seq-3D_source')" id="l_method-i-tcp_seq-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-tcp_seq-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/tcp/header.rb, line 121</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">tcp_seq=</span>(<span class="ruby-identifier">i</span>); <span class="ruby-identifier">typecast</span> <span class="ruby-identifier">i</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-tcp_seq_readable">
+            
+              <b>tcp_seq_readable</b>()
+            
+            <a href="../../classes/PacketFu/TCPHeader.html#method-i-tcp_seq_readable" name="method-i-tcp_seq_readable" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-tcp_seq_readable_source')" id="l_method-i-tcp_seq_readable_source">show</a>
+                
+              </p>
+              <div id="method-i-tcp_seq_readable_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/tcp/header.rb, line 293</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">tcp_seq_readable</span>
+        <span class="ruby-string">&quot;0x%08x&quot;</span> <span class="ruby-operator">%</span> <span class="ruby-identifier">tcp_seq</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-tcp_sport">
+            
+              <b>tcp_sport</b>()
+            
+            <a href="../../classes/PacketFu/TCPHeader.html#method-i-tcp_sport" name="method-i-tcp_sport" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Equivalent to tcp_src.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-tcp_sport_source')" id="l_method-i-tcp_sport_source">show</a>
+                
+              </p>
+              <div id="method-i-tcp_sport_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/tcp/header.rb, line 246</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">tcp_sport</span>
+        <span class="ruby-keyword">self</span>.<span class="ruby-identifier">tcp_src</span>.<span class="ruby-identifier">to_i</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-tcp_sport-3D">
+            
+              <b>tcp_sport=</b>(arg)
+            
+            <a href="../../classes/PacketFu/TCPHeader.html#method-i-tcp_sport-3D" name="method-i-tcp_sport-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Equivalent to <a href="TCPHeader.html#method-i-tcp_src">#tcp_src</a>=.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-tcp_sport-3D_source')" id="l_method-i-tcp_sport-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-tcp_sport-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/tcp/header.rb, line 251</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">tcp_sport=</span>(<span class="ruby-identifier">arg</span>)
+        <span class="ruby-keyword">self</span>.<span class="ruby-identifier">tcp_src</span>=(<span class="ruby-identifier">arg</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-tcp_src">
+            
+              <b>tcp_src</b>()
+            
+            <a href="../../classes/PacketFu/TCPHeader.html#method-i-tcp_src" name="method-i-tcp_src" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Getter for the TCP source port.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-tcp_src_source')" id="l_method-i-tcp_src_source">show</a>
+                
+              </p>
+              <div id="method-i-tcp_src_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/tcp/header.rb, line 115</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">tcp_src</span>; <span class="ruby-keyword">self</span>[<span class="ruby-value">:tcp_src</span>].<span class="ruby-identifier">to_i</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-tcp_src-3D">
+            
+              <b>tcp_src=</b>(i)
+            
+            <a href="../../classes/PacketFu/TCPHeader.html#method-i-tcp_src-3D" name="method-i-tcp_src-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Setter for the TCP source port.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-tcp_src-3D_source')" id="l_method-i-tcp_src-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-tcp_src-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/tcp/header.rb, line 113</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">tcp_src=</span>(<span class="ruby-identifier">i</span>); <span class="ruby-identifier">typecast</span> <span class="ruby-identifier">i</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-tcp_sum">
+            
+              <b>tcp_sum</b>()
+            
+            <a href="../../classes/PacketFu/TCPHeader.html#method-i-tcp_sum" name="method-i-tcp_sum" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Getter for the TCP checksum.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-tcp_sum_source')" id="l_method-i-tcp_sum_source">show</a>
+                
+              </p>
+              <div id="method-i-tcp_sum_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/tcp/header.rb, line 135</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">tcp_sum</span>; <span class="ruby-keyword">self</span>[<span class="ruby-value">:tcp_sum</span>].<span class="ruby-identifier">to_i</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-tcp_sum-3D">
+            
+              <b>tcp_sum=</b>(i)
+            
+            <a href="../../classes/PacketFu/TCPHeader.html#method-i-tcp_sum-3D" name="method-i-tcp_sum-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Setter for the TCP checksum.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-tcp_sum-3D_source')" id="l_method-i-tcp_sum-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-tcp_sum-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/tcp/header.rb, line 133</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">tcp_sum=</span>(<span class="ruby-identifier">i</span>); <span class="ruby-identifier">typecast</span> <span class="ruby-identifier">i</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-tcp_sum_readable">
+            
+              <b>tcp_sum_readable</b>()
+            
+            <a href="../../classes/PacketFu/TCPHeader.html#method-i-tcp_sum_readable" name="method-i-tcp_sum_readable" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-tcp_sum_readable_source')" id="l_method-i-tcp_sum_readable_source">show</a>
+                
+              </p>
+              <div id="method-i-tcp_sum_readable_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/tcp/header.rb, line 297</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">tcp_sum_readable</span>
+        <span class="ruby-string">&quot;0x%04x&quot;</span> <span class="ruby-operator">%</span> <span class="ruby-identifier">tcp_sum</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-tcp_urg">
+            
+              <b>tcp_urg</b>()
+            
+            <a href="../../classes/PacketFu/TCPHeader.html#method-i-tcp_urg" name="method-i-tcp_urg" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Getter for the TCP urgent field.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-tcp_urg_source')" id="l_method-i-tcp_urg_source">show</a>
+                
+              </p>
+              <div id="method-i-tcp_urg_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/tcp/header.rb, line 139</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">tcp_urg</span>; <span class="ruby-keyword">self</span>[<span class="ruby-value">:tcp_urg</span>].<span class="ruby-identifier">to_i</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-tcp_urg-3D">
+            
+              <b>tcp_urg=</b>(i)
+            
+            <a href="../../classes/PacketFu/TCPHeader.html#method-i-tcp_urg-3D" name="method-i-tcp_urg-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Setter for the TCP urgent field.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-tcp_urg-3D_source')" id="l_method-i-tcp_urg-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-tcp_urg-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/tcp/header.rb, line 137</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">tcp_urg=</span>(<span class="ruby-identifier">i</span>); <span class="ruby-identifier">typecast</span> <span class="ruby-identifier">i</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-tcp_win">
+            
+              <b>tcp_win</b>()
+            
+            <a href="../../classes/PacketFu/TCPHeader.html#method-i-tcp_win" name="method-i-tcp_win" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Getter for the TCP window size number.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-tcp_win_source')" id="l_method-i-tcp_win_source">show</a>
+                
+              </p>
+              <div id="method-i-tcp_win_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/tcp/header.rb, line 131</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">tcp_win</span>; <span class="ruby-keyword">self</span>[<span class="ruby-value">:tcp_win</span>].<span class="ruby-identifier">to_i</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-tcp_win-3D">
+            
+              <b>tcp_win=</b>(i)
+            
+            <a href="../../classes/PacketFu/TCPHeader.html#method-i-tcp_win-3D" name="method-i-tcp_win-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Setter for the TCP window size number.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-tcp_win-3D_source')" id="l_method-i-tcp_win-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-tcp_win-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/tcp/header.rb, line 129</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">tcp_win=</span>(<span class="ruby-identifier">i</span>); <span class="ruby-identifier">typecast</span> <span class="ruby-identifier">i</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-to_s">
+            
+              <b>to_s</b>()
+            
+            <a href="../../classes/PacketFu/TCPHeader.html#method-i-to_s" name="method-i-to_s" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns the object in string form.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-to_s_source')" id="l_method-i-to_s_source">show</a>
+                
+              </p>
+              <div id="method-i-to_s_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/tcp/header.rb, line 75</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">to_s</span>
+        <span class="ruby-identifier">hdr</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">to_a</span>.<span class="ruby-identifier">map</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span>
+                <span class="ruby-keyword">if</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">kind_of?</span> <span class="ruby-constant">TcpHlen</span>
+                        <span class="ruby-identifier">bits_to_s</span>
+                <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">kind_of?</span> <span class="ruby-constant">TcpReserved</span>
+                        <span class="ruby-keyword">next</span>
+                <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">kind_of?</span> <span class="ruby-constant">TcpEcn</span>
+                        <span class="ruby-keyword">next</span>
+                <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">kind_of?</span> <span class="ruby-constant">TcpFlags</span>
+                        <span class="ruby-keyword">next</span>
+                <span class="ruby-keyword">else</span>
+                        <span class="ruby-identifier">x</span>.<span class="ruby-identifier">to_s</span>
+                <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-identifier">hdr</span>.<span class="ruby-identifier">flatten</span>.<span class="ruby-identifier">join</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

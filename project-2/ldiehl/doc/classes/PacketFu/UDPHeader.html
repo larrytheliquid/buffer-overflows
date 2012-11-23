@@ -1,0 +1,872 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>PacketFu::UDPHeader</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/github.css" type="text/css" media="screen" />
+<script src="../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            PacketFu::UDPHeader 
+            
+                <span class="parent">&lt; 
+                    
+                    Struct.new(:udp_src, :udp_dst, :udp_len, :udp_sum, :body)
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../files/lib/packetfu/protos/udp/header_rb.html">lib/packetfu/protos/udp/header.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p><a href="UDPHeader.html">UDPHeader</a> is a complete UDP struct, used in <a
+href="UDPPacket.html">UDPPacket</a>. Many Internet-critical protocols rely
+on UDP, such as DNS and World of Warcraft.</p>
+
+<p>For more on UDP packets, see <a
+href="http://www.networksorcery.com/enp/protocol/udp.htm">www.networksorcery.com/enp/protocol/udp.htm</a></p>
+
+<h4 id="label-Header+Definition">Header Definition</h4>
+
+<pre>Int16   :udp_src
+Int16   :udp_dst
+Int16   :udp_len  Default: calculated
+Int16   :udp_sum  Default: 0. Often calculated. 
+String  :body</pre>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-new">new</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>R</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-read">read</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-to_s">to_s</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>U</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-udp_calc_len">udp_calc_len</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-udp_dport">udp_dport</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-udp_dport-3D">udp_dport=</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-udp_dst">udp_dst</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-udp_dst-3D">udp_dst=</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-udp_len">udp_len</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-udp_len-3D">udp_len=</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-udp_recalc">udp_recalc</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-udp_sport">udp_sport</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-udp_sport-3D">udp_sport=</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-udp_src">udp_src</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-udp_src-3D">udp_src=</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-udp_sum">udp_sum</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-udp_sum-3D">udp_sum=</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-udp_sum_readable">udp_sum_readable</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+    <!-- Includes -->
+    <div class="sectiontitle">Included Modules</div>
+    <ul>
+      
+        <li>
+          
+            <a href="../StructFu.html">
+              StructFu
+            </a>
+          
+        </li>
+      
+    </ul>
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-new">
+            
+              <b>new</b>(args={})
+            
+            <a href="../../classes/PacketFu/UDPHeader.html#method-c-new" name="method-c-new" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
+                
+              </p>
+              <div id="method-c-new_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/udp/header.rb, line 18</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize</span>(<span class="ruby-identifier">args</span>={})
+        <span class="ruby-keyword">super</span>(
+                <span class="ruby-constant">Int16</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">args</span>[<span class="ruby-value">:udp_src</span>]),
+                <span class="ruby-constant">Int16</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">args</span>[<span class="ruby-value">:udp_dst</span>]),
+                <span class="ruby-constant">Int16</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">args</span>[<span class="ruby-value">:udp_len</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">udp_calc_len</span>),
+                <span class="ruby-constant">Int16</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">args</span>[<span class="ruby-value">:udp_sum</span>]),
+                <span class="ruby-constant">StructFu</span><span class="ruby-operator">::</span><span class="ruby-constant">String</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">read</span>(<span class="ruby-identifier">args</span>[<span class="ruby-value">:body</span>])
+        )
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-read">
+            
+              <b>read</b>(str)
+            
+            <a href="../../classes/PacketFu/UDPHeader.html#method-i-read" name="method-i-read" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Reads a string to populate the object.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-read_source')" id="l_method-i-read_source">show</a>
+                
+              </p>
+              <div id="method-i-read_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/udp/header.rb, line 34</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">read</span>(<span class="ruby-identifier">str</span>)
+        <span class="ruby-identifier">force_binary</span>(<span class="ruby-identifier">str</span>)
+        <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">str</span>.<span class="ruby-identifier">nil?</span>
+        <span class="ruby-keyword">self</span>[<span class="ruby-value">:udp_src</span>].<span class="ruby-identifier">read</span>(<span class="ruby-identifier">str</span>[<span class="ruby-number">0</span>,<span class="ruby-number">2</span>])
+        <span class="ruby-keyword">self</span>[<span class="ruby-value">:udp_dst</span>].<span class="ruby-identifier">read</span>(<span class="ruby-identifier">str</span>[<span class="ruby-number">2</span>,<span class="ruby-number">2</span>])
+        <span class="ruby-keyword">self</span>[<span class="ruby-value">:udp_len</span>].<span class="ruby-identifier">read</span>(<span class="ruby-identifier">str</span>[<span class="ruby-number">4</span>,<span class="ruby-number">2</span>])
+        <span class="ruby-keyword">self</span>[<span class="ruby-value">:udp_sum</span>].<span class="ruby-identifier">read</span>(<span class="ruby-identifier">str</span>[<span class="ruby-number">6</span>,<span class="ruby-number">2</span>])
+        <span class="ruby-keyword">self</span>[<span class="ruby-value">:body</span>].<span class="ruby-identifier">read</span>(<span class="ruby-identifier">str</span>[<span class="ruby-number">8</span>,<span class="ruby-identifier">str</span>.<span class="ruby-identifier">size</span>])
+        <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-to_s">
+            
+              <b>to_s</b>()
+            
+            <a href="../../classes/PacketFu/UDPHeader.html#method-i-to_s" name="method-i-to_s" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns the object in string form.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-to_s_source')" id="l_method-i-to_s_source">show</a>
+                
+              </p>
+              <div id="method-i-to_s_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/udp/header.rb, line 29</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">to_s</span>
+        <span class="ruby-keyword">self</span>.<span class="ruby-identifier">to_a</span>.<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">to_s</span>}.<span class="ruby-identifier">join</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-udp_calc_len">
+            
+              <b>udp_calc_len</b>()
+            
+            <a href="../../classes/PacketFu/UDPHeader.html#method-i-udp_calc_len" name="method-i-udp_calc_len" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns the true length of the UDP packet.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-udp_calc_len_source')" id="l_method-i-udp_calc_len_source">show</a>
+                
+              </p>
+              <div id="method-i-udp_calc_len_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/udp/header.rb, line 63</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">udp_calc_len</span>
+        <span class="ruby-identifier">body</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">+</span> <span class="ruby-number">8</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-udp_dport">
+            
+              <b>udp_dport</b>()
+            
+            <a href="../../classes/PacketFu/UDPHeader.html#method-i-udp_dport" name="method-i-udp_dport" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Equivalent to <a href="UDPHeader.html#method-i-udp_dst">#udp_dst</a></p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-udp_dport_source')" id="l_method-i-udp_dport_source">show</a>
+                
+              </p>
+              <div id="method-i-udp_dport_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/udp/header.rb, line 91</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">udp_dport</span>
+        <span class="ruby-keyword">self</span>.<span class="ruby-identifier">udp_dst</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-udp_dport-3D">
+            
+              <b>udp_dport=</b>(arg)
+            
+            <a href="../../classes/PacketFu/UDPHeader.html#method-i-udp_dport-3D" name="method-i-udp_dport-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Equivalent to <a href="UDPHeader.html#method-i-udp_dst">#udp_dst</a>=</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-udp_dport-3D_source')" id="l_method-i-udp_dport-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-udp_dport-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/udp/header.rb, line 96</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">udp_dport=</span>(<span class="ruby-identifier">arg</span>)
+        <span class="ruby-keyword">self</span>.<span class="ruby-identifier">udp_dst</span>=(<span class="ruby-identifier">arg</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-udp_dst">
+            
+              <b>udp_dst</b>()
+            
+            <a href="../../classes/PacketFu/UDPHeader.html#method-i-udp_dst" name="method-i-udp_dst" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Getter for the UDP destination port.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-udp_dst_source')" id="l_method-i-udp_dst_source">show</a>
+                
+              </p>
+              <div id="method-i-udp_dst_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/udp/header.rb, line 52</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">udp_dst</span>; <span class="ruby-keyword">self</span>[<span class="ruby-value">:udp_dst</span>].<span class="ruby-identifier">to_i</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-udp_dst-3D">
+            
+              <b>udp_dst=</b>(i)
+            
+            <a href="../../classes/PacketFu/UDPHeader.html#method-i-udp_dst-3D" name="method-i-udp_dst-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Setter for the UDP destination port.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-udp_dst-3D_source')" id="l_method-i-udp_dst-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-udp_dst-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/udp/header.rb, line 50</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">udp_dst=</span>(<span class="ruby-identifier">i</span>); <span class="ruby-identifier">typecast</span> <span class="ruby-identifier">i</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-udp_len">
+            
+              <b>udp_len</b>()
+            
+            <a href="../../classes/PacketFu/UDPHeader.html#method-i-udp_len" name="method-i-udp_len" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Getter for the length field.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-udp_len_source')" id="l_method-i-udp_len_source">show</a>
+                
+              </p>
+              <div id="method-i-udp_len_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/udp/header.rb, line 56</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">udp_len</span>; <span class="ruby-keyword">self</span>[<span class="ruby-value">:udp_len</span>].<span class="ruby-identifier">to_i</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-udp_len-3D">
+            
+              <b>udp_len=</b>(i)
+            
+            <a href="../../classes/PacketFu/UDPHeader.html#method-i-udp_len-3D" name="method-i-udp_len-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Setter for the length field. Usually should be recalc()‘ed instead.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-udp_len-3D_source')" id="l_method-i-udp_len-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-udp_len-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/udp/header.rb, line 54</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">udp_len=</span>(<span class="ruby-identifier">i</span>); <span class="ruby-identifier">typecast</span> <span class="ruby-identifier">i</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-udp_recalc">
+            
+              <b>udp_recalc</b>(args=:all)
+            
+            <a href="../../classes/PacketFu/UDPHeader.html#method-i-udp_recalc" name="method-i-udp_recalc" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Recalculates calculated fields for UDP.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-udp_recalc_source')" id="l_method-i-udp_recalc_source">show</a>
+                
+              </p>
+              <div id="method-i-udp_recalc_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/udp/header.rb, line 68</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">udp_recalc</span>(<span class="ruby-identifier">args</span>=<span class="ruby-value">:all</span>)
+        <span class="ruby-identifier">arg</span> = <span class="ruby-identifier">arg</span>.<span class="ruby-identifier">intern</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">arg</span>.<span class="ruby-identifier">respond_to?</span> <span class="ruby-value">:intern</span>
+        <span class="ruby-keyword">case</span> <span class="ruby-identifier">args</span>
+        <span class="ruby-keyword">when</span> <span class="ruby-value">:udp_len</span>
+                <span class="ruby-keyword">self</span>.<span class="ruby-identifier">udp_len</span> = <span class="ruby-identifier">udp_calc_len</span>
+        <span class="ruby-keyword">when</span> <span class="ruby-value">:all</span>
+                <span class="ruby-keyword">self</span>.<span class="ruby-identifier">udp_recalc</span>(<span class="ruby-value">:udp_len</span>)
+        <span class="ruby-keyword">else</span>
+                <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;No such field `#{arg}'&quot;</span>
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-udp_sport">
+            
+              <b>udp_sport</b>()
+            
+            <a href="../../classes/PacketFu/UDPHeader.html#method-i-udp_sport" name="method-i-udp_sport" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Equivalent to udp_src.to_i</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-udp_sport_source')" id="l_method-i-udp_sport_source">show</a>
+                
+              </p>
+              <div id="method-i-udp_sport_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/udp/header.rb, line 81</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">udp_sport</span>
+        <span class="ruby-keyword">self</span>.<span class="ruby-identifier">udp_src</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-udp_sport-3D">
+            
+              <b>udp_sport=</b>(arg)
+            
+            <a href="../../classes/PacketFu/UDPHeader.html#method-i-udp_sport-3D" name="method-i-udp_sport-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Equivalent to <a href="UDPHeader.html#method-i-udp_src">#udp_src</a>=</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-udp_sport-3D_source')" id="l_method-i-udp_sport-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-udp_sport-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/udp/header.rb, line 86</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">udp_sport=</span>(<span class="ruby-identifier">arg</span>)
+        <span class="ruby-keyword">self</span>.<span class="ruby-identifier">udp_src</span>=(<span class="ruby-identifier">arg</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-udp_src">
+            
+              <b>udp_src</b>()
+            
+            <a href="../../classes/PacketFu/UDPHeader.html#method-i-udp_src" name="method-i-udp_src" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Getter for the UDP source port.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-udp_src_source')" id="l_method-i-udp_src_source">show</a>
+                
+              </p>
+              <div id="method-i-udp_src_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/udp/header.rb, line 48</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">udp_src</span>; <span class="ruby-keyword">self</span>[<span class="ruby-value">:udp_src</span>].<span class="ruby-identifier">to_i</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-udp_src-3D">
+            
+              <b>udp_src=</b>(i)
+            
+            <a href="../../classes/PacketFu/UDPHeader.html#method-i-udp_src-3D" name="method-i-udp_src-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Setter for the UDP source port.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-udp_src-3D_source')" id="l_method-i-udp_src-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-udp_src-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/udp/header.rb, line 46</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">udp_src=</span>(<span class="ruby-identifier">i</span>); <span class="ruby-identifier">typecast</span> <span class="ruby-identifier">i</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-udp_sum">
+            
+              <b>udp_sum</b>()
+            
+            <a href="../../classes/PacketFu/UDPHeader.html#method-i-udp_sum" name="method-i-udp_sum" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Getter for the checksum.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-udp_sum_source')" id="l_method-i-udp_sum_source">show</a>
+                
+              </p>
+              <div id="method-i-udp_sum_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/udp/header.rb, line 60</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">udp_sum</span>; <span class="ruby-keyword">self</span>[<span class="ruby-value">:udp_sum</span>].<span class="ruby-identifier">to_i</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-udp_sum-3D">
+            
+              <b>udp_sum=</b>(i)
+            
+            <a href="../../classes/PacketFu/UDPHeader.html#method-i-udp_sum-3D" name="method-i-udp_sum-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Setter for the checksum. Usually should be recalc()‘ed instad.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-udp_sum-3D_source')" id="l_method-i-udp_sum-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-udp_sum-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/udp/header.rb, line 58</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">udp_sum=</span>(<span class="ruby-identifier">i</span>); <span class="ruby-identifier">typecast</span> <span class="ruby-identifier">i</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-udp_sum_readable">
+            
+              <b>udp_sum_readable</b>()
+            
+            <a href="../../classes/PacketFu/UDPHeader.html#method-i-udp_sum_readable" name="method-i-udp_sum_readable" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Readability aliases</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-udp_sum_readable_source')" id="l_method-i-udp_sum_readable_source">show</a>
+                
+              </p>
+              <div id="method-i-udp_sum_readable_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/packetfu/protos/udp/header.rb, line 102</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">udp_sum_readable</span>
+        <span class="ruby-string">&quot;0x%04x&quot;</span> <span class="ruby-operator">%</span> <span class="ruby-identifier">udp_sum</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    
