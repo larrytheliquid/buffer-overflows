@@ -172,6 +172,36 @@ class Part2Decoder(Decoder):
         for ((s,ip),d) in sorted(servers.iteritems(), key=lambda (s,d): s):
             print s, ip, d['connections'], d['bytes']
 
+
+
+class Part3Decoder(Decoder):
+    def __init__(self, pcap):
+        Decoder.__init__(self,pcap)
+        self.sinners = {}
+
+    def packetHandler(self, hdr, data):
+        (p,ip,tcp,src,dst) = Decoder.packetHandler(self,hdr,data)
+        if tcp.get_th_flags() == TH_SYN:
+            (attacker_ip,_) = src
+            (victim_ip,victim_port) = dst
+            self.sinners.setdefault(attacker_ip,{}) \
+                .setdefault(victim_ip,set()) \
+                .add(victim_port)
+
+    def report(self):
+        # sinners :: attacker_ip -> victim_ip -> ports_syn ed
+
+        # output format: attacker_ip server_ip number_of_ports_scanned
+        attacks = []
+        for (attacker,victims) in self.sinners.iteritems():
+            for (victim,ports) in victims.iteritems():
+                attacks.append((attacker,victim,len(ports)))
+
+        # Sort first on number of SYNs
+        for (a,v,n) in sorted(attacks, key=lambda (a,v,n): (n,a,v), reverse=True):
+            if n >= 0: # 100:
+                print a,v,n
+
 def main1(filename):
     p = open_offline(filename)
     # Restrict to tcp packets with syn and ack set.
@@ -183,9 +213,19 @@ def main1(filename):
 
 def main2(filename):
     p = open_offline(filename)
-    # Restrict to tcp packets with syn and ack set.
+    # XXX: could gain speed by doing two phases: one to find servers
+    # which only looks at handshake packets, and one which counts
+    # traffic, but restricted to packets for known streams.
     p.setfilter(r'ip proto \tcp')
     d = Part2Decoder(p)
+    d.start()
+    d.report()
+
+def main3(filename):
+    p = open_offline(filename)
+    # Restrict to tcp packets with syn and ack set.
+    p.setfilter(r'(tcp[tcpflags] & tcp-syn) == tcp[tcpflags]')
+    d = Part3Decoder(p)
     d.start()
     d.report()
 
@@ -208,4 +248,4 @@ if __name__ == '__main__':
         print "Usage: %s <filename>" % sys.argv[0]
         sys.exit(1)
 
-    main1(sys.argv[1])
+    main3(sys.argv[1])
