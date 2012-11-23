@@ -1,4 +1,0 @@
-3 ../no-scan-1.tcpdump
-3 ../no-scan-2.tcpdump
-3 ../scan-1.tcpdump
-3 ../scan-2.tcpdump
