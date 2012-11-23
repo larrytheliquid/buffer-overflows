@@ -140,7 +140,7 @@ class Part2Decoder(Decoder):
             servers[server] = d
 
         for ((s,ip),d) in sorted(servers.iteritems(), key=lambda (s,d): s):
-            print s, ip, d['connections'], d['bytes']
+            print s, ip, d['connections'], d.get('bytes',0)
 
 
 class Part3Decoder(Decoder):
