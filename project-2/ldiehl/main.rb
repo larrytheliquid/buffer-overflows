@@ -11,38 +11,27 @@ class Parser
   end
 
   def tcp_packets
-    packets.select(&:is_tcp?)
+    @tcp_packets ||= packets.select(&:is_tcp?)
   end
 
   def server_packets
-    tcp_packets.select do |packet|
+    @server_packets ||= tcp_packets.select do |packet|
       packet.tcp_flags.syn == 1 && packet.tcp_flags.ack == 1
     end
   end
 
   def syn_packets
-    tcp_packets.select do |packet|
+    @syn_packets ||= tcp_packets.select do |packet|
       packet.tcp_flags.syn == 1 && packet.tcp_flags.ack == 0
     end
   end
 
-  def servers_and_ports
-    result = {}
+  def servers
+    result = Set.new
     server_packets.each do |packet|
-      key = packet.ip_saddr
-      if ports = result[key]
-        ports << packet.tcp_sport
-      else
-        ports = Set.new
-        ports << packet.tcp_sport
-        result[key] = ports
-      end
+      result << [packet.ip_saddr, packet.tcp_sport]
     end
     result
-  end
-
-  def servers
-    servers_and_ports.keys
   end
 
   def servers_and_traffic
@@ -52,7 +41,7 @@ class Parser
     end
 
     tcp_packets.each do |packet|
-      key = packet.ip_saddr
+      key = [packet.ip_saddr, packet.tcp_sport]
       if result.include?(key)
         result[key] = [result[key].first.succ, (result[key].last + packet.payload.size)]
       end
@@ -87,20 +76,20 @@ class Parser
     parser = self.new ARGV[0]
 
     puts "Part 1: Servers and ports"
-    parser.servers_and_ports.each do |k, v|
-      puts "#{k}:#{v.to_a.join(',')}"
+    parser.servers.each do |server_ip, port|
+      puts [server_ip, port].join(" ")
     end
     puts
 
     puts "Part 2: Servers, connections, and traffic"
-    parser.servers_and_traffic.each do |k, v|
-      puts "#{k} - #{v.first} (connections) #{v.last} (bytes)"
+    parser.servers_and_traffic.each do |(server_ip, port), (conns, bytes)|
+      puts [server_ip, port, conns, bytes].join(" ")
     end
     puts
 
     puts "Part 3: Port scanners"
-    parser.scanners_and_ports.each do |k, v|
-      puts "#{k.first} -> #{k.last} / #{v.size} ports"
+    parser.scanners_and_ports.each do |(attacker_ip, server_ip), ports|
+      puts [attacker_ip, server_ip, ports.size].join(" ")
     end
     puts
   end
