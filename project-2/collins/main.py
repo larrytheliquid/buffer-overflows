@@ -23,7 +23,7 @@ TH_ECE = 0x40
 TH_CWR = 0x80
 
 
-class Decoder:
+class Decoder(object):
     def __init__(self, pcap):
         # Query the type of the link and instantiate a decoder accordingly.
         datalink = pcap.datalink()
@@ -33,12 +33,8 @@ class Decoder:
             raise Exception("Datalink type not supported: " % datalink)
 
         self.pcap = pcap
-        self.handshakes = {}
-        self.connections = []
 
     def start(self):
-        # Sniff ad infinitum.
-        # PacketHandler shall be invoked by pcap for every packet.
         self.pcap.loop(0, self.packetHandler)
 
     def packetHandler(self, hdr, data):
@@ -47,7 +43,16 @@ class Decoder:
         tcp = ip.child()
         src = (ip.get_ip_src(), tcp.get_th_sport() )
         dst = (ip.get_ip_dst(), tcp.get_th_dport() )
+        return (p,ip,tcp,src,dst)
 
+class Part1Decoder(Decoder):
+    def __init__(self, pcap):
+        Decoder.__init__(self,pcap)
+        self.handshakes = {}
+        self.connections = []
+
+    def packetHandler(self, hdr, data):
+        (p,ip,tcp,src,dst) = Decoder.packetHandler(self,hdr,data)
         # Handshake 1
         if tcp.get_th_flags() == TH_SYN:
             #print "1"
@@ -87,7 +92,7 @@ def main(filename):
     p = open_offline(filename)
     p.setfilter(r'ip proto \tcp')
     global d
-    d = Decoder(p)
+    d = Part1Decoder(p)
     d.start()
 
     # Report server stats
