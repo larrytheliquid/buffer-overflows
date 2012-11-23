@@ -1,0 +1,22 @@
+Summary of Approach: 
+
+Part 1: 
+
+We generate the list of IP addresses and ports that act as servers by
+looking for any address/port pair that sends a [SYN, ACK] packet as these
+are sent in the initial handshake of establishing a connection.
+
+Part 2: 
+
+We count the total number of connections to each server by counting the
+number of packets sent to the server with the SYN flag off but the ACK flag
+set, as these correspond to a client finalizing the handshake with the server
+to establish the connection.
+
+The total number of bytes served is calculated by summing the payloads of all the packets sent by the server.
+
+Part 3:
+
+We take the fairly simple approach of counting the total number of ports
+of the target address per client that have been sent an initial SYN packet.
+We take a modest threshold of 100 for claiming there is a possible port scan.
