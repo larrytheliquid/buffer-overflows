@@ -173,18 +173,20 @@ class Part3Decoder(Decoder):
 
 def main1(filename):
     p = open_offline(filename)
-    # Restrict to tcp packets with syn and ack set.
-    p.setfilter(r'tcp[tcpflags] & (tcp-syn|tcp-fin) != 0')
+    # Restrict to tcp packets with only syn and ack set.
+    p.setfilter(r'tcp[tcpflags] == (tcp-syn | tcp-ack)')
     d = Part1Decoder(p)
     d.start()
     d.report()
 
 def main2(filename):
     p = open_offline(filename)
+    # Restrict to tcp.
+    #
     # XXX: could gain speed by doing two phases: one to find servers
     # which only looks at handshake packets, and one which counts
     # traffic, but restricted to packets for known streams.
-    p.setfilter(r'ip proto \tcp')
+    p.setfilter(r'tcp')
     d = Part2Decoder(p)
     d.start()
     d.report()
@@ -192,7 +194,7 @@ def main2(filename):
 def main3(filename):
     p = open_offline(filename)
     # Restrict to tcp packets with only syn set.
-    p.setfilter(r'(tcp[tcpflags] & tcp-syn) == tcp[tcpflags]')
+    p.setfilter(r'tcp[tcpflags] == tcp-syn')
     d = Part3Decoder(p)
     d.start()
     d.report()
