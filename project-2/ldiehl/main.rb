@@ -41,9 +41,16 @@ class Parser
     end
 
     tcp_packets.each do |packet|
+      key = [packet.ip_daddr, packet.tcp_dport]
+      if result.include?(key)
+        if packet.tcp_flags.syn == 0 && packet.tcp_flags.ack == 1
+          result[key][0] = result[key][0].succ
+        end
+      end
+
       key = [packet.ip_saddr, packet.tcp_sport]
       if result.include?(key)
-        result[key] = [result[key].first.succ, (result[key].last + packet.payload.size)]
+        result[key][1] = result[key][1] + packet.payload.size
       end
     end
     result
