@@ -12,3 +12,25 @@ A 10 minute (2.4M) trace with no port scans (APT thinks):
 
   wget http://web.cecs.pdx.edu/~apt/cs491/98-10minutes.tcpdump
   tcpdump -r 98-10minutes.tcpdump -w 98-10minutes.tcpdump.new
+  ln -s 98-10minutes.tcpdump.new no-scan-1.tcpdump
+
+A 4 hour trace file with no port scans (APT thinks):
+
+  wget http://web.cecs.pdx.edu/~apt/cs491/98-4hours.tcpdump.gz
+  gunzip 98-4hours.tcpdump.gz
+  tcpdump -r 98-4hours.tcpdump -w 98-4hours.tcpdump.new
+  ln -s 98-4hours.tcpdump.new no-scan-2.tcpdump
+
+A 35 minute trace with a quick sequential SYN scan:
+
+  wget http://web.cecs.pdx.edu/~apt/cs491/98-week6-thursday-9amx.tcpdump.gz
+  gunzip 98-week6-thursday-9amx.tcpdump.gz
+  tcpdump -r 98-week6-thursday-9amx.tcpdump -w 98-week6-thursday-9amx.tcpdump.new
+  ln -s 98-week6-thursday-9amx.tcpdump.new scan-1.tcpdump
+
+A one hour trace with a slower random-order SYN port scan. 
+
+  wget http://web.cecs.pdx.edu/~apt/cs491/98-week6-thursday-11am.tcpdump.gz
+  gunzip 98-week6-thursday-11am.tcpdump.gz
+  tcpdump -r 98-week6-thursday-11am.tcpdump -w 98-week6-thursday-11am.tcpdump.new
+  ln -s 98-week6-thursday-11am.tcpdump.new scan-2.tcpdump
