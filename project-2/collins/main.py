@@ -68,6 +68,10 @@ class Part1Decoder(Decoder):
             self.syn_acks.add(src)
 
     def report(self):
+        for (s,p) in sorted(self.syn_acks, reverse=True):
+            print s, p
+
+    def report_fancy(self):
         print "%-14s %-5s" % ("Server", "Port")
         print "%s %s"      % ("="*14, "="*5)
         print
@@ -88,6 +92,10 @@ class Part2Decoder_(Decoder):
             self.sent[(src,dst)] = self.sent.get((src,dst),0) + tcp.get_size()
 
     def report(self):
+        for (s,p) in sorted(self.syn_acks, reverse=True):
+            print s, p
+
+    def report_fancy(self):
         print "%-14s %-5s" % ("Server", "Port")
         print "%s %s"      % ("="*14, "="*5)
         print
@@ -200,4 +208,4 @@ if __name__ == '__main__':
         print "Usage: %s <filename>" % sys.argv[0]
         sys.exit(1)
 
-    main2(sys.argv[1])
+    main1(sys.argv[1])
