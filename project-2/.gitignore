@@ -1,4 +1,3 @@
 *.tcpdump
 *.tcpdump.new
 .DS_Store
-*.out

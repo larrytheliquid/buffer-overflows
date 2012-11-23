@@ -1,7 +1,8 @@
+mkdir out
 for part in 1 2 3; do
   for f in ../no-scan-1.tcpdump ../no-scan-2.tcpdump ../scan-1.tcpdump ../scan-2.tcpdump; do
     echo $part $f;
     # XXX: The outer redirection is untested.
-    { time python main.py $part $f > $f.part-$part.out } 2>&1;
+    { time python main.py $part $f > out/$(basename $f).part-$part.out ; } 2>&1;
   done
-done | tee all-parts-stats.txt
+done | tee out/timing.txt
