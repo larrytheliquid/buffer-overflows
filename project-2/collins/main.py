@@ -45,7 +45,36 @@ class Decoder(object):
         dst = (ip.get_ip_dst(), tcp.get_th_dport() )
         return (p,ip,tcp,src,dst)
 
+    def report(self):
+        raise Exception("Not implemented")
+
 class Part1Decoder(Decoder):
+    def __init__(self, pcap):
+        Decoder.__init__(self,pcap)
+        self.syn_acks = set()
+
+    def packetHandler(self, hdr, data):
+        (p,ip,tcp,src,dst) = Decoder.packetHandler(self,hdr,data)
+
+        # Handshake 2
+        #
+        # Define a server as anything that responds to connection
+        # requests, i.e. that sends SYN-ACK packets. Not actually
+        # checking for the initiating SYN, but have that code in
+        # "Handshake 1" part.
+
+        # XXX: more efficient to do this with the pcap filter
+        if tcp.get_th_flags() == TH_SYN | TH_ACK:
+            self.syn_acks.add(src)
+
+    def report(self):
+        print "%-14s %-5s" % ("Server", "Port")
+        print "%s %s"      % ("="*14, "="*5)
+        print
+        for (s,p) in sorted(self.syn_acks, reverse=True):
+            print "%-14s %-5i" % (s,p)
+
+class Part2Decoder(Decoder):
     def __init__(self, pcap):
         Decoder.__init__(self,pcap)
         self.handshakes = {}
@@ -88,30 +117,17 @@ class Part1Decoder(Decoder):
                     self.connections.append(client_server)
 
 
-def main(filename):
+def main(filename,decoder):
     p = open_offline(filename)
-    p.setfilter(r'ip proto \tcp')
-    global d
-    d = Part1Decoder(p)
+    # tcp-syn == 1 | tcp-ack == 1
+    p.setfilter(r'tcp[tcpflags] & (tcp-syn|tcp-fin) != 0')
+    d = decoder(p)
     d.start()
-
-    # Report server stats
-    servers = [ s for (_,s) in d.connections ]
-    server_stats = {}
-    for s in servers:
-        server_stats[s] = server_stats.get(s,0) + 1
-    sorted_server_stats = sorted(server_stats.iteritems(),
-                                 key=lambda (_,c): c, reverse=True)
-    print "%-14s %-5s %s" % ("Server", "Port", "Connections")
-    print "%s %s %s"      % ("="*14, "="*5, "="*len("Connections"))
-    print
-    for ((s,p),c) in sorted_server_stats:
-        print "%-14s %-5i %i" % (s,p,c)
-
+    d.report()
 
 if __name__ == '__main__':
     if len(sys.argv) <= 1:
         print "Usage: %s <filename>" % sys.argv[0]
         sys.exit(1)
 
-    main(sys.argv[1])
+    main(sys.argv[1],Part1Decoder)
