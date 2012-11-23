@@ -229,7 +229,7 @@ def main3(filename):
     d.start()
     d.report()
 
-
+mains = [main1,main2,main3]
 
 def main2_(filename,decoder):
     p1 = open_offline(filename)
@@ -244,8 +244,8 @@ def main2_(filename,decoder):
     d2.report()
 
 if __name__ == '__main__':
-    if len(sys.argv) <= 1:
-        print "Usage: %s <filename>" % sys.argv[0]
+    if len(sys.argv) != 1+2:
+        print "Usage: %s [1|2|3] <filename>" % sys.argv[0]
         sys.exit(1)
 
-    main3(sys.argv[1])
+    mains[int(sys.argv[1])-1](sys.argv[2])
