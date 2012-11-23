@@ -118,7 +118,7 @@ class Decoder:
             if client_server in self.handshakes:
                 #print "2??"
                 hs = self.handshakes[client_server]
-                if hs.get("client_seq",None) + 1 == tcp.get_th_ack():
+                if hs.get("client_seq",None) == tcp.get_th_ack() - 1:
                     hs["server_seq"] = tcp.get_th_seq()
                 else:
                     #print "2 fail: expecting %i, got $i" % (hs.get("client_seq",None),tcp.get_th_ack())
@@ -130,8 +130,8 @@ class Decoder:
             client_server = (src,dst)
             if client_server in self.handshakes:
                 hs = self.handshakes[client_server]
-                if hs.get("client_seq",None) + 1 == tcp.get_th_seq() and \
-                   hs.get("server_seq",None) + 1 == tcp.get_th_ack():
+                if hs.get("client_seq",None) == tcp.get_th_seq() - 1 and \
+                   hs.get("server_seq",None) == tcp.get_th_ack() - 1:
                     self.handshakes.pop(client_server)
                     self.connections.append(client_server)
 
