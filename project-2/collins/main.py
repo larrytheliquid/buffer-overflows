@@ -74,11 +74,33 @@ class Part1Decoder(Decoder):
         for (s,p) in sorted(self.syn_acks, reverse=True):
             print "%-14s %-5i" % (s,p)
 
+
+# Too simple: does not count connections
+class Part2Decoder_(Decoder):
+    def __init__(self, pcap, servers):
+        Decoder.__init__(self,pcap)
+        self.servers = servers
+        self.sent = {}
+
+    def packetHandler(self, hdr, data):
+        (p,ip,tcp,src,dst) = Decoder.packetHandler(self,hdr,data)
+        if src in self.servers:
+            self.sent[(src,dst)] = self.sent.get((src,dst),0) + tcp.get_size()
+
+    def report(self):
+        print "%-14s %-5s" % ("Server", "Port")
+        print "%s %s"      % ("="*14, "="*5)
+        print
+        for (s,p) in sorted(self.syn_acks, reverse=True):
+            print "%-14s %-5i" % (s,p)
+
+
 class Part2Decoder(Decoder):
     def __init__(self, pcap):
         Decoder.__init__(self,pcap)
         self.handshakes = {}
-        self.connections = []
+        self.connections = {}
+        self.served = {}
 
     def packetHandler(self, hdr, data):
         (p,ip,tcp,src,dst) = Decoder.packetHandler(self,hdr,data)
@@ -114,20 +136,68 @@ class Part2Decoder(Decoder):
                 if hs.get("client_seq",None) == tcp.get_th_seq() - 1 and \
                    hs.get("server_seq",None) == tcp.get_th_ack() - 1:
                     self.handshakes.pop(client_server)
-                    self.connections.append(client_server)
+                    self.connections[client_server] = \
+                        self.connections.get(client_server,0) + 1
+        else:
+            client_server = (dst,src)
+            if client_server in self.connections:
+                self.served[client_server] = self.served.get(client_server,0) \
+                                           + tcp.get_size()
 
+    def report(self):
+        # connections :: (client,server) -> number of connections
+        # sent        :: (client,server) -> bytes sent
 
-def main(filename,decoder):
+        # output format: server_ip port connections bytes
+        servers = {}
+        # Don't distinguish clients
+        for ((client,server),connections) in self.connections.iteritems():
+            d = servers.get(server,{})
+            d['connections'] = d.get('connections',0) + connections
+            servers[server] = d
+
+        for ((client,server),bytes) in self.served.iteritems():
+            d = servers.get(server,{})            
+            d['bytes'] = d.get('bytes',0) + bytes
+            servers[server] = d
+
+        for ((s,ip),d) in sorted(servers.iteritems(), key=lambda (s,d): s):
+            print s, ip, d['connections'], d['bytes']
+
+def main1(filename):
     p = open_offline(filename)
-    # tcp-syn == 1 | tcp-ack == 1
+    # Restrict to tcp packets with syn and ack set.
     p.setfilter(r'tcp[tcpflags] & (tcp-syn|tcp-fin) != 0')
-    d = decoder(p)
+    d = Part1Decoder(p)
     d.start()
     d.report()
+
+
+def main2(filename):
+    p = open_offline(filename)
+    # Restrict to tcp packets with syn and ack set.
+    p.setfilter(r'ip proto \tcp')
+    d = Part2Decoder(p)
+    d.start()
+    d.report()
+
+
+
+def main2_(filename,decoder):
+    p1 = open_offline(filename)
+    # tcp-syn == 1 | tcp-ack == 1
+    p1.setfilter(r'tcp[tcpflags] & (tcp-syn|tcp-fin) != 0')
+    d1 = Part1Decoder(p1)
+    d1.start()
+
+    p2 = open_offline(filename)
+    d2 = Part2Decoder(p2,d1.syn_acks)
+    d2.start()
+    d2.report()
 
 if __name__ == '__main__':
     if len(sys.argv) <= 1:
         print "Usage: %s <filename>" % sys.argv[0]
         sys.exit(1)
 
-    main(sys.argv[1],Part1Decoder)
+    main2(sys.argv[1])
