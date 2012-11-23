@@ -1,8 +1,38 @@
-Looking at traces in Wireshark, it appears that a TCP handshake
-consists of three packets:
+TCP handshake consists of three packets:
 
-1. C -> S: flags = SYN
-2. S -> C: flags = SYN | ACK
-3. C -> S: flags = ACK, ack field = 1
+1. C -> S: flags = SYN, seq = A
+2. S -> C: flags = SYN | ACK, seq = B, ack = A+1
+3. C -> S: flags = ACK, seq = A+1, ack = B+1
 
-Should double check this.
+Details:
+
+Connection establishment
+(https://en.wikipedia.org/wiki/Transmission_Control_Protocol#Connection_establishment):
+
+To establish a connection, TCP uses a three-way handshake. Before a
+client attempts to connect with a server, the server must first bind
+to and listen at a port to open it up for connections: this is called
+a passive open. Once the passive open is established, a client may
+initiate an active open. To establish a connection, the three-way (or
+3-step) handshake occurs:
+
+    SYN: The active open is performed by the client sending a SYN to
+    the server. The client sets the segment's sequence number to a
+    random value A.
+
+    SYN-ACK: In response, the server replies with a SYN-ACK. The
+    acknowledgment number is set to one more than the received
+    sequence number (A + 1), and the sequence number that the server
+    chooses for the packet is another random number, B.
+
+    ACK: Finally, the client sends an ACK back to the server. The
+    sequence number is set to the received acknowledgement value
+    i.e. A + 1, and the acknowledgement number is set to one more than
+    the received sequence number i.e. B + 1.
+
+At this point, both the client and server have received an
+acknowledgment of the connection. The steps 1, 2 establish the
+connection parameter (sequence number) for one direction and it is
+acknowledged. The steps 2, 3 establish the connection parameter
+(sequence number) for the other direction and it is acknowledged. With
+these, a full-duplex communication is established.
