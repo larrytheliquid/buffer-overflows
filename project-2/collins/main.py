@@ -11,6 +11,8 @@ import impacket
 from impacket.ImpactDecoder import EthDecoder
 
 
+# TCP flag bits.
+#
 # Copied from C pcap tutorial. These must be def'd by Impacket
 # somewhere ...
 TH_FIN = 0x01
@@ -48,6 +50,7 @@ class Decoder(object):
     def report(self):
         raise Exception("Not implemented")
 
+
 class Part1Decoder(Decoder):
     def __init__(self, pcap):
         Decoder.__init__(self,pcap)
@@ -63,33 +66,9 @@ class Part1Decoder(Decoder):
         # checking for the initiating SYN, but have that code in
         # "Handshake 1" part.
 
-        # XXX: more efficient to do this with the pcap filter
+        # XXX: the pcap prefilter makes the explicit check redundant.
         if tcp.get_th_flags() == TH_SYN | TH_ACK:
             self.syn_acks.add(src)
-
-    def report(self):
-        for (s,p) in sorted(self.syn_acks, reverse=True):
-            print s, p
-
-    def report_fancy(self):
-        print "%-14s %-5s" % ("Server", "Port")
-        print "%s %s"      % ("="*14, "="*5)
-        print
-        for (s,p) in sorted(self.syn_acks, reverse=True):
-            print "%-14s %-5i" % (s,p)
-
-
-# Too simple: does not count connections
-class Part2Decoder_(Decoder):
-    def __init__(self, pcap, servers):
-        Decoder.__init__(self,pcap)
-        self.servers = servers
-        self.sent = {}
-
-    def packetHandler(self, hdr, data):
-        (p,ip,tcp,src,dst) = Decoder.packetHandler(self,hdr,data)
-        if src in self.servers:
-            self.sent[(src,dst)] = self.sent.get((src,dst),0) + tcp.get_size()
 
     def report(self):
         for (s,p) in sorted(self.syn_acks, reverse=True):
@@ -114,30 +93,20 @@ class Part2Decoder(Decoder):
         (p,ip,tcp,src,dst) = Decoder.packetHandler(self,hdr,data)
         # Handshake 1
         if tcp.get_th_flags() == TH_SYN:
-            #print "1"
             client_server = (src,dst)
             self.handshakes[client_server] = { "client_seq" : tcp.get_th_seq() }
         # Handshake 2
-        #
-        # XXX: For the purposes of defining a "server", replying with
-        # SYN-ACK may be sufficient.  In particular, a port scan would
-        # identify servers that I don't identify, since I'm requiring
-        # the handshake to complete.
         elif tcp.get_th_flags() == TH_SYN | TH_ACK:
-            #print "2?"
             client_server = (dst,src)
             if client_server in self.handshakes:
-                #print "2??"
                 hs = self.handshakes[client_server]
                 if hs.get("client_seq",None) == tcp.get_th_ack() - 1:
                     hs["server_seq"] = tcp.get_th_seq()
                 else:
                     #print "2 fail: expecting %i, got $i" % (hs.get("client_seq",None),tcp.get_th_ack())
-                    # Could be more paranoid here: got an unexpected handshake 2.
                     pass
         # Handshake 3
         elif tcp.get_th_flags() == TH_ACK:
-            #print "3"
             client_server = (src,dst)
             if client_server in self.handshakes:
                 hs = self.handshakes[client_server]
@@ -146,6 +115,7 @@ class Part2Decoder(Decoder):
                     self.handshakes.pop(client_server)
                     self.connections[client_server] = \
                         self.connections.get(client_server,0) + 1
+        # Data served?
         else:
             client_server = (dst,src)
             if client_server in self.connections:
@@ -171,7 +141,6 @@ class Part2Decoder(Decoder):
 
         for ((s,ip),d) in sorted(servers.iteritems(), key=lambda (s,d): s):
             print s, ip, d['connections'], d['bytes']
-
 
 
 class Part3Decoder(Decoder):
@@ -210,7 +179,6 @@ def main1(filename):
     d.start()
     d.report()
 
-
 def main2(filename):
     p = open_offline(filename)
     # XXX: could gain speed by doing two phases: one to find servers
@@ -223,29 +191,16 @@ def main2(filename):
 
 def main3(filename):
     p = open_offline(filename)
-    # Restrict to tcp packets with syn and ack set.
+    # Restrict to tcp packets with only syn set.
     p.setfilter(r'(tcp[tcpflags] & tcp-syn) == tcp[tcpflags]')
     d = Part3Decoder(p)
     d.start()
     d.report()
-
-mains = [main1,main2,main3]
-
-def main2_(filename,decoder):
-    p1 = open_offline(filename)
-    # tcp-syn == 1 | tcp-ack == 1
-    p1.setfilter(r'tcp[tcpflags] & (tcp-syn|tcp-fin) != 0')
-    d1 = Part1Decoder(p1)
-    d1.start()
-
-    p2 = open_offline(filename)
-    d2 = Part2Decoder(p2,d1.syn_acks)
-    d2.start()
-    d2.report()
 
 if __name__ == '__main__':
     if len(sys.argv) != 1+2:
         print "Usage: %s [1|2|3] <filename>" % sys.argv[0]
         sys.exit(1)
 
+    mains = [main1,main2,main3]
     mains[int(sys.argv[1])-1](sys.argv[2])
