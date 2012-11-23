@@ -192,13 +192,13 @@ def main(filename):
     server_stats = {}
     for s in servers:
         server_stats[s] = server_stats.get(s,0) + 1
-    rekeyed_server_stats = [(c, "%s:%i" % (s,p)) for ((s,p),c) in server_stats.iteritems()]
-    sorted_server_stats = sorted(rekeyed_server_stats, reverse=True)
-    print "Connections Server"
-    print "=========== ======"
+    sorted_server_stats = sorted(server_stats.iteritems(),
+                                 key=lambda (_,c): c, reverse=True)
+    print "%-14s %-5s %s" % ("Server", "Port", "Connections")
+    print "%s %s %s"      % ("="*14, "="*5, "="*len("Connections"))
     print
-    for (c,s) in sorted_server_stats:
-        print "%-11i %s" % (c,s)
+    for ((s,p),c) in sorted_server_stats:
+        print "%-14s %-5i %i" % (s,p,c)
 
 
 # Process command-line arguments.
