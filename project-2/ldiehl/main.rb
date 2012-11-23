@@ -45,7 +45,7 @@ class Parser
     servers_and_ports.keys
   end
 
-  def servers_and_payload
+  def servers_and_traffic
     result = {}
     servers.each do |server|
       result[server] = [0, 0]
@@ -82,9 +82,31 @@ class Parser
     parser = self.new ARGV[0]
     binding.pry
   end
+
+  def self.print
+    parser = self.new ARGV[0]
+
+    puts "Part 1: Servers and ports"
+    parser.servers_and_ports.each do |k, v|
+      puts "#{k}:#{v.to_a.join(',')}"
+    end
+    puts
+
+    puts "Part 2: Servers, connections, and traffic"
+    parser.servers_and_traffic.each do |k, v|
+      puts "#{k} - #{v.first} (connections) #{v.last} (bytes)"
+    end
+    puts
+
+    puts "Part 3: Port scanners"
+    parser.scanners_and_ports.each do |k, v|
+      puts "#{k.first} -> #{k.last} / #{v.size} ports"
+    end
+    puts
+  end
 end
 
-Parser.shell
+Parser.print
 
 
 
