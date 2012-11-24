@@ -5,7 +5,8 @@ Run:
 
   make
 
-The libpcap headers must already be installed on your system.
+The libpcap and python headers must already be installed on your
+system.
 
 Run Part 1 (list possible servers)
 ==================================
@@ -47,6 +48,6 @@ list off all attacks.
 
 The output format is:
 
-  ATTACKER_IP SERVER_IP NUMBER_OF_PORTS_SCANNED
+  ATTACKER_IP VICTIM_IP NUMBER_OF_PORTS_SCANNED
 
 one per line.

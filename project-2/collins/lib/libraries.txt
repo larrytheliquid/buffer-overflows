@@ -1,8 +1,13 @@
-Pcap headers:
+Python and Pcap headers
+=======================
 
+For building Pcapy.
+
+  sudo aptitude install python-dev
   sudo aptitude install libpcap-dev
 
-Impacket:
+Impacket
+========
 
 For decoding raw packets.
 
@@ -12,7 +17,8 @@ For decoding raw packets.
   python setup.py install --prefix=`readlink -f ..`/local
   cd ..
 
-Pcapy:
+Pcapy
+=====
 
 Pcap interface.
 
@@ -22,7 +28,12 @@ Pcap interface.
   python setup.py install --prefix=`readlink -f ..`/local
   cd ..
 
+Python load path
+================
+
 Make Python see the local libs (don't remember the "right" way to do
 local libs):
 
   export PYTHONPATH=local/lib/python*/site-packages/:$PYTHONPATH
+
+See ../local.py for an alternate hack.
