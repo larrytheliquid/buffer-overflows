@@ -2,12 +2,12 @@ local: impacket pcapy
 
 impacket:
 	tar xf impacket-0.9.9.9.tar.gz
-	cd impacket && python setup.py install --prefix=`readlink -f ..`/local
+	cd impacket && python setup.py install --prefix=../local
 
 pcapy:
 	tar xf pcapy.tar.gz
 	mv pcapy-0.10.8 pcapy
-	cd pcapy && python setup.py install --prefix=`readlink -f ..`/local
+	cd pcapy && python setup.py install --prefix=../local
 
 clean:
 	-rm -r impacket
