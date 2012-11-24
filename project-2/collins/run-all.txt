@@ -1,8 +1,8 @@
 # run with `time zsh run-all.txt` or `time bash run-all.txt`
-mkdir --parents out
+mkdir -p out
 for part in 1 2 3; do
   for f in ../{no-,}scan-{1,2}.tcpdump part-1-traces/trace{1,2,3,4}.pcap; do 
     echo $part $f;
     { time python main.py $part $f > out/$(basename $f).part-$part.out ; } 2>&1;
   done
-done | tee --append out/timing.txt
+done | tee -a out/timing.txt
