@@ -72,6 +72,7 @@ class Part1Decoder(Decoder):
         if tcp.get_th_flags() == TH_SYN | TH_ACK:
             self.syn_acks.add(src)
 
+    # Output format: server port
     def report(self):
         for (s,p) in sorted(self.syn_acks, reverse=True):
             print s, p

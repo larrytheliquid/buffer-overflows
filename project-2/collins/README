@@ -1,0 +1,52 @@
+Build / Install
+===============
+
+Run:
+
+  make
+
+The libpcap headers must already be installed on your system.
+
+Run Part 1 (list possible servers)
+==================================
+
+Run:
+
+  python main.py 1 PCAP_FILE
+
+The output format is:
+
+  SERVER_IP SERVER_PORT
+
+one per line.  Redirect the output if you want to save it.
+
+Run Part 2 (list server stats)
+==============================
+
+Run:
+
+  python main.py 2 PCAP_FILE
+
+The output format is:
+
+  SERVER_IP SERVER_PORT CONNECTION_COUNT TCP_PAYLOAD_BYTES_SERVED
+
+one per line.
+
+Run Part 3 (identify port scans)
+================================
+
+Run:
+
+  python main.py 3 PCAP_FILE 100 VICTIM_IP
+
+The "100" means define attackers as those sending SYNs to at least 100
+distinct ports on VICTIM_IP.  You can of course supply other values;
+this is just the value we chose.  You can also omit VICTIM_IP to get a
+list off all attacks.
+
+The output format is:
+
+  ATTACKER_IP SERVER_IP NUMBER_OF_PORTS_SCANNED
+
+one per line.
