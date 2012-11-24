@@ -1,6 +1,7 @@
-impacket*
-pcapy*
+impacket
+pcapy
 local
 part-1-traces
 out
+out.*
 *.pyc

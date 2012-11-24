@@ -1,21 +1,22 @@
-all:
+all: lib
 
-# set up libraries
-local: impacket pcapy
+# Setup libraries
+.PHONY: lib
+lib:
+	make -C lib
 
-impacket:
-	tar xf impacket-0.9.9.9.tar.gz
-	cd impacket && python setup.py install --prefix=`readlink -f ..`/local
+# Run tests
+out:
+	-rm -r out
+	time zsh run-all.txt
+	cp -r out "out.`date -u`"
 
-pcapy:
-	tar xf pcapy.tar.gz
-	mv pcapy-0.10.8 pcapy
-	cd pcapy && python setup.py install --prefix=`readlink -f ..`/local
-
-clean:
-	-rm -r impacket
-	-rm -r pcapy
+out.tgz: out
+	tar cvzf out.tgz out
 
 really-clean: clean
-	-rm -r local
 	-rm -r out
+	-rm -r out.tgz
+
+clean:
+	make -C lib clean
