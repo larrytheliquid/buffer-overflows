@@ -74,13 +74,13 @@ class Parser
     result
   end
 
-  def self.shell
-    parser = self.new ARGV[0]
+  def self.shell(filename=ARGV[0])
+    parser = self.new filename
     binding.pry
   end
 
-  def self.print
-    parser = self.new ARGV[0]
+  def self.print(filename=ARGV[0])
+    parser = self.new filename
 
     puts "Part 1: Servers and ports"
     parser.servers.each do |server_ip, port|
@@ -100,9 +100,43 @@ class Parser
     end
     puts
   end
+
+  def self.run(input_dir=ARGV[0], output_dir=ARGV[1])
+    input_dir = File.expand_path input_dir
+    output_dir = File.expand_path output_dir
+
+    pcap_files = Dir.glob("#{input_dir}/*.pcap") + Dir.glob("#{input_dir}/*.tcpdump")
+    pcap_files.each do |pcap_file|
+
+      puts "Processing #{pcap_file}"
+      parser = self.new pcap_file
+
+      File.open("#{output_dir}/#{File.basename pcap_file}.part-1.out", 'w') do |file|
+        puts "Processing part 1"
+        parser.servers.each do |server_ip, port|
+          file.puts [server_ip, port].join(" ")
+        end
+      end
+
+      File.open("#{output_dir}/#{File.basename pcap_file}.part-2.out", 'w') do |file|
+        puts "Processing part 2"
+        parser.servers_and_traffic.each do |(server_ip, port), (conns, bytes)|
+          file.puts [server_ip, port, conns, bytes].join(" ")
+        end
+      end
+
+      File.open("#{output_dir}/#{File.basename pcap_file}.part-3.out", 'w') do |file|
+        puts "Processing part 3"
+        parser.scanners_and_ports.each do |(attacker_ip, server_ip), ports|
+          file.puts [attacker_ip, server_ip, ports.size].join(" ")
+        end
+      end
+
+    end
+  end
 end
 
-Parser.print
+Parser.run
 
 
 
