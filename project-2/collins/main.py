@@ -119,11 +119,11 @@ class Part2Decoder(Decoder):
                     self.connections[client_server] = \
                         self.connections.get(client_server,0) + 1
         # Data served?
-        else:
-            client_server = (dst,src)
-            if client_server in self.connections:
-                self.served[client_server] = self.served.get(client_server,0) \
-                                           + tcp.get_size()
+        client_server = (dst,src)
+        if client_server in self.connections:
+            #print "sum 1", src, tcp.child().get_size()
+            self.served[client_server] = self.served.get(client_server,0) \
+                                         + tcp.child().get_size()
 
     def report(self):
         # connections :: (client,server) -> number of connections
