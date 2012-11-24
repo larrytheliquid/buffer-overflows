@@ -146,8 +146,10 @@ class Part2Decoder(Decoder):
 
 
 class Part3Decoder(Decoder):
-    def __init__(self, pcap):
+    def __init__(self, pcap, victim_ip=None, syn_threshold=0):
         Decoder.__init__(self,pcap)
+        self.victim_ip = victim_ip
+        self.syn_threshold = syn_threshold
         self.sinners = {}
 
     def packetHandler(self, hdr, data):
@@ -170,10 +172,11 @@ class Part3Decoder(Decoder):
 
         # Sort first on number of SYNs
         for (a,v,n) in sorted(attacks, key=lambda (a,v,n): (n,a,v), reverse=True):
-            if n >= 0: # 100:
+            if (self.victim_ip == None or self.victim_ip == v) \
+               and n >= self.syn_threshold:
                 print a,v,n
 
-def main1(filename):
+def main1(filename,_):
     p = open_offline(filename)
     # Restrict to tcp packets with only syn and ack set.
     p.setfilter(r'tcp[tcpflags] == (tcp-syn | tcp-ack)')
@@ -181,7 +184,7 @@ def main1(filename):
     d.start()
     d.report()
 
-def main2(filename):
+def main2(filename,_):
     p = open_offline(filename)
     # Restrict to tcp.
     #
@@ -193,18 +196,23 @@ def main2(filename):
     d.start()
     d.report()
 
-def main3(filename):
+def main3(filename,args):
     p = open_offline(filename)
     # Restrict to tcp packets with only syn set.
     p.setfilter(r'tcp[tcpflags] == tcp-syn')
-    d = Part3Decoder(p)
+    kws = {}
+    if len(args) >= 1:
+        kws['syn_threshold'] = int(args[0])
+    if len(args) >= 2:
+        kws['victim_ip'] = args[1]
+    d = Part3Decoder(p,**kws)
     d.start()
     d.report()
 
 if __name__ == '__main__':
-    if len(sys.argv) != 1+2:
-        print "Usage: %s [1|2|3] <filename>" % sys.argv[0]
+    if len(sys.argv) < 1+2:
+        print "Usage: %s ((1|2) PCAP_FILE | 3 PCAP_FILE [SYN_THRESHOLD [VICTIM_IP]]" % sys.argv[0]
         sys.exit(1)
 
     mains = [main1,main2,main3]
-    mains[int(sys.argv[1])-1](sys.argv[2])
+    mains[int(sys.argv[1])-1](sys.argv[2],sys.argv[3:])
