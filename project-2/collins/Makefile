@@ -6,10 +6,11 @@ lib:
 	make -C lib
 
 # Run tests
+.PHONY: out
 out:
 	-rm -r out
 	time zsh run-all.txt
-	cp -r out "out.`date -u`"
+	cp -r out "out.`date`"
 
 out.tgz: out
 	tar cvzf out.tgz out
