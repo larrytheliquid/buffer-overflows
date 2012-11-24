@@ -2,6 +2,8 @@
 
 # Based on impacket/examples/split.py.
 
+import local
+
 import sys
 from exceptions import Exception
 
