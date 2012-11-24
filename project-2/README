@@ -8,6 +8,11 @@ are sent in the initial handshake of establishing a connection.
 
 Part 2: 
 
+TODO: describe actual identification of handshakes as implemented.
+Can refer to ./tcp-handshake.txt. (We learned that ACK is set on all
+non-handshake packets, in addition to some handshake packets, so
+checking for ACK gives huge over counts).
+
 We count the total number of connections to each server by counting the
 number of packets sent to the server with the SYN flag off but the ACK flag
 set, as these correspond to a client finalizing the handshake with the server
