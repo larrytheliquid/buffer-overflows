@@ -1,8 +1,15 @@
-# run with `time zsh run-all.txt` or `time bash run-all.txt`
+# run with `time zsh run-all.txt TRACES` or `time bash run-all.txt TRACES`
+
+if [[ -z "$1" ]]; then
+   echo "usage: [zsh|bash] $0 TRACE_FILE*" > /dev/stderr
+   echo > /dev/stderr
+   echo "E.g. if your traces are in ./traces: zsh run-all.txt traces/*" > /dev/stderr
+   exit 2
+fi
 mkdir -p out
 for part in 1 2 3; do
-  for f in ../{no-,}scan-{1,2}.tcpdump part-1-traces/trace{1,2,3,4}.pcap; do 
-    echo $part $f;
-    { time python main.py $part $f > out/$(basename $f).part-$part.out ; } 2>&1;
+  for file in "$@"; do
+    echo \$part=$part \$file=$file;
+    { time python main.py $part $file > out/$(basename $file).part-$part.out ; } 2>&1;
   done
 done | tee -a out/timing.txt
