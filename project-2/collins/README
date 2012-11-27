@@ -1,12 +1,17 @@
 Build / Install
 ===============
 
-Run:
+To install libraries run:
 
   make
 
 The libpcap and python headers must already be installed on your
-system.
+system (python-dev and libpcap-dev on Debian based systems).
+
+NB: Our program does not work correctly with old format .pcap files.
+Please convert your old format .pcap files to the new format with:
+
+  tcpdump -r OLD_PCAP_FILE -w NEW_PCAP_FILE
 
 Run Part 1 (list possible servers)
 ==================================
