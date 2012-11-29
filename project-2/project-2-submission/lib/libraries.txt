@@ -1,0 +1,39 @@
+Python and Pcap headers
+=======================
+
+For building Pcapy.
+
+  sudo aptitude install python-dev
+  sudo aptitude install libpcap-dev
+
+Impacket
+========
+
+For decoding raw packets.
+
+  wget https://impacket.googlecode.com/files/impacket-0.9.9.9.tar.gz
+  tar xf impacket*
+  cd impacket/
+  python setup.py install --prefix=`readlink -f ..`/local
+  cd ..
+
+Pcapy
+=====
+
+Pcap interface.
+
+  wget 'http://corelabs.coresecurity.com/index.php?module=Wiki&action=attachment&type=tool&page=Pcapy&file=pcapy-0.10.8.tar.gz' -Opcapy.tar.gz
+  tar xf pcapy*
+  cd pcapy-0.10.8/
+  python setup.py install --prefix=`readlink -f ..`/local
+  cd ..
+
+Python load path
+================
+
+Make Python see the local libs (don't remember the "right" way to do
+local libs):
+
+  export PYTHONPATH=local/lib/python*/site-packages/:$PYTHONPATH
+
+See ../local.py for an alternate hack.

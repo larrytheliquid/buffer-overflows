@@ -1,0 +1,124 @@
+Summary of Approach
+===================
+
+Part 1
+====== 
+
+We generate the list of IP addresses and ports that act as servers by
+looking for any address/port pair that sends a packet with the syn and
+ack flags set simultaneously as these are sent in the initial handshake
+of establishing a connection.
+
+Part 2
+======
+
+We count the total number of connections to each server by counting the
+total number of completed handshakes between the server and its clients.
+
+A TCP handshake consists of three packets:
+
+1. C -> S: flags = SYN, seq = A
+2. S -> C: flags = SYN | ACK, seq = B, ack = A+1
+3. C -> S: flags = ACK, seq = A+1, ack = B+1
+
+To establish a connection, TCP uses a three-way handshake. Before a
+client attempts to connect with a server, the server must first bind
+to and listen at a port to open it up for connections: this is called
+a passive open. Once the passive open is established, a client may
+initiate an active open. To establish a connection, the three-way (or
+3-step) handshake occurs:
+
+    SYN: The active open is performed by the client sending a SYN to
+    the server. The client sets the segment's sequence number to a
+    random value A.
+
+    SYN-ACK: In response, the server replies with a SYN-ACK. The
+    acknowledgment number is set to one more than the received
+    sequence number (A + 1), and the sequence number that the server
+    chooses for the packet is another random number, B.
+
+    ACK: Finally, the client sends an ACK back to the server. The
+    sequence number is set to the received acknowledgement value
+    i.e. A + 1, and the acknowledgement number is set to one more than
+    the received sequence number i.e. B + 1.
+
+At this point, both the client and server have received an
+acknowledgment of the connection. The steps 1, 2 establish the
+connection parameter (sequence number) for one direction and it is
+acknowledged. The steps 2, 3 establish the connection parameter
+(sequence number) for the other direction and it is acknowledged. With
+these, a full-duplex communication is established.
+
+Note that since we only count complete handshakes as as connections, then
+that means that handshakes that are in progress at the beginning of the file
+will not actually be counted. 
+
+The total number of bytes served is calculated by summing the payloads of all 
+the packets sent by the server.
+
+Part 3
+======
+
+We take the fairly simple approach of counting the total number of ports
+of the target address per client that have been sent an initial SYN packet.
+We assume a default threshold of 100 ports scanned against an address by 
+a single client for claiming there is a possible port scan.
+
+Build / Install
+===============
+
+To install libraries run:
+
+  make
+
+The libpcap and python headers must already be installed on your
+system (python-dev and libpcap-dev on Debian based systems).
+
+Our program does not work correctly with old format .pcap files.
+Please convert your old format .pcap files to the new format with:
+
+  tcpdump -r OLD_PCAP_FILE -w NEW_PCAP_FILE
+
+Run Part 1 (list possible servers)
+==================================
+
+Run:
+
+  python main.py 1 PCAP_FILE
+
+The output format is:
+
+  SERVER_IP SERVER_PORT
+
+one per line.  Redirect the output if you want to save it.
+
+Run Part 2 (list server stats)
+==============================
+
+Run:
+
+  python main.py 2 PCAP_FILE
+
+The output format is:
+
+  SERVER_IP SERVER_PORT CONNECTION_COUNT TCP_PAYLOAD_BYTES_SERVED
+
+one per line.
+
+Run Part 3 (identify port scans)
+================================
+
+Run:
+
+  python main.py 3 PCAP_FILE 100 VICTIM_IP
+
+The "100" means define attackers as those sending SYNs to at least 100
+distinct ports on VICTIM_IP.  You can of course supply other values;
+this is just the value we chose.  You can also omit VICTIM_IP to get a
+list off all attacks.
+
+The output format is:
+
+  ATTACKER_IP VICTIM_IP NUMBER_OF_PORTS_SCANNED
+
+one per line.
